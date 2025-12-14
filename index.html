@@ -104,13 +104,15 @@
     }
 
     /* Video */
-    .hero-video{
-      width: 100%;
-      max-width: 900px;
-      margin: 18px auto 0;
-      display: block;
-    }
-
+ .hero-video{
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 18px;
+  display: block;
+  background: #000;
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 0 28px rgba(0,0,0,0.6);
+}
     /* Contact */
     .contact-grid{
       display: grid;
@@ -172,11 +174,25 @@
     <div class="container">
       <h2>Présentation</h2>
       <p class="section-desc">
-        Vidéo 3D (fond transparent) — à ajouter. En attendant, tu peux déjà consulter les modèles disponibles.
+       <p class="section-desc">
+  Vidéo de présentation (sobre) — et accès aux modèles disponibles.
+</p>
+<p class="section-desc">
+  Vidéo de présentation (sobre) — et accès aux modèles disponibles.
+</p>
+
       </p>
 
-      <div class="block">
-        <a class="cta" href="modeles.html">Voir nos modèles</a>
+<div class="block">
+
+  <video class="hero-video" autoplay loop muted playsinline preload="metadata" controls>
+    <source src="machine.mp4" type="video/mp4">
+  </video>
+
+  <a class="cta" href="modeles.html">Voir nos modèles</a>
+
+</div>
+
 
         <!-- Active la vidéo quand tu auras upload machine.webm -->
         <!--
