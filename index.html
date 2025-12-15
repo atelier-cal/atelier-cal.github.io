@@ -44,16 +44,19 @@ nav a:hover{
   margin: 0 auto 18px;
   display: block;
 }
+    .cta-group{
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
 
 @media (max-width: 520px){
   .logo{
     width: 220px;
   }
 }
-.cta + .cta{
-  margin-left: 14px;
-}
-
 
     body{
       margin:0;
@@ -238,8 +241,11 @@ nav a:hover{
           Votre navigateur ne supporte pas la vidéo.
         </video>
 
-      <a class="cta" href="/machine.html">Voir la machine</a>
-<a class="cta" href="/modeles.html">Voir les rouleaux en bronze</a>
+<div class="cta-group">
+  <a class="cta" href="/machine.html">Voir la machine</a>
+  <a class="cta" href="/modeles.html">Voir les rouleaux en bronze</a>
+</div>
+
 
 
       </div>
