@@ -1,0 +1,84 @@
+<section>
+  <div class="container">
+
+    <!-- 1) HERO -->
+    <div class="block center">
+      <img class="img-main" src="machine-hero.jpg" alt="Machine SRC Série 1 – Atelier CAL">
+      <h1>Machine de confiserie professionnelle – SRC Série 1</h1>
+      <p class="subtitle">
+        Bâti à cylindres motorisé avec rouleaux en bronze, conçu pour la fabrication artisanale
+        de bonbons en sucre cuit, nougatine et spécialités au miel.
+      </p>
+      <div class="cta-group">
+        <a class="cta" href="mailto:contact@atelier-cal.fr">Demander un devis</a>
+        <a class="cta ghost" href="/modeles.html">Voir les rouleaux en bronze</a>
+      </div>
+    </div>
+
+    <!-- 2) CADRE -->
+    <div class="block split">
+      <div>
+        <h2>Cadre aluminium anodisé</h2>
+        <p>
+          Cadre en <strong>aluminium anodisé</strong> : conception durable et robuste, adaptée à un usage professionnel.
+          L’objectif est d’obtenir une machine <strong>stable</strong>, <strong>facile à nettoyer</strong> et conçue pour durer.
+        </p>
+      </div>
+      <div>
+        <img class="img" src="cadre-anodise.jpg" alt="Cadre aluminium anodisé – SRC Série 1">
+      </div>
+    </div>
+
+    <!-- 3) PROTECTIONS -->
+    <div class="block split">
+      <div>
+        <h2>Sécurité & protections</h2>
+        <ul>
+          <li><strong>Arrêt d’urgence</strong></li>
+          <li>Protection engrenages + capots</li>
+          <li>Protection polycarbonate</li>
+        </ul>
+        <p class="muted">
+          Conçu pour un usage atelier avec une attention particulière à la sécurité.
+        </p>
+      </div>
+      <div>
+        <img class="img" src="protections-securite.jpg" alt="Protections et arrêt d’urgence – SRC Série 1">
+      </div>
+    </div>
+
+    <!-- 4) 220V -->
+    <div class="block split">
+      <div>
+        <h2>Branchement simple – 220V</h2>
+        <p>
+          Fonctionne sur <strong>prise domestique 220V monophasé</strong> : installation simple dans un atelier,
+          sans infrastructure spéciale.
+        </p>
+      </div>
+      <div>
+        <img class="img" src="prise-220v.jpg" alt="Alimentation 220V – SRC Série 1">
+      </div>
+    </div>
+
+    <!-- 5) VITESSE / FONCTIONNEMENT -->
+    <div class="block split">
+      <div>
+        <h2>Vitesse maîtrisée & fonctionnement</h2>
+        <p>
+          Vitesse de rotation <strong>maîtrisée (≈ 10 tr/min)</strong> : idéale pour travailler le sucre cuit
+          avec régularité, obtenir un marquage net et un démoulage propre.
+        </p>
+      </div>
+      <div>
+        <img class="img" src="fonctionnement.jpg" alt="Fonctionnement – SRC Série 1">
+      </div>
+    </div>
+
+    <!-- 6) CTA FINAL -->
+    <div class="block center">
+      <h2>Recevoir un devis</h2>
+      <p class="muted">
+        Dites-moi votre besoin (types de bonbons, volume, formes souhaitées) et je vous réponds avec une proposition.
+      </p>
+      <a class="cta" h
