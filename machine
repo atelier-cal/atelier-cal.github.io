@@ -1,27 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Machine de confiserie professionnelle – SRC Série 1 | Atelier CAL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="description" content="Machine de confiserie professionnelle SRC Série 1 Atelier CAL. Bâti à cylindres motorisé avec rouleaux en bronze pour bonbons en sucre cuit, nougatine et miel." />
+
+  <link rel="canonical" href="https://atelier-cal.fr/machine.html" />
+
+  <style>
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: rgba(255,255,255,0.92);
+      background: radial-gradient(circle at top, #1c1c1c 0%, #0b0b0b 45%, #000 100%);
+    }
+
+    .container{
+      width: min(1120px, 92vw);
+      margin: 0 auto;
+    }
+
+    header{
+      padding: 70px 0 40px;
+      text-align:center;
+    }
+
+    h1{
+      margin:0 0 14px;
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    h2{ margin:0 0 12px; }
+
+    .subtitle{
+      color: rgba(255,255,255,0.75);
+      max-width: 900px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    section{ padding: 50px 0; }
+
+    .block{
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.04);
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+
+    ul{
+      padding-left: 18px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .cta{
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 34px;
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .cta:hover{ background:#fff; color:#000; }
+
+    nav{ margin-bottom: 26px; }
+
+    nav a{
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 0.9rem;
+    }
+
+    nav a:hover{ text-decoration: underline; }
+
+    footer{
+      text-align:center;
+      padding: 30px 0 40px;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.55);
+    }
+
+    /* --- SECTIONS DETAILLEES --- */
+    .center{ text-align:center; }
+
+    .img-main{
+      width: 100%;
+      max-width: 920px;
+      display:block;
+      margin: 0 auto 18px;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+
+    .img{
+      width: 100%;
+      display:block;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+
+    .split{
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .muted{ color: rgba(255,255,255,0.75); line-height:1.7; }
+
+    .cta-group{
+      display:flex;
+      justify-content:center;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top: 18px;
+    }
+
+    .cta.ghost{ background: transparent; }
+
+    @media (max-width: 820px){
+      .split{ grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a href="/">Accueil</a>
+      <a href="/modeles.html">Rouleaux en bronze</a>
+    </nav>
+
+    <h1>Machine de confiserie professionnelle – SRC Série 1</h1>
+    <p class="subtitle">
+      Bâti à cylindres motorisé avec <strong>rouleaux en bronze</strong>, conçu pour la fabrication
+      artisanale de bonbons en sucre cuit, nougatine et spécialités au miel.
+    </p>
+  </div>
+</header>
+
 <section>
   <div class="container">
 
-    <!-- 1) HERO -->
+    <!-- HERO -->
     <div class="block center">
       <img class="img-main" src="machine-hero.jpg" alt="Machine SRC Série 1 – Atelier CAL">
-      <h1>Machine de confiserie professionnelle – SRC Série 1</h1>
-      <p class="subtitle">
-        Bâti à cylindres motorisé avec rouleaux en bronze, conçu pour la fabrication artisanale
-        de bonbons en sucre cuit, nougatine et spécialités au miel.
-      </p>
       <div class="cta-group">
         <a class="cta" href="mailto:contact@atelier-cal.fr">Demander un devis</a>
         <a class="cta ghost" href="/modeles.html">Voir les rouleaux en bronze</a>
       </div>
     </div>
 
-    <!-- 2) CADRE -->
+    <!-- CADRE -->
     <div class="block split">
       <div>
         <h2>Cadre aluminium anodisé</h2>
         <p>
-          Cadre en <strong>aluminium anodisé</strong> : conception durable et robuste, adaptée à un usage professionnel.
-          L’objectif est d’obtenir une machine <strong>stable</strong>, <strong>facile à nettoyer</strong> et conçue pour durer.
+          Cadre en <strong>aluminium anodisé</strong> offrant rigidité, durabilité et facilité de nettoyage.
+          Conçu pour une <strong>longévité accrue</strong> en usage professionnel.
         </p>
       </div>
       <div>
@@ -29,56 +172,67 @@
       </div>
     </div>
 
-    <!-- 3) PROTECTIONS -->
+    <!-- SECURITE -->
     <div class="block split">
       <div>
         <h2>Sécurité & protections</h2>
         <ul>
-          <li><strong>Arrêt d’urgence</strong></li>
-          <li>Protection engrenages + capots</li>
+          <li>Arrêt d’urgence</li>
+          <li>Protection engrenages et capots</li>
           <li>Protection polycarbonate</li>
         </ul>
-        <p class="muted">
-          Conçu pour un usage atelier avec une attention particulière à la sécurité.
-        </p>
+        <p class="muted">Pensée pour un usage atelier sécurisé.</p>
       </div>
       <div>
-        <img class="img" src="protections-securite.jpg" alt="Protections et arrêt d’urgence – SRC Série 1">
+        <img class="img" src="protections-securite.jpg" alt="Protections et arrêt d’urgence">
       </div>
     </div>
 
-    <!-- 4) 220V -->
+    <!-- ALIMENTATION -->
     <div class="block split">
       <div>
         <h2>Branchement simple – 220V</h2>
         <p>
-          Fonctionne sur <strong>prise domestique 220V monophasé</strong> : installation simple dans un atelier,
-          sans infrastructure spéciale.
+          Fonctionne sur <strong>prise domestique 220V monophasé</strong>.
+          Installation rapide sans infrastructure spécifique.
         </p>
       </div>
       <div>
-        <img class="img" src="prise-220v.jpg" alt="Alimentation 220V – SRC Série 1">
+        <img class="img" src="prise-220v.jpg" alt="Alimentation 220V">
       </div>
     </div>
 
-    <!-- 5) VITESSE / FONCTIONNEMENT -->
+    <!-- FONCTIONNEMENT -->
     <div class="block split">
       <div>
         <h2>Vitesse maîtrisée & fonctionnement</h2>
         <p>
-          Vitesse de rotation <strong>maîtrisée (≈ 10 tr/min)</strong> : idéale pour travailler le sucre cuit
-          avec régularité, obtenir un marquage net et un démoulage propre.
+          Vitesse fixe optimisée (≈ 10 tr/min), idéale pour le travail du sucre cuit :
+          régularité, marquage précis et démoulage propre.
         </p>
       </div>
       <div>
-        <img class="img" src="fonctionnement.jpg" alt="Fonctionnement – SRC Série 1">
+        <img class="img" src="fonctionnement.jpg" alt="Fonctionnement machine SRC Série 1">
       </div>
     </div>
 
-    <!-- 6) CTA FINAL -->
+    <!-- CTA FINAL -->
     <div class="block center">
       <h2>Recevoir un devis</h2>
       <p class="muted">
-        Dites-moi votre besoin (types de bonbons, volume, formes souhaitées) et je vous réponds avec une proposition.
+        Indiquez votre besoin (types de bonbons, volumes, contraintes) et recevez
+        une proposition adaptée à votre atelier.
       </p>
-      <a class="cta" h
+      <a class="cta" href="mailto:contact@atelier-cal.fr">Demander un devis</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  Atelier CAL – Confiserie Art Lorraine<br>
+  contact@atelier-cal.fr
+</footer>
+
+</body>
+</html>
