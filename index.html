@@ -18,64 +18,85 @@
       --line2: rgba(255,255,255,0.28);
       --card: rgba(255,255,255,0.04);
       --accent: #c9a24d;
+      --bg1: #1c1c1c;
+      --bg2: #0b0b0b;
+      --bg3: #000;
     }
 
     body{
       margin:0;
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
-      background: radial-gradient(circle at top, #1c1c1c 0%, #0b0b0b 45%, #000 100%);
+      background: radial-gradient(circle at top, var(--bg1) 0%, var(--bg2) 45%, var(--bg3) 100%);
     }
 
-    /* ================= BANNIÈRE ================= */
+    /* =============== BANNIÈRE (BONBONS + TEXTE DÉFILANT) =============== */
     .top-banner{
       position: relative;
+      height: 40px;
       background: #0f1115;
-      color: var(--accent);
-      height: 38px;
-      overflow: hidden;
       border-bottom: 1px solid rgba(255,255,255,0.08);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
+      overflow: hidden;
     }
 
-    .banner-text{
-      position: relative;
-      z-index: 2;
-      pointer-events: none;
-    }
-
+    /* bonbons */
     .banner-candies{
       position: absolute;
       inset: 0;
+      z-index: 1;
       pointer-events: none;
     }
 
     .candy{
       position: absolute;
-      width: 36px;
-      opacity: 0.75;
+      width: 28px;
+      opacity: 0.8;
       animation: spin linear infinite;
       filter: drop-shadow(0 6px 12px rgba(0,0,0,0.45));
     }
 
-    .c1{ left: 5%;  top: -6px;  animation-duration: 14s; }
-    .c2{ left: 20%; top: 8px;   animation-duration: 18s; }
-    .c3{ left: 45%; top: -10px; animation-duration: 16s; }
-    .c4{ left: 70%; top: 6px;   animation-duration: 20s; }
-    .c5{ left: 85%; top: -8px;  animation-duration: 22s; }
+    /* Les bonbons restent DANS la bande */
+    .c1{ left: 6%;  top: 6px;  animation-duration: 14s; }
+    .c2{ left: 22%; top: 10px; animation-duration: 18s; }
+    .c3{ left: 48%; top: 6px;  animation-duration: 16s; }
+    .c4{ left: 72%; top: 11px; animation-duration: 20s; }
+    .c5{ left: 88%; top: 7px;  animation-duration: 22s; }
 
     @keyframes spin{
       from{ transform: rotate(0deg); }
       to{ transform: rotate(360deg); }
     }
 
-    @media (max-width: 768px){
-      .candy{ width: 26px; opacity: 0.6; }
+    /* texte défilant */
+    .marquee{
+      position: relative;
+      z-index: 2;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      color: var(--accent);
+      font-size: 14px;
+      white-space: nowrap;
     }
-    /* ============================================ */
+
+    .marquee__inner{
+      display: inline-flex;
+      gap: 48px;
+      padding-left: 100%;
+      will-change: transform;
+      animation: marqueeMove 18s linear infinite;
+    }
+
+    @keyframes marqueeMove{
+      0%   { transform: translate3d(0,0,0); }
+      100% { transform: translate3d(-50%,0,0); }
+    }
+
+    @media (max-width: 768px){
+      .candy{ width: 24px; opacity: 0.65; }
+      .marquee__inner{ animation-duration: 22s; }
+    }
+    /* =================================================================== */
 
     nav{
       margin: 12px 0 18px;
@@ -195,6 +216,38 @@
       transform: translateY(-1px);
     }
 
+    /* Contact : liens en blanc (pas bleu) */
+    #contact a{
+      color: rgba(255,255,255,0.92);
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(255,255,255,0.35);
+    }
+    #contact a:hover{
+      color: #fff;
+      border-bottom-color: rgba(255,255,255,0.7);
+    }
+
+    .contact-grid{
+      width: min(1040px, 100%);
+      margin: 22px auto 0;
+      padding: 26px 22px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      text-align: left;
+    }
+
+    .contact-item{
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .contact-item:last-child{ border-bottom: none; }
+
+    .contact-item strong{
+      display: block;
+      margin-bottom: 6px;
+      color: rgba(255,255,255,0.85);
+    }
+
     footer{
       padding: 28px 0 38px;
       text-align:center;
@@ -215,8 +268,12 @@
       <img src="assets/images/banner/ban-4.png" class="candy c4" alt="">
       <img src="assets/images/banner/ban-5.png" class="candy c5" alt="">
     </div>
-    <div class="banner-text">
-      🎄 Bonnes fêtes de fin d’année à tous – merci pour votre soutien ✨
+
+    <div class="marquee">
+      <div class="marquee__inner">
+        <span>🎄 Bonnes fêtes de fin d’année à tous — merci pour votre soutien ✨</span>
+        <span aria-hidden="true">🎄 Bonnes fêtes de fin d’année à tous — merci pour votre soutien ✨</span>
+      </div>
     </div>
   </div>
 
