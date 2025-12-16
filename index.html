@@ -4,15 +4,10 @@
   <meta charset="UTF-8" />
   <title>Machine de confiserie professionnelle – Bâti à cylindres | Atelier CAL</title>
 
-<meta name="google-site-verification" content="A0dojKL5m35FOtxZXnqt33BbuTEnXFRBVb-cTb6grEY" />
-
-<meta name="description" content="Atelier CAL conçoit et fabrique des machines professionnelles pour la confiserie : bâti à cylindres motorisé pour bonbons en sucre cuit, nougatine et miel. Conception française." />
-
-
-<meta name="keywords" content="machine confiserie, machine bonbon, bâti à cylindres, machine nougatine, machine bonbon miel, confiseur professionnel" />
-
-<meta name="author" content="Atelier CAL" />
-
+  <meta name="google-site-verification" content="A0dojKL5m35FOtxZXnqt33BbuTEnXFRBVb-cTb6grEY" />
+  <meta name="description" content="Atelier CAL conçoit et fabrique des machines professionnelles pour la confiserie : bâti à cylindres motorisé pour bonbons en sucre cuit, nougatine et miel. Conception française." />
+  <meta name="keywords" content="machine confiserie, machine bonbon, bâti à cylindres, machine nougatine, machine bonbon miel, confiseur professionnel" />
+  <meta name="author" content="Atelier CAL" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
@@ -22,41 +17,8 @@
       --line: rgba(255,255,255,0.18);
       --line2: rgba(255,255,255,0.28);
       --card: rgba(255,255,255,0.04);
+      --accent: #c9a24d;
     }
-nav{
-  margin: 12px 0 18px;
-}
-
-nav a{
-  color: rgba(255,255,255,0.85);
-  text-decoration: none;
-  margin: 0 8px;
-  font-size: 0.9rem;
-}
-
-nav a:hover{
-  text-decoration: underline;
-}
-
-.logo{
-  width: 320px;
-  max-width: 90%;
-  margin: 0 auto 18px;
-  display: block;
-}
-    .cta-group{
-  display: flex;
-  justify-content: center;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-
-
-@media (max-width: 520px){
-  .logo{
-    width: 220px;
-  }
-}
 
     body{
       margin:0;
@@ -65,7 +27,82 @@ nav a:hover{
       background: radial-gradient(circle at top, #1c1c1c 0%, #0b0b0b 45%, #000 100%);
     }
 
-    /* Layout (un peu plus large) */
+    /* ================= BANNIÈRE ================= */
+    .top-banner{
+      position: relative;
+      background: #0f1115;
+      color: var(--accent);
+      height: 38px;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .banner-text{
+      position: relative;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .banner-candies{
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .candy{
+      position: absolute;
+      width: 36px;
+      opacity: 0.75;
+      animation: spin linear infinite;
+      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.45));
+    }
+
+    .c1{ left: 5%;  top: -6px;  animation-duration: 14s; }
+    .c2{ left: 20%; top: 8px;   animation-duration: 18s; }
+    .c3{ left: 45%; top: -10px; animation-duration: 16s; }
+    .c4{ left: 70%; top: 6px;   animation-duration: 20s; }
+    .c5{ left: 85%; top: -8px;  animation-duration: 22s; }
+
+    @keyframes spin{
+      from{ transform: rotate(0deg); }
+      to{ transform: rotate(360deg); }
+    }
+
+    @media (max-width: 768px){
+      .candy{ width: 26px; opacity: 0.6; }
+    }
+    /* ============================================ */
+
+    nav{
+      margin: 12px 0 18px;
+    }
+
+    nav a{
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      margin: 0 8px;
+      font-size: 0.9rem;
+    }
+
+    nav a:hover{
+      text-decoration: underline;
+    }
+
+    .logo{
+      width: 320px;
+      max-width: 90%;
+      margin: 0 auto 18px;
+      display: block;
+    }
+
+    @media (max-width: 520px){
+      .logo{ width: 220px; }
+    }
+
     .container{
       width: min(1120px, 92vw);
       margin: 0 auto;
@@ -108,7 +145,6 @@ nav a:hover{
       line-height: 1.6;
     }
 
-    /* Bloc un peu plus large */
     .block{
       margin: 22px auto 0;
       width: min(1040px, 100%);
@@ -117,17 +153,22 @@ nav a:hover{
       border: 1px solid var(--line);
     }
 
-    /* VIDEO: plus grande + ratio propre */
     .hero-video{
       width: 100%;
       max-width: 1000px;
       aspect-ratio: 16 / 9;
-      height: auto;
       display: block;
       margin: 0 auto 18px;
       background: #000;
       border: 1px solid rgba(255,255,255,0.18);
       box-shadow: 0 0 28px rgba(0,0,0,0.6);
+    }
+
+    .cta-group{
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
     }
 
     .cta{
@@ -144,53 +185,14 @@ nav a:hover{
       letter-spacing: 1.1px;
       text-transform: uppercase;
       background: transparent;
-      transition: transform .18s ease, box-shadow .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
-      width: fit-content;
+      transition: all .2s ease;
     }
 
     .cta:hover{
       background:#fff;
       color:#000;
-      border-color: rgba(255,255,255,0.85);
       box-shadow: 0 0 22px rgba(255,255,255,0.22);
       transform: translateY(-1px);
-    }
-
-    .cta:active{
-      transform: translateY(0px);
-      box-shadow: none;
-    }
-
-    .contact-grid{
-      display: grid;
-      gap: 14px;
-      justify-items: center;
-      margin-top: 16px;
-    }
-
-    .contact-item{
-      width: min(560px, 100%);
-      padding: 14px 16px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.03);
-      text-align: left;
-    }
-
-    .contact-item strong{
-      display:block;
-      font-size: .95rem;
-      margin-bottom: 4px;
-      color: rgba(255,255,255,0.9);
-    }
-
-    .contact-item a{
-      color: rgba(255,255,255,0.9);
-      text-decoration: none;
-      border-bottom: 1px dotted rgba(255,255,255,0.25);
-    }
-
-    .contact-item a:hover{
-      border-bottom-color: rgba(255,255,255,0.55);
     }
 
     footer{
@@ -199,59 +201,64 @@ nav a:hover{
       font-size: 0.9rem;
       color: rgba(255,255,255,0.55);
     }
-
-    @media (max-width: 520px){
-      header{ padding-top: 74px; }
-      .block{ padding: 22px 16px; }
-      .cta{ width: 100%; max-width: 340px; padding: 15px 18px; }
-    }
   </style>
 </head>
 
 <body>
 
-  <header>
-  <div class="container">
-
-    <img src="logo-atelier-cal.png" alt="Atelier CAL" class="logo">
-    <nav>
-      <a href="/">Accueil</a> |
-      <a href="/modeles.html">Modèles</a>
-    </nav>
-
-    <h1>Atelier CAL</h1>
-
-    <p class="subtitle">
-      Conception et fabrication de machines professionnelles pour la réalisation de bonbons en sucre cuit.
-    </p>
-
+  <!-- BANNIÈRE -->
+  <div class="top-banner">
+    <div class="banner-candies">
+      <img src="assets/images/banner/ban-1.png" class="candy c1" alt="">
+      <img src="assets/images/banner/ban-2.png" class="candy c2" alt="">
+      <img src="assets/images/banner/ban-3.png" class="candy c3" alt="">
+      <img src="assets/images/banner/ban-4.png" class="candy c4" alt="">
+      <img src="assets/images/banner/ban-5.png" class="candy c5" alt="">
+    </div>
+    <div class="banner-text">
+      ⚙️ Machines de confiserie artisanale – Atelier CAL
+    </div>
   </div>
-</header>
 
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <img src="logo-atelier-cal.png" alt="Atelier CAL" class="logo">
 
+      <nav>
+        <a href="/">Accueil</a> |
+        <a href="/modeles.html">Modèles</a>
+      </nav>
+
+      <h1>Atelier CAL</h1>
+
+      <p class="subtitle">
+        Conception et fabrication de machines professionnelles pour la réalisation de bonbons en sucre cuit.
+      </p>
+    </div>
+  </header>
+
+  <!-- PRÉSENTATION -->
   <section>
     <div class="container">
       <h2>Présentation</h2>
       <p class="section-desc">Bâti à cylindres SRC SÉRIE 1 motorisé</p>
 
       <div class="block">
-
         <video class="hero-video" autoplay loop muted playsinline preload="metadata" controls>
           <source src="machine.mp4" type="video/mp4">
           Votre navigateur ne supporte pas la vidéo.
         </video>
 
-<div class="cta-group">
-  <a class="cta" href="/machine.html">Voir la machine</a>
-  <a class="cta" href="/modeles.html">Voir les rouleaux en bronze</a>
-</div>
-
-
-
+        <div class="cta-group">
+          <a class="cta" href="/machine.html">Voir la machine</a>
+          <a class="cta" href="/modeles.html">Voir les rouleaux en bronze</a>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- CONTACT -->
   <section id="contact">
     <div class="container">
       <h2>Contact</h2>
