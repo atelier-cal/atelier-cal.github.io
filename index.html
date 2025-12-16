@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Atelier CAL – Machine de confiserie</title>
 
   <style>
@@ -22,149 +22,96 @@
       background: radial-gradient(circle at top, #1c1c1c 0%, #0b0b0b 45%, #000 100%);
     }
 
-    /* ======= BANNIÈRE (défilement + bonbons) ======= */
+    /* ===== BANNIÈRE DÉFILANTE ===== */
     .top-banner{
       height:46px;
       background:#0f1115;
       border-bottom:1px solid rgba(255,255,255,.08);
       overflow:hidden;
-      position:relative;
     }
-/* ===== BANNIÈRE : RAIL DÉFILANT ===== */
-.top-banner{
-  height: 46px;
-  background: #0f1115;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  overflow: hidden;
-  position: relative;
-}
 
-.banner-rail{
-  height: 46px;
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-  gap: 15px;                     /* RESSERRÉ (~15%) */
-  will-change: transform;
-  animation: railMove 20s linear infinite;
-}
+    .banner-rail{
+      height:46px;
+      display:flex;
+      align-items:center;
+      white-space:nowrap;
+      will-change:transform;
+      animation: railMove 20s linear infinite;
+    }
 
-.rail-wrap{
-  display: flex;
-  width: 200%;
-}
+    .rail-wrap{
+      display:flex;
+      width:200%;
+    }
 
-.rail{
-  display: flex;
-  align-items: center;
-  gap: 15px;                     /* RESSERRÉ (~15%) */
-  width: 50%;
-  padding-left: 20%;             /* BOUCLE CONTINUE */
-  box-sizing: border-box;
-}
+    .rail{
+      display:flex;
+      align-items:center;
+      gap:15px;
+      width:50%;
+      padding-left:20%;
+      box-sizing:border-box;
+    }
 
-.banner-text{
-  color: #c9a24d;
-  font-size: 14px;
-  letter-spacing: 0.2px;
-}
+    .banner-text{
+      color:var(--accent);
+      font-size:14px;
+      letter-spacing:.2px;
+    }
 
-.banner-candy{
-  width: 50px;                   /* +80% */
-  height: 50px;
-  flex: 0 0 auto;
-  animation: spin 8s linear infinite;
-  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.45));
-}
+    .banner-candy{
+      width:50px;
+      height:50px;
+      flex:0 0 auto;
+      animation: spin 8s linear infinite;
+      filter: drop-shadow(0 6px 12px rgba(0,0,0,.45));
+    }
 
-@keyframes railMove{
-  from{ transform: translateX(0); }
-  to  { transform: translateX(-50%); }
-}
+    @keyframes railMove{
+      from{ transform:translateX(0); }
+      to{ transform:translateX(-50%); }
+    }
 
-@keyframes spin{
-  from{ transform: rotate(0deg); }
-  to  { transform: rotate(360deg); }
-}
+    @keyframes spin{
+      from{ transform:rotate(0deg); }
+      to{ transform:rotate(360deg); }
+    }
 
-@media (max-width: 768px){
-  .banner-rail{
-    animation-duration: 16s;  /* plus rapide sur mobile */
-  }
-  .banner-candy{
-    width: 42px;
-    height: 42px;
-  }
-}
+    @media (max-width:768px){
+      .banner-candy{
+        width:42px;
+        height:42px;
+      }
+    }
+    /* ============================== */
 
-
-/* ================================== */
-
-
-    .container{ width:min(1120px, 92vw); margin:0 auto; }
+    .container{ width:min(1120px,92vw); margin:0 auto; }
 
     header{ padding:92px 0 34px; text-align:center; }
     .logo{ width:320px; max-width:90%; display:block; margin:0 auto 18px; }
-    @media (max-width:520px){ .logo{ width:220px; } }
 
     nav{ margin:12px 0 18px; }
-    nav a{ color:rgba(255,255,255,.85); text-decoration:none; margin:0 8px; font-size:.9rem; }
-    nav a:hover{ text-decoration:underline; }
+    nav a{ color:rgba(255,255,255,.85); text-decoration:none; margin:0 8px; }
 
-    h1{ margin:0 0 12px; font-size:clamp(2.2rem, 4vw, 3.2rem); }
-    .subtitle{ max-width:920px; margin:0 auto; line-height:1.65; font-size:1.05rem; color:var(--muted); }
+    h1{ margin:0 0 12px; font-size:clamp(2.2rem,4vw,3.2rem); }
+    .subtitle{ max-width:920px; margin:0 auto; line-height:1.65; color:var(--muted); }
 
     section{ padding:58px 0; text-align:center; }
-    h2{ margin:0 0 10px; font-size:1.55rem; }
-    .section-desc{ max-width:900px; margin:0 auto 18px; color:var(--muted); line-height:1.6; }
 
     .block{
       margin:22px auto 0;
-      width:min(1040px, 100%);
+      width:min(1040px,100%);
       padding:26px 22px;
       background:var(--card);
       border:1px solid var(--line);
     }
 
-    .hero-video{
-      width:100%;
-      max-width:1000px;
-      aspect-ratio:16/9;
-      display:block;
-      margin:0 auto 18px;
-      background:#000;
-      border:1px solid rgba(255,255,255,.18);
-      box-shadow:0 0 28px rgba(0,0,0,.6);
+    footer{
+      padding:28px 0 38px;
+      text-align:center;
+      font-size:.9rem;
+      color:rgba(255,255,255,.55);
     }
-
-    .cta-group{ display:flex; justify-content:center; gap:14px; flex-wrap:wrap; }
-    .cta{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:16px 44px;
-      border:1px solid var(--line2);
-      color:#fff; text-decoration:none;
-      font-size:.98rem; letter-spacing:1.1px; text-transform:uppercase;
-      transition: all .2s ease;
-    }
-    .cta:hover{ background:#fff; color:#000; box-shadow:0 0 22px rgba(255,255,255,.22); transform:translateY(-1px); }
-
-    /* Contact : liens clairs (pas bleus) */
-    #contact a{ color:rgba(255,255,255,.95); text-decoration:none; border-bottom:1px dotted rgba(255,255,255,.45); }
-    #contact a:hover{ color:#fff; border-bottom-color:rgba(255,255,255,.8); }
-
-    .contact-grid{
-      width:min(1040px, 100%);
-      margin:22px auto 0;
-      padding:26px 22px;
-      background:var(--card);
-      border:1px solid var(--line);
-      text-align:left;
-    }
-    .contact-item{ padding:14px 0; border-bottom:1px solid rgba(255,255,255,.08); }
-    .contact-item:last-child{ border-bottom:none; }
-    .contact-item strong{ display:block; margin-bottom:6px; color:rgba(255,255,255,.92); }
-
-    footer{ padding:28px 0 38px; text-align:center; font-size:.9rem; color:rgba(255,255,255,.55); }
   </style>
 </head>
 
@@ -173,79 +120,48 @@
   <!-- BANNIÈRE -->
   <div class="top-banner">
     <div class="rail-wrap banner-rail">
+
       <div class="rail">
         <img class="banner-candy" src="assets/images/ban-1.png" alt="">
         <img class="banner-candy" src="assets/images/ban-2.png" alt="">
         <img class="banner-candy" src="assets/images/ban-3.png" alt="">
+
         <span class="banner-text">🎄 Bonnes fêtes de fin d’année à tous — merci pour votre soutien ✨</span>
+
         <img class="banner-candy" src="assets/images/ban-4.png" alt="">
         <img class="banner-candy" src="assets/images/ban-5.png" alt="">
-        <span class="banner-text">🎄 Bonnes fêtes de fin d’année à tous — merci pour votre soutien ✨</span>
+        <img class="banner-candy" src="assets/images/ban-1.png" alt="">
       </div>
 
-      <!-- DUPLICATA pour boucle infinie -->
+      <!-- DUPLICATA -->
       <div class="rail" aria-hidden="true">
         <img class="banner-candy" src="assets/images/ban-1.png" alt="">
         <img class="banner-candy" src="assets/images/ban-2.png" alt="">
         <img class="banner-candy" src="assets/images/ban-3.png" alt="">
+
         <span class="banner-text">🎄 Bonnes fêtes de fin d’année à tous — merci pour votre soutien ✨</span>
+
         <img class="banner-candy" src="assets/images/ban-4.png" alt="">
         <img class="banner-candy" src="assets/images/ban-5.png" alt="">
-        <span class="banner-text">🎄 Bonnes fêtes de fin d’année à tous — merci pour votre soutien ✨</span>
+        <img class="banner-candy" src="assets/images/ban-1.png" alt="">
       </div>
+
     </div>
   </div>
 
   <header>
     <div class="container">
       <img src="logo-atelier-cal.png" class="logo" alt="Atelier CAL">
-
       <nav>
         <a href="/">Accueil</a> |
         <a href="/modeles.html">Modèles</a>
       </nav>
-
       <h1>Atelier CAL</h1>
       <p class="subtitle">Conception et fabrication de machines professionnelles pour la réalisation de bonbons en sucre cuit.</p>
     </div>
   </header>
 
-  <section>
-    <div class="container">
-      <h2>Présentation</h2>
-      <p class="section-desc">Bâti à cylindres SRC SÉRIE 1 motorisé</p>
-
-      <div class="block">
-        <video class="hero-video" autoplay loop muted playsinline preload="metadata" controls>
-          <source src="machine.mp4" type="video/mp4">
-        </video>
-
-        <div class="cta-group">
-          <a class="cta" href="/machine.html">Voir la machine</a>
-          <a class="cta" href="/modeles.html">Voir les rouleaux en bronze</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <p class="section-desc">Réponse rapide par email ou téléphone.</p>
-
-      <div class="contact-grid">
-        <div class="contact-item">
-          <strong>Email</strong>
-          <a href="mailto:contact@atelier-cal.fr">contact@atelier-cal.fr</a>
-        </div>
-        <div class="contact-item">
-          <strong>Téléphone</strong>
-          <a href="tel:+33677845435">06 77 84 54 35</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <footer>Atelier CAL – Tous droits réservés</footer>
 
-</body
+</body>
+</html>
