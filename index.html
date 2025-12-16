@@ -123,3 +123,193 @@
       margin: 0 auto;
       max-width: 920px;
       line-height: 1.65;
+      font-size: 1.05rem;
+      color: var(--muted);
+    }
+
+    section{ padding: 58px 0; text-align:center; }
+
+    h2{ margin:0 0 10px; font-size: 1.55rem; letter-spacing: 0.3px; }
+
+    .section-desc{
+      margin: 0 auto 18px;
+      max-width: 900px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .block{
+      margin: 22px auto 0;
+      width: min(1040px, 100%);
+      padding: 26px 22px;
+      background: var(--card);
+      border: 1px solid var(--line);
+    }
+
+    .hero-video{
+      width: 100%;
+      max-width: 1000px;
+      aspect-ratio: 16 / 9;
+      display: block;
+      margin: 0 auto 18px;
+      background: #000;
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: 0 0 28px rgba(0,0,0,0.6);
+    }
+
+    .cta-group{
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .cta{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 10px auto 0;
+      padding: 16px 44px;
+      border: 1px solid var(--line2);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.98rem;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+      background: transparent;
+      transition: all .2s ease;
+    }
+
+    .cta:hover{
+      background:#fff;
+      color:#000;
+      box-shadow: 0 0 22px rgba(255,255,255,0.22);
+      transform: translateY(-1px);
+    }
+
+    /* Contact : liens en blanc (pas bleu) */
+    #contact a{
+      color: rgba(255,255,255,0.95);
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(255,255,255,0.45);
+    }
+    #contact a:hover{
+      color: #fff;
+      border-bottom-color: rgba(255,255,255,0.8);
+    }
+
+    .contact-grid{
+      width: min(1040px, 100%);
+      margin: 22px auto 0;
+      padding: 26px 22px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      text-align: left;
+    }
+
+    .contact-item{
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .contact-item:last-child{ border-bottom: none; }
+
+    .contact-item strong{
+      display: block;
+      margin-bottom: 6px;
+      color: rgba(255,255,255,0.92);
+    }
+
+    footer{
+      padding: 28px 0 38px;
+      text-align:center;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.55);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- BANNIÈRE (texte + bonbons qui défilent ensemble) -->
+  <div class="top-banner">
+    <div class="banner-track">
+      <img class="banner-candy" src="assets/images/ban-1.png" alt="">
+      <img class="banner-candy" src="assets/images/ban-2.png" alt="">
+      <img class="banner-candy" src="assets/images/ban-3.png" alt="">
+      <span class="banner-text">🎄 Bonnes fêtes de fin d’année à tous — merci pour votre soutien ✨</span>
+      <img class="banner-candy" src="assets/images/ban-4.png" alt="">
+      <img class="banner-candy" src="assets/images/ban-5.png" alt="">
+      <span class="banner-text" aria-hidden="true">🎄 Bonnes fêtes de fin d’année à tous — merci pour votre soutien ✨</span>
+      <img class="banner-candy" src="assets/images/ban-1.png" alt="">
+      <img class="banner-candy" src="assets/images/ban-2.png" alt="">
+      <img class="banner-candy" src="assets/images/ban-3.png" alt="">
+      <img class="banner-candy" src="assets/images/ban-4.png" alt="">
+      <img class="banner-candy" src="assets/images/ban-5.png" alt="">
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <img src="logo-atelier-cal.png" alt="Atelier CAL" class="logo">
+
+      <nav>
+        <a href="/">Accueil</a> |
+        <a href="/modeles.html">Modèles</a>
+      </nav>
+
+      <h1>Atelier CAL</h1>
+
+      <p class="subtitle">
+        Conception et fabrication de machines professionnelles pour la réalisation de bonbons en sucre cuit.
+      </p>
+    </div>
+  </header>
+
+  <!-- PRÉSENTATION -->
+  <section>
+    <div class="container">
+      <h2>Présentation</h2>
+      <p class="section-desc">Bâti à cylindres SRC SÉRIE 1 motorisé</p>
+
+      <div class="block">
+        <video class="hero-video" autoplay loop muted playsinline preload="metadata" controls>
+          <source src="machine.mp4" type="video/mp4">
+          Votre navigateur ne supporte pas la vidéo.
+        </video>
+
+        <div class="cta-group">
+          <a class="cta" href="/machine.html">Voir la machine</a>
+          <a class="cta" href="/modeles.html">Voir les rouleaux en bronze</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p class="section-desc">Réponse rapide par email ou téléphone.</p>
+
+      <div class="contact-grid">
+        <div class="contact-item">
+          <strong>Email</strong>
+          <a href="mailto:contact@atelier-cal.fr">contact@atelier-cal.fr</a>
+        </div>
+
+        <div class="contact-item">
+          <strong>Téléphone</strong>
+          <a href="tel:+33677845435">06 77 84 54 35</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Atelier CAL – Tous droits réservés
+  </footer>
+
+</body>
+</html>
