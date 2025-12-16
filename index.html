@@ -30,52 +30,74 @@
       overflow:hidden;
       position:relative;
     }
-    .banner-rail{
-      height:46px;
-      display:flex;
-      align-items:center;
-      white-space:nowrap;
-      gap:18px;
-      will-change: transform;
-      animation: railMove 18s linear infinite;
-    }
-    /* on duplique le contenu, donc on défile sur -50% */
-    @keyframes railMove{
-      0%{ transform: translateX(0); }
-      100%{ transform: translateX(-50%); }
-    }
-    .rail-wrap{
-      display:flex;
-      width:200%;
-    }
-    .rail{
-      display:flex;
-      align-items:center;
-      gap:18px;
-      width:50%;
-      padding-left:100%;
-      box-sizing:border-box;
-    }
-    .banner-text{
-      color:var(--accent);
-      font-size:14px;
-      letter-spacing:.2px;
-    }
-    .banner-candy{
-      width:50px; height:50px; /* +80% environ */
-      flex:0 0 auto;
-      animation: spin 8s linear infinite;
-      filter: drop-shadow(0 6px 12px rgba(0,0,0,.45));
-    }
-    @keyframes spin{ from{transform:rotate(0)} to{transform:rotate(360deg)} }
+/* ===== BANNIÈRE : RAIL DÉFILANT ===== */
+.top-banner{
+  height: 46px;
+  background: #0f1115;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  overflow: hidden;
+  position: relative;
+}
 
-    @media (max-width:768px){
-      .top-banner{ height:44px; }
-      .banner-rail{ height:44px; animation-duration:22s; }
-      .banner-candy{ width:42px; height:42px; }
-      .banner-text{ font-size:13px; }
-    }
-    /* ============================================== */
+.banner-rail{
+  height: 46px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  gap: 15px;                     /* RESSERRÉ (~15%) */
+  will-change: transform;
+  animation: railMove 20s linear infinite;
+}
+
+.rail-wrap{
+  display: flex;
+  width: 200%;
+}
+
+.rail{
+  display: flex;
+  align-items: center;
+  gap: 15px;                     /* RESSERRÉ (~15%) */
+  width: 50%;
+  padding-left: 20%;             /* BOUCLE CONTINUE */
+  box-sizing: border-box;
+}
+
+.banner-text{
+  color: #c9a24d;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+}
+
+.banner-candy{
+  width: 50px;                   /* +80% */
+  height: 50px;
+  flex: 0 0 auto;
+  animation: spin 8s linear infinite;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.45));
+}
+
+@keyframes railMove{
+  from{ transform: translateX(0); }
+  to  { transform: translateX(-50%); }
+}
+
+@keyframes spin{
+  from{ transform: rotate(0deg); }
+  to  { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px){
+  .banner-rail{
+    animation-duration: 24s;     /* plus lent mobile */
+  }
+  .banner-candy{
+    width: 42px;
+    height: 42px;
+  }
+}
+/* ================================== */
+
 
     .container{ width:min(1120px, 92vw); margin:0 auto; }
 
