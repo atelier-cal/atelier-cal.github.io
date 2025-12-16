@@ -53,11 +53,15 @@
       box-sizing:border-box;
     }
 
-    .banner-text{
-      color:var(--accent);
-      font-size:14px;
-      letter-spacing:.2px;
-    }
+  .banner-text{
+  color: var(--accent);
+  font-size: 14px;
+  letter-spacing: .2px;
+  display: inline-block;
+  padding: 0 14px;              /* évite que les bonbons collent au texte */
+  background: #0f1115;          /* “cache” derrière le texte */
+}
+
 
     .banner-candy{
       width:50px;
@@ -77,12 +81,17 @@
       to{ transform:rotate(360deg); }
     }
 
-    @media (max-width:768px){
-      .banner-candy{
-        width:42px;
-        height:42px;
-      }
-    }
+@media (max-width:768px){
+  .rail{
+    gap: 18px;                  /* un peu plus d’air sur mobile */
+    padding-left: 45%;          /* évite que ça réapparaisse trop près du texte */
+  }
+  .banner-candy{
+    width: 42px;
+    height: 42px;
+  }
+}
+
     /* ============================== */
 
     .container{ width:min(1120px,92vw); margin:0 auto; }
