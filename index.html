@@ -30,77 +30,66 @@
       background: radial-gradient(circle at top, var(--bg1) 0%, var(--bg2) 45%, var(--bg3) 100%);
     }
 
-    /* =============== BANNIÈRE (BONBONS + TEXTE DÉFILANT) =============== */
+    /* ===================== BANNIÈRE (défilement + bonbons) ===================== */
     .top-banner{
       position: relative;
-      height: 40px;
+      height: 46px;
       background: #0f1115;
       border-bottom: 1px solid rgba(255,255,255,0.08);
       overflow: hidden;
     }
 
-    /* bonbons */
-    .banner-candies{
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    .candy{
-      position: absolute;
-      width: 28px;
-      opacity: 0.8;
-      animation: spin linear infinite;
-      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.45));
-    }
-
-    /* Les bonbons restent DANS la bande */
-    .c1{ left: 6%;  top: 6px;  animation-duration: 14s; }
-    .c2{ left: 22%; top: 10px; animation-duration: 18s; }
-    .c3{ left: 48%; top: 6px;  animation-duration: 16s; }
-    .c4{ left: 72%; top: 11px; animation-duration: 20s; }
-    .c5{ left: 88%; top: 7px;  animation-duration: 22s; }
-
-    @keyframes spin{
-      from{ transform: rotate(0deg); }
-      to{ transform: rotate(360deg); }
-    }
-
-    /* texte défilant */
-    .marquee{
-      position: relative;
-      z-index: 2;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      color: var(--accent);
-      font-size: 14px;
-      white-space: nowrap;
-    }
-
-    .marquee__inner{
+    /* un seul "rail" qui défile : texte + bonbons ensemble */
+    .banner-track{
+      height: 46px;
       display: inline-flex;
-      gap: 48px;
+      align-items: center;
+      gap: 18px;
       padding-left: 100%;
+      white-space: nowrap;
       will-change: transform;
-      animation: marqueeMove 18s linear infinite;
+      animation: bannerScroll 18s linear infinite;
     }
 
-    @keyframes marqueeMove{
+    @keyframes bannerScroll{
       0%   { transform: translate3d(0,0,0); }
       100% { transform: translate3d(-50%,0,0); }
     }
 
-    @media (max-width: 768px){
-      .candy{ width: 24px; opacity: 0.65; }
-      .marquee__inner{ animation-duration: 22s; }
+    /* texte */
+    .banner-text{
+      color: var(--accent);
+      font-size: 14px;
+      letter-spacing: 0.2px;
     }
-    /* =================================================================== */
 
-    nav{
-      margin: 12px 0 18px;
+    /* bonbons DANS le rail */
+    .banner-candy{
+      width: 50px;                 /* +80% (28px -> ~50px) */
+      height: 50px;
+      margin-top: -2px;            /* petit ajustement vertical */
+      flex: 0 0 auto;
+      pointer-events: none;
+      opacity: 1;                  /* pas d’opacité */
+      animation: spin 8s linear infinite;
+      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.45));
     }
+
+    @keyframes spin{
+      from{ transform: rotate(0deg); }
+      to  { transform: rotate(360deg); }
+    }
+
+    /* Mobile : un peu plus petit pour pas bouffer la bannière */
+    @media (max-width: 768px){
+      .top-banner{ height: 44px; }
+      .banner-track{ height: 44px; animation-duration: 22s; }
+      .banner-candy{ width: 42px; height: 42px; }
+      .banner-text{ font-size: 13px; }
+    }
+    /* ========================================================================== */
+
+    nav{ margin: 12px 0 18px; }
 
     nav a{
       color: rgba(255,255,255,0.85);
@@ -108,10 +97,7 @@
       margin: 0 8px;
       font-size: 0.9rem;
     }
-
-    nav a:hover{
-      text-decoration: underline;
-    }
+    nav a:hover{ text-decoration: underline; }
 
     .logo{
       width: 320px;
@@ -119,20 +105,13 @@
       margin: 0 auto 18px;
       display: block;
     }
-
     @media (max-width: 520px){
       .logo{ width: 220px; }
     }
 
-    .container{
-      width: min(1120px, 92vw);
-      margin: 0 auto;
-    }
+    .container{ width: min(1120px, 92vw); margin: 0 auto; }
 
-    header{
-      padding: 92px 0 34px;
-      text-align:center;
-    }
+    header{ padding: 92px 0 34px; text-align:center; }
 
     h1{
       margin:0 0 12px;
@@ -144,200 +123,3 @@
       margin: 0 auto;
       max-width: 920px;
       line-height: 1.65;
-      font-size: 1.05rem;
-      color: var(--muted);
-    }
-
-    section{
-      padding: 58px 0;
-      text-align:center;
-    }
-
-    h2{
-      margin:0 0 10px;
-      font-size: 1.55rem;
-      letter-spacing: 0.3px;
-    }
-
-    .section-desc{
-      margin: 0 auto 18px;
-      max-width: 900px;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .block{
-      margin: 22px auto 0;
-      width: min(1040px, 100%);
-      padding: 26px 22px;
-      background: var(--card);
-      border: 1px solid var(--line);
-    }
-
-    .hero-video{
-      width: 100%;
-      max-width: 1000px;
-      aspect-ratio: 16 / 9;
-      display: block;
-      margin: 0 auto 18px;
-      background: #000;
-      border: 1px solid rgba(255,255,255,0.18);
-      box-shadow: 0 0 28px rgba(0,0,0,0.6);
-    }
-
-    .cta-group{
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .cta{
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      margin: 10px auto 0;
-      padding: 16px 44px;
-      border: 1px solid var(--line2);
-      color: #fff;
-      text-decoration: none;
-      font-size: 0.98rem;
-      letter-spacing: 1.1px;
-      text-transform: uppercase;
-      background: transparent;
-      transition: all .2s ease;
-    }
-
-    .cta:hover{
-      background:#fff;
-      color:#000;
-      box-shadow: 0 0 22px rgba(255,255,255,0.22);
-      transform: translateY(-1px);
-    }
-
-    /* Contact : liens en blanc (pas bleu) */
-    #contact a{
-      color: rgba(255,255,255,0.92);
-      text-decoration: none;
-      border-bottom: 1px dotted rgba(255,255,255,0.35);
-    }
-    #contact a:hover{
-      color: #fff;
-      border-bottom-color: rgba(255,255,255,0.7);
-    }
-
-    .contact-grid{
-      width: min(1040px, 100%);
-      margin: 22px auto 0;
-      padding: 26px 22px;
-      background: var(--card);
-      border: 1px solid var(--line);
-      text-align: left;
-    }
-
-    .contact-item{
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .contact-item:last-child{ border-bottom: none; }
-
-    .contact-item strong{
-      display: block;
-      margin-bottom: 6px;
-      color: rgba(255,255,255,0.85);
-    }
-
-    footer{
-      padding: 28px 0 38px;
-      text-align:center;
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.55);
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- BANNIÈRE -->
-  <div class="top-banner">
-    <div class="banner-candies">
-      <img src="assets/images/ban-1.png" class="candy c1" alt="">
-      <img src="assets/images/ban-2.png" class="candy c2" alt="">
-      <img src="assets/images/ban-3.png" class="candy c3" alt="">
-      <img src="assets/images/ban-4.png" class="candy c4" alt="">
-      <img src="assets/images/ban-5.png" class="candy c5" alt="">
-    </div>
-
-    <div class="marquee">
-      <div class="marquee__inner">
-        <span>🎄 Bonnes fêtes de fin d’année à tous — merci pour votre soutien ✨</span>
-        <span aria-hidden="true">🎄 Bonnes fêtes de fin d’année à tous — merci pour votre soutien ✨</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- HEADER -->
-  <header>
-    <div class="container">
-      <img src="logo-atelier-cal.png" alt="Atelier CAL" class="logo">
-
-      <nav>
-        <a href="/">Accueil</a> |
-        <a href="/modeles.html">Modèles</a>
-      </nav>
-
-      <h1>Atelier CAL</h1>
-
-      <p class="subtitle">
-        Conception et fabrication de machines professionnelles pour la réalisation de bonbons en sucre cuit.
-      </p>
-    </div>
-  </header>
-
-  <!-- PRÉSENTATION -->
-  <section>
-    <div class="container">
-      <h2>Présentation</h2>
-      <p class="section-desc">Bâti à cylindres SRC SÉRIE 1 motorisé</p>
-
-      <div class="block">
-        <video class="hero-video" autoplay loop muted playsinline preload="metadata" controls>
-          <source src="machine.mp4" type="video/mp4">
-          Votre navigateur ne supporte pas la vidéo.
-        </video>
-
-        <div class="cta-group">
-          <a class="cta" href="/machine.html">Voir la machine</a>
-          <a class="cta" href="/modeles.html">Voir les rouleaux en bronze</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <p class="section-desc">Réponse rapide par email ou téléphone.</p>
-
-      <div class="contact-grid">
-        <div class="contact-item">
-          <strong>Email</strong>
-          <a href="mailto:contact@atelier-cal.fr">contact@atelier-cal.fr</a>
-        </div>
-
-        <div class="contact-item">
-          <strong>Téléphone</strong>
-          <a href="tel:+33677845435">06 77 84 54 35</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    Atelier CAL – Tous droits réservés
-  </footer>
-
-</body>
-</html>
