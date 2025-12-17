@@ -5,6 +5,9 @@
   <title>Atelier CAL – Modèles disponibles</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- viewer 3D (model-viewer) -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
   <style>
     :root{
       --text: rgba(255,255,255,0.92);
@@ -93,14 +96,13 @@
     }
 
     .img{
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  background: #000;
-  border: 1px solid rgba(255,255,255,0.14);
-  display: block;
-  object-fit: contain;
-}
-
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: #000;
+      border: 1px solid rgba(255,255,255,0.14);
+      display: block;
+      object-fit: contain;
+    }
 
     .title{
       margin: 12px 0 6px;
@@ -157,6 +159,46 @@
       header{ padding-top: 50px; }
       .grid{ grid-template-columns: 1fr; }
     }
+
+    /* ===== MODAL 3D (ajout minimal) ===== */
+    .viewer3d-overlay{
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 14px;
+    }
+
+    .viewer3d-box{
+      width: min(980px, 100%);
+      height: min(640px, 82vh);
+      background: #000;
+      border: 1px solid rgba(255,255,255,0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .viewer3d-close{
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+      font-size: 18px;
+      padding: 6px 10px;
+      cursor: pointer;
+      z-index: 2;
+    }
+    .viewer3d-close:hover{
+      background:#fff;
+      color:#000;
+    }
+
+    .img-clickable{ cursor: pointer; }
   </style>
 </head>
 
@@ -164,9 +206,7 @@
   <header>
     <div class="container">
       <h1>Modèles disponibles</h1>
-      <p class="subtitle">
-        
-      </p>
+      <p class="subtitle"></p>
 
       <div class="top-actions">
         <a class="btn" href="index.html">Retour</a>
@@ -201,60 +241,4 @@
           <img class="img" src="modele-abeille.png" alt="Modèle Abeille">
           <div class="title">Abeille (gravée)</div>
           <p class="desc">Signature “miel”, relief précis, rendu premium.</p>
-          <span class="tag">Signature</span>
-        </div>
-
-        <!-- CARTE 4 -->
-        <div class="card">
-          <img class="img" src="modèle-hexagone.png" alt="Modèle Hexagone">
-          <div class="title">Hexagone</div>
-          <p class="desc">Forme hexagonale élégante.</p>
-          <span class="tag">Géométrique</span>
-        </div>
-
-        <!-- CARTE 5 -->
-        <div class="card">
-          <img class="img" src="modele-feuille.png" alt="Modèle Feuille">
-          <div class="title">Feuille</div>
-          <p class="desc">Motif naturel et élégant, très bon rendu visuel.</p>
-          <span class="tag">Nature</span>
-        </div>
-
-        <!-- CARTE 6 (exemple / perso) -->
-        <div class="card">
-          <img class="img" src="modele-personnalise.png" alt="Modèle personnalisable">
-          <div class="title">Personnalisation</div>
-          <p class="desc">Logo, motif, format sur demande. Étude rapide et faisabilité selon recette.</p>
-          <span class="tag">Sur mesure</span>
-        </div>
-
-        <!-- CARTE : OEUF -->
-<div class="card">
-  <img class="img" src="modele-oeuf.png" alt="Modèle Œuf">
-  <div class="title">Œuf</div>
-  <p class="desc">Forme douce et arrondie, très bon démoulage, idéale pour bonbons premium.</p>
-  <span class="tag">Classique</span>
-</div>
-<!-- CARTE : PASTILLE OVALE -->
-<div class="card">
-  <img class="img" src="modele-pastille-ovale.png" alt="Modèle Pastille ovale">
-  <div class="title">Pastille ovale</div>
-  <p class="desc">Format élégant et allongé, excellente lisibilité des gravures.</p>
-  <span class="tag">Standard</span>
-</div>
-
-      </div>
-
-      <div id="contact" class="contact">
-        Contact : <a href="mailto:contact@atelier-cal.fr">contact@atelier-cal.fr</a> ·
-        <a href="tel:+33677845435">06 77 84 54 35</a>
-      </div>
-
-    </div>
-  </main>
-
-  <footer>
-    Atelier CAL – Tous droits réservés
-  </footer>
-</body>
-</html>
+          <span class="tag">Signatu
