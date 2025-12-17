@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <title>Simulateur de rentabilité – Atelier CAL</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Simulateur de rentabilité Atelier CAL : estimez le chiffre d'affaires, la marge et la durée d'amortissement de la machine SRC selon votre production mensuelle." />
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -15,9 +14,6 @@
       --line: rgba(255,255,255,0.18);
       --card: rgba(255,255,255,0.04);
       --accent: #c9a24d;
-      --bg1: #1c1c1c;
-      --bg2: #0b0b0b;
-      --bg3: #000;
     }
 
     *{ box-sizing:border-box; }
@@ -26,7 +22,7 @@
       margin:0;
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
-      background: radial-gradient(circle at top, var(--bg1) 0%, var(--bg2) 45%, var(--bg3) 100%);
+      background: radial-gradient(circle at top, #1c1c1c 0%, #0b0b0b 45%, #000 100%);
     }
 
     .container{
@@ -35,45 +31,18 @@
       padding: 26px 0 60px;
     }
 
-    .top{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      margin-bottom: 16px;
-    }
-
     .btn{
       display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding: 12px 14px;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.18);
+      padding:12px 14px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,0.18);
       background: rgba(255,255,255,0.06);
       color: var(--text);
       text-decoration:none;
-      font-weight: 700;
-      white-space:nowrap;
+      font-weight:700;
     }
-    .btn:hover{ background: rgba(255,255,255,0.10); }
-    .btn-accent{
-      border-color: rgba(201,162,77,0.45);
-      background: rgba(201,162,77,0.10);
-    }
-    .btn-accent:hover{ background: rgba(201,162,77,0.16); }
 
-    h1{
-      margin: 10px 0 10px;
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
-      letter-spacing: 0.2px;
-    }
-    .subtitle{
-      color: var(--muted);
-      line-height: 1.6;
-      margin: 0 0 18px;
-      max-width: 900px;
-    }
+    h1{ margin:14px 0 8px; }
 
     .panel{
       background: var(--card);
@@ -82,358 +51,214 @@
       padding: 18px;
     }
 
-    .grid{
-      display:grid;
-      grid-template-columns: 1.2fr 1fr 1fr 1fr;
-      gap: 10px;
-      align-items:center;
-      margin-top: 12px;
+    .row{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
     }
+    .row > div{ flex:1 1 220px; }
 
-    .head{
-      color: rgba(255,255,255,0.78);
-      font-weight: 700;
-      font-size: 0.92rem;
-      padding: 6px 0;
-    }
-
-    .label{
-      color: rgba(255,255,255,0.9);
-      font-weight: 700;
+    label{
+      display:block;
+      margin-bottom:6px;
+      font-weight:700;
+      color: var(--muted);
     }
 
     input, select{
-      width: 100%;
-      padding: 12px 12px;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.16);
+      width:100%;
+      padding:12px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,0.16);
       background: rgba(0,0,0,0.35);
       color: var(--text);
-      outline: none;
-    }
-    input:focus, select:focus{
-      border-color: rgba(201,162,77,0.55);
-      box-shadow: 0 0 0 3px rgba(201,162,77,0.12);
     }
 
-    .row{
-      display:flex;
-      flex-wrap:wrap;
-      gap: 10px;
-      margin-top: 12px;
+    .grid{
+      display:grid;
+      grid-template-columns: 1.3fr 1fr 1fr 1fr;
+      gap:10px;
+      margin-top:14px;
     }
-    .row > div{
-      flex: 1 1 220px;
-      min-width: 220px;
-    }
-    .row label{
-      display:block;
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.78);
-      margin-bottom: 6px;
-      font-weight: 700;
-    }
+
+    .head{ font-weight:700; color:var(--muted); }
+    .label{ font-weight:700; }
 
     .actions{
       display:flex;
-      flex-wrap:wrap;
-      gap: 10px;
-      align-items:center;
       justify-content:space-between;
-      margin-top: 14px;
-      padding-top: 14px;
-      border-top: 1px solid rgba(255,255,255,0.10);
-    }
-
-    .actions-left{
-      display:flex;
-      gap:10px;
       align-items:center;
+      margin-top:14px;
+      gap:10px;
       flex-wrap:wrap;
     }
-
-    .check{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      color: rgba(255,255,255,0.82);
-      font-weight: 700;
-    }
-    .check input{ width:auto; }
 
     .kpis{
       display:grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 14px;
+      grid-template-columns: repeat(3,1fr);
+      gap:10px;
+      margin-top:14px;
     }
+
     .kpi{
       background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 14px;
-      padding: 14px;
+      border:1px solid rgba(255,255,255,0.1);
+      border-radius:14px;
+      padding:14px;
     }
-    .kpi-title{
-      color: rgba(255,255,255,0.72);
-      font-weight: 700;
-      font-size: 0.9rem;
-      margin-bottom: 8px;
-    }
-    .kpi-val{
-      font-size: 1.25rem;
+
+    .kpi-title{ color:var(--muted); font-weight:700; }
+    .kpi-val{ font-size:1.25rem; font-weight:900; }
+
+    .summary-line{
+      margin: 10px 0 12px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px dashed rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.04);
       font-weight: 900;
-      letter-spacing: 0.2px;
     }
 
     .chart-wrap{
-      margin-top: 14px;
-      padding: 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.10);
+      height:360px;
+      margin-top:10px;
+      padding:12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,0.1);
       background: rgba(0,0,0,0.25);
     }
+    #roiChart{ width:100%; height:100%; }
 
-    .note{
-      margin-top: 12px;
-      color: rgba(255,255,255,0.62);
-      font-size: 0.9rem;
-      line-height: 1.55;
-    }
-
-    .cta-bottom{
-      margin-top: 14px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      align-items:center;
-      justify-content:space-between;
-    }
-
-    .small{
-      color: rgba(255,255,255,0.7);
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 860px){
-      .grid{ grid-template-columns: 1fr; }
+    @media(max-width:860px){
+      .grid{ grid-template-columns:1fr; }
       .head{ display:none; }
-      .label{ margin-top: 8px; }
-      .kpis{ grid-template-columns: 1fr; }
-      .top{ flex-direction:column; align-items:flex-start; }
+      .kpis{ grid-template-columns:1fr; }
+      .chart-wrap{ height:420px; }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
+<div class="container">
 
-    <div class="top">
-      <a class="btn" href="index.html">← Retour</a>
-      <a class="btn btn-accent" href="mailto:contact@atelier-cal.fr?subject=Simulation%20rentabilit%C3%A9%20Machine%20SRC&body=Bonjour,%0A%0AJe%20souhaite%20une%20simulation%20personnalis%C3%A9e%20pour%20la%20machine%20SRC.%0A%0AMerci.">Demander une simulation personnalisée</a>
-    </div>
+<a class="btn" href="index.html">← Retour</a>
 
-    <h1>Calculer la rentabilité</h1>
-    <p class="subtitle">
-      Entrez votre production mensuelle en paquets (200 g ou 250 g). Ajustez vos prix au kilo si besoin :
-      le graphique se met à jour pour estimer chiffre d’affaires, marge et durée d’amortissement.
-    </p>
+<h1>Calculer la rentabilité</h1>
 
-    <div class="panel">
-      <div class="row">
-        <div>
-          <label>Poids du paquet</label>
-          <select id="packSize">
-            <option value="200">200 g</option>
-            <option value="250" selected>250 g</option>
-          </select>
-        </div>
+<div class="panel">
 
-        <div>
-          <label>Prix machine (€)</label>
-          <input id="machinePrice" type="number" value="3260" min="0" step="10">
-        </div>
-
-        <div>
-          <label>Période du graphique</label>
-          <select id="months">
-            <option value="12">12 mois</option>
-            <option value="24" selected>24 mois</option>
-            <option value="36">36 mois</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="grid" style="margin-top:14px;">
-        <div class="head"></div>
-        <div class="head">Paquets / mois</div>
-        <div class="head">Prix €/kg</div>
-        <div class="head">Marge %</div>
-
-        <div class="label">Bonbon sucre cuit</div>
-        <input id="qtySugar" type="number" value="120" min="0" step="1">
-        <input id="priceSugar" type="number" value="21.30" min="0" step="0.10">
-        <input id="marginSugar" type="number" value="50" min="0" max="100" step="1">
-
-        <div class="label">Bonbon au miel</div>
-        <input id="qtyHoney" type="number" value="80" min="0" step="1">
-        <input id="priceHoney" type="number" value="28.90" min="0" step="0.10">
-        <input id="marginHoney" type="number" value="55" min="0" max="100" step="1">
-
-        <div class="label">Nougatine</div>
-        <input id="qtyNoug" type="number" value="40" min="0" step="1">
-        <input id="priceNoug" type="number" value="55.00" min="0" step="0.10">
-        <input id="marginNoug" type="number" value="45" min="0" max="100" step="1">
-      </div>
-
-      <div class="actions">
-        <div class="actions-left">
-          <label class="check"><input type="checkbox" id="live" checked> Calcul en direct</label>
-          <button class="btn" type="button" id="btnCalc">Calculer</button>
-          <button class="btn" type="button" id="btnReset">Prix conseillés</button>
-        </div>
-        <div class="small">💡 Vous pouvez modifier les prix au kilo selon votre positionnement.</div>
-      </div>
-
-      <div class="kpis">
-        <div class="kpi">
-          <div class="kpi-title">Chiffre d’affaires / mois</div>
-          <div class="kpi-val" id="kpiCA">—</div>
-        </div>
-        <div class="kpi">
-          <div class="kpi-title">Marge / mois (estimée)</div>
-          <div class="kpi-val" id="kpiMargin">—</div>
-        </div>
-        <div class="kpi">
-          <div class="kpi-title">Durée d’amortissement</div>
-          <div class="kpi-val" id="kpiPayback">—</div>
-        </div>
-      </div>
-
-      <div class="chart-wrap">
-        <canvas id="roiChart" height="120"></canvas>
-      </div>
-
-      <div class="cta-bottom">
-        <div class="note">
-          Simulation indicative : les charges (énergie, emballages, temps, distribution, saisonnalité…) varient selon chaque entreprise.
-          Atelier CAL peut réaliser une estimation personnalisée sur vos chiffres.
-        </div>
-      </div>
-    </div>
+<div class="row">
+  <div>
+    <label>Poids du paquet</label>
+    <select id="packSize">
+      <option value="200">200 g</option>
+      <option value="250" selected>250 g</option>
+    </select>
   </div>
+  <div>
+    <label>Prix machine (€)</label>
+    <input id="machinePrice" value="3260">
+  </div>
+</div>
 
-  <script>
-    let chart;
+<div class="grid">
+  <div></div><div class="head">Paquets/mois</div><div class="head">Prix €/kg</div><div class="head">Marge %</div>
 
-    function euro(n){
-      if(!isFinite(n)) return "—";
-      return n.toLocaleString("fr-FR", { style:"currency", currency:"EUR" });
+  <div class="label">Bonbon sucre cuit</div>
+  <input id="qtySugar" value="120">
+  <input id="priceSugar" value="21.30">
+  <input id="marginSugar" value="50">
+
+  <div class="label">Bonbon au miel</div>
+  <input id="qtyHoney" value="80">
+  <input id="priceHoney" value="28.90">
+  <input id="marginHoney" value="55">
+
+  <div class="label">Nougatine</div>
+  <input id="qtyNoug" value="40">
+  <input id="priceNoug" value="55.00">
+  <input id="marginNoug" value="45">
+</div>
+
+<div class="actions">
+  <label><input type="checkbox" id="live" checked> Calcul en direct</label>
+  <button class="btn" id="btnCalc">Calculer</button>
+</div>
+
+<div class="kpis">
+  <div class="kpi"><div class="kpi-title">CA / mois</div><div class="kpi-val" id="kpiCA">—</div></div>
+  <div class="kpi"><div class="kpi-title">Marge / mois</div><div class="kpi-val" id="kpiMargin">—</div></div>
+  <div class="kpi"><div class="kpi-title">Amortissement</div><div class="kpi-val" id="kpiPayback">—</div></div>
+</div>
+
+<div id="summaryLine" class="summary-line">—</div>
+
+<div class="chart-wrap">
+  <canvas id="roiChart"></canvas>
+</div>
+
+</div>
+</div>
+
+<script>
+let chart;
+
+function euro(n){ return n.toLocaleString("fr-FR",{style:"currency",currency:"EUR"}); }
+function v(id){ return parseFloat(document.getElementById(id).value)||0; }
+
+function compute(){
+  const packKg = v("packSize")/1000;
+  const machine = v("machinePrice");
+
+  const items = [
+    [v("qtySugar"), v("priceSugar"), v("marginSugar")],
+    [v("qtyHoney"), v("priceHoney"), v("marginHoney")],
+    [v("qtyNoug"),  v("priceNoug"),  v("marginNoug")]
+  ];
+
+  let ca=0, marge=0, packs=0;
+  items.forEach(i=>{
+    const c = i[0]*packKg*i[1];
+    ca+=c; marge+=c*(i[2]/100); packs+=i[0];
+  });
+
+  document.getElementById("kpiCA").textContent = euro(ca);
+  document.getElementById("kpiMargin").textContent = euro(marge);
+
+  const pay = marge>0 ? (machine/marge).toFixed(1)+" mois" : "—";
+  document.getElementById("kpiPayback").textContent = pay;
+
+  document.getElementById("summaryLine").textContent =
+    `Production : ${(packs*packKg).toFixed(1)} kg/mois — machine amortie en ~${pay}`;
+
+  const labels=[], mc=[], inv=[];
+  let cum=0;
+  for(let i=1;i<=24;i++){
+    cum+=marge; labels.push("M"+i); mc.push(cum); inv.push(machine);
+  }
+
+  if(chart) chart.destroy();
+  chart = new Chart(roiChart,{
+    type:"line",
+    data:{labels,datasets:[
+      {label:"Marge cumulée",data:mc,borderWidth:2},
+      {label:"Investissement machine",data:inv,borderWidth:2,borderDash:[6,6]}
+    ]},
+    options:{
+      responsive:true,
+      maintainAspectRatio:false,
+      plugins:{legend:{position:"bottom"}},
+      scales:{y:{ticks:{callback:v=>v+" €"}}}
     }
+  });
+}
 
-    function readNum(id){
-      const el = document.getElementById(id);
-      if(!el) return 0;
-      const v = parseFloat(el.value);
-      return isFinite(v) ? v : 0;
-    }
+["packSize","machinePrice","qtySugar","priceSugar","marginSugar","qtyHoney","priceHoney","marginHoney","qtyNoug","priceNoug","marginNoug"]
+.forEach(id=>document.getElementById(id).addEventListener("input",()=>document.getElementById("live").checked&&compute()));
 
-    function compute(){
-      const packG = readNum("packSize");
-      const packKg = packG / 1000;
+document.getElementById("btnCalc").onclick=compute;
+compute();
+</script>
 
-      const machinePrice = readNum("machinePrice");
-      const months = Math.max(1, Math.floor(readNum("months")));
-
-      const items = [
-        { qty: readNum("qtySugar"), priceKg: readNum("priceSugar"), marginPct: readNum("marginSugar") },
-        { qty: readNum("qtyHoney"), priceKg: readNum("priceHoney"), marginPct: readNum("marginHoney") },
-        { qty: readNum("qtyNoug"),  priceKg: readNum("priceNoug"),  marginPct: readNum("marginNoug")  },
-      ];
-
-      let caMonth = 0;
-      let marginMonth = 0;
-
-      for(const it of items){
-        const ca = it.qty * packKg * it.priceKg;
-        const m  = ca * (it.marginPct / 100);
-        caMonth += ca;
-        marginMonth += m;
-      }
-
-      document.getElementById("kpiCA").textContent = euro(caMonth);
-      document.getElementById("kpiMargin").textContent = euro(marginMonth);
-
-      let paybackTxt = "—";
-      if(marginMonth > 0){
-        const mths = machinePrice / marginMonth;
-        paybackTxt = (mths >= 1) ? `${mths.toFixed(1)} mois` : `${Math.max(1, Math.round(mths*30))} jours`;
-      } else {
-        paybackTxt = "Impossible (marge = 0)";
-      }
-      document.getElementById("kpiPayback").textContent = paybackTxt;
-
-      // Graph
-      const labels = [];
-      const marginCum = [];
-      const investLine = [];
-      let cum = 0;
-
-      for(let i=1;i<=months;i++){
-        labels.push("M"+i);
-        cum += marginMonth;
-        marginCum.push(cum);
-        investLine.push(machinePrice);
-      }
-
-      if(chart) chart.destroy();
-
-      chart = new Chart(document.getElementById("roiChart"), {
-        type: "line",
-        data: {
-          labels,
-          datasets: [
-            { label: "Marge cumulée (estimée)", data: marginCum, borderWidth: 2, tension: 0.25 },
-            { label: "Investissement machine", data: investLine, borderWidth: 2, borderDash:[6,6], tension: 0 }
-          ]
-        },
-        options: {
-          responsive: true,
-          plugins: { legend: { display: true } },
-          scales: {
-            y: { ticks: { callback: (v)=> (v).toLocaleString("fr-FR")+" €" } }
-          }
-        }
-      });
-    }
-
-    function hook(){
-      const ids = [
-        "packSize","machinePrice","months",
-        "qtySugar","priceSugar","marginSugar",
-        "qtyHoney","priceHoney","marginHoney",
-        "qtyNoug","priceNoug","marginNoug"
-      ];
-
-      ids.forEach(id=>{
-        const el = document.getElementById(id);
-        if(!el) return;
-        el.addEventListener("input", ()=>{
-          if(document.getElementById("live").checked) compute();
-        });
-      });
-
-      document.getElementById("btnCalc").addEventListener("click", compute);
-
-      document.getElementById("btnReset").addEventListener("click", () => {
-        document.getElementById("priceSugar").value = "21.30";
-        document.getElementById("priceHoney").value = "28.90";
-        document.getElementById("priceNoug").value  = "55.00";
-        compute();
-      });
-    }
-
-    hook();
-    compute();
-  </script>
 </body>
 </html>
