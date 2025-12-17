@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Partenariat Formateurs Indépendants – Atelier CAL</title>
+  <meta name="description" content="Programme partenaire Atelier CAL pour formateurs indépendants : conditions préférentielles, code de parrainage, remise client et commission sur les ventes." />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Partenariat Formateurs Indépendants – Atelier CAL" />
+  <meta property="og:description" content="Code de parrainage, remise client et commission sur les ventes. Partenariat simple et professionnel." />
+  <meta property="og:image" content="https://atelier-cal.fr/images/formateur.png" />
+
+  <style>
+    :root{
+      --bg:#07080b;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.10);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.72);
+      --line: rgba(255,255,255,.14);
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
+      --accent: #ffb55a;
+      --accent2:#ff7a18;
+      --radius: 18px;
+      --max: 1100px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(1200px 600px at 20% 10%, rgba(255,122,24,.10), transparent 60%),
+        radial-gradient(900px 500px at 80% 20%, rgba(255,181,90,.10), transparent 55%),
+        linear-gradient(180deg, #06070a 0%, #05060a 60%, #04050a 100%);
+      color: var(--text);
+      overflow-x:hidden;
+    }
+
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding: 24px}
+
+    header{
+      position:sticky; top:0; z-index:20;
+      background: linear-gradient(180deg, rgba(7,8,11,.92), rgba(7,8,11,.62));
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding: 14px 24px;
+      max-width: var(--max); margin:0 auto;
+    }
+
+    .brand{
+      display:flex; align-items:center; gap:12px; text-decoration:none;
+    }
+    .logo{
+      width:38px; height:38px; border-radius:12px;
+      background: linear-gradient(135deg, rgba(255,181,90,.25), rgba(255,122,24,.18));
+      border: 1px solid rgba(255,181,90,.25);
+      box-shadow: 0 10px 30px rgba(0,0,0,.45);
+      flex: 0 0 auto;
+    }
+    .brand strong{font-size:14px; letter-spacing:.3px}
+    .brand span{display:block; font-size:12px; color: var(--muted)}
+
+    .nav .actions{display:flex; gap:10px; align-items:center}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      text-decoration:none;
+      box-shadow: 0 10px 25px rgba(0,0,0,.35);
+      transition: transform .12s ease, border-color .12s ease, background .12s ease;
+      user-select:none;
+    }
+    .btn:hover{transform: translateY(-1px); border-color: rgba(255,181,90,.35); background: rgba(255,255,255,.06)}
+    .btn.primary{
+      border-color: rgba(255,181,90,.35);
+      background: linear-gradient(135deg, rgba(255,181,90,.18), rgba(255,122,24,.14));
+    }
+    .btn:focus-visible{outline: 2px solid rgba(255,181,90,.55); outline-offset: 2px}
+
+    /* HERO */
+    .hero{
+      position:relative;
+      border-radius: calc(var(--radius) + 8px);
+      overflow:hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      margin-top: 22px;
+      min-height: 540px;
+      background: #0b0c10;
+    }
+    .hero img{
+      position:absolute; inset:0;
+      width:100%; height:100%;
+      object-fit: cover;
+      filter: contrast(1.02) saturate(1.02);
+      transform: scale(1.02);
+    }
+    .hero::after{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        linear-gradient(90deg, rgba(7,8,11,.92) 0%, rgba(7,8,11,.72) 45%, rgba(7,8,11,.20) 100%),
+        radial-gradient(600px 420px at 30% 40%, rgba(255,181,90,.10), transparent 60%);
+    }
+    .hero .content{
+      position:relative;
+      padding: 44px 34px;
+      max-width: 640px;
+    }
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,181,90,.25);
+      background: rgba(255,181,90,.08);
+      color: rgba(255,255,255,.88);
+      font-size: 13px;
+      letter-spacing:.2px;
+    }
+    h1{
+      margin: 14px 0 10px;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.08;
+      letter-spacing: -0.6px;
+    }
+    .lead{
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 15.5px;
+      line-height: 1.55;
+    }
+    .ctaRow{display:flex; flex-wrap:wrap; gap:10px; margin-top: 14px}
+    .mini{
+      font-size:12px; color: rgba(255,255,255,.60);
+      margin-top: 10px;
+    }
+
+    /* Main layout */
+    main{padding: 18px 0 60px}
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+    @media (max-width: 920px){
+      .grid{grid-template-columns: 1fr}
+      .hero::after{
+        background: linear-gradient(180deg, rgba(7,8,11,.90) 0%, rgba(7,8,11,.62) 55%, rgba(7,8,11,.18) 100%);
+      }
+      .hero .content{max-width: 100%}
+    }
+
+    .card{
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      border-radius: var(--radius);
+      box-shadow: 0 14px 40px rgba(0,0,0,.38);
+      overflow:hidden;
+    }
+    .card .inner{padding: 18px}
+    .card h2{
+      margin: 0 0 10px;
+      font-size: 18px;
+      letter-spacing: -.2px;
+    }
+    .card p{margin: 0; color: var(--muted); line-height:1.6; font-size: 14px}
+
+    .list{
+      margin: 12px 0 0;
+      padding:0; list-style:none;
+      display:grid; gap:10px;
+    }
+    .li{
+      display:flex; gap:10px; align-items:flex-start;
+      padding: 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+    }
+    .dot{
+      width:10px; height:10px; margin-top: 5px;
+      border-radius:999px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.95), rgba(255,181,90,.55) 45%, rgba(255,122,24,.20) 70%, transparent 75%);
+      box-shadow: 0 0 24px rgba(255,181,90,.25);
+      flex: 0 0 auto;
+    }
+    .li strong{display:block; font-size: 14px}
+    .li span{display:block; color: var(--muted); font-size: 13px; line-height: 1.45}
+
+    .pillRow{display:flex; flex-wrap:wrap; gap:8px; margin-top: 12px}
+    .pill{
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      font-size: 12.5px;
+      color: rgba(255,255,255,.80);
+    }
+
+    /* Form */
+    form{margin-top: 12px}
+    .formGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    @media (max-width: 720px){
+      .formGrid{grid-template-columns: 1fr}
+    }
+    .field{
+      display:flex; flex-direction:column; gap:6px;
+    }
+    label{
+      font-size: 12.5px;
+      color: rgba(255,255,255,.78);
+    }
+    input, textarea, select{
+      width:100%;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.28);
+      color: var(--text);
+      outline:none;
+      transition: border-color .12s ease, background .12s ease;
+      font-size: 14px;
+    }
+    textarea{min-height: 120px; resize: vertical}
+    input:focus, textarea:focus, select:focus{
+      border-color: rgba(255,181,90,.45);
+      background: rgba(0,0,0,.34);
+    }
+    .full{grid-column: 1 / -1}
+    .hint{
+      margin-top: 10px;
+      font-size: 12px;
+      color: rgba(255,255,255,.60);
+      line-height: 1.5;
+    }
+    .hidden-honey{
+      position:absolute !important;
+      left:-9999px !important;
+      width:1px !important;
+      height:1px !important;
+      overflow:hidden !important;
+    }
+
+    .footer{
+      border-top: 1px solid var(--line);
+      padding: 26px 0 40px;
+      color: rgba(255,255,255,.60);
+      font-size: 12.5px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"Partenariat Formateurs Indépendants – Atelier CAL",
+    "description":"Programme partenaire pour formateurs : conditions préférentielles, code de parrainage, remise client et commission sur les ventes.",
+    "publisher":{"@type":"Organization","name":"Atelier CAL"}
+  }
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="index.html" aria-label="Retour à l'accueil Atelier CAL">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <strong>Atelier CAL</strong>
+          <span>Machines & rouleaux de confiserie</span>
+        </div>
+      </a>
+      <div class="actions">
+        <a class="btn" href="machine.html">Voir la machine</a>
+        <a class="btn primary" href="#contact">Devenir partenaire</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <section class="hero" aria-label="Partenariat formateurs indépendants">
+      <!-- Image : /images/formateur.png -->
+      <img src="images/formateur.png" alt="Formateur confiseur en atelier – partenariat Atelier CAL" loading="eager" />
+      <div class="content">
+        <div class="kicker">🤝 Programme partenaire • Formateurs indépendants</div>
+        <h1>Recommandez la machine que vous utilisez.<br/>Gagnez une commission.</h1>
+        <p class="lead">
+          Vous formez en confiserie, chocolaterie ou métiers de bouche ?
+          Atelier CAL propose un partenariat simple et professionnel :
+          <strong>conditions partenaires</strong>, <strong>code de parrainage</strong>, <strong>remise client</strong> et
+          <strong>commission sur les ventes</strong>.
+        </p>
+
+        <div class="ctaRow">
+          <a class="btn primary" href="#contact">Demander le partenariat</a>
+          <a class="btn" href="#fonctionnement">Voir comment ça marche</a>
+        </div>
+
+        <div class="mini">Sans stock • Sans gestion SAV • Atelier CAL gère la vente, la fabrication et le support.</div>
+      </div>
+    </section>
+
+    <main>
+      <div class="grid">
+        <section class="card" id="fonctionnement">
+          <div class="inner">
+            <h2>Comment ça marche</h2>
+            <p>
+              Le partenariat est pensé pour les formateurs : vous utilisez la machine en formation,
+              vous la recommandez naturellement, et les ventes sont suivies via votre code.
+            </p>
+
+            <ul class="list" aria-label="Étapes du partenariat">
+              <li class="li">
+                <span class="dot" aria-hidden="true"></span>
+                <div>
+                  <strong>1) Conditions partenaires</strong>
+                  <span>Accès à la machine SRC à conditions préférentielles (selon profil et activité).</span>
+                </div>
+              </li>
+              <li class="li">
+                <span class="dot" aria-hidden="true"></span>
+                <div>
+                  <strong>2) Code de parrainage personnel</strong>
+                  <span>Un code unique à partager (remise appliquée automatiquement au client).</span>
+                </div>
+              </li>
+              <li class="li">
+                <span class="dot" aria-hidden="true"></span>
+                <div>
+                  <strong>3) Commission sur les ventes</strong>
+                  <span>Vous percevez une commission pour chaque vente réalisée avec votre code.</span>
+                </div>
+              </li>
+            </ul>
+
+            <div class="pillRow" aria-label="Points clés">
+              <div class="pill">Cadre clair</div>
+              <div class="pill">Transparence</div>
+              <div class="pill">Zéro gestion commerciale</div>
+              <div class="pill">Partenariat long terme</div>
+            </div>
+          </div>
+        </section>
+
+        <aside class="card">
+          <div class="inner">
+            <h2>Pour qui ?</h2>
+            <p>Formateurs indépendants, ateliers, démonstrateurs, intervenants, organismes privés.</p>
+
+            <ul class="list" aria-label="Avantages du partenariat">
+              <li class="li">
+                <span class="dot" aria-hidden="true"></span>
+                <div>
+                  <strong>Crédibilité immédiate</strong>
+                  <span>Vous présentez un outil pro en conditions réelles.</span>
+                </div>
+              </li>
+              <li class="li">
+                <span class="dot" aria-hidden="true"></span>
+                <div>
+                  <strong>Remise pour vos clients</strong>
+                  <span>Un avantage concret pour déclencher une décision d’achat.</span>
+                </div>
+              </li>
+              <li class="li">
+                <span class="dot" aria-hidden="true"></span>
+                <div>
+                  <strong>Atelier CAL s’occupe de tout</strong>
+                  <span>Vente, fabrication, expédition et SAV restent gérés par Atelier CAL.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+
+      <section class="card" id="contact" style="margin-top:18px;">
+        <div class="inner">
+          <h2>Demander le partenariat</h2>
+          <p>
+            Remplissez ce formulaire : en cliquant sur “Envoyer”, votre messagerie s’ouvre avec un email déjà rempli.
+          </p>
+
+          <form id="partnerForm" novalidate>
+            <!-- honeypot anti-spam -->
+            <div class="hidden-honey" aria-hidden="true">
+              <label>Ne pas remplir</label>
+              <input type="text" name="website" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="formGrid">
+              <div class="field">
+                <label for="name">Nom / Prénom *</label>
+                <input id="name" name="name" type="text" required autocomplete="name" placeholder="Ex : Julien Martin">
+              </div>
+
+              <div class="field">
+                <label for="email">Email *</label>
+                <input id="email" name="email" type="email" required autocomplete="email" placeholder="Ex : julien@mail.fr">
+              </div>
+
+              <div class="field">
+                <label for="phone">Téléphone</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Ex : 06 00 00 00 00">
+              </div>
+
+              <div class="field">
+                <label for="region">Région / Ville *</label>
+                <input id="region" name="region" type="text" required placeholder="Ex : Nancy / Lorraine">
+              </div>
+
+              <div class="field full">
+                <label for="activity">Votre activité de formation *</label>
+                <select id="activity" name="activity" required>
+                  <option value="" selected disabled>Choisir…</option>
+                  <option>Formateur indépendant</option>
+                  <option>Atelier / démonstrateur</option>
+                  <option>Organisme privé</option>
+                  <option>Autre</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" required
+                  placeholder="Ex : Je fais des formations confiserie 1 à 2 fois par mois. Je souhaite proposer la machine à mes stagiaires, et connaître les conditions partenaires."></textarea>
+              </div>
+            </div>
+
+            <div class="ctaRow" style="margin-top:14px;">
+              <button class="btn primary" type="submit">Envoyer la demande</button>
+              <a class="btn" href="machine.html">Voir la machine SRC</a>
+            </div>
+
+            <div class="hint">
+              *Le formateur agit comme prescripteur. Atelier CAL reste responsable de la vente, de la fabrication, de la livraison et du SAV.
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <div class="footer">
+      © <span id="y"></span> Atelier CAL • Programme partenaire formateurs indépendants
+    </div>
+  </div>
+
+  <script>
+    // ✅ CHANGE ICI : ton email de réception
+    const DEST_EMAIL = "contact@atelier-cal.fr";
+
+    const form = document.getElementById("partnerForm");
+    const year = document.getElementById("y");
+    year.textContent = new Date().getFullYear();
+
+    function encode(str){ return encodeURIComponent(str || ""); }
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      // honeypot anti-spam
+      const honey = form.querySelector('input[name="website"]');
+      if (honey && honey.value.trim() !== "") return;
+
+      // validations simples
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const phone = form.phone.value.trim();
+      const region = form.region.value.trim();
+      const activity = form.activity.value;
+      const message = form.message.value.trim();
+
+      if (!name || !email || !region || !activity || !message) {
+        alert("Merci de remplir tous les champs obligatoires (*)");
+        return;
+      }
+
+      const subject = `Demande partenariat formateur – ${name}`;
+      const body =
+`Bonjour,
+
+Je souhaite rejoindre le programme partenaire formateur Atelier CAL.
+
+Nom : ${name}
+Email : ${email}
+Téléphone : ${phone || "-"}
+Région / Ville : ${region}
+Activité : ${activity}
+
+Message :
+${message}
+
+Merci,
+${name}`;
+
+      const mailto = `mailto:${DEST_EMAIL}?subject=${encode(subject)}&body=${encode(body)}`;
+
+      // ouvre le client mail
+      window.location.href = mailto;
+    });
+  </script>
+</body>
+</html>
