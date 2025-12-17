@@ -2,6 +2,245 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
+  <!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K4502PGZ0X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K4502PGZ0X');
+</script>
+
+  <meta charset="UTF-8" />
+  <title>Machine de confiserie professionnelle – Bâti à cylindres | Atelier CAL</title>
+
+  <meta name="google-site-verification" content="A0dojKL5m35FOtxZXnqt33BbuTEnXFRBVb-cTb6grEY" />
+  <meta name="description" content="Atelier CAL conçoit et fabrique des machines professionnelles pour la confiserie : bâti à cylindres motorisé pour bonbons en sucre cuit, nougatine et miel. Conception française." />
+  <meta name="keywords" content="machine confiserie, machine bonbon, bâti à cylindres, machine nougatine, machine bonbon miel, confiseur professionnel" />
+  <meta name="author" content="Atelier CAL" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    :root{
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.75);
+      --line: rgba(255,255,255,0.18);
+      --card: rgba(255,255,255,0.04);
+      --accent: #c9a24d;
+      --speed: 20s;
+    }
+
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at top, #1c1c1c 0%, #0b0b0b 45%, #000 100%);
+    }
+
+    /* ================= BANNIÈRE DÉFILANTE ================= */
+    .top-banner{
+      height: 48px;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background:#0f1115;
+      position: relative;
+    }
+
+    .banner-track{
+      display: flex;
+      align-items: center;
+      width: max-content;
+      height: 100%;
+      animation: marquee var(--speed) linear infinite;
+      gap: 32px;
+      padding-left: 20px;
+    }
+
+    .banner-clone{
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      white-space: nowrap;
+    }
+
+    .banner-text{
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    .banner-candies{
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .candy{
+      width: calc(36px * 1.8);
+      height: calc(36px * 1.8);
+      object-fit: contain;
+      animation: spin linear infinite;
+      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.45));
+    }
+
+    .c1{ animation-duration: 2s; }
+    .c2{ animation-duration: 2.6s; }
+    .c3{ animation-duration: 2.2s; }
+    .c4{ animation-duration: 3s; }
+    .c5{ animation-duration: 2.4s; }
+
+    @keyframes spin{
+      from{ transform: rotate(0deg); }
+      to{ transform: rotate(360deg); }
+    }
+
+    @keyframes marquee{
+      from{ transform: translateX(0); }
+      to{ transform: translateX(-50%); }
+    }
+
+    /* ================= CONTENU ================= */
+    .container{
+      width: min(1120px, 92vw);
+      margin: 0 auto;
+    }
+
+    header{
+      padding: 92px 0 34px;
+      text-align:center;
+    }
+
+    .logo{
+      width: 320px;
+      max-width: 90%;
+      margin-bottom: 18px;
+    }
+
+    nav a{
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      margin: 0 8px;
+      font-size: 0.9rem;
+    }
+
+    nav a:hover{ text-decoration: underline; }
+
+    /* ===== AJOUT PREMIUM : lien discret + badge ===== */
+    nav a.nav-partner{
+      opacity: 0.82;
+      font-size: 0.92rem;
+    }
+    nav a.nav-partner:hover{
+      opacity: 1;
+    }
+
+    .nav-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      margin-left:10px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .2px;
+      color: rgba(255,255,255,0.88);
+      border: 1px solid rgba(201,162,77,0.35);
+      background: linear-gradient(135deg, rgba(201,162,77,0.16), rgba(255,255,255,0.06));
+      box-shadow: 0 10px 26px rgba(0,0,0,0.35);
+      vertical-align: middle;
+    }
+
+    .pulse-dot{
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95), rgba(201,162,77,0.85) 55%, rgba(201,162,77,0.25) 75%);
+      box-shadow: 0 0 0 0 rgba(201,162,77,0.35);
+      animation: pulseSoft 2.2s ease-in-out infinite;
+      flex: 0 0 auto;
+    }
+
+    @keyframes pulseSoft{
+      0%   { transform: scale(1);    box-shadow: 0 0 0 0 rgba(201,162,77,0.35); }
+      55%  { transform: scale(1.10); box-shadow: 0 0 0 8px rgba(201,162,77,0.00); }
+      100% { transform: scale(1);    box-shadow: 0 0 0 0 rgba(201,162,77,0.00); }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .pulse-dot{ animation: none; }
+      .banner-track{ animation: none; }
+      .candy{ animation: none; }
+    }
+    /* ===== fin ajout badge ===== */
+
+    h1{
+      margin:14px 0 12px;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+    }
+
+    .subtitle{
+      max-width: 920px;
+      margin: 0 auto;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    section{
+      padding: 58px 0;
+      text-align:center;
+    }
+
+    .block{
+      margin: 22px auto 0;
+      padding: 26px 22px;
+      background: var(--card);
+      border: 1px solid var(--line);
+    }
+
+    .hero-video{
+      width: 100%;
+      max-width: 1000px;
+      aspect-ratio: 16/9;
+      margin-bottom: 18px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background:#000;
+    }
+
+    .cta{
+      display:inline-block;
+      padding: 16px 44px;
+      border: 1px solid rgba(255,255,255,0.28);
+      color:#fff;
+      text-decoration:none;
+      margin: 8px;
+      text-transform: uppercase;
+    }
+
+    footer{
+      padding: 28px 0 38px;
+      text-align:center;
+      color: rgba(255,255,255,0.55);
+    }
+
+    /* Couleur email et téléphone */
+    a[href^="mailto"],
+    a[href^="tel"]{
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+    }
+
+    a[href^="mailto"]:hover,
+    a[href^="tel"]:hover{
+      color: rgba(255,255,255,0.9);
+    }
+  </style>
+</head>
+
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Partenariat Formateurs Indépendants – Atelier CAL</title>
