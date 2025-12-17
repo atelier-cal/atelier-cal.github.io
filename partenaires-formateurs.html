@@ -12,7 +12,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Partenariat Formateurs Indépendants – Atelier CAL" />
   <meta property="og:description" content="Code de parrainage, remise client et commission sur les ventes. Partenariat simple et professionnel." />
-  <meta property="og:image" content="https://atelier-cal.fr/images/formateur.png" />
+  <meta property="og:image" content="https://atelier-cal.fr/images/fomateur.png" />
 
   <style>
     :root{
@@ -24,7 +24,6 @@
       --line: rgba(255,255,255,.14);
       --shadow: 0 18px 60px rgba(0,0,0,.55);
       --accent: #ffb55a;
-      --accent2:#ff7a18;
       --radius: 18px;
       --max: 1100px;
     }
@@ -60,14 +59,21 @@
 
     .brand{
       display:flex; align-items:center; gap:12px; text-decoration:none;
+      min-width: 240px;
     }
-    .logo{
-      width:38px; height:38px; border-radius:12px;
-      background: linear-gradient(135deg, rgba(255,181,90,.25), rgba(255,122,24,.18));
-      border: 1px solid rgba(255,181,90,.25);
+
+    /* ✅ Logo image au lieu du rectangle */
+    .brand-logo{
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 1px solid rgba(255,255,255,.14);
       box-shadow: 0 10px 30px rgba(0,0,0,.45);
+      background: rgba(255,255,255,.04);
       flex: 0 0 auto;
     }
+
     .brand strong{font-size:14px; letter-spacing:.3px}
     .brand span{display:block; font-size:12px; color: var(--muted)}
 
@@ -110,13 +116,16 @@
       filter: contrast(1.02) saturate(1.02);
       transform: scale(1.02);
     }
+
+    /* ✅ Overlay un peu moins sombre (on voit mieux la photo sur PC) */
     .hero::after{
       content:"";
       position:absolute; inset:0;
       background:
-        linear-gradient(90deg, rgba(7,8,11,.92) 0%, rgba(7,8,11,.72) 45%, rgba(7,8,11,.20) 100%),
-        radial-gradient(600px 420px at 30% 40%, rgba(255,181,90,.10), transparent 60%);
+        linear-gradient(90deg, rgba(7,8,11,.86) 0%, rgba(7,8,11,.62) 45%, rgba(7,8,11,.18) 100%),
+        radial-gradient(600px 420px at 30% 40%, rgba(255,181,90,.12), transparent 60%);
     }
+
     .hero .content{
       position:relative;
       padding: 44px 34px;
@@ -161,7 +170,7 @@
     @media (max-width: 920px){
       .grid{grid-template-columns: 1fr}
       .hero::after{
-        background: linear-gradient(180deg, rgba(7,8,11,.90) 0%, rgba(7,8,11,.62) 55%, rgba(7,8,11,.18) 100%);
+        background: linear-gradient(180deg, rgba(7,8,11,.86) 0%, rgba(7,8,11,.62) 55%, rgba(7,8,11,.18) 100%);
       }
       .hero .content{max-width: 100%}
     }
@@ -224,13 +233,8 @@
     @media (max-width: 720px){
       .formGrid{grid-template-columns: 1fr}
     }
-    .field{
-      display:flex; flex-direction:column; gap:6px;
-    }
-    label{
-      font-size: 12.5px;
-      color: rgba(255,255,255,.78);
-    }
+    .field{display:flex; flex-direction:column; gap:6px;}
+    label{font-size: 12.5px; color: rgba(255,255,255,.78);}
     input, textarea, select{
       width:100%;
       padding: 12px 12px;
@@ -269,28 +273,20 @@
       font-size: 12.5px;
     }
   </style>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebPage",
-    "name":"Partenariat Formateurs Indépendants – Atelier CAL",
-    "description":"Programme partenaire pour formateurs : conditions préférentielles, code de parrainage, remise client et commission sur les ventes.",
-    "publisher":{"@type":"Organization","name":"Atelier CAL"}
-  }
-  </script>
 </head>
 
 <body>
   <header>
     <div class="nav">
       <a class="brand" href="index.html" aria-label="Retour à l'accueil Atelier CAL">
-        <div class="logo" aria-hidden="true"></div>
+        <!-- ✅ ton logo -->
+        <img class="brand-logo" src="logo-atelier-cal.png" alt="Atelier CAL">
         <div>
           <strong>Atelier CAL</strong>
-          <span>Machines & rouleaux de confiserie</span>
+          <span>Bâti à cylindres</span>
         </div>
       </a>
+
       <div class="actions">
         <a class="btn" href="machine.html">Voir la machine</a>
         <a class="btn primary" href="#contact">Devenir partenaire</a>
@@ -300,8 +296,8 @@
 
   <div class="wrap">
     <section class="hero" aria-label="Partenariat formateurs indépendants">
-      <!-- Image : /images/formateur.png -->
-      <img src="images/formateur.png" alt="Formateur confiseur en atelier – partenariat Atelier CAL" loading="eager" />
+      <!-- ✅ Image : /images/fomateur.png -->
+      <img src="images/fomateur.png" alt="Formateur confiseur en atelier – partenariat Atelier CAL" loading="eager" />
       <div class="content">
         <div class="kicker">🤝 Programme partenaire • Formateurs indépendants</div>
         <h1>Recommandez la machine que vous utilisez.<br/>Gagnez une commission.</h1>
@@ -399,12 +395,9 @@
       <section class="card" id="contact" style="margin-top:18px;">
         <div class="inner">
           <h2>Demander le partenariat</h2>
-          <p>
-            Remplissez ce formulaire : en cliquant sur “Envoyer”, votre messagerie s’ouvre avec un email déjà rempli.
-          </p>
+          <p>Remplissez ce formulaire : en cliquant sur “Envoyer”, votre messagerie s’ouvre avec un email déjà rempli.</p>
 
           <form id="partnerForm" novalidate>
-            <!-- honeypot anti-spam -->
             <div class="hidden-honey" aria-hidden="true">
               <label>Ne pas remplir</label>
               <input type="text" name="website" tabindex="-1" autocomplete="off">
@@ -468,9 +461,7 @@
   </div>
 
   <script>
-    // ✅ CHANGE ICI : ton email de réception
     const DEST_EMAIL = "contact@atelier-cal.fr";
-
     const form = document.getElementById("partnerForm");
     const year = document.getElementById("y");
     year.textContent = new Date().getFullYear();
@@ -480,11 +471,9 @@
     form.addEventListener("submit", (e) => {
       e.preventDefault();
 
-      // honeypot anti-spam
       const honey = form.querySelector('input[name="website"]');
       if (honey && honey.value.trim() !== "") return;
 
-      // validations simples
       const name = form.name.value.trim();
       const email = form.email.value.trim();
       const phone = form.phone.value.trim();
@@ -515,10 +504,7 @@ ${message}
 Merci,
 ${name}`;
 
-      const mailto = `mailto:${DEST_EMAIL}?subject=${encode(subject)}&body=${encode(body)}`;
-
-      // ouvre le client mail
-      window.location.href = mailto;
+      window.location.href = `mailto:${DEST_EMAIL}?subject=${encode(subject)}&body=${encode(body)}`;
     });
   </script>
 </body>
