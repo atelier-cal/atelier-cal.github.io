@@ -205,35 +205,90 @@
 
     .img-clickable{ cursor: pointer; }
 
-    /* Badge premium "Voir en 3D" */
-    .img-wrap::after{
-      content: "Voir en 3D";
+    /* ===== BADGE PREMIUM (SVG cube + micro animation) ===== */
+    .img-wrap.has-3d::after{
+      content: "";
       position: absolute;
       left: 12px;
       bottom: 12px;
-      padding: 7px 12px;
+      width: 92px;
+      height: 30px;
       border-radius: 999px;
       background: rgba(0,0,0,0.60);
       border: 1px solid rgba(255,255,255,0.30);
-      color: rgba(255,255,255,0.95);
-      font-size: 12px;
-      letter-spacing: .6px;
-      text-transform: uppercase;
       backdrop-filter: blur(6px);
       opacity: 0;
       transform: translateY(6px);
       transition: opacity .18s ease, transform .18s ease;
       pointer-events: none;
     }
-    .card:hover .img-wrap::after{
+
+    .img-wrap.has-3d::before{
+      content: "";
+      position: absolute;
+      left: 22px;
+      bottom: 19px;
+      width: 14px;
+      height: 14px;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity .18s ease, transform .18s ease;
+      pointer-events: none;
+
+      /* petit cube SVG blanc */
+      background: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z'/%3E%3Cpath d='M3.3 7.3 12 12l8.7-4.7'/%3E%3Cpath d='M12 22V12'/%3E%3C/svg%3E");
+    }
+
+    /* texte "Voir en 3D" */
+    .badge-3d-text{
+      position:absolute;
+      left: 44px;
+      bottom: 16px;
+      font-size: 12px;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.95);
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity .18s ease, transform .18s ease;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .card:hover .img-wrap.has-3d::after,
+    .card:hover .img-wrap.has-3d::before,
+    .card:hover .img-wrap.has-3d .badge-3d-text{
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* Mobile : badge visible */
     @media (hover: none){
-      .img-wrap::after{
+      .img-wrap.has-3d::after,
+      .img-wrap.has-3d::before,
+      .img-wrap.has-3d .badge-3d-text{
         opacity: .95;
         transform: none;
       }
+    }
+
+    /* micro pulsation discrète */
+    @keyframes pulse3d {
+      0%   { transform: translateY(0) scale(1); }
+      35%  { transform: translateY(0) scale(1.06); }
+      70%  { transform: translateY(0) scale(1); }
+      100% { transform: translateY(0) scale(1); }
+    }
+
+    .img-wrap.has-3d.pulse::after{
+      opacity: .98;
+      transform: translateY(0);
+      animation: pulse3d .85s ease-out 1;
+    }
+    .img-wrap.has-3d.pulse::before,
+    .img-wrap.has-3d.pulse .badge-3d-text{
+      opacity: .98;
+      transform: translateY(0);
     }
 
     /* Repère visuel du recentrage natif */
@@ -274,13 +329,12 @@
     <div class="container">
       <div class="grid">
 
-        <!-- PERLE -> 3D -->
+        <!-- PERLE (PAS cliquable) -->
         <div class="card">
           <div class="img-wrap">
-            <img class="img img-clickable"
+            <img class="img"
                  src="modele-perle.png"
-                 alt="Modèle Perle 15 mm"
-                 onclick="open3D('perle.glb')">
+                 alt="Modèle Perle 15 mm">
           </div>
           <div class="title">Perle Ø 15 mm</div>
           <p class="desc">Forme polyvalente, démoulage propre, idéale pour bonbons en sucre cuit.</p>
@@ -289,11 +343,12 @@
 
         <!-- PASTILLE -> 3D -->
         <div class="card">
-          <div class="img-wrap">
+          <div class="img-wrap has-3d">
             <img class="img img-clickable"
                  src="modele-pastille.png"
                  alt="Modèle Pastille"
                  onclick="open3D('pastille.glb')">
+            <div class="badge-3d-text">Voir en 3D</div>
           </div>
           <div class="title">Pastille</div>
           <p class="desc">Format standard, parfait pour séries.</p>
@@ -302,11 +357,12 @@
 
         <!-- ABEILLE -> 3D -->
         <div class="card">
-          <div class="img-wrap">
+          <div class="img-wrap has-3d">
             <img class="img img-clickable"
                  src="modele-abeille.png"
                  alt="Modèle Abeille"
                  onclick="open3D('abeille.glb')">
+            <div class="badge-3d-text">Voir en 3D</div>
           </div>
           <div class="title">Abeille (gravée)</div>
           <p class="desc">Signature “miel”, relief précis, rendu premium.</p>
@@ -315,11 +371,12 @@
 
         <!-- HEXAGONE -> 3D -->
         <div class="card">
-          <div class="img-wrap">
+          <div class="img-wrap has-3d">
             <img class="img img-clickable"
                  src="modèle-hexagone.png"
                  alt="Modèle Hexagone"
                  onclick="open3D('hexagone.glb')">
+            <div class="badge-3d-text">Voir en 3D</div>
           </div>
           <div class="title">Hexagone</div>
           <p class="desc">Forme hexagonale élégante.</p>
@@ -328,11 +385,12 @@
 
         <!-- FEUILLE -> 3D -->
         <div class="card">
-          <div class="img-wrap">
+          <div class="img-wrap has-3d">
             <img class="img img-clickable"
                  src="modele-feuille.png"
                  alt="Modèle Feuille"
                  onclick="open3D('feuille.glb')">
+            <div class="badge-3d-text">Voir en 3D</div>
           </div>
           <div class="title">Feuille</div>
           <p class="desc">Motif naturel et élégant, très bon rendu visuel.</p>
@@ -341,11 +399,12 @@
 
         <!-- SUR MESURE -> 3D -->
         <div class="card">
-          <div class="img-wrap">
+          <div class="img-wrap has-3d">
             <img class="img img-clickable"
                  src="modele-personnalise.png"
                  alt="Modèle personnalisable"
                  onclick="open3D('surmesure.glb')">
+            <div class="badge-3d-text">Voir en 3D</div>
           </div>
           <div class="title">Personnalisation</div>
           <p class="desc">Logo, motif, format sur demande. Étude rapide et faisabilité selon recette.</p>
@@ -354,11 +413,12 @@
 
         <!-- OEUF -> 3D -->
         <div class="card">
-          <div class="img-wrap">
+          <div class="img-wrap has-3d">
             <img class="img img-clickable"
                  src="modele-oeuf.png"
                  alt="Modèle Œuf"
                  onclick="open3D('oeuf.glb')">
+            <div class="badge-3d-text">Voir en 3D</div>
           </div>
           <div class="title">Œuf</div>
           <p class="desc">Forme douce et arrondie, très bon démoulage, idéale pour bonbons premium.</p>
@@ -367,11 +427,12 @@
 
         <!-- OVALE -> 3D -->
         <div class="card">
-          <div class="img-wrap">
+          <div class="img-wrap has-3d">
             <img class="img img-clickable"
                  src="modele-pastille-ovale.png"
                  alt="Modèle Pastille ovale"
                  onclick="open3D('ovale.glb')">
+            <div class="badge-3d-text">Voir en 3D</div>
           </div>
           <div class="title">Pastille ovale</div>
           <p class="desc">Format élégant et allongé, excellente lisibilité des gravures.</p>
@@ -464,6 +525,38 @@
     window.addEventListener('keydown', (ev) => {
       if (ev.key === 'Escape') close3D(null, true);
     });
+
+    // Pulse premium au scroll (entrée dans le viewport + stop scroll)
+    (function(){
+      const targets = document.querySelectorAll('.img-wrap.has-3d');
+      if (!('IntersectionObserver' in window) || targets.length === 0) return;
+
+      const pulseOnce = (el) => {
+        el.classList.remove('pulse');
+        void el.offsetWidth; // relance animation
+        el.classList.add('pulse');
+      };
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) pulseOnce(entry.target);
+        });
+      }, { threshold: 0.45 });
+
+      targets.forEach(t => io.observe(t));
+
+      let tmr;
+      window.addEventListener('scroll', () => {
+        clearTimeout(tmr);
+        tmr = setTimeout(() => {
+          targets.forEach(el => {
+            const r = el.getBoundingClientRect();
+            const mid = window.innerHeight * 0.55;
+            if (r.top < mid && r.bottom > mid) pulseOnce(el);
+          });
+        }, 160);
+      }, { passive: true });
+    })();
   </script>
 </body>
 </html>
