@@ -33,6 +33,8 @@
 
     .btn{
       display:inline-flex;
+      align-items:center;
+      gap:10px;
       padding:12px 14px;
       border-radius:12px;
       border:1px solid rgba(255,255,255,0.18);
@@ -55,6 +57,7 @@
       display:flex;
       gap:10px;
       flex-wrap:wrap;
+      margin-bottom: 10px;
     }
     .row > div{ flex:1 1 220px; }
 
@@ -65,24 +68,116 @@
       color: var(--muted);
     }
 
-    input, select{
+    input[type="number"], select{
       width:100%;
       padding:12px;
       border-radius:12px;
       border:1px solid rgba(255,255,255,0.16);
       background: rgba(0,0,0,0.35);
       color: var(--text);
+      outline:none;
     }
 
+    /* ===== GRID (PC) ===== */
     .grid{
       display:grid;
       grid-template-columns: 1.3fr 1fr 1fr 1fr;
       gap:10px;
       margin-top:14px;
+      align-items:center;
     }
 
-    .head{ font-weight:700; color:var(--muted); }
-    .label{ font-weight:700; }
+    .head{ font-weight:800; color:var(--muted); }
+    .label{ font-weight:900; }
+
+    /* ===== Field row (mobile labels à droite) ===== */
+    .field-row{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      width:100%;
+      background: rgba(0,0,0,0.18);
+      border:1px solid rgba(255,255,255,0.10);
+      border-radius: 12px;
+      padding: 10px 10px;
+    }
+
+    .field-row input[type="number"]{
+      width: 140px;
+      max-width: 45%;
+      margin:0;
+    }
+
+    .field-label{
+      font-weight:800;
+      color: rgba(255,255,255,0.72);
+      white-space:nowrap;
+      flex: 1;
+    }
+
+    /* PC : on cache les labels à droite (on a déjà les entêtes) */
+    @media(min-width: 861px){
+      .field-label{ display:none; }
+      .field-row{
+        background: transparent;
+        border: 0;
+        padding: 0;
+      }
+      .field-row input[type="number"]{
+        width:100%;
+        max-width: 100%;
+      }
+    }
+
+    /* ===== Slider paquets/mois ===== */
+    .qty-wrap{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      width:100%;
+    }
+
+    input[type="range"].qty{
+      -webkit-appearance:none;
+      appearance:none;
+      width:100%;
+      height:10px;
+      border-radius:999px;
+      outline:none;
+      background: linear-gradient(to right, var(--accent) 0%, rgba(255,255,255,0.18) 0%);
+      border:1px solid rgba(255,255,255,0.10);
+    }
+
+    input[type="range"].qty::-webkit-slider-thumb{
+      -webkit-appearance:none;
+      appearance:none;
+      width:22px;
+      height:22px;
+      border-radius:50%;
+      background: var(--accent);
+      border: 2px solid rgba(0,0,0,0.35);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.35);
+      cursor:pointer;
+    }
+
+    input[type="range"].qty::-moz-range-thumb{
+      width:22px;
+      height:22px;
+      border-radius:50%;
+      background: var(--accent);
+      border: 2px solid rgba(0,0,0,0.35);
+      cursor:pointer;
+    }
+
+    .qty-pill{
+      min-width: 56px;
+      text-align:center;
+      font-weight: 900;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.06);
+    }
 
     .actions{
       display:flex;
@@ -107,7 +202,7 @@
       padding:14px;
     }
 
-    .kpi-title{ color:var(--muted); font-weight:700; }
+    .kpi-title{ color:var(--muted); font-weight:800; }
     .kpi-val{ font-size:1.25rem; font-weight:900; }
 
     .summary-line{
@@ -134,6 +229,12 @@
       .head{ display:none; }
       .kpis{ grid-template-columns:1fr; }
       .chart-wrap{ height:420px; }
+
+      /* Sur mobile, on garde le look "field-row" visible */
+      .field-row input[type="number"]{
+        width: 120px;
+        max-width: 44%;
+      }
     }
   </style>
 </head>
@@ -141,123 +242,236 @@
 <body>
 <div class="container">
 
-<a class="btn" href="index.html">← Retour</a>
+  <a class="btn" href="index.html">← Retour</a>
 
-<h1>Calculer la rentabilité</h1>
+  <h1>Calculer la rentabilité</h1>
 
-<div class="panel">
+  <div class="panel">
 
-<div class="row">
-  <div>
-    <label>Poids du paquet</label>
-    <select id="packSize">
-      <option value="200">200 g</option>
-      <option value="250" selected>250 g</option>
-    </select>
+    <div class="row">
+      <div>
+        <label>Poids du paquet</label>
+        <select id="packSize">
+          <option value="200">200 g</option>
+          <option value="250" selected>250 g</option>
+        </select>
+      </div>
+      <div>
+        <label>Prix machine (€)</label>
+        <input type="number" id="machinePrice" value="3260" step="10" min="0">
+      </div>
+    </div>
+
+    <div class="grid">
+      <div></div>
+      <div class="head">Paquets/mois</div>
+      <div class="head">Prix €/kg</div>
+      <div class="head">Marge %</div>
+
+      <!-- ===== SUCRE CUIT ===== -->
+      <div class="label">Bonbon sucre cuit</div>
+
+      <!-- slider paquets -->
+      <div class="field-row">
+        <div class="qty-wrap" style="flex:1;">
+          <input class="qty" type="range" id="qtySugar" min="0" max="500" step="1" value="120" data-max="500">
+          <span class="qty-pill" id="qtySugarOut">120</span>
+        </div>
+        <span class="field-label">Paquets / mois</span>
+      </div>
+
+      <!-- prix -->
+      <div class="field-row">
+        <input type="number" id="priceSugar" value="21.30" step="0.10" min="0">
+        <span class="field-label">Prix €/kg</span>
+      </div>
+
+      <!-- marge -->
+      <div class="field-row">
+        <input type="number" id="marginSugar" value="50" step="1" min="0" max="100">
+        <span class="field-label">Marge %</span>
+      </div>
+
+      <!-- ===== MIEL ===== -->
+      <div class="label">Bonbon au miel</div>
+
+      <div class="field-row">
+        <div class="qty-wrap" style="flex:1;">
+          <input class="qty" type="range" id="qtyHoney" min="0" max="500" step="1" value="80" data-max="500">
+          <span class="qty-pill" id="qtyHoneyOut">80</span>
+        </div>
+        <span class="field-label">Paquets / mois</span>
+      </div>
+
+      <div class="field-row">
+        <input type="number" id="priceHoney" value="28.90" step="0.10" min="0">
+        <span class="field-label">Prix €/kg</span>
+      </div>
+
+      <div class="field-row">
+        <input type="number" id="marginHoney" value="55" step="1" min="0" max="100">
+        <span class="field-label">Marge %</span>
+      </div>
+
+      <!-- ===== NOUGATINE ===== -->
+      <div class="label">Nougatine</div>
+
+      <div class="field-row">
+        <div class="qty-wrap" style="flex:1;">
+          <input class="qty" type="range" id="qtyNoug" min="0" max="500" step="1" value="40" data-max="500">
+          <span class="qty-pill" id="qtyNougOut">40</span>
+        </div>
+        <span class="field-label">Paquets / mois</span>
+      </div>
+
+      <div class="field-row">
+        <input type="number" id="priceNoug" value="55.00" step="0.10" min="0">
+        <span class="field-label">Prix €/kg</span>
+      </div>
+
+      <div class="field-row">
+        <input type="number" id="marginNoug" value="45" step="1" min="0" max="100">
+        <span class="field-label">Marge %</span>
+      </div>
+    </div>
+
+    <div class="actions">
+      <label style="font-weight:800; color:rgba(255,255,255,0.85);">
+        <input type="checkbox" id="live" checked>
+        Calcul en direct
+      </label>
+      <button class="btn" id="btnCalc" type="button">Calculer</button>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi"><div class="kpi-title">CA / mois</div><div class="kpi-val" id="kpiCA">—</div></div>
+      <div class="kpi"><div class="kpi-title">Marge / mois</div><div class="kpi-val" id="kpiMargin">—</div></div>
+      <div class="kpi"><div class="kpi-title">Amortissement</div><div class="kpi-val" id="kpiPayback">—</div></div>
+    </div>
+
+    <div id="summaryLine" class="summary-line">—</div>
+
+    <div class="chart-wrap">
+      <canvas id="roiChart"></canvas>
+    </div>
+
   </div>
-  <div>
-    <label>Prix machine (€)</label>
-    <input id="machinePrice" value="3260">
-  </div>
-</div>
-
-<div class="grid">
-  <div></div><div class="head">Paquets/mois</div><div class="head">Prix €/kg</div><div class="head">Marge %</div>
-
-  <div class="label">Bonbon sucre cuit</div>
-  <input id="qtySugar" value="120">
-  <input id="priceSugar" value="21.30">
-  <input id="marginSugar" value="50">
-
-  <div class="label">Bonbon au miel</div>
-  <input id="qtyHoney" value="80">
-  <input id="priceHoney" value="28.90">
-  <input id="marginHoney" value="55">
-
-  <div class="label">Nougatine</div>
-  <input id="qtyNoug" value="40">
-  <input id="priceNoug" value="55.00">
-  <input id="marginNoug" value="45">
-</div>
-
-<div class="actions">
-  <label><input type="checkbox" id="live" checked> Calcul en direct</label>
-  <button class="btn" id="btnCalc">Calculer</button>
-</div>
-
-<div class="kpis">
-  <div class="kpi"><div class="kpi-title">CA / mois</div><div class="kpi-val" id="kpiCA">—</div></div>
-  <div class="kpi"><div class="kpi-title">Marge / mois</div><div class="kpi-val" id="kpiMargin">—</div></div>
-  <div class="kpi"><div class="kpi-title">Amortissement</div><div class="kpi-val" id="kpiPayback">—</div></div>
-</div>
-
-<div id="summaryLine" class="summary-line">—</div>
-
-<div class="chart-wrap">
-  <canvas id="roiChart"></canvas>
-</div>
-
-</div>
 </div>
 
 <script>
-let chart;
+  let chart;
 
-function euro(n){ return n.toLocaleString("fr-FR",{style:"currency",currency:"EUR"}); }
-function v(id){ return parseFloat(document.getElementById(id).value)||0; }
-
-function compute(){
-  const packKg = v("packSize")/1000;
-  const machine = v("machinePrice");
-
-  const items = [
-    [v("qtySugar"), v("priceSugar"), v("marginSugar")],
-    [v("qtyHoney"), v("priceHoney"), v("marginHoney")],
-    [v("qtyNoug"),  v("priceNoug"),  v("marginNoug")]
-  ];
-
-  let ca=0, marge=0, packs=0;
-  items.forEach(i=>{
-    const c = i[0]*packKg*i[1];
-    ca+=c; marge+=c*(i[2]/100); packs+=i[0];
-  });
-
-  document.getElementById("kpiCA").textContent = euro(ca);
-  document.getElementById("kpiMargin").textContent = euro(marge);
-
-  const pay = marge>0 ? (machine/marge).toFixed(1)+" mois" : "—";
-  document.getElementById("kpiPayback").textContent = pay;
-
-  document.getElementById("summaryLine").textContent =
-    `Production : ${(packs*packKg).toFixed(1)} kg/mois — machine amortie en ~${pay}`;
-
-  const labels=[], mc=[], inv=[];
-  let cum=0;
-  for(let i=1;i<=24;i++){
-    cum+=marge; labels.push("M"+i); mc.push(cum); inv.push(machine);
+  function euro(n){
+    if(!isFinite(n)) return "—";
+    return n.toLocaleString("fr-FR",{style:"currency",currency:"EUR"});
+  }
+  function v(id){
+    const el = document.getElementById(id);
+    if(!el) return 0;
+    return parseFloat(el.value) || 0;
   }
 
-  if(chart) chart.destroy();
-  chart = new Chart(roiChart,{
-    type:"line",
-    data:{labels,datasets:[
-      {label:"Marge cumulée",data:mc,borderWidth:2},
-      {label:"Investissement machine",data:inv,borderWidth:2,borderDash:[6,6]}
-    ]},
-    options:{
-      responsive:true,
-      maintainAspectRatio:false,
-      plugins:{legend:{position:"bottom"}},
-      scales:{y:{ticks:{callback:v=>v+" €"}}}
+  function setRangeFill(rangeEl){
+    const min = parseFloat(rangeEl.min || "0");
+    const max = parseFloat(rangeEl.max || rangeEl.dataset.max || "100");
+    const val = parseFloat(rangeEl.value || "0");
+    const pct = ((val - min) * 100) / (max - min);
+    rangeEl.style.background = `linear-gradient(to right, var(--accent) ${pct}%, rgba(255,255,255,0.18) ${pct}%)`;
+  }
+
+  function syncQty(id){
+    const r = document.getElementById(id);
+    const out = document.getElementById(id + "Out");
+    if(!r || !out) return;
+    out.textContent = r.value;
+    setRangeFill(r);
+  }
+
+  function compute(){
+    const packKg = v("packSize") / 1000;
+    const machine = v("machinePrice");
+
+    const qtySugar = v("qtySugar");
+    const qtyHoney = v("qtyHoney");
+    const qtyNoug  = v("qtyNoug");
+
+    const items = [
+      [qtySugar, v("priceSugar"), v("marginSugar")],
+      [qtyHoney, v("priceHoney"), v("marginHoney")],
+      [qtyNoug,  v("priceNoug"),  v("marginNoug")]
+    ];
+
+    let ca=0, marge=0, packs=0;
+    items.forEach(i=>{
+      const c = i[0] * packKg * i[1];
+      ca += c;
+      marge += c * (i[2] / 100);
+      packs += i[0];
+    });
+
+    document.getElementById("kpiCA").textContent = euro(ca);
+    document.getElementById("kpiMargin").textContent = euro(marge);
+
+    const pay = marge>0 ? (machine/marge).toFixed(1)+" mois" : "—";
+    document.getElementById("kpiPayback").textContent = pay;
+
+    document.getElementById("summaryLine").textContent =
+      `Production : ${(packs*packKg).toFixed(1)} kg/mois — machine amortie en ~${pay}`;
+
+    const labels=[], mc=[], inv=[];
+    let cum=0;
+    for(let i=1;i<=24;i++){
+      cum += marge;
+      labels.push("M"+i);
+      mc.push(cum);
+      inv.push(machine);
     }
-  });
-}
 
-["packSize","machinePrice","qtySugar","priceSugar","marginSugar","qtyHoney","priceHoney","marginHoney","qtyNoug","priceNoug","marginNoug"]
-.forEach(id=>document.getElementById(id).addEventListener("input",()=>document.getElementById("live").checked&&compute()));
+    if(chart) chart.destroy();
+    chart = new Chart(roiChart,{
+      type:"line",
+      data:{labels,datasets:[
+        {label:"Marge cumulée",data:mc,borderWidth:2,tension:0.25},
+        {label:"Investissement machine",data:inv,borderWidth:2,borderDash:[6,6],tension:0}
+      ]},
+      options:{
+        responsive:true,
+        maintainAspectRatio:false,
+        plugins:{
+          legend:{position:"bottom"}
+        },
+        scales:{
+          y:{ticks:{callback:v=>v.toLocaleString("fr-FR")+" €"}}
+        }
+      }
+    });
+  }
 
-document.getElementById("btnCalc").onclick=compute;
-compute();
+  function hook(){
+    // sliders qty
+    ["qtySugar","qtyHoney","qtyNoug"].forEach(id=>{
+      const el = document.getElementById(id);
+      if(!el) return;
+      el.addEventListener("input", ()=>{
+        syncQty(id);
+        if(document.getElementById("live").checked) compute();
+      });
+      syncQty(id);
+    });
+
+    // autres inputs
+    ["packSize","machinePrice","priceSugar","marginSugar","priceHoney","marginHoney","priceNoug","marginNoug"]
+      .forEach(id=>{
+        const el = document.getElementById(id);
+        if(!el) return;
+        el.addEventListener("input", ()=> document.getElementById("live").checked && compute());
+      });
+
+    document.getElementById("btnCalc").addEventListener("click", compute);
+  }
+
+  hook();
+  compute();
 </script>
 
 </body>
