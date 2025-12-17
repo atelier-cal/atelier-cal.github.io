@@ -221,6 +221,7 @@
       border-radius:14px;
       border:1px solid rgba(255,255,255,0.1);
       background: rgba(0,0,0,0.25);
+      position: relative;
     }
     #roiChart{ width:100%; height:100%; }
 
@@ -230,7 +231,6 @@
       .kpis{ grid-template-columns:1fr; }
       .chart-wrap{ height:420px; }
 
-      /* Sur mobile, on garde le look "field-row" visible */
       .field-row input[type="number"]{
         width: 120px;
         max-width: 44%;
@@ -271,7 +271,6 @@
       <!-- ===== SUCRE CUIT ===== -->
       <div class="label">Bonbon sucre cuit</div>
 
-      <!-- slider paquets -->
       <div class="field-row">
         <div class="qty-wrap" style="flex:1;">
           <input class="qty" type="range" id="qtySugar" min="0" max="500" step="1" value="120" data-max="500">
@@ -280,13 +279,11 @@
         <span class="field-label">Paquets / mois</span>
       </div>
 
-      <!-- prix -->
       <div class="field-row">
         <input type="number" id="priceSugar" value="21.30" step="0.10" min="0">
         <span class="field-label">Prix €/kg</span>
       </div>
 
-      <!-- marge -->
       <div class="field-row">
         <input type="number" id="marginSugar" value="50" step="1" min="0" max="100">
         <span class="field-label">Marge %</span>
@@ -360,6 +357,69 @@
 
 <script>
   let chart;
+  let pulseTimer = null;
+
+  // Plugin : affiche “€” + halo pulsant + "Amorti ici" sur le point d'amortissement
+  const amortiMarkerPlugin = {
+    id: 'amortiMarkerPlugin',
+    afterDatasetsDraw(chart, args, pluginOptions){
+      const index = chart?.$amortiIndex;
+      if(index === null || index === undefined || index < 0) return;
+
+      // dataset 0 = marge cumulée
+      const meta = chart.getDatasetMeta(0);
+      if(!meta || !meta.data || !meta.data[index]) return;
+
+      const pt = meta.data[index].getProps(['x','y'], true);
+      const ctx = chart.ctx;
+
+      // pulse (0..1)
+      const t = Date.now();
+      const pulse = (Math.sin(t / 220) + 1) / 2; // douce
+      const haloR = 10 + pulse * 10;
+
+      ctx.save();
+
+      // Halo
+      ctx.beginPath();
+      ctx.arc(pt.x, pt.y, haloR, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(201,162,77,${0.10 + pulse*0.18})`;
+      ctx.fill();
+
+      // Point
+      ctx.beginPath();
+      ctx.arc(pt.x, pt.y, 7, 0, Math.PI * 2);
+      ctx.fillStyle = '#c9a24d';
+      ctx.fill();
+
+      // € dans le point
+      ctx.fillStyle = '#0b0b0b';
+      ctx.font = '900 11px Arial';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('€', pt.x, pt.y + 0.5);
+
+      // Label “Amorti ici”
+      ctx.fillStyle = 'rgba(201,162,77,0.98)';
+      ctx.font = '900 12px Arial';
+      ctx.textAlign = 'left';
+      ctx.textBaseline = 'bottom';
+
+      const text = 'Amorti ici';
+      const tx = pt.x + 12;
+      const ty = pt.y - 10;
+
+      // petit contour sombre pour lisibilité
+      ctx.strokeStyle = 'rgba(0,0,0,0.65)';
+      ctx.lineWidth = 4;
+      ctx.strokeText(text, tx, ty);
+
+      ctx.lineWidth = 1;
+      ctx.fillText(text, tx, ty);
+
+      ctx.restore();
+    }
+  };
 
   function euro(n){
     if(!isFinite(n)) return "—";
@@ -385,6 +445,14 @@
     if(!r || !out) return;
     out.textContent = r.value;
     setRangeFill(r);
+  }
+
+  function startPulseRedraw(){
+    if(pulseTimer) clearInterval(pulseTimer);
+    // 30 fps ~ fluide sans trop charger
+    pulseTimer = setInterval(()=>{
+      if(chart) chart.draw();
+    }, 33);
   }
 
   function compute(){
@@ -427,13 +495,21 @@
       inv.push(machine);
     }
 
+    // index du mois où la marge cumulée dépasse le prix machine
+    let amortiIndex = mc.findIndex(val => val >= machine);
+    if(amortiIndex === -1) amortiIndex = null;
+
     if(chart) chart.destroy();
+
     chart = new Chart(roiChart,{
       type:"line",
-      data:{labels,datasets:[
-        {label:"Marge cumulée",data:mc,borderWidth:2,tension:0.25},
-        {label:"Investissement machine",data:inv,borderWidth:2,borderDash:[6,6],tension:0}
-      ]},
+      data:{
+        labels,
+        datasets:[
+          { label:"Marge cumulée", data:mc, borderWidth:2, tension:0.25, pointRadius:3 },
+          { label:"Investissement machine", data:inv, borderWidth:2, borderDash:[6,6], tension:0, pointRadius:0 }
+        ]
+      },
       options:{
         responsive:true,
         maintainAspectRatio:false,
@@ -443,12 +519,19 @@
         scales:{
           y:{ticks:{callback:v=>v.toLocaleString("fr-FR")+" €"}}
         }
-      }
+      },
+      plugins:[amortiMarkerPlugin]
     });
+
+    // stocke l'index dans l'instance chart pour le plugin
+    chart.$amortiIndex = amortiIndex;
+
+    // lance l'animation uniquement si amorti existe
+    if(amortiIndex !== null) startPulseRedraw();
+    else if(pulseTimer){ clearInterval(pulseTimer); pulseTimer = null; }
   }
 
   function hook(){
-    // sliders qty
     ["qtySugar","qtyHoney","qtyNoug"].forEach(id=>{
       const el = document.getElementById(id);
       if(!el) return;
@@ -459,7 +542,6 @@
       syncQty(id);
     });
 
-    // autres inputs
     ["packSize","machinePrice","priceSugar","marginSugar","priceHoney","marginHoney","priceNoug","marginNoug"]
       .forEach(id=>{
         const el = document.getElementById(id);
