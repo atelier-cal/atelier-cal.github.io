@@ -17,10 +17,10 @@
       --card: rgba(255,255,255,0.04);
     }
 
-    *{ box-sizing: border-box; }
+    *{ box-sizing:border-box; }
 
     body{
-      margin: 0;
+      margin:0;
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
       background: radial-gradient(circle at top, #1c1c1c 0%, #0b0b0b 45%, #000 100%);
@@ -33,39 +33,31 @@
 
     header{
       padding: 60px 0 18px;
-      text-align: center;
+      text-align:center;
     }
 
     h1{
-      margin: 0 0 10px;
+      margin:0 0 10px;
       font-size: clamp(2rem, 3.4vw, 2.8rem);
       letter-spacing: .5px;
     }
 
-    .subtitle{
-      margin: 0 auto;
-      max-width: 900px;
-      line-height: 1.6;
-      font-size: 1.02rem;
-      color: var(--muted);
-    }
-
     .top-actions{
       margin-top: 18px;
-      display: flex;
+      display:flex;
       gap: 12px;
-      justify-content: center;
+      justify-content:center;
       flex-wrap: wrap;
     }
 
     .btn{
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
       padding: 14px 22px;
       border: 1px solid var(--line2);
       color:#fff;
-      text-decoration: none;
+      text-decoration:none;
       font-size: .95rem;
       letter-spacing: .8px;
       text-transform: uppercase;
@@ -82,7 +74,7 @@
     main{ padding: 30px 0 50px; }
 
     .grid{
-      display: grid;
+      display:grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 16px;
     }
@@ -91,6 +83,11 @@
       background: var(--card);
       border: 1px solid var(--line);
       padding: 14px;
+    }
+
+    .img-wrap{
+      position: relative;
+      display: block;
     }
 
     .img{
@@ -117,7 +114,7 @@
 
     .tag{
       margin-top: 10px;
-      display: inline-block;
+      display:inline-block;
       padding: 6px 10px;
       border: 1px solid rgba(255,255,255,0.18);
       color: rgba(255,255,255,0.8);
@@ -131,19 +128,21 @@
       padding: 18px;
       border: 1px solid var(--line);
       background: rgba(255,255,255,0.03);
-      text-align: center;
+      text-align:center;
       color: var(--muted);
     }
     .contact a{
       color: rgba(255,255,255,0.92);
-      text-decoration: none;
+      text-decoration:none;
       border-bottom: 1px dotted rgba(255,255,255,0.25);
     }
-    .contact a:hover{ border-bottom-color: rgba(255,255,255,0.55); }
+    .contact a:hover{
+      border-bottom-color: rgba(255,255,255,0.55);
+    }
 
     footer{
       padding: 28px 0 38px;
-      text-align: center;
+      text-align:center;
       font-size: .9rem;
       color: rgba(255,255,255,0.55);
     }
@@ -154,6 +153,71 @@
     @media (max-width: 560px){
       header{ padding-top: 50px; }
       .grid{ grid-template-columns: 1fr; }
+    }
+
+    /* ===== BADGE 3D PREMIUM (FIABLE) ===== */
+    .img-wrap.has-3d{
+      cursor: pointer; /* clic sur toute la zone image */
+    }
+
+    .badge-3d{
+      position: absolute;
+      left: 12px;
+      bottom: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.62);
+      border: 1px solid rgba(255,255,255,0.30);
+      color: rgba(255,255,255,0.95);
+      font-size: 12px;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+      backdrop-filter: blur(6px);
+      pointer-events: none;
+      z-index: 5;
+
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity .18s ease, transform .18s ease, box-shadow .18s ease;
+    }
+
+    .badge-3d svg{
+      width: 14px;
+      height: 14px;
+      display:block;
+      opacity: .95;
+    }
+
+    /* PC: visible au hover */
+    .card:hover .img-wrap.has-3d .badge-3d{
+      opacity: 1;
+      transform: translateY(0);
+      box-shadow: 0 0 20px rgba(255,255,255,0.10);
+    }
+
+    /* Mobile: visible tout le temps */
+    @media (hover: none){
+      .img-wrap.has-3d .badge-3d{
+        opacity: .95;
+        transform: none;
+      }
+    }
+
+    /* Pulse discrète */
+    @keyframes pulse3d {
+      0%   { transform: translateY(0) scale(1); }
+      35%  { transform: translateY(0) scale(1.06); }
+      70%  { transform: translateY(0) scale(1); }
+      100% { transform: translateY(0) scale(1); }
+    }
+
+    .img-wrap.has-3d.pulse .badge-3d{
+      opacity: .98;
+      transform: translateY(0);
+      animation: pulse3d .85s ease-out 1;
     }
 
     /* ===== MODAL 3D ===== */
@@ -194,14 +258,10 @@
       color:#000;
     }
 
-    .img-clickable{ cursor: pointer; }
-
-    /* Repère visuel du recentrage natif */
     .recenter-hint{
       position: absolute;
       bottom: 18px;
       right: 18px;
-      left: auto;
       width: 42px;
       height: 42px;
       border-radius: 50%;
@@ -235,83 +295,133 @@
     <div class="container">
       <div class="grid">
 
-        <!-- CARTE 1 -->
+        <!-- PASTILLE -> 3D -->
         <div class="card">
-          <img class="img" src="modele-perle.png" alt="Modèle Perle 15 mm">
-          <div class="title">Perle Ø 15 mm</div>
-          <p class="desc">Forme polyvalente, démoulage propre, idéale pour bonbons en sucre cuit.</p>
-          <span class="tag">Classique</span>
-        </div>
-
-        <!-- CARTE 2 (Pastille -> 3D) -->
-        <div class="card">
-          <img class="img img-clickable"
-               src="modele-pastille.png"
-               alt="Modèle Pastille"
-               onclick="open3D('pastille.glb')">
+          <div class="img-wrap has-3d" onclick="open3D('pastille.glb')">
+            <img class="img" src="modele-pastille.png" alt="Modèle Pastille">
+            <div class="badge-3d">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+                <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
+              </svg>
+              <span>Voir en 3D</span>
+            </div>
+          </div>
           <div class="title">Pastille</div>
           <p class="desc">Format standard, parfait pour séries.</p>
           <span class="tag">Standard</span>
         </div>
 
-        <!-- CARTE 3 (Abeille -> 3D) -->
+        <!-- ABEILLE -> 3D -->
         <div class="card">
-          <img class="img img-clickable"
-               src="modele-abeille.png"
-               alt="Modèle Abeille"
-               onclick="open3D('abeille.glb')">
+          <div class="img-wrap has-3d" onclick="open3D('abeille.glb')">
+            <img class="img" src="modele-abeille.png" alt="Modèle Abeille">
+            <div class="badge-3d">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+                <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
+              </svg>
+              <span>Voir en 3D</span>
+            </div>
+          </div>
           <div class="title">Abeille (gravée)</div>
           <p class="desc">Signature “miel”, relief précis, rendu premium.</p>
           <span class="tag">Signature</span>
         </div>
 
-        <!-- CARTE 4 -->
+        <!-- HEXAGONE -> 3D -->
         <div class="card">
-          <img class="img" src="modèle-hexagone.png" alt="Modèle Hexagone">
+          <div class="img-wrap has-3d" onclick="open3D('hexagone.glb')">
+            <img class="img" src="modèle-hexagone.png" alt="Modèle Hexagone">
+            <div class="badge-3d">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+                <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
+              </svg>
+              <span>Voir en 3D</span>
+            </div>
+          </div>
           <div class="title">Hexagone</div>
           <p class="desc">Forme hexagonale élégante.</p>
           <span class="tag">Géométrique</span>
         </div>
 
-        <!-- CARTE 5 (Feuille -> 3D) -->
+        <!-- FEUILLE -> 3D -->
         <div class="card">
-          <img class="img img-clickable"
-               src="modele-feuille.png"
-               alt="Modèle Feuille"
-               onclick="open3D('feuille.glb')">
+          <div class="img-wrap has-3d" onclick="open3D('feuille.glb')">
+            <img class="img" src="modele-feuille.png" alt="Modèle Feuille">
+            <div class="badge-3d">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+                <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
+              </svg>
+              <span>Voir en 3D</span>
+            </div>
+          </div>
           <div class="title">Feuille</div>
           <p class="desc">Motif naturel et élégant, très bon rendu visuel.</p>
           <span class="tag">Nature</span>
         </div>
 
-        <!-- CARTE 6 (exemple / perso) -->
+        <!-- PERSONNALISATION -> 3D -->
         <div class="card">
-          <img class="img" src="modele-personnalise.png" alt="Modèle personnalisable">
+          <div class="img-wrap has-3d" onclick="open3D('surmesure.glb')">
+            <img class="img" src="modele-personnalise.png" alt="Modèle personnalisable">
+            <div class="badge-3d">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+                <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
+              </svg>
+              <span>Voir en 3D</span>
+            </div>
+          </div>
           <div class="title">Personnalisation</div>
           <p class="desc">Logo, motif, format sur demande. Étude rapide et faisabilité selon recette.</p>
           <span class="tag">Sur mesure</span>
         </div>
 
-        <!-- CARTE : OEUF (-> 3D) -->
+        <!-- OEUF -> 3D -->
         <div class="card">
-          <img class="img img-clickable"
-               src="modele-oeuf.png"
-               alt="Modèle Œuf"
-               onclick="open3D('oeuf.glb')">
+          <div class="img-wrap has-3d" onclick="open3D('oeuf.glb')">
+            <img class="img" src="modele-oeuf.png" alt="Modèle Œuf">
+            <div class="badge-3d">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+                <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
+              </svg>
+              <span>Voir en 3D</span>
+            </div>
+          </div>
           <div class="title">Œuf</div>
           <p class="desc">Forme douce et arrondie, très bon démoulage, idéale pour bonbons premium.</p>
           <span class="tag">Classique</span>
         </div>
 
-        <!-- CARTE : PASTILLE OVALE (-> 3D) -->
+        <!-- OVALE -> 3D -->
         <div class="card">
-          <img class="img img-clickable"
-               src="modele-pastille-ovale.png"
-               alt="Modèle Pastille ovale"
-               onclick="open3D('ovale.glb')">
+          <div class="img-wrap has-3d" onclick="open3D('ovale.glb')">
+            <img class="img" src="modele-pastille-ovale.png" alt="Modèle Pastille ovale">
+            <div class="badge-3d">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+                <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
+              </svg>
+              <span>Voir en 3D</span>
+            </div>
+          </div>
           <div class="title">Pastille ovale</div>
           <p class="desc">Format élégant et allongé, excellente lisibilité des gravures.</p>
           <span class="tag">Standard</span>
+        </div>
+
+        <!-- PERLE (EN DERNIER, NON CLIQUABLE) -->
+        <div class="card">
+          <div class="img-wrap">
+            <img class="img" src="modele-perle.png" alt="Modèle Perle 15 mm">
+          </div>
+          <div class="title">Perle Ø 15 mm</div>
+          <p class="desc">Forme polyvalente, démoulage propre, idéale pour bonbons en sucre cuit.</p>
+          <span class="tag">Classique</span>
         </div>
 
       </div>
@@ -323,9 +433,7 @@
     </div>
   </main>
 
-  <footer>
-    Atelier CAL – Tous droits réservés
-  </footer>
+  <footer>Atelier CAL – Tous droits réservés</footer>
 
   <!-- MODAL 3D -->
   <div id="viewer3D" class="viewer3d-overlay" onclick="close3D(event)">
@@ -371,7 +479,7 @@
       model.src = '';
 
       requestAnimationFrame(() => {
-        model.src = glbPath + '?v=' + Date.now(); // reload à chaque ouverture
+        model.src = glbPath + '?v=' + Date.now();
 
         const onLoad = () => {
           model.cameraOrbit = DEFAULT_ORBIT;
@@ -387,7 +495,6 @@
       if (!force && e && e.target && e.target.id !== 'viewer3D') return;
 
       const model = document.getElementById('model3d');
-
       model.autoRotate = false;
       model.src = '';
       model.cameraOrbit = DEFAULT_ORBIT;
@@ -400,6 +507,38 @@
     window.addEventListener('keydown', (ev) => {
       if (ev.key === 'Escape') close3D(null, true);
     });
+
+    // Pulse premium au scroll (entrée dans le viewport + stop scroll)
+    (function(){
+      const targets = document.querySelectorAll('.img-wrap.has-3d');
+      if (!('IntersectionObserver' in window) || targets.length === 0) return;
+
+      const pulseOnce = (el) => {
+        el.classList.remove('pulse');
+        void el.offsetWidth;
+        el.classList.add('pulse');
+      };
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) pulseOnce(entry.target);
+        });
+      }, { threshold: 0.45 });
+
+      targets.forEach(t => io.observe(t));
+
+      let tmr;
+      window.addEventListener('scroll', () => {
+        clearTimeout(tmr);
+        tmr = setTimeout(() => {
+          targets.forEach(el => {
+            const r = el.getBoundingClientRect();
+            const mid = window.innerHeight * 0.55;
+            if (r.top < mid && r.bottom > mid) pulseOnce(el);
+          });
+        }, 160);
+      }, { passive: true });
+    })();
   </script>
 </body>
 </html>
