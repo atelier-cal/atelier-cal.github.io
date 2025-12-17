@@ -16,6 +16,38 @@
       --line2: rgba(255,255,255,0.28);
       --card: rgba(255,255,255,0.04);
     }
+    .recenter-btn{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.55);
+  border: 1px solid rgba(255,255,255,0.35);
+  color: #fff;
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 52px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 3;
+  backdrop-filter: blur(4px);
+}
+.recenter-btn:hover{
+  background: rgba(255,255,255,0.9);
+  color: #000;
+}
+@media (max-width: 768px){
+  .recenter-btn{
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+    line-height: 46px;
+  }
+}
+
 
     *{ box-sizing:border-box; }
 
@@ -305,6 +337,7 @@
   <div id="viewer3D" class="viewer3d-overlay" onclick="close3D(event)">
     <div class="viewer3d-box">
       <button class="viewer3d-close" onclick="close3D(null, true)">✕</button>
+      <button class="recenter-btn" onclick="recenter3D()" title="Recentrer">+</button>
 
       <model-viewer
         id="model3d"
@@ -330,6 +363,18 @@
   <script>
     const DEFAULT_ORBIT = "0deg 75deg 4m";
     const DEFAULT_FOV = "30deg";
+    function recenter3D(){
+  const model = document.getElementById('model3d');
+  if(!model) return;
+
+  model.cameraOrbit = DEFAULT_ORBIT;
+  model.fieldOfView = DEFAULT_FOV;
+
+  if (model.jumpCameraToGoal) {
+    model.jumpCameraToGoal();
+  }
+}
+
 
     function open3D(glbPath){
       const overlay = document.getElementById('viewer3D');
