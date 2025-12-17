@@ -343,11 +343,13 @@
       model.autoRotate = true;
       model.cameraOrbit = DEFAULT_ORBIT;
       model.fieldOfView = DEFAULT_FOV;
+      if (model.jumpCameraToGoal) model.jumpCameraToGoal();
+
       model.src = '';
 
       // 3) charger le modèle ensuite (propre)
       requestAnimationFrame(() => {
-        model.src = glbPath;
+      model.src = glbPath + '?v=' + Date.now();   // force un rechargement à chaque ouverture
 
         // reset après chargement (garantit qu'il revient à la position par défaut)
         const onLoad = () => {
