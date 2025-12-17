@@ -273,7 +273,7 @@
           <img class="img img-clickable"
                src="modele-oeuf.png"
                alt="Modèle Œuf"
-               onclick="open3D('tmx4536zczsu.glb')">
+               onclick="open3D('oeuf.glb')">
           <div class="title">Œuf</div>
           <p class="desc">Forme douce et arrondie, très bon démoulage, idéale pour bonbons premium.</p>
           <span class="tag">Classique</span>
@@ -306,16 +306,24 @@
     <div class="viewer3d-box">
       <button class="viewer3d-close" onclick="close3D()">✕</button>
 
-      <model-viewer
-        id="model3d"
-        src=""
-        camera-controls
-        interaction-prompt="none"
-        environment-image="neutral"
-        exposure="1.05"
-        shadow-intensity="0.35"
-        style="width:100%; height:100%; background: radial-gradient(circle at center, #1a1a1a, #000);">
-      </model-viewer>
+<model-viewer
+  id="model3d"
+  src=""
+  camera-controls
+  interaction-prompt="none"
+  environment-image="neutral"
+  exposure="1.05"
+  shadow-intensity="0.35"
+  camera-orbit="0deg 75deg 2.5m"
+  field-of-view="30deg"
+  style="width:100%; height:100%; background: radial-gradient(circle at center, #1a1a1a, #000);">
+
+  <div slot="poster" style="color:white;opacity:.85;font-family:Arial;padding:14px;">
+    Chargement du modèle 3D…
+  </div>
+
+</model-viewer>
+
     </div>
   </div>
 
