@@ -35,12 +35,12 @@
       background: radial-gradient(circle at top, #1c1c1c 0%, #0b0b0b 45%, #000 100%);
     }
 
-    /* CONTACT LINKS */
-    .contact-link{
+    /* contact links (avoid default blue) */
+    a[href^="mailto"], a[href^="tel"], .contact-link{
       color: rgba(255,255,255,0.65);
       text-decoration: none;
     }
-    .contact-link:hover{
+    a[href^="mailto"]:hover, a[href^="tel"]:hover, .contact-link:hover{
       color: rgba(255,255,255,0.9);
     }
 
@@ -152,6 +152,7 @@
       border: 1px solid rgba(201,162,77,0.35);
       background: linear-gradient(135deg, rgba(201,162,77,0.16), rgba(255,255,255,0.06));
       box-shadow: 0 10px 26px rgba(0,0,0,0.35);
+      vertical-align: middle;
     }
 
     h1{
@@ -207,6 +208,70 @@
 
 <body>
 
+<!-- BANNER -->
+<div class="top-banner">
+  <div class="banner-track">
+    <div class="banner-clone">
+      <div class="banner-text">✨ Season’s greetings — thank you for your support</div>
+      <div class="banner-candies">
+        <img src="/assets/images/ban-1.png" class="candy c1" alt="">
+        <img src="/assets/images/ban-2.png" class="candy c2" alt="">
+        <img src="/assets/images/ban-3.png" class="candy c3" alt="">
+        <img src="/assets/images/ban-4.png" class="candy c4" alt="">
+        <img src="/assets/images/ban-5.png" class="candy c5" alt="">
+      </div>
+      <div class="banner-text">SRC Roller Frame – French design</div>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="container">
+    <img src="/logo-atelier-cal.png" class="logo" alt="Atelier CAL">
+
+    <nav>
+      <a href="/en/index.html">Home</a> |
+      <a href="/en/modeles.html">Rollers</a> |
+      <a href="/en/partners-trainers.html">
+        Trainer partnership
+        <span class="nav-badge">NEW</span>
+      </a>
+      |
+      <!-- LANGUAGE -->
+      <a href="/index.html" title="Français">
+        <img src="/flag-fr.svg" alt="Français" style="height:18px;vertical-align:middle;">
+      </a>
+      <a href="/en/index.html" title="English">
+        <img src="/flag-en.svg" alt="English" style="height:18px;vertical-align:middle;opacity:.6;">
+      </a>
+    </nav>
+
+    <h1>Atelier CAL</h1>
+    <p class="subtitle">
+      Design and manufacturing of professional machines for boiled sugar candy production.
+    </p>
+  </div>
+</header>
+
+<!-- PRESENTATION -->
+<section>
+  <div class="container">
+    <h2>Presentation</h2>
+    <p>SRC SERIES 1 – Motorized roller frame</p>
+
+    <div class="block">
+      <video class="hero-video" autoplay loop muted playsinline controls>
+        <source src="/machine.mp4" type="video/mp4">
+      </video>
+
+      <a class="cta" href="/en/machine.html">View the machine</a>
+      <a class="cta" href="/en/modeles.html">View rollers</a>
+      <a class="cta" href="/calculer.html">ROI calculator</a>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section>
   <div class="container">
@@ -214,24 +279,13 @@
 
     <p>
       Email:
-      <a class="contact-link" href="mailto:contact@atelier-cal.fr">
-        contact@atelier-cal.fr
-      </a>
+      <a class="contact-link" href="mailto:contact@atelier-cal.fr">contact@atelier-cal.fr</a>
     </p>
 
     <p>
       Phone / WhatsApp:
-      <a
-        class="contact-link"
-        href="https://wa.me/33677845435"
-        target="_blank"
-        rel="noopener"
-      >
-        <img
-          src="/whatsapp.svg"
-          alt="WhatsApp"
-          style="height:16px;vertical-align:middle;margin-right:6px;"
-        >
+      <a class="contact-link" href="https://wa.me/33677845435" target="_blank" rel="noopener">
+        <img src="/whatsapp.svg" alt="WhatsApp" style="height:16px;vertical-align:middle;margin-right:6px;">
         +33 6 77 84 54 35
       </a>
     </p>
