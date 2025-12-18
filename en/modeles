@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K4502PGZ0X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K4502PGZ0X');
+  </script>
+
+  <meta charset="UTF-8" />
+  <title>Available Roller Models | Atelier CAL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="description" content="Discover Atelier CAL roller models (bronze). View each candy shape in 3D and request a quote for standard or custom designs." />
+  <meta name="keywords" content="bronze rollers, candy rollers, confectionery rollers, custom candy mold, 3D candy model" />
+  <meta name="author" content="Atelier CAL" />
+
+  <!-- viewer 3D (model-viewer) -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <style>
+    :root{
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.75);
+      --line: rgba(255,255,255,0.18);
+      --line2: rgba(255,255,255,0.28);
+      --card: rgba(255,255,255,0.04);
+    }
+
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at top, #1c1c1c 0%, #0b0b0b 45%, #000 100%);
+    }
+
+    .container{
+      width: min(1120px, 92vw);
+      margin: 0 auto;
+    }
+
+    /* Avoid default blue links */
+    a[href^="mailto"], a[href^="tel"], a[href^="https://wa.me"], .contact a{
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+    }
+    a[href^="mailto"]:hover, a[href^="tel"]:hover, a[href^="https://wa.me"]:hover, .contact a:hover{
+      color: rgba(255,255,255,0.92);
+    }
+
+    header{
+      padding: 60px 0 18px;
+      text-align:center;
+    }
+
+    h1{
+      margin:0 0 10px;
+      font-size: clamp(2rem, 3.4vw, 2.8rem);
+      letter-spacing: .5px;
+    }
+
+    .subtitle{
+      max-width: 920px;
+      margin: 0 auto;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .top-actions{
+      margin-top: 18px;
+      display:flex;
+      gap: 12px;
+      justify-content:center;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 14px 22px;
+      border: 1px solid var(--line2);
+      color:#fff;
+      text-decoration:none;
+      font-size: .95rem;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+      background: transparent;
+      transition: all .25s ease;
+    }
+    .btn:hover{
+      background:#fff;
+      color:#000;
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+      transform: translateY(-1px);
+    }
+
+    /* Language mini-switch */
+    .lang{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.02);
+    }
+    .lang img{ height:18px; vertical-align:middle; }
+    .lang a{ opacity:.9; }
+    .lang a.is-active{ opacity:.55; pointer-events:none; }
+
+    main{ padding: 30px 0 50px; }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card{
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 14px;
+    }
+
+    .img-wrap{
+      position: relative;
+      display: block;
+    }
+
+    .img{
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: #000;
+      border: 1px solid rgba(255,255,255,0.14);
+      display: block;
+      object-fit: contain;
+    }
+
+    .title{
+      margin: 12px 0 6px;
+      font-size: 1.05rem;
+      letter-spacing: .2px;
+    }
+
+    .desc{
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: .95rem;
+    }
+
+    .tag{
+      margin-top: 10px;
+      display:inline-block;
+      padding: 6px 10px;
+      border: 1px solid rgba(255,255,255,0.18);
+      color: rgba(255,255,255,0.8);
+      font-size: .8rem;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+    }
+
+    .contact{
+      margin-top: 26px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      text-align:center;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    footer{
+      padding: 28px 0 38px;
+      text-align:center;
+      font-size: .9rem;
+      color: rgba(255,255,255,0.55);
+    }
+
+    @media (max-width: 920px){
+      .grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 560px){
+      header{ padding-top: 50px; }
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    /* ===== 3D BADGE ===== */
+    .img-wrap.has-3d{ cursor: pointer; }
+
+    .badge-3d{
+      position: absolute;
+      left: 12px;
+      bottom: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.62);
+      border: 1px solid rgba(255,255,255,0.30);
+      color: rgba(255,255,255,0.95);
+      font-size: 12px;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+      backdrop-filter: blur(6px);
+      pointer-events: none;
+      z-index: 5;
+
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity .18s ease, transform .18s ease, box-shadow .18s ease;
+    }
+
+    .badge-3d svg{
+      width: 14px;
+      height: 14px;
+      display:block;
+      opacity: .95;
+    }
+
+    .card:hover .img-wrap.has-3d .badge-3d{
+      opacity: 1;
+      transform: translateY(0);
+      box-shadow: 0 0 20px rgba(255,255,255,0.10);
+    }
+
+    @media (hover: none){
+      .img-wrap.has-3d .badge-3d{
+        opacity: .95;
+        transform: none;
+      }
+    }
+
+    @keyframes pulse3d {
+      0%   { transform: translateY(0) scale(1); }
+      35%  { transform: translateY(0) scale(1.06); }
+      70%  { transform: translateY(0) scale(1); }
+      100% { transform: translateY(0) scale(1); }
+    }
+
+    .img-wrap.has-3d.pulse .badge-3d{
+      opacity: .98;
+      transform: translateY(0);
+      animation: pulse3d .85s ease-out 1;
+    }
+
+    /* ===== 3D MODAL ===== */
+    .viewer3d-overlay{
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 14px;
+    }
+
+    .viewer3d-box{
+      width: min(980px, 100%);
+      height: min(640px, 82vh);
+      background: #000;
+      border: 1px solid rgba(255,255,255,0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .viewer3d-close{
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+      font-size: 18px;
+      padding: 6px 10px;
+      cursor: pointer;
+      z-index: 2;
+    }
+    .viewer3d-close:hover{
+      background:#fff;
+      color:#000;
+    }
+
+    .recenter-hint{
+      position: absolute;
+      bottom: 18px;
+      right: 18px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 20px;
+      line-height: 40px;
+      text-align: center;
+      z-index: 3;
+      backdrop-filter: blur(4px);
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h1>Available models</h1>
+      <p class="subtitle">
+        Click a model to open the 3D viewer. Standard shapes are available, and we can also create custom designs.
+      </p>
+
+      <div class="top-actions">
+        <a class="btn" href="/en/index.html">Back</a>
+        <a class="btn" href="#contact">Request a quote</a>
+
+        <div class="lang" aria-label="Language switch">
+          <a href="/modeles.html" title="Français">
+            <img src="/flag-fr.svg" alt="Français">
+          </a>
+          <a class="is-active" href="/en/modeles.html" title="English">
+            <img src="/flag-en.svg" alt="English">
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="grid">
+
+        <!-- LOZENGE / PASTILLE -> 3D -->
+        <div class="card">
+          <div class="img-wrap has-3d" onclick="open3D('/pastille.glb')">
+            <img class="img" src="/modele-pastille.png" alt="Lozenge model">
+            <div class="badge-3d">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+                <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
+              </svg>
+              <span>View 3D</span>
+            </div>
+          </div>
+          <div class="title">Lozenge</div>
+          <p class="desc">Standard size, perfect for production runs.</p>
+          <span class="tag">Standard</span>
+        </div>
+
+        <!-- BEE -> 3D -->
+        <div class="card">
+          <div class="img-wrap has-3d" onclick="open3D('/abeille.glb')">
+            <img class="img" src="/modele-abeille.png" alt="Bee model">
+            <div class="badge-3d">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+                <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
+              </svg>
+              <span>View 3D</span>
+            </div>
+          </div>
+          <div class="title">Bee (engraved)</div>
+          <p class="desc">“Honey” signature design, crisp relief and premium look.</p>
+          <span class="tag">Signature</span>
+        </div>
+
+        <!-- HEXAGON -> 3D -->
+        <div class="card">
+          <div class="img-wrap has-3d" onclick="open3D('/hexagone.glb')">
+            <img class="img" src="/modèle-hexagone.png" alt="Hexagon model">
+            <div class="badge-3d">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+                <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
+              </svg>
+              <span>View 3D</span>
+            </div>
+          </div>
+          <div class="title">Hexagon</div>
+          <p class="desc">Elegant hexagon shape.</p>
+          <span class="tag">Geometric</span>
+        </div>
+
+        <!-- LEAF -> 3D -->
+        <div class="card">
+          <div class="img-wrap has-3d" onclick="open3D('/feuille.glb')">
+            <img class="img" src="/modele-feuille.png" alt="Leaf model">
+            <div class="badge-3d">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+                <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
+              </svg>
+              <span>View 3D</span>
+            </div>
+          </div>
+          <div class="title">Leaf</div>
+          <p class="desc">Natural and elegant pattern with a strong visual finish.</p>
+          <span class="tag">Nature</span>
+        </div>
+
+        <!-- CUSTOM -> 3D -->
+        <div class="card">
+          <div class="img-wrap has-3d" onclick="open3D('/surmesure.glb')">
+            <img class="img" src="/modele-personnalise.png" alt="Custom model">
+            <div class="badge-3d">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+                <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
+              </svg>
+              <span>View 3D</span>
+            </div>
+          </div>
+          <div class="title">Custom design</div>
+          <p class="desc">Logo, pattern and size on request. Quick feasibility review depending on your recipe.</p>
+          <span class="tag">Custom</span>
+        </div>
+
+        <!-- EGG -> 3D -->
+        <div class="card">
+          <div class="img-wrap has-3d" onclick="open3D('/oeuf.glb')">
+            <img class="img" src="/modele-oeuf.png" alt="Egg model">
+            <div class="badge-3d">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+                <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
+              </svg>
+              <span>View 3D</span>
+            </div>
+          </div>
+          <div class="title">Egg</div>
+          <p class="desc">Soft rounded shape, easy release—ideal for premium candies.</p>
+          <span class="tag">Classic</span>
+        </div>
+
+        <!-- OVAL LOZENGE -> 3D -->
+        <div class="card">
+          <div class="img-wrap has-3d" onclick="open3D('/ovale.glb')">
+            <img class="img" src="/modele-pastille-ovale.png" alt="Oval lozenge model">
+            <div class="badge-3d">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+                <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
+              </svg>
+              <span>View 3D</span>
+            </div>
+          </div>
+          <div class="title">Oval lozenge</div>
+          <p class="desc">Elegant elongated format with excellent engraving readability.</p>
+          <span class="tag">Standard</span>
+        </div>
+
+        <!-- PEARL (LAST, NOT CLICKABLE) -->
+        <div class="card">
+          <div class="img-wrap">
+            <img class="img" src="/modele-perle.png" alt="Pearl 15 mm model">
+          </div>
+          <div class="title">Pearl Ø 15 mm</div>
+          <p class="desc">Versatile shape, clean release—ideal for boiled sugar candies.</p>
+          <span class="tag">Classic</span>
+        </div>
+
+      </div>
+
+      <div id="contact" class="contact">
+        <div>
+          Contact:
+          <a href="mailto:contact@atelier-cal.fr">contact@atelier-cal.fr</a>
+        </div>
+        <div>
+          Phone / WhatsApp:
+          <a href="https://wa.me/33677845435" target="_blank" rel="noopener">
+            <img src="/whatsapp.svg" alt="WhatsApp" style="height:16px;vertical-align:middle;margin-right:6px;">
+            +33 6 77 84 54 35
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>Atelier CAL – All rights reserved</footer>
+
+  <!-- 3D MODAL -->
+  <div id="viewer3D" class="viewer3d-overlay" onclick="close3D(event)">
+    <div class="viewer3d-box">
+      <button class="viewer3d-close" onclick="close3D(null, true)">✕</button>
+      <div class="recenter-hint">⌖</div>
+
+      <model-viewer
+        id="model3d"
+        src=""
+        camera-controls
+        auto-rotate
+        interaction-prompt="none"
+        environment-image="neutral"
+        exposure="1.05"
+        shadow-intensity="0.35"
+        camera-orbit="0deg 75deg 4m"
+        field-of-view="30deg"
+        style="width:100%; height:100%; background: radial-gradient(circle at center, #1a1a1a, #000);">
+        <div slot="poster" style="color:white;opacity:.85;font-family:Arial;padding:14px;">
+          Loading 3D model…
+        </div>
+      </model-viewer>
+    </div>
+  </div>
+
+  <script>
+    const DEFAULT_ORBIT = "0deg 75deg 4m";
+    const DEFAULT_FOV = "30deg";
+
+    function open3D(glbPath){
+      const overlay = document.getElementById('viewer3D');
+      const model = document.getElementById('model3d');
+
+      overlay.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+
+      model.autoRotate = true;
+      model.cameraOrbit = DEFAULT_ORBIT;
+      model.fieldOfView = DEFAULT_FOV;
+      if (model.jumpCameraToGoal) model.jumpCameraToGoal();
+
+      model.src = '';
+
+      requestAnimationFrame(() => {
+        model.src = glbPath + '?v=' + Date.now();
+
+        const onLoad = () => {
+          model.cameraOrbit = DEFAULT_ORBIT;
+          model.fieldOfView = DEFAULT_FOV;
+          model.autoRotate = true;
+          model.removeEventListener('load', onLoad);
+        };
+        model.addEventListener('load', onLoad);
+      });
+    }
+
+    function close3D(e, force){
+      if (!force && e && e.target && e.target.id !== 'viewer3D') return;
+
+      const model = document.getElementById('model3d');
+      model.autoRotate = false;
+      model.src = '';
+      model.cameraOrbit = DEFAULT_ORBIT;
+      model.fieldOfView = DEFAULT_FOV;
+
+      document.getElementById('viewer3D').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    window.addEventListener('keydown', (ev) => {
+      if (ev.key === 'Escape') close3D(null, true);
+    });
+
+    /* Premium pulse on viewport entry */
+    (function(){
+      const targets = document.querySelectorAll('.img-wrap.has-3d');
+      if (!('IntersectionObserver' in window) || targets.length === 0) return;
+
+      const pulseOnce = (el) => {
+        el.classList.remove('pulse');
+        void el.offsetWidth;
+        el.classList.add('pulse');
+      };
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) pulseOnce(entry.target);
+        });
+      }, { threshold: 0.45 });
+
+      targets.forEach(t => io.observe(t));
+
+      let tmr;
+      window.addEventListener('scroll', () => {
+        clearTimeout(tmr);
+        tmr = setTimeout(() => {
+          targets.forEach(el => {
+            const r = el.getBoundingClientRect();
+            const mid = window.innerHeight * 0.55;
+            if (r.top < mid && r.bottom > mid) pulseOnce(el);
+          });
+        }, 160);
+      }, { passive: true });
+    })();
+  </script>
+</body>
+</html>
