@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K4502PGZ0X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K4502PGZ0X');
+  </script>
+
+  <meta charset="UTF-8" />
+  <title>Professional Candy Machine – SRC Series 1 | Atelier CAL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="description" content="Atelier CAL SRC Series 1 professional candy machine. Motorized roller frame with bronze rollers for boiled sugar candies, nougatine and honey specialties." />
+  <link rel="canonical" href="https://atelier-cal.fr/en/machine.html" />
+
+  <style>
+    :root{
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.72);
+      --line: rgba(255,255,255,0.18);
+      --line2: rgba(255,255,255,0.28);
+      --card: rgba(255,255,255,0.04);
+      --card2: rgba(255,255,255,0.06);
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at top, #1c1c1c 0%, #0b0b0b 45%, #000 100%);
+    }
+    .container{
+      width: min(1120px, 92vw);
+      margin: 0 auto;
+    }
+
+    /* links (avoid default blue) */
+    a[href^="mailto"], a[href^="tel"], a[href^="https://wa.me"]{
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+    }
+    a[href^="mailto"]:hover, a[href^="tel"]:hover, a[href^="https://wa.me"]:hover{
+      color: rgba(255,255,255,0.9);
+    }
+
+    /* NAV */
+    nav{
+      text-align:center;
+      padding: 18px 0 10px;
+    }
+    nav a{
+      color: rgba(255,255,255,0.82);
+      text-decoration:none;
+      margin: 0 10px;
+      font-size: .95rem;
+    }
+    nav a:hover{ text-decoration:underline; }
+
+    /* BLOCKS */
+    section{ padding: 26px 0 48px; }
+    .block{
+      border: 1px solid var(--line);
+      background: var(--card);
+      padding: 26px;
+      margin: 18px auto 0;
+    }
+    .center{ text-align:center; }
+
+    h1{
+      margin: 0 0 14px;
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: .3px;
+    }
+    .subtitle{
+      color: var(--muted);
+      max-width: 920px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* CTA */
+    .cta-group{
+      display:flex;
+      justify-content:center;
+      gap: 14px;
+      flex-wrap:wrap;
+      margin-top: 18px;
+    }
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding: 14px 34px;
+      border: 1px solid var(--line2);
+      text-decoration:none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: .95rem;
+      transition: transform .18s ease, box-shadow .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
+      width: fit-content;
+    }
+    .cta.primary{
+      background:#fff;
+      color:#000;
+      border-color: rgba(255,255,255,0.9);
+    }
+    .cta.ghost{
+      background: transparent;
+      color:#fff;
+    }
+    .cta:hover{
+      box-shadow: 0 0 22px rgba(255,255,255,0.18);
+      transform: translateY(-1px);
+    }
+    .cta:active{ transform: translateY(0px); box-shadow:none; }
+
+    /* INTERACTIVE IMAGE */
+    .machine-wrap{
+      position: relative;
+      width: min(980px, 100%);
+      margin: 14px auto 0;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,0.35);
+      overflow:hidden;
+    }
+    .machine-wrap img{
+      width:100%;
+      height:auto;
+      display:block;
+      filter: saturate(1.02) contrast(1.02);
+      user-select:none;
+      -webkit-user-drag:none;
+    }
+    .machine-wrap::after{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      pointer-events:none;
+      background: radial-gradient(circle at 40% 30%, rgba(255,255,255,0.08), rgba(0,0,0,0.0) 38%),
+                  radial-gradient(circle at 70% 80%, rgba(255,255,255,0.06), rgba(0,0,0,0.0) 42%),
+                  radial-gradient(circle at center, rgba(0,0,0,0.0) 55%, rgba(0,0,0,0.55) 100%);
+      mix-blend-mode: screen;
+      opacity: .55;
+    }
+
+    /* HOTSPOTS */
+    .hotspot{
+      position:absolute;
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.55);
+      background: rgba(0,0,0,0.35);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      backdrop-filter: blur(6px);
+      -webkit-tap-highlight-color: transparent;
+      transition: transform .15s ease, background .2s ease, border-color .2s ease;
+    }
+    .hotspot:hover{ transform: scale(1.04); border-color: rgba(255,255,255,0.85); }
+    .hotspot:active{ transform: scale(0.98); }
+    .hotspot span{
+      font-weight: 700;
+      color: rgba(255,255,255,0.92);
+      font-size: 1rem;
+      line-height: 1;
+    }
+    .hotspot .ring{
+      position:absolute;
+      inset:-10px;
+      border-radius:999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      opacity:.55;
+      animation: pulse 2.2s ease-in-out infinite;
+    }
+    @keyframes pulse{
+      0%,100%{ transform: scale(0.92); opacity:.35; }
+      50%{ transform: scale(1.08); opacity:.65; }
+    }
+
+    /* DETAILS GRID (below) */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .card{
+      border: 1px solid var(--line);
+      background: var(--card2);
+      padding: 16px;
+    }
+    .card h3{
+      margin: 0 0 6px;
+      font-size: 1.05rem;
+    }
+    .card p{
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: .96rem;
+    }
+    .card button{
+      margin-top: 10px;
+      width:100%;
+      padding: 12px 12px;
+      border: 1px solid var(--line2);
+      background: transparent;
+      color:#fff;
+      cursor:pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .card button:hover{
+      background:#fff;
+      color:#000;
+    }
+
+    /* MODAL */
+    .modal{
+      position: fixed;
+      inset: 0;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      background: rgba(0,0,0,0.72);
+      z-index: 9999;
+      padding: 18px;
+    }
+    .modal.open{ display:flex; }
+    .modal-panel{
+      width: min(980px, 96vw);
+      max-height: min(92vh, 920px);
+      overflow:auto;
+      border: 1px solid rgba(255,255,255,0.22);
+      background: rgba(10,10,10,0.86);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 40px rgba(0,0,0,0.6);
+    }
+    .modal-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.14);
+    }
+    .modal-title{
+      font-weight:700;
+      letter-spacing:.3px;
+    }
+    .modal-close{
+      border: 1px solid rgba(255,255,255,0.22);
+      background: transparent;
+      color:#fff;
+      cursor:pointer;
+      padding: 8px 10px;
+      font-size: .95rem;
+    }
+    .modal-close:hover{ background:#fff; color:#000; }
+    .modal-body{
+      padding: 16px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 14px;
+    }
+    .modal-body img{
+      width:100%;
+      height:auto;
+      border: 1px solid rgba(255,255,255,0.18);
+      display:block;
+    }
+    .modal-body .txt{
+      color: var(--muted);
+      line-height:1.7;
+      font-size: .98rem;
+    }
+    .modal-body .txt strong{ color: var(--text); }
+
+    footer{
+      text-align:center;
+      padding: 30px 0 40px;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.55);
+    }
+
+    @media (max-width: 820px){
+      .grid{ grid-template-columns: 1fr; }
+      .modal-body{ grid-template-columns: 1fr; }
+      .hotspot{ width: 28px; height: 28px; }
+      .hotspot span{ font-size: 0.85rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="container">
+    <a href="/en/index.html">Home</a>
+    <a href="/en/modeles.html">Bronze rollers</a>
+    <a href="/en/partners-trainers.html">Trainer partnership</a>
+    |
+    <a href="/machine.html" title="Français">
+      <img src="/flag-fr.svg" alt="Français" style="height:18px;vertical-align:middle;">
+    </a>
+    <a href="/en/machine.html" title="English">
+      <img src="/flag-en.svg" alt="English" style="height:18px;vertical-align:middle;opacity:.6;">
+    </a>
+  </nav>
+
+  <section>
+    <div class="container">
+
+      <!-- HERO -->
+      <div class="block center">
+        <h1>Professional candy machine – SRC Series 1</h1>
+        <p class="subtitle">
+          Motorized roller frame with bronze rollers, designed for artisanal production of
+          boiled sugar candies, nougatine and honey specialties.
+        </p>
+
+        <div class="cta-group">
+          <a class="cta primary" href="mailto:contact@atelier-cal.fr">Request a quote</a>
+          <a class="cta ghost" href="/en/modeles.html">View bronze rollers</a>
+          <a class="cta ghost" href="https://wa.me/33677845435" target="_blank" rel="noopener">
+            <img src="/whatsapp.svg" alt="WhatsApp" style="height:16px;vertical-align:middle;margin-right:6px;">
+            WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- INTERACTIVE IMAGE -->
+      <div class="block">
+        <div class="center" style="margin-bottom:10px; color:rgba(255,255,255,0.8);">
+          <strong>Interactive view</strong> — click (desktop) or press (mobile) on the markers
+        </div>
+
+        <div class="machine-wrap" id="machineWrap">
+          <img src="/machine-main.png" alt="SRC Series 1 machine – Atelier CAL">
+
+          <div class="hotspot" data-id="1" style="left: 30%; top: 34%;" title="Bronze rollers">
+            <div class="ring"></div><span>1</span>
+          </div>
+
+          <div class="hotspot" data-id="2" style="left: 38%; top: 58%;" title="Anodized aluminum frame">
+            <div class="ring"></div><span>2</span>
+          </div>
+
+          <div class="hotspot" data-id="3" style="left: 82%; top: 55%;" title="Control box + emergency stop">
+            <div class="ring"></div><span>3</span>
+          </div>
+
+          <div class="hotspot" data-id="4" style="left: 62%; top: 18%;" title="Polycarbonate guard">
+            <div class="ring"></div><span>4</span>
+          </div>
+
+          <div class="hotspot" data-id="5" style="left: 57%; top: 62%;" title="Gear guard">
+            <div class="ring"></div><span>5</span>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Key specifications</h3>
+            <p>
+              • Standard outlet <strong>220V single-phase</strong><br>
+              • Fixed speed <strong>≈ 10 rpm</strong> (up to <strong>40 kg/h</strong>)<br>
+              • <strong>Bronze-aluminum</strong> rollers (natural non-stick)<br>
+              • <strong>Aluminum</strong> frame + mirror stainless plate<br>
+              • Safety: emergency stop + guards + polycarbonate cover
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>See details</h3>
+            <p>
+              Click a marker (1 to 5) to open the spec sheet and the zoom image.
+              On mobile, a long press also works.
+            </p>
+            <button type="button" data-open="1">Open detail 1 (Rollers)</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA FINAL -->
+      <div class="block center">
+        <h2 style="margin:0 0 10px;">Get a quote</h2>
+        <p class="subtitle" style="max-width:860px;">
+          Tell us your needs (candy type, output, desired shapes) and we’ll reply quickly.
+        </p>
+        <div class="cta-group">
+          <a class="cta primary" href="mailto:contact@atelier-cal.fr">Request a quote</a>
+          <a class="cta ghost" href="/SRC%20S%C3%89RIE%201%20(6).pdf">Download the PDF sheet</a>
+          <a class="cta ghost" href="https://wa.me/33677845435" target="_blank" rel="noopener">
+            <img src="/whatsapp.svg" alt="WhatsApp" style="height:16px;vertical-align:middle;margin-right:6px;">
+            WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    © Atelier CAL – Professional confectionery machines
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-panel" role="dialog" aria-modal="true">
+      <div class="modal-head">
+        <div class="modal-title" id="modalTitle">Detail</div>
+        <button class="modal-close" id="modalClose" type="button">Close</button>
+      </div>
+      <div class="modal-body">
+        <img id="modalImg" src="" alt="">
+        <div class="txt" id="modalText"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const DETAILS = {
+      1: {
+        title: "1 — Bronze rollers",
+        img: "/zoom-rouleaux.png",
+        alt: "Bronze rollers – SRC Series 1",
+        text: `
+          <strong>Bronze-aluminum rollers</strong>: excellent heat resistance,
+          outstanding durability and optimal thermal conduction.<br><br>
+          Ideal for a <strong>sharp imprint</strong> and <strong>clean release</strong> on boiled sugar, nougatine and honey.
+        `
+      },
+      2: {
+        title: "2 — Anodized aluminum frame",
+        img: "/zoom-cadre.png",
+        alt: "Anodized aluminum frame – SRC Series 1",
+        text: `
+          <strong>Aluminum frame</strong> designed for workshop use:
+          stable, robust and easy to clean.<br><br>
+          Anodizing improves long-term durability and the professional finish.
+        `
+      },
+      3: {
+        title: "3 — Control box + emergency stop + 4 m extension",
+        img: "/zoom-boitier.png",
+        alt: "Control box and emergency stop – SRC Series 1",
+        text: `
+          Easy <strong>220V</strong> connection to a standard outlet.<br><br>
+          <strong>Emergency stop</strong> + accessible controls, supplied with a <strong>4-meter extension</strong>
+          for flexible workshop setup.
+        `
+      },
+      4: {
+        title: "4 — Polycarbonate guard",
+        img: "/zoom-polycarbonate.png",
+        alt: "Polycarbonate guard – SRC Series 1",
+        text: `
+          <strong>Transparent polycarbonate protection</strong> covering the rollers:
+          improved safety while keeping full visibility of the process.
+        `
+      },
+      5: {
+        title: "5 — Gear guard",
+        img: "/zoom-engrenage.png",
+        alt: "Gear guard – SRC Series 1",
+        text: `
+          <strong>Protective covers</strong> on the gear area to reduce any contact risk.<br><br>
+          Built for real workshop use with a true “pro machine” approach.
+        `
+      }
+    };
+
+    const modal = document.getElementById("modal");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalImg = document.getElementById("modalImg");
+    const modalText = document.getElementById("modalText");
+    const modalClose = document.getElementById("modalClose");
+
+    function openModal(id){
+      const d = DETAILS[id];
+      if(!d) return;
+
+      modalTitle.textContent = d.title;
+      modalImg.src = d.img;
+      modalImg.alt = d.alt || d.title;
+      modalText.innerHTML = d.text;
+
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden","false");
+    }
+
+    function closeModal(){
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden","true");
+      setTimeout(()=>{ modalImg.src = ""; }, 120);
+    }
+
+    modalClose.addEventListener("click", closeModal);
+    modal.addEventListener("click", (e)=>{ if(e.target === modal) closeModal(); });
+    document.addEventListener("keydown", (e)=>{ if(e.key === "Escape") closeModal(); });
+
+    document.querySelectorAll(".hotspot").forEach(h => {
+      h.addEventListener("click", () => openModal(h.dataset.id));
+    });
+
+    let pressTimer = null;
+    document.querySelectorAll(".hotspot").forEach(h => {
+      h.addEventListener("pointerdown", () => {
+        pressTimer = setTimeout(() => openModal(h.dataset.id), 380);
+      });
+      h.addEventListener("pointerup", () => clearTimeout(pressTimer));
+      h.addEventListener("pointerleave", () => clearTimeout(pressTimer));
+      h.addEventListener("pointercancel", () => clearTimeout(pressTimer));
+    });
+
+    document.querySelectorAll("[data-open]").forEach(b=>{
+      b.addEventListener("click", ()=> openModal(b.getAttribute("data-open")));
+    });
+  </script>
+
+</body>
+</html>
