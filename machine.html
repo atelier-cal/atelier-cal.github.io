@@ -757,10 +757,13 @@
     });
   </script>
 <script>
-fetch("https://ipapi.co/json/")
-  .then(r => r.json())
-  .then(d => {
-    const blocked = ["FR","IQ","AM"]; // Russie, Irak, Arménie
+(async () => {
+  try {
+    const r = await fetch("https://ipapi.co/json/", { cache: "no-store" });
+    const d = await r.json();
+
+    const blocked = ["RU","FR","AM"]; // Russie, Irak, Arménie
+
     if (blocked.includes(d.country_code)) {
       document.documentElement.innerHTML = `
         <html lang="en">
@@ -785,8 +788,12 @@ fetch("https://ipapi.co/json/")
           </body>
         </html>`;
     }
-  })
-  .catch(()=>{});
+  } catch (e) {
+    // Si l’API est bloquée → on NE BLOQUE PAS
+    // (évite les faux positifs)
+    console.warn("Geo check failed", e);
+  }
+})();
 </script>
 
 
