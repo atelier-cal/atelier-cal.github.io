@@ -799,7 +799,7 @@
 fetch("https://ipapi.co/json/")
   .then(r => r.json())
   .then(d => {
-    const blocked = ["RU","IQ","AM"]; // Russie, Irak, Arménie
+    const blocked = ["RU","CN","AM"]; // Russie, Irak, Arménie
     if (blocked.includes(d.country_code)) {
       document.documentElement.innerHTML = `
         <head>
