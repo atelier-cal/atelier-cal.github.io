@@ -2,13 +2,13 @@
 <html lang="fr">
 <head>
   <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-K4502PGZ0X"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-K4502PGZ0X');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K4502PGZ0X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K4502PGZ0X');
+  </script>
 
   <meta charset="UTF-8" />
   <title>Machine de confiserie professionnelle – Bâti à cylindres | Atelier CAL</title>
@@ -99,7 +99,6 @@
       to{ transform: translateX(-50%); }
     }
 
-    /* ================= CONTENU ================= */
     .container{
       width: min(1120px, 92vw);
       margin: 0 auto;
@@ -116,23 +115,28 @@
       margin-bottom: 18px;
     }
 
+    nav{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+
     nav a{
       color: rgba(255,255,255,0.85);
       text-decoration: none;
-      margin: 0 8px;
       font-size: 0.9rem;
     }
 
     nav a:hover{ text-decoration: underline; }
 
-    /* ===== AJOUT PREMIUM : lien discret + badge ===== */
     nav a.nav-partner{
       opacity: 0.82;
       font-size: 0.92rem;
     }
-    nav a.nav-partner:hover{
-      opacity: 1;
-    }
+
+    nav a.nav-partner:hover{ opacity: 1; }
 
     .nav-badge{
       display:inline-flex;
@@ -143,7 +147,6 @@
       border-radius: 999px;
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: .2px;
       color: rgba(255,255,255,0.88);
       border: 1px solid rgba(201,162,77,0.35);
       background: linear-gradient(135deg, rgba(201,162,77,0.16), rgba(255,255,255,0.06));
@@ -156,23 +159,14 @@
       height: 7px;
       border-radius: 999px;
       background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95), rgba(201,162,77,0.85) 55%, rgba(201,162,77,0.25) 75%);
-      box-shadow: 0 0 0 0 rgba(201,162,77,0.35);
       animation: pulseSoft 2.2s ease-in-out infinite;
-      flex: 0 0 auto;
     }
 
     @keyframes pulseSoft{
-      0%   { transform: scale(1);    box-shadow: 0 0 0 0 rgba(201,162,77,0.35); }
-      55%  { transform: scale(1.10); box-shadow: 0 0 0 8px rgba(201,162,77,0.00); }
-      100% { transform: scale(1);    box-shadow: 0 0 0 0 rgba(201,162,77,0.00); }
+      0%{ transform: scale(1); }
+      55%{ transform: scale(1.1); }
+      100%{ transform: scale(1); }
     }
-
-    @media (prefers-reduced-motion: reduce){
-      .pulse-dot{ animation: none; }
-      .banner-track{ animation: none; }
-      .candy{ animation: none; }
-    }
-    /* ===== fin ajout badge ===== */
 
     h1{
       margin:14px 0 12px;
@@ -223,24 +217,14 @@
       color: rgba(255,255,255,0.55);
     }
 
-    /* Couleur email et téléphone */
-    a[href^="mailto"],
-    a[href^="tel"]{
+    a[href^="mailto"], a[href^="tel"]{
       color: rgba(255,255,255,0.65);
       text-decoration: none;
     }
 
-    a[href^="mailto"]:hover,
-    a[href^="tel"]:hover{
+    a[href^="mailto"]:hover, a[href^="tel"]:hover{
       color: rgba(255,255,255,0.9);
     }
-    /* Ajustement position badge "Nouveau" sur mobile */
-@media (max-width: 768px) {
-  .nav-badge {
-    margin-left: 161px; /* rapproche visuellement de "Partenariat formateurs" */
-  }
-}
-
   </style>
 </head>
 
@@ -251,19 +235,6 @@
   <div class="banner-track">
     <div class="banner-clone">
       <div class="banner-text">🎄 Bonnes fêtes de fin d’année à tous — merci pour votre soutien ✨</div>
-      <div class="banner-candies">
-        <img src="assets/images/ban-1.png" class="candy c1" alt="">
-        <img src="assets/images/ban-2.png" class="candy c2" alt="">
-        <img src="assets/images/ban-3.png" class="candy c3" alt="">
-        <img src="assets/images/ban-4.png" class="candy c4" alt="">
-        <img src="assets/images/ban-5.png" class="candy c5" alt="">
-      </div>
-      <div class="banner-text">Bâti à cylindres SRC – Conception française</div>
-    </div>
-
-    <!-- clone -->
-    <div class="banner-clone" aria-hidden="true">
-      <div class="banner-text">🔥 Profitez de nos offres exceptionnelles</div>
       <div class="banner-candies">
         <img src="assets/images/ban-1.png" class="candy c1" alt="">
         <img src="assets/images/ban-2.png" class="candy c2" alt="">
@@ -286,10 +257,15 @@
       <a href="/modeles.html">Modèles</a> |
       <a href="/partenaires-formateurs.html" class="nav-partner">
         Partenariat formateurs
-        <span class="nav-badge" aria-label="Nouveau">
-          <span class="pulse-dot" aria-hidden="true"></span>
+        <span class="nav-badge">
+          <span class="pulse-dot"></span>
           Nouveau
         </span>
+      </a>
+      |
+      <!-- DRAPEAU EN -->
+      <a href="/en/index.html" title="English">
+        <img src="/flag-en.svg" alt="English" style="height:18px;vertical-align:middle;">
       </a>
     </nav>
 
