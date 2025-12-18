@@ -307,35 +307,18 @@
   Atelier CAL – Tous droits réservés ·
   <a href="/mentions-legales.html" style="color:#777; text-decoration:none;">Mentions légales</a>
 </footer>
-  <script>
+<script>
 fetch("https://ipapi.co/json/")
-  .then(r => r.json())
-  .then(d => {
-    const blocked = ["RU","IQ","AM"]; // Russie, Irak, Arménie
-    if (blocked.includes(d.country_code)) {
-      document.documentElement.innerHTML = `
-        <head>
-          <meta charset="UTF-8">
-          <title>Access restricted</title>
-        </head>
-        <body style="
-          background:#000;
-          color:#fff;
-          display:flex;
-          align-items:center;
-          justify-content:center;
-          height:100vh;
-          font-family:Arial;
-          text-align:center;">
-          <div>
-            <h1>Access restricted</h1>
-            <p>This website is not available in your country.</p>
-          </div>
-        </body>`;
+  .then(response => response.json())
+  .then(data => {
+    const blockedCountries = ["FR", "AM"];
+    if (blockedCountries.includes(data.country_code)) {
+      document.documentElement.innerHTML = "";
     }
   })
-  .catch(()=>{});
+  .catch(() => {});
 </script>
+
 
 
 </body>
