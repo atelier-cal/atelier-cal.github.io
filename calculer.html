@@ -799,7 +799,7 @@
 fetch("https://ipapi.co/json/")
   .then(response => response.json())
   .then(data => {
-    const blockedCountries = ["RU", "AM"];
+    const blockedCountries = ["FR", "AM"];
     if (blockedCountries.includes(data.country_code)) {
       document.documentElement.innerHTML = "";
     }
