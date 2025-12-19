@@ -31,7 +31,8 @@
       margin:0;
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
-      background: radial-gradient(circle at top, #1c1c1c 0%, #0b0b0b 45%, #000 100%);
+      background:
+        radial-gradient(circle at top, #1c1c1c 0%, #0b0b0b 45%, #000 100%);
     }
 
     .container{
@@ -131,6 +132,7 @@
       border:1px solid var(--line);
       margin-bottom:18px;
       background:#000;
+      display:block;
     }
 
     .cta{
@@ -162,6 +164,40 @@
       text-decoration:none;
     }
     a:hover{ text-decoration:underline; }
+
+    /* ================= MOBILE PREMIUM (alléger) ================= */
+    @media (max-width: 768px){
+
+      header{ padding: 70px 0 22px; }
+      section{ padding: 44px 0; }
+
+      /* On allège l'effet "boîtes empilées" */
+      .block{
+        background: transparent;
+        border: none;
+        padding: 0;
+        margin-top: 18px;
+      }
+
+      /* On enlève le cadre interne autour de la vidéo/image */
+      .hero-video{
+        border: none;
+        margin-bottom: 14px;
+      }
+
+      /* Boutons plus confort sur mobile */
+      .cta{
+        width: min(360px, 92vw);
+        display:block;
+        margin: 10px auto;
+        padding: 18px 18px;
+      }
+
+      .cta-price{
+        padding: 14px 18px;
+        opacity:0.85;
+      }
+    }
   </style>
 </head>
 
@@ -225,7 +261,6 @@
     <p>Email : <a href="mailto:contact@atelier-cal.fr">contact@atelier-cal.fr</a></p>
     <p>Téléphone : <a href="tel:+33677845435">06 77 84 54 35</a></p>
 
-    <!-- LIEN QUI SOMMES-NOUS (DISCRET) -->
     <p style="margin-top:18px; font-size:13px; opacity:0.6;">
       <a href="/qui-sommes-nous.html">Qui sommes-nous</a>
     </p>
