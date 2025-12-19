@@ -762,7 +762,7 @@
     const r = await fetch("https://ipapi.co/json/", { cache: "no-store" });
     const d = await r.json();
 
-    const blocked = ["RU","FR","AM"]; // Russie, Irak, Arménie
+    const blocked = ["RU","IQ","AM"]; // Russie, Irak, Arménie
 
     if (blocked.includes(d.country_code)) {
       document.documentElement.innerHTML = `
