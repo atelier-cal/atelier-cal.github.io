@@ -15,14 +15,12 @@
 
   <title>Machine de confiserie professionnelle – Bâti à cylindres | Atelier CAL</title>
   <meta name="description" content="Atelier CAL conçoit et fabrique des machines professionnelles pour la confiserie : bâti à cylindres motorisé pour bonbons en sucre cuit, nougatine et miel. Conception française." />
-  <meta name="keywords" content="machine confiserie, machine bonbon, bâti à cylindres, machine nougatine, machine bonbon miel, confiseur professionnel" />
-  <meta name="author" content="Atelier CAL" />
-  <meta name="google-site-verification" content="A0dojKL5m35FOtxZXnqt33BbuTEnXFRBVb-cTb6grEY" />
+  <meta name="keywords" content="machine confiserie, machine bonbon, bâti à cylindres, machine nougatine, machine bonbon miel" />
 
   <style>
     :root{
       --text: rgba(255,255,255,0.92);
-      --muted: rgba(255,255,255,0.75);
+      --muted: rgba(255,255,255,0.7);
       --line: rgba(255,255,255,0.18);
       --card: rgba(255,255,255,0.04);
       --accent: #c9a24d;
@@ -41,145 +39,82 @@
       margin: 0 auto;
     }
 
-    /* ================= BANNIÈRE DÉFILANTE ================= */
+    section{
+      padding: 56px 0;
+      text-align:center;
+    }
+
+    /* ================= BANNIÈRE ================= */
     .top-banner{
       height: 48px;
       overflow: hidden;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
       background:#0f1115;
-      position: relative;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     .banner-track{
       display:flex;
       align-items:center;
-      height: 100%;
-      width: max-content;
+      width:max-content;
+      height:100%;
       animation: marquee var(--speed) linear infinite;
-      gap: 32px;
-      padding-left: 20px;
-      will-change: transform;
+      gap:32px;
+      padding-left:20px;
     }
 
     .banner-clone{
       display:flex;
       align-items:center;
-      gap: 32px;
-      white-space: nowrap;
-      padding-right: 32px;
+      gap:32px;
+      white-space:nowrap;
     }
 
     .banner-text{
       color: var(--accent);
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.3px;
+      font-size:14px;
+      font-weight:600;
     }
 
-    .banner-candies{
-      display:flex;
-      gap: 16px;
-      align-items:center;
-    }
-
-    .candy{
-      width: calc(36px * 1.8);
-      height: calc(36px * 1.8);
-      object-fit: contain;
-      animation: spin linear infinite;
-      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.45));
-    }
-    .c1{ animation-duration: 2s; }
-    .c2{ animation-duration: 2.6s; }
-    .c3{ animation-duration: 2.2s; }
-    .c4{ animation-duration: 3s; }
-    .c5{ animation-duration: 2.4s; }
-
-    @keyframes spin{
-      from{ transform: rotate(0deg); }
-      to{ transform: rotate(360deg); }
-    }
     @keyframes marquee{
       from{ transform: translateX(0); }
       to{ transform: translateX(-50%); }
     }
 
     header{
-      padding: 92px 0 34px;
+      padding: 90px 0 32px;
       text-align:center;
     }
 
     .logo{
       width: 320px;
       max-width: 90%;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
     nav{
       display:flex;
-      align-items:center;
       justify-content:center;
       gap:8px;
       flex-wrap:wrap;
+      margin-bottom:14px;
     }
 
     nav a{
       color: rgba(255,255,255,0.85);
-      text-decoration: none;
-      font-size: 0.9rem;
-    }
-    nav a:hover{ text-decoration: underline; }
-
-    nav a.nav-partner{
-      opacity: 0.82;
-      font-size: 0.92rem;
-    }
-    nav a.nav-partner:hover{ opacity: 1; }
-
-    .nav-badge{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      margin-left:10px;
-      padding: 3px 8px;
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 700;
-      color: rgba(255,255,255,0.88);
-      border: 1px solid rgba(201,162,77,0.35);
-      background: linear-gradient(135deg, rgba(201,162,77,0.16), rgba(255,255,255,0.06));
-      box-shadow: 0 10px 26px rgba(0,0,0,0.35);
-      vertical-align: middle;
-    }
-
-    .pulse-dot{
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95), rgba(201,162,77,0.85) 55%, rgba(201,162,77,0.25) 75%);
-      animation: pulseSoft 2.2s ease-in-out infinite;
-    }
-    @keyframes pulseSoft{
-      0%{ transform: scale(1); }
-      55%{ transform: scale(1.1); }
-      100%{ transform: scale(1); }
+      text-decoration:none;
+      font-size:0.9rem;
     }
 
     h1{
-      margin:14px 0 12px;
+      margin:14px 0 10px;
       font-size: clamp(2.2rem, 4vw, 3.2rem);
     }
 
     .subtitle{
-      max-width: 920px;
+      max-width: 900px;
       margin: 0 auto;
       color: var(--muted);
-      line-height: 1.65;
-    }
-
-    section{
-      padding: 58px 0;
-      text-align:center;
+      line-height:1.6;
     }
 
     .block{
@@ -190,188 +125,117 @@
     }
 
     .hero-video{
-      width: 100%;
-      max-width: 1000px;
-      aspect-ratio: 16/9;
-      margin-bottom: 18px;
-      border: 1px solid rgba(255,255,255,0.18);
+      width:100%;
+      max-width:1000px;
+      aspect-ratio:16/9;
+      border:1px solid var(--line);
+      margin-bottom:18px;
       background:#000;
     }
 
     .cta{
       display:inline-block;
-      padding: 16px 44px;
-      border: 1px solid rgba(255,255,255,0.28);
+      padding:16px 44px;
+      border:1px solid rgba(255,255,255,0.28);
       color:#fff;
       text-decoration:none;
-      margin: 8px;
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
+      margin:8px;
+      text-transform:uppercase;
+      letter-spacing:0.6px;
     }
 
-    /* bouton secondaire (prix) */
-    .cta.cta-price{
-      padding: 12px 34px;
-      opacity: 0.82;
+    .cta-price{
+      padding:12px 34px;
+      opacity:0.8;
     }
-    .cta.cta-price:hover{ opacity: 1; }
+    .cta-price:hover{ opacity:1; }
 
     footer{
-      padding: 28px 0 38px;
+      padding: 28px 0 36px;
       text-align:center;
       color: rgba(255,255,255,0.55);
+      font-size:13px;
     }
 
-    a[href^="mailto"], a[href^="tel"]{
-      color: rgba(255,255,255,0.65);
-      text-decoration: none;
+    a{
+      color:inherit;
+      text-decoration:none;
     }
-    a[href^="mailto"]:hover, a[href^="tel"]:hover{
-      color: rgba(255,255,255,0.9);
-    }
+    a:hover{ text-decoration:underline; }
   </style>
 </head>
 
 <body>
 
-  <!-- BANNIÈRE -->
-  <div class="top-banner" aria-label="Bannière d'information">
-    <div class="banner-track">
-      <!-- Clone 1 -->
-      <div class="banner-clone">
-        <div class="banner-text">🎄 Bonnes fêtes de fin d’année à tous — merci pour votre soutien ✨</div>
-        <div class="banner-candies" aria-hidden="true">
-          <img src="assets/images/ban-1.png" class="candy c1" alt="">
-          <img src="assets/images/ban-2.png" class="candy c2" alt="">
-          <img src="assets/images/ban-3.png" class="candy c3" alt="">
-          <img src="assets/images/ban-4.png" class="candy c4" alt="">
-          <img src="assets/images/ban-5.png" class="candy c5" alt="">
-        </div>
-        <div class="banner-text">Bâti à cylindres SRC – Conception française</div>
-      </div>
-
-      <!-- Clone 2 (pour boucle fluide) -->
-      <div class="banner-clone" aria-hidden="true">
-        <div class="banner-text">🎄 Bonnes fêtes de fin d’année à tous — merci pour votre soutien ✨</div>
-        <div class="banner-candies">
-          <img src="assets/images/ban-1.png" class="candy c1" alt="">
-          <img src="assets/images/ban-2.png" class="candy c2" alt="">
-          <img src="assets/images/ban-3.png" class="candy c3" alt="">
-          <img src="assets/images/ban-4.png" class="candy c4" alt="">
-          <img src="assets/images/ban-5.png" class="candy c5" alt="">
-        </div>
-        <div class="banner-text">Bâti à cylindres SRC – Conception française</div>
-      </div>
+<!-- BANNIÈRE -->
+<div class="top-banner">
+  <div class="banner-track">
+    <div class="banner-clone">
+      <div class="banner-text">🎄 Bonnes fêtes de fin d’année — merci pour votre soutien ✨</div>
+      <div class="banner-text">Bâti à cylindres SRC – Conception française</div>
+    </div>
+    <div class="banner-clone">
+      <div class="banner-text">🎄 Bonnes fêtes de fin d’année — merci pour votre soutien ✨</div>
+      <div class="banner-text">Bâti à cylindres SRC – Conception française</div>
     </div>
   </div>
+</div>
 
-  <!-- HEADER -->
-  <header>
-    <div class="container">
-      <img src="logo-atelier-cal.png" class="logo" alt="Atelier CAL — Confiserie Art Lorraine">
+<!-- HEADER -->
+<header>
+  <div class="container">
+    <img src="logo-atelier-cal.png" class="logo" alt="Atelier CAL">
 
-      <nav aria-label="Navigation principale">
-        <a href="/">Accueil</a> |
-        <a href="/modeles.html">Modèles</a> |
-        <a href="/partenaires-formateurs.html" class="nav-partner">
-          Partenariat formateurs
-          <span class="nav-badge">
-            <span class="pulse-dot"></span>
-            Nouveau
-          </span>
-        </a>
-        |
-        <a href="/en/index.html" title="English" aria-label="English version">
-          <img src="/flag-en.svg" alt="English" style="height:18px;vertical-align:middle;">
-        </a>
-      </nav>
+    <nav>
+      <a href="/">Accueil</a> |
+      <a href="/modeles.html">Modèles</a> |
+      <a href="/partenaires-formateurs.html">Partenariat formateurs</a>
+    </nav>
 
-      <h1>Atelier CAL</h1>
-      <p class="subtitle">
-        Conception et fabrication de machines professionnelles pour la réalisation de bonbons en sucre cuit.
-      </p>
+    <h1>Atelier CAL</h1>
+    <p class="subtitle">
+      Conception et fabrication de machines professionnelles pour la réalisation de bonbons en sucre cuit.
+    </p>
+  </div>
+</header>
+
+<!-- PRÉSENTATION -->
+<section>
+  <div class="container">
+    <h2>Présentation</h2>
+    <p>Bâti à cylindres SRC SÉRIE 1 motorisé</p>
+
+    <div class="block">
+      <video class="hero-video" autoplay loop muted playsinline controls>
+        <source src="machine.mp4" type="video/mp4">
+      </video>
+
+      <a class="cta" href="/machine.html">Voir la machine</a>
+      <a class="cta" href="/modeles.html">Voir les rouleaux</a>
+      <a class="cta" href="/calculer.html">Simulateur de rentabilité</a>
+      <a class="cta cta-price" href="/machine.html#prix">Voir le prix</a>
     </div>
-  </header>
+  </div>
+</section>
 
-  <!-- PRÉSENTATION -->
-  <section>
-    <div class="container">
-      <h2>Présentation</h2>
-      <p>Bâti à cylindres SRC SÉRIE 1 motorisé</p>
+<!-- CONTACT -->
+<section>
+  <div class="container">
+    <h2>Contact</h2>
+    <p>Email : <a href="mailto:contact@atelier-cal.fr">contact@atelier-cal.fr</a></p>
+    <p>Téléphone : <a href="tel:+33677845435">06 77 84 54 35</a></p>
 
-      <div class="block">
-        <video class="hero-video" autoplay loop muted playsinline controls preload="metadata">
-          <source src="machine.mp4" type="video/mp4">
-          Votre navigateur ne supporte pas la lecture vidéo.
-        </video>
+    <!-- LIEN QUI SOMMES-NOUS (DISCRET) -->
+    <p style="margin-top:18px; font-size:13px; opacity:0.6;">
+      <a href="/qui-sommes-nous.html">Qui sommes-nous</a>
+    </p>
+  </div>
+</section>
 
-        <a class="cta" href="/machine.html">Voir la machine</a>
-        <a class="cta" href="/modeles.html">Voir les rouleaux</a>
-        <a class="cta" href="/calculer.html">Simulateur de rentabilité</a>
-        <a class="cta cta-price" href="/machine.html#prix">Voir le prix</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- QUI SOMMES-NOUS (bas de page) -->
-  <section>
-    <div class="container">
-      <h2>Qui sommes-nous ?</h2>
-      <div class="block">
-        <p class="subtitle" style="margin:0 auto; max-width: 920px;">
-          Atelier CAL conçoit et fabrique en France des machines professionnelles pour la confiserie artisanale.
-          Notre objectif : proposer un bâti à cylindres compact, robuste et sécurisé, pensé pour le sucre cuit,
-          la nougatine et les spécialités au miel.
-          <br><br>
-          Chaque machine est assemblée et contrôlée avec exigence pour une utilisation atelier : réglages précis,
-          composants durables, et conception orientée qualité.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section>
-    <div class="container">
-      <h2>Contact</h2>
-      <p>Email : <a href="mailto:contact@atelier-cal.fr">contact@atelier-cal.fr</a></p>
-      <p>Téléphone : <a href="tel:+33677845435">06 77 84 54 35</a></p>
-    </div>
-  </section>
-
-  <footer>
-    Atelier CAL – Tous droits réservés ·
-    <a href="/mentions-legales.html" style="color:#777; text-decoration:none;">Mentions légales</a>
-  </footer>
-
-  <!-- Blocage pays (simple + safe) -->
-  <script>
-    fetch("https://ipapi.co/json/")
-      .then(r => r.json())
-      .then(d => {
-        const blocked = ["RU","IQ","AM"]; // Russie, Irak, Arménie
-        if (blocked.includes(d.country_code)) {
-          document.body.innerHTML = `
-            <main style="
-              margin:0;
-              background:#000;
-              color:#fff;
-              display:flex;
-              align-items:center;
-              justify-content:center;
-              min-height:100vh;
-              font-family:Arial, Helvetica, sans-serif;
-              text-align:center;
-              padding:24px;">
-              <div>
-                <h1 style="margin:0 0 8px; font-size:42px;">404</h1>
-                <p style="margin:0; opacity:0.85;">This website is not available in your country.</p>
-              </div>
-            </main>`;
-        }
-      })
-      .catch(()=>{});
-  </script>
+<footer>
+  © Atelier CAL – Machines professionnelles de confiserie ·
+  <a href="/mentions-legales.html">Mentions légales</a>
+</footer>
 
 </body>
 </html>
