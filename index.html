@@ -11,13 +11,13 @@
   </script>
 
   <meta charset="UTF-8" />
-  <title>Machine de confiserie professionnelle – Bâti à cylindres | Atelier CAL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta name="google-site-verification" content="A0dojKL5m35FOtxZXnqt33BbuTEnXFRBVb-cTb6grEY" />
+  <title>Machine de confiserie professionnelle – Bâti à cylindres | Atelier CAL</title>
   <meta name="description" content="Atelier CAL conçoit et fabrique des machines professionnelles pour la confiserie : bâti à cylindres motorisé pour bonbons en sucre cuit, nougatine et miel. Conception française." />
   <meta name="keywords" content="machine confiserie, machine bonbon, bâti à cylindres, machine nougatine, machine bonbon miel, confiseur professionnel" />
   <meta name="author" content="Atelier CAL" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="A0dojKL5m35FOtxZXnqt33BbuTEnXFRBVb-cTb6grEY" />
 
   <style>
     :root{
@@ -36,6 +36,11 @@
       background: radial-gradient(circle at top, #1c1c1c 0%, #0b0b0b 45%, #000 100%);
     }
 
+    .container{
+      width: min(1120px, 92vw);
+      margin: 0 auto;
+    }
+
     /* ================= BANNIÈRE DÉFILANTE ================= */
     .top-banner{
       height: 48px;
@@ -46,20 +51,22 @@
     }
 
     .banner-track{
-      display: flex;
-      align-items: center;
-      width: max-content;
+      display:flex;
+      align-items:center;
       height: 100%;
+      width: max-content;
       animation: marquee var(--speed) linear infinite;
       gap: 32px;
       padding-left: 20px;
+      will-change: transform;
     }
 
     .banner-clone{
-      display: flex;
-      align-items: center;
+      display:flex;
+      align-items:center;
       gap: 32px;
       white-space: nowrap;
+      padding-right: 32px;
     }
 
     .banner-text{
@@ -70,9 +77,9 @@
     }
 
     .banner-candies{
-      display: flex;
+      display:flex;
       gap: 16px;
-      align-items: center;
+      align-items:center;
     }
 
     .candy{
@@ -82,7 +89,6 @@
       animation: spin linear infinite;
       filter: drop-shadow(0 6px 12px rgba(0,0,0,0.45));
     }
-
     .c1{ animation-duration: 2s; }
     .c2{ animation-duration: 2.6s; }
     .c3{ animation-duration: 2.2s; }
@@ -93,15 +99,9 @@
       from{ transform: rotate(0deg); }
       to{ transform: rotate(360deg); }
     }
-
     @keyframes marquee{
       from{ transform: translateX(0); }
       to{ transform: translateX(-50%); }
-    }
-
-    .container{
-      width: min(1120px, 92vw);
-      margin: 0 auto;
     }
 
     header{
@@ -128,14 +128,12 @@
       text-decoration: none;
       font-size: 0.9rem;
     }
-
     nav a:hover{ text-decoration: underline; }
 
     nav a.nav-partner{
       opacity: 0.82;
       font-size: 0.92rem;
     }
-
     nav a.nav-partner:hover{ opacity: 1; }
 
     .nav-badge{
@@ -161,7 +159,6 @@
       background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95), rgba(201,162,77,0.85) 55%, rgba(201,162,77,0.25) 75%);
       animation: pulseSoft 2.2s ease-in-out infinite;
     }
-
     @keyframes pulseSoft{
       0%{ transform: scale(1); }
       55%{ transform: scale(1.1); }
@@ -209,7 +206,15 @@
       text-decoration:none;
       margin: 8px;
       text-transform: uppercase;
+      letter-spacing: 0.6px;
     }
+
+    /* bouton secondaire (prix) */
+    .cta.cta-price{
+      padding: 12px 34px;
+      opacity: 0.82;
+    }
+    .cta.cta-price:hover{ opacity: 1; }
 
     footer{
       padding: 28px 0 38px;
@@ -221,7 +226,6 @@
       color: rgba(255,255,255,0.65);
       text-decoration: none;
     }
-
     a[href^="mailto"]:hover, a[href^="tel"]:hover{
       color: rgba(255,255,255,0.9);
     }
@@ -230,114 +234,144 @@
 
 <body>
 
-<!-- BANNIÈRE -->
-<div class="top-banner">
-  <div class="banner-track">
-    <div class="banner-clone">
-      <div class="banner-text">🎄 Bonnes fêtes de fin d’année à tous — merci pour votre soutien ✨</div>
-      <div class="banner-candies">
-        <img src="assets/images/ban-1.png" class="candy c1" alt="">
-        <img src="assets/images/ban-2.png" class="candy c2" alt="">
-        <img src="assets/images/ban-3.png" class="candy c3" alt="">
-        <img src="assets/images/ban-4.png" class="candy c4" alt="">
-        <img src="assets/images/ban-5.png" class="candy c5" alt="">
+  <!-- BANNIÈRE -->
+  <div class="top-banner" aria-label="Bannière d'information">
+    <div class="banner-track">
+      <!-- Clone 1 -->
+      <div class="banner-clone">
+        <div class="banner-text">🎄 Bonnes fêtes de fin d’année à tous — merci pour votre soutien ✨</div>
+        <div class="banner-candies" aria-hidden="true">
+          <img src="assets/images/ban-1.png" class="candy c1" alt="">
+          <img src="assets/images/ban-2.png" class="candy c2" alt="">
+          <img src="assets/images/ban-3.png" class="candy c3" alt="">
+          <img src="assets/images/ban-4.png" class="candy c4" alt="">
+          <img src="assets/images/ban-5.png" class="candy c5" alt="">
+        </div>
+        <div class="banner-text">Bâti à cylindres SRC – Conception française</div>
       </div>
-      <div class="banner-text">Bâti à cylindres SRC – Conception française</div>
+
+      <!-- Clone 2 (pour boucle fluide) -->
+      <div class="banner-clone" aria-hidden="true">
+        <div class="banner-text">🎄 Bonnes fêtes de fin d’année à tous — merci pour votre soutien ✨</div>
+        <div class="banner-candies">
+          <img src="assets/images/ban-1.png" class="candy c1" alt="">
+          <img src="assets/images/ban-2.png" class="candy c2" alt="">
+          <img src="assets/images/ban-3.png" class="candy c3" alt="">
+          <img src="assets/images/ban-4.png" class="candy c4" alt="">
+          <img src="assets/images/ban-5.png" class="candy c5" alt="">
+        </div>
+        <div class="banner-text">Bâti à cylindres SRC – Conception française</div>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- HEADER -->
-<header>
-  <div class="container">
-    <img src="logo-atelier-cal.png" class="logo" alt="Atelier CAL">
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <img src="logo-atelier-cal.png" class="logo" alt="Atelier CAL — Confiserie Art Lorraine">
 
-    <nav>
-      <a href="/">Accueil</a> |
-      <a href="/modeles.html">Modèles</a> |
-      <a href="/partenaires-formateurs.html" class="nav-partner">
-        Partenariat formateurs
-        <span class="nav-badge">
-          <span class="pulse-dot"></span>
-          Nouveau
-        </span>
-      </a>
-      |
-      <!-- DRAPEAU EN -->
-      <a href="/en/index.html" title="English">
-        <img src="/flag-en.svg" alt="English" style="height:18px;vertical-align:middle;">
-      </a>
-    </nav>
+      <nav aria-label="Navigation principale">
+        <a href="/">Accueil</a> |
+        <a href="/modeles.html">Modèles</a> |
+        <a href="/partenaires-formateurs.html" class="nav-partner">
+          Partenariat formateurs
+          <span class="nav-badge">
+            <span class="pulse-dot"></span>
+            Nouveau
+          </span>
+        </a>
+        |
+        <a href="/en/index.html" title="English" aria-label="English version">
+          <img src="/flag-en.svg" alt="English" style="height:18px;vertical-align:middle;">
+        </a>
+      </nav>
 
-    <h1>Atelier CAL</h1>
-    <p class="subtitle">
-      Conception et fabrication de machines professionnelles pour la réalisation de bonbons en sucre cuit.
-    </p>
-  </div>
-</header>
-
-<!-- PRÉSENTATION -->
-<section>
-  <div class="container">
-    <h2>Présentation</h2>
-    <p>Bâti à cylindres SRC SÉRIE 1 motorisé</p>
-
-    <div class="block">
-      <video class="hero-video" autoplay loop muted playsinline controls>
-        <source src="machine.mp4" type="video/mp4">
-      </video>
-
-      <a class="cta" href="/machine.html">Voir la machine</a>
-      <a class="cta" href="/modeles.html">Voir les rouleaux</a>
-      <a class="cta" href="calculer.html">Simulateur de rentabilité</a>
-      <a class="cta" href="/machine.html#prix">Voir le prix</a>
+      <h1>Atelier CAL</h1>
+      <p class="subtitle">
+        Conception et fabrication de machines professionnelles pour la réalisation de bonbons en sucre cuit.
+      </p>
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- CONTACT -->
-<section>
-  <div class="container">
-    <h2>Contact</h2>
-    <p>Email : <a href="mailto:contact@atelier-cal.fr">contact@atelier-cal.fr</a></p>
-    <p>Téléphone : <a href="tel:+33677845435">06 77 84 54 35</a></p>
-  </div>
-</section>
+  <!-- PRÉSENTATION -->
+  <section>
+    <div class="container">
+      <h2>Présentation</h2>
+      <p>Bâti à cylindres SRC SÉRIE 1 motorisé</p>
 
-<footer>
-  Atelier CAL – Tous droits réservés ·
-  <a href="/mentions-legales.html" style="color:#777; text-decoration:none;">Mentions légales</a>
-</footer>
+      <div class="block">
+        <video class="hero-video" autoplay loop muted playsinline controls preload="metadata">
+          <source src="machine.mp4" type="video/mp4">
+          Votre navigateur ne supporte pas la lecture vidéo.
+        </video>
 
+        <a class="cta" href="/machine.html">Voir la machine</a>
+        <a class="cta" href="/modeles.html">Voir les rouleaux</a>
+        <a class="cta" href="/calculer.html">Simulateur de rentabilité</a>
+        <a class="cta cta-price" href="/machine.html#prix">Voir le prix</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUI SOMMES-NOUS (bas de page) -->
+  <section>
+    <div class="container">
+      <h2>Qui sommes-nous ?</h2>
+      <div class="block">
+        <p class="subtitle" style="margin:0 auto; max-width: 920px;">
+          Atelier CAL conçoit et fabrique en France des machines professionnelles pour la confiserie artisanale.
+          Notre objectif : proposer un bâti à cylindres compact, robuste et sécurisé, pensé pour le sucre cuit,
+          la nougatine et les spécialités au miel.
+          <br><br>
+          Chaque machine est assemblée et contrôlée avec exigence pour une utilisation atelier : réglages précis,
+          composants durables, et conception orientée qualité.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section>
+    <div class="container">
+      <h2>Contact</h2>
+      <p>Email : <a href="mailto:contact@atelier-cal.fr">contact@atelier-cal.fr</a></p>
+      <p>Téléphone : <a href="tel:+33677845435">06 77 84 54 35</a></p>
+    </div>
+  </section>
+
+  <footer>
+    Atelier CAL – Tous droits réservés ·
+    <a href="/mentions-legales.html" style="color:#777; text-decoration:none;">Mentions légales</a>
+  </footer>
+
+  <!-- Blocage pays (simple + safe) -->
   <script>
-fetch("https://ipapi.co/json/")
-  .then(r => r.json())
-  .then(d => {
-    const blocked = ["RU","IQ","AM"]; // Russie, Irak, Arménie
-    if (blocked.includes(d.country_code)) {
-      document.documentElement.innerHTML = `
-        <head>
-          <meta charset="UTF-8">
-          <title>Access restricted</title>
-        </head>
-        <body style="
-          background:#000;
-          color:#fff;
-          display:flex;
-          align-items:center;
-          justify-content:center;
-          height:100vh;
-          font-family:Arial;
-          text-align:center;">
-          <div>
-            <h1>404</h1>
-            <p>This website is not available in your country.</p>
-          </div>
-        </body>`;
-    }
-  })
-  .catch(()=>{});
-</script>
+    fetch("https://ipapi.co/json/")
+      .then(r => r.json())
+      .then(d => {
+        const blocked = ["RU","IQ","AM"]; // Russie, Irak, Arménie
+        if (blocked.includes(d.country_code)) {
+          document.body.innerHTML = `
+            <main style="
+              margin:0;
+              background:#000;
+              color:#fff;
+              display:flex;
+              align-items:center;
+              justify-content:center;
+              min-height:100vh;
+              font-family:Arial, Helvetica, sans-serif;
+              text-align:center;
+              padding:24px;">
+              <div>
+                <h1 style="margin:0 0 8px; font-size:42px;">404</h1>
+                <p style="margin:0; opacity:0.85;">This website is not available in your country.</p>
+              </div>
+            </main>`;
+        }
+      })
+      .catch(()=>{});
+  </script>
 
 </body>
 </html>
