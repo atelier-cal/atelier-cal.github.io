@@ -39,9 +39,8 @@
       color:var(--text);
     }
 
-    /* ===== HEADER ===== */
     header{
-      padding:80px 20px 40px;
+      padding:80px 20px 30px;
       text-align:center;
     }
 
@@ -63,10 +62,24 @@
       line-height:1.6;
     }
 
+    /* ===== VIDEO ===== */
+    .video-wrapper{
+      max-width:1100px;
+      margin:40px auto 20px;
+      padding:0 20px;
+    }
+
+    .hero-video{
+      width:100%;
+      aspect-ratio:16/9;
+      border:1px solid var(--line);
+      background:#000;
+    }
+
     /* ===== GRID ACTIONS ===== */
     .actions{
       max-width:1100px;
-      margin:50px auto 70px;
+      margin:40px auto 70px;
       padding:0 20px;
       display:grid;
       grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
@@ -121,7 +134,7 @@
       border-color:var(--accent);
     }
 
-    /* ===== BUY HIGHLIGHT ===== */
+    /* ===== BUY CARD ===== */
     .buy{
       border:1px solid rgba(201,162,77,0.55);
       background:linear-gradient(145deg, rgba(201,162,77,0.12), rgba(255,255,255,0.04));
@@ -131,7 +144,6 @@
       color:var(--accent);
     }
 
-    /* ===== FOOTER ===== */
     footer{
       padding:28px 20px 36px;
       text-align:center;
@@ -154,7 +166,6 @@
 
 <header>
   <img src="logo-atelier-cal.png" alt="Atelier CAL" class="logo">
-
   <h1>Atelier CAL</h1>
   <p class="subtitle">
     Conception et fabrication de machines professionnelles pour la confiserie.<br>
@@ -162,42 +173,37 @@
   </p>
 </header>
 
-<!-- ===== ACTION BOXES ===== -->
+<!-- VIDEO -->
+<div class="video-wrapper">
+  <video class="hero-video" autoplay loop muted playsinline controls>
+    <source src="machine.mp4" type="video/mp4">
+  </video>
+</div>
+
+<!-- ACTIONS -->
 <section class="actions">
 
   <div class="action-card">
     <h3>Voir la machine</h3>
-    <p>
-      Découvrez le bâti à cylindres SRC : conception, sécurité,
-      matériaux et fonctionnement.
-    </p>
+    <p>Présentation complète du bâti à cylindres SRC et de ses caractéristiques.</p>
     <a href="machine.html" class="action-btn">Accéder</a>
   </div>
 
   <div class="action-card">
     <h3>Voir les rouleaux</h3>
-    <p>
-      Pastille, perle, hexagone, feuille et gravures spécifiques.
-      Rouleaux interchangeables.
-    </p>
-    <a href="modeles.html" class="action-btn">Voir les modèles</a>
+    <p>Pastille, perle, hexagone, feuille et gravures spécifiques disponibles.</p>
+    <a href="modeles.html" class="action-btn">Voir</a>
   </div>
 
   <div class="action-card">
     <h3>Simulateur de rentabilité</h3>
-    <p>
-      Calculez l’amortissement de la machine selon votre production
-      et vos prix de vente.
-    </p>
+    <p>Estimez le retour sur investissement selon votre production.</p>
     <a href="calculer.html" class="action-btn">Simuler</a>
   </div>
 
   <div class="action-card buy">
     <h3>Acheter / Précommande</h3>
-    <p>
-      Commandez votre machine ou vos rouleaux.
-      Paiement sécurisé en ligne.
-    </p>
+    <p>Commande de la machine et des rouleaux. Paiement sécurisé.</p>
     <a href="https://stripe.com" class="action-btn">Acheter</a>
   </div>
 
