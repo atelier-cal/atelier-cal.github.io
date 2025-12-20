@@ -41,6 +41,7 @@
 
     section{
       padding: 56px 0;
+ig
       text-align:center;
     }
 
@@ -142,6 +143,12 @@
       margin:8px;
       text-transform:uppercase;
       letter-spacing:0.6px;
+      transition: transform .12s ease, opacity .12s ease, border-color .12s ease;
+    }
+    .cta:hover{
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,0.42);
+      text-decoration:none;
     }
 
     .cta-price{
@@ -149,6 +156,15 @@
       opacity:0.8;
     }
     .cta-price:hover{ opacity:1; }
+
+    /* ✅ NOUVEAU : bouton Acheter (plus visible) */
+    .cta-buy{
+      border-color: rgba(201,162,77,0.55);
+      box-shadow: 0 0 0 1px rgba(201,162,77,0.18) inset;
+    }
+    .cta-buy:hover{
+      border-color: rgba(201,162,77,0.95);
+    }
 
     footer{
       padding: 28px 0 36px;
@@ -214,6 +230,14 @@
       <a class="cta" href="/modeles.html">Voir les rouleaux</a>
       <a class="cta" href="/calculer.html">Simulateur de rentabilité</a>
       <a class="cta cta-price" href="/machine.html#prix">Voir le prix</a>
+
+      <!-- ✅ NOUVEAU BOUTON : ACHETER -->
+      <!-- Plus tard : remplace href par /commander.html (choix des formes) -->
+      <a class="cta cta-buy"
+         href="https://buy.stripe.com/00w14o0gb8T7eIE547cZa00"
+         target="_blank" rel="noopener">
+         Acheter / Précommander
+      </a>
     </div>
   </div>
 </section>
@@ -225,7 +249,6 @@
     <p>Email : <a href="mailto:contact@atelier-cal.fr">contact@atelier-cal.fr</a></p>
     <p>Téléphone : <a href="tel:+33677845435">06 77 84 54 35</a></p>
 
-    <!-- LIEN QUI SOMMES-NOUS (DISCRET) -->
     <p style="margin-top:18px; font-size:13px; opacity:0.6;">
       <a href="/qui-sommes-nous.html">Qui sommes-nous</a>
     </p>
