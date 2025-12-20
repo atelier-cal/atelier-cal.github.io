@@ -39,8 +39,57 @@
       color:var(--text);
     }
 
+    /* ===== BANDE DÉFILANTE ===== */
+    .top-banner{
+      height:46px;
+      overflow:hidden;
+      background:#0f1115;
+      border-bottom:1px solid rgba(255,255,255,0.1);
+    }
+
+    .banner-track{
+      display:flex;
+      align-items:center;
+      height:100%;
+      width:max-content;
+      animation:scroll 22s linear infinite;
+      gap:30px;
+      padding-left:20px;
+    }
+
+    .banner-item{
+      white-space:nowrap;
+      color:var(--accent);
+      font-size:14px;
+      font-weight:600;
+      letter-spacing:.3px;
+    }
+
+    @keyframes scroll{
+      from{transform:translateX(0)}
+      to{transform:translateX(-50%)}
+    }
+
+    /* ===== MENU ===== */
+    .top-nav{
+      padding:16px 20px;
+      text-align:center;
+    }
+
+    .top-nav a{
+      color:rgba(255,255,255,0.85);
+      text-decoration:none;
+      margin:0 10px;
+      font-size:.9rem;
+    }
+
+    .top-nav a:hover{
+      text-decoration:underline;
+    }
+
+    /* ===== HEADER ===== */
     header{
-      padding:80px 20px 30px;
+      padding:50px 20px 30px;
       text-align:center;
     }
 
@@ -95,7 +144,7 @@
       flex-direction:column;
       justify-content:space-between;
       min-height:190px;
-      transition:transform .25s ease, border .25s ease;
+      transition:.25s;
     }
 
     .action-card:hover{
@@ -106,26 +155,24 @@
     .action-card h3{
       margin:0 0 10px;
       font-size:1.15rem;
-      letter-spacing:0.3px;
     }
 
     .action-card p{
       margin:0 0 18px;
-      font-size:0.95rem;
+      font-size:.95rem;
       color:var(--muted);
       line-height:1.5;
     }
 
     .action-btn{
-      display:inline-block;
       padding:12px 18px;
       border:1px solid rgba(255,255,255,0.35);
       color:#fff;
       text-decoration:none;
       text-transform:uppercase;
-      font-size:0.85rem;
-      letter-spacing:0.8px;
-      transition:background .25s ease, color .25s ease;
+      font-size:.85rem;
+      letter-spacing:.8px;
+      transition:.25s;
     }
 
     .action-btn:hover{
@@ -134,20 +181,17 @@
       border-color:var(--accent);
     }
 
-    /* ===== BUY CARD ===== */
     .buy{
       border:1px solid rgba(201,162,77,0.55);
-      background:linear-gradient(145deg, rgba(201,162,77,0.12), rgba(255,255,255,0.04));
+      background:linear-gradient(145deg, rgba(201,162,77,.12), rgba(255,255,255,.04));
     }
 
-    .buy h3{
-      color:var(--accent);
-    }
+    .buy h3{color:var(--accent)}
 
     footer{
       padding:28px 20px 36px;
       text-align:center;
-      font-size:0.85rem;
+      font-size:.85rem;
       color:rgba(255,255,255,0.55);
     }
 
@@ -155,17 +199,36 @@
       color:rgba(255,255,255,0.65);
       text-decoration:none;
     }
-
-    footer a:hover{
-      color:#fff;
-    }
   </style>
 </head>
 
 <body>
 
+<!-- BANDE -->
+<div class="top-banner">
+  <div class="banner-track">
+    <div class="banner-item">🔥 Bâti à cylindres SRC – Conception française</div>
+    <div class="banner-item">🍯 Bonbons miel • sucre cuit • nougatine</div>
+    <div class="banner-item">✨ Machines professionnelles Atelier CAL</div>
+    <div class="banner-item">🚀 Précommandes ouvertes</div>
+
+    <!-- clone visuel -->
+    <div class="banner-item">🔥 Bâti à cylindres SRC – Conception française</div>
+    <div class="banner-item">🍯 Bonbons miel • sucre cuit • nougatine</div>
+    <div class="banner-item">✨ Machines professionnelles Atelier CAL</div>
+    <div class="banner-item">🚀 Précommandes ouvertes</div>
+  </div>
+</div>
+
+<!-- MENU -->
+<nav class="top-nav">
+  <a href="index.html">Accueil</a> |
+  <a href="modeles.html">Voir les modèles</a> |
+  <a href="partenaires-formateurs.html">Partenariat formateurs</a>
+</nav>
+
 <header>
-  <img src="logo-atelier-cal.png" alt="Atelier CAL" class="logo">
+  <img src="logo-atelier-cal.png" class="logo" alt="Atelier CAL">
   <h1>Atelier CAL</h1>
   <p class="subtitle">
     Conception et fabrication de machines professionnelles pour la confiserie.<br>
@@ -185,25 +248,25 @@
 
   <div class="action-card">
     <h3>Voir la machine</h3>
-    <p>Présentation complète du bâti à cylindres SRC et de ses caractéristiques.</p>
+    <p>Présentation complète du bâti à cylindres SRC.</p>
     <a href="machine.html" class="action-btn">Accéder</a>
   </div>
 
   <div class="action-card">
     <h3>Voir les rouleaux</h3>
-    <p>Pastille, perle, hexagone, feuille et gravures spécifiques disponibles.</p>
+    <p>Pastille, perle, hexagone, feuille et gravures.</p>
     <a href="modeles.html" class="action-btn">Voir</a>
   </div>
 
   <div class="action-card">
     <h3>Simulateur de rentabilité</h3>
-    <p>Estimez le retour sur investissement selon votre production.</p>
+    <p>Calculez l’amortissement de votre machine.</p>
     <a href="calculer.html" class="action-btn">Simuler</a>
   </div>
 
   <div class="action-card buy">
     <h3>Acheter / Précommande</h3>
-    <p>Commande de la machine et des rouleaux. Paiement sécurisé.</p>
+    <p>Commande et paiement sécurisé en ligne.</p>
     <a href="https://stripe.com" class="action-btn">Acheter</a>
   </div>
 
