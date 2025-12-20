@@ -111,11 +111,20 @@
       line-height:1.6;
     }
 
+    /* ===== AJOUT : CADRE AUTOUR VIDEO + CASES (sans toucher au reste) ===== */
+    .main-block{
+      max-width:1100px;
+      margin:40px auto 70px;
+      padding:26px 20px;
+      border:1px solid var(--line);
+      background: var(--card);
+    }
+
     /* ===== VIDEO ===== */
     .video-wrapper{
       max-width:1100px;
-      margin:40px auto 20px;
-      padding:0 20px;
+      margin:0 auto 20px; /* modif: était 40px auto 20px, pour être propre dans le cadre */
+      padding:0;          /* modif: était 0 20px, inutile dans le cadre */
     }
 
     .hero-video{
@@ -128,8 +137,8 @@
     /* ===== GRID ACTIONS ===== */
     .actions{
       max-width:1100px;
-      margin:40px auto 70px;
-      padding:0 20px;
+      margin:20px auto 0; /* modif: était 40px auto 70px, géré par le cadre */
+      padding:0;          /* modif: était 0 20px, inutile dans le cadre */
       display:grid;
       grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
       gap:22px;
@@ -236,41 +245,48 @@
   </p>
 </header>
 
-<!-- VIDEO -->
-<div class="video-wrapper">
-  <video class="hero-video" autoplay loop muted playsinline controls>
-    <source src="machine.mp4" type="video/mp4">
-  </video>
+<!-- ===== CADRE VIDEO + CASES ===== -->
+<div class="main-block">
+
+  <!-- VIDEO -->
+  <div class="video-wrapper">
+    <video class="hero-video" autoplay loop muted playsinline controls>
+      <source src="machine.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- ACTIONS -->
+  <section class="actions">
+
+    <div class="action-card">
+      <h3>Voir la machine</h3>
+      <p>Présentation complète du bâti à cylindres SRC.</p>
+      <a href="machine.html" class="action-btn">Accéder</a>
+    </div>
+
+    <div class="action-card">
+      <h3>Voir les rouleaux</h3>
+      <p>Pastille, perle, hexagone, feuille et gravures.</p>
+      <a href="modeles.html" class="action-btn">Voir</a>
+    </div>
+
+    <!-- ORDRE MODIFIÉ : Acheter en 3e -->
+    <div class="action-card buy">
+      <h3>Acheter / Précommande</h3>
+      <p>Commande et paiement sécurisé en ligne.</p>
+      <a href="https://stripe.com" class="action-btn">Acheter</a>
+    </div>
+
+    <!-- ORDRE MODIFIÉ : Simulateur en dernier -->
+    <div class="action-card">
+      <h3>Simulateur de rentabilité</h3>
+      <p>Calculez l’amortissement de votre machine.</p>
+      <a href="calculer.html" class="action-btn">Simuler</a>
+    </div>
+
+  </section>
+
 </div>
-
-<!-- ACTIONS -->
-<section class="actions">
-
-  <div class="action-card">
-    <h3>Voir la machine</h3>
-    <p>Présentation complète du bâti à cylindres SRC.</p>
-    <a href="machine.html" class="action-btn">Accéder</a>
-  </div>
-
-  <div class="action-card">
-    <h3>Voir les rouleaux</h3>
-    <p>Pastille, perle, hexagone, feuille et gravures.</p>
-    <a href="modeles.html" class="action-btn">Voir</a>
-  </div>
-
-  <div class="action-card">
-    <h3>Simulateur de rentabilité</h3>
-    <p>Calculez l’amortissement de votre machine.</p>
-    <a href="calculer.html" class="action-btn">Simuler</a>
-  </div>
-
-  <div class="action-card buy">
-    <h3>Acheter / Précommande</h3>
-    <p>Commande et paiement sécurisé en ligne.</p>
-    <a href="https://stripe.com" class="action-btn">Acheter</a>
-  </div>
-
-</section>
 
 <footer>
   Atelier CAL – Tous droits réservés ·
