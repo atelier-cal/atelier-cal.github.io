@@ -362,7 +362,7 @@
       text-transform: uppercase;
     }
 
-    /* === AJOUT (MINI) : ligne STANDARD + bulle ACHETER (Pastille uniquement) === */
+    /* === AJOUT (MINI) : ligne TAG + bulle ACHETER === */
     .tag-row{
       margin-top: 10px;
       display: flex;
@@ -370,7 +370,7 @@
       justify-content: space-between;
       gap: 12px;
     }
-    .tag-row .tag{ margin-top: 0; } /* évite double marge */
+    .tag-row .tag{ margin-top: 0; }
 
     .buy-pill{
       display: inline-flex;
@@ -430,7 +430,7 @@
 
     /* ===== BADGE 3D PREMIUM (FIABLE) ===== */
     .img-wrap.has-3d{
-      cursor: pointer; /* clic sur toute la zone image */
+      cursor: pointer;
     }
 
     .badge-3d{
@@ -464,14 +464,12 @@
       opacity: .95;
     }
 
-    /* PC: visible au hover */
     .card:hover .img-wrap.has-3d .badge-3d{
       opacity: 1;
       transform: translateY(0);
       box-shadow: 0 0 20px rgba(255,255,255,0.10);
     }
 
-    /* Mobile: visible tout le temps */
     @media (hover: none){
       .img-wrap.has-3d .badge-3d{
         opacity: .95;
@@ -479,7 +477,6 @@
       }
     }
 
-    /* Pulse discrète */
     @keyframes pulse3d {
       0%   { transform: translateY(0) scale(1); }
       35%  { transform: translateY(0) scale(1.06); }
@@ -583,7 +580,6 @@
           <div class="title">Pastille</div>
           <p class="desc">Format standard, parfait pour séries.</p>
 
-          <!-- ✅ STANDARD (gauche) + ACHETER (droite) dans la zone bleue -->
           <div class="tag-row">
             <span class="tag">Standard</span>
             <a class="buy-pill"
@@ -609,7 +605,16 @@
           </div>
           <div class="title">Abeille (gravée)</div>
           <p class="desc">Signature “miel”, relief précis, rendu premium.</p>
-          <span class="tag">Signature</span>
+
+          <div class="tag-row">
+            <span class="tag">Signature</span>
+            <a class="buy-pill"
+               href="https://buy.stripe.com/9B6fZi5Avc5jaso2VZcZa09"
+               target="_blank"
+               rel="noopener">
+              Acheter
+            </a>
+          </div>
         </div>
 
         <!-- HEXAGONE -> 3D -->
@@ -626,7 +631,16 @@
           </div>
           <div class="title">Hexagone</div>
           <p class="desc">Forme hexagonale élégante.</p>
-          <span class="tag">Géométrique</span>
+
+          <div class="tag-row">
+            <span class="tag">Géométrique</span>
+            <a class="buy-pill"
+               href="https://buy.stripe.com/00wbJ2bYT8T72ZW547cZa06"
+               target="_blank"
+               rel="noopener">
+              Acheter
+            </a>
+          </div>
         </div>
 
         <!-- FEUILLE -> 3D -->
@@ -643,7 +657,16 @@
           </div>
           <div class="title">Feuille</div>
           <p class="desc">Motif naturel et élégant, très bon rendu visuel.</p>
-          <span class="tag">Nature</span>
+
+          <div class="tag-row">
+            <span class="tag">Nature</span>
+            <a class="buy-pill"
+               href="https://buy.stripe.com/3cI9AUfb5d9n2ZWdADcZa08"
+               target="_blank"
+               rel="noopener">
+              Acheter
+            </a>
+          </div>
         </div>
 
         <!-- PERSONNALISATION -> 3D -->
@@ -677,7 +700,16 @@
           </div>
           <div class="title">Œuf</div>
           <p class="desc">Forme douce et arrondie.</p>
-          <span class="tag">Standard</span>
+
+          <div class="tag-row">
+            <span class="tag">Standard</span>
+            <a class="buy-pill"
+               href="https://buy.stripe.com/9B65kE5Avb1ffMI68bcZa07"
+               target="_blank"
+               rel="noopener">
+              Acheter
+            </a>
+          </div>
         </div>
 
         <!-- OVALE -> 3D -->
@@ -694,17 +726,35 @@
           </div>
           <div class="title">Pastille ovale</div>
           <p class="desc">Format élégant et allongé, excellente lisibilité des gravures.</p>
-          <span class="tag">Standard</span>
+
+          <div class="tag-row">
+            <span class="tag">Standard</span>
+            <a class="buy-pill"
+               href="https://buy.stripe.com/00w3cw3snb1f9okdADcZa0a"
+               target="_blank"
+               rel="noopener">
+              Acheter
+            </a>
+          </div>
         </div>
 
-        <!-- PERLE (EN DERNIER, NON CLIQUABLE) -->
+        <!-- PERLE (EN DERNIER) -->
         <div class="card">
           <div class="img-wrap">
             <img class="img" src="modele-perle.png" alt="Modèle Perle 15 mm">
           </div>
           <div class="title">Perle Ø 15 mm</div>
           <p class="desc">Forme polyvalente, démoulage propre, idéale pour bonbons en sucre cuit.</p>
-          <span class="tag">Standard</span>
+
+          <div class="tag-row">
+            <span class="tag">Standard</span>
+            <a class="buy-pill"
+               href="https://buy.stripe.com/14AdRa1kf4CRcAw403cZa05"
+               target="_blank"
+               rel="noopener">
+              Acheter
+            </a>
+          </div>
         </div>
 
       </div>
@@ -791,7 +841,6 @@
       if (ev.key === 'Escape') close3D(null, true);
     });
 
-    // Pulse premium au scroll (entrée dans le viewport + stop scroll)
     (function(){
       const targets = document.querySelectorAll('.img-wrap.has-3d');
       if (!('IntersectionObserver' in window) || targets.length === 0) return;
