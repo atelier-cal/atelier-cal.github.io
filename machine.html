@@ -772,45 +772,6 @@
       b.addEventListener("click", ()=> openModal(b.getAttribute("data-open")));
     });
   </script>
-<script>
-(async () => {
-  try {
-    const r = await fetch("https://ipapi.co/json/", { cache: "no-store" });
-    const d = await r.json();
-
-    const blocked = ["RU","IQ","AM"]; // Russie, Irak, Arménie
-
-    if (blocked.includes(d.country_code)) {
-      document.documentElement.innerHTML = `
-        <html lang="en">
-          <head>
-            <meta charset="UTF-8">
-            <title>404 Not Found</title>
-          </head>
-          <body style="
-            margin:0;
-            background:#000;
-            color:#fff;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            height:100vh;
-            font-family:Arial, Helvetica, sans-serif;
-            text-align:center;">
-            <div>
-              <h1>404</h1>
-              <p>The requested URL was not found on this server.</p>
-            </div>
-          </body>
-        </html>`;
-    }
-  } catch (e) {
-    // Si l’API est bloquée → on NE BLOQUE PAS
-    // (évite les faux positifs)
-    console.warn("Geo check failed", e);
-  }
-})();
-</script>
 
 
 </body>
