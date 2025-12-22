@@ -309,15 +309,73 @@
       backdrop-filter: blur(4px);
       pointer-events: none;
     }
+    /* ===== STOCK (badge à côté du titre) ===== */
+.title-line{
+  display:flex !important;
+  align-items:center;
+  gap:10px;
+}
 
-    /* ===== STOCK (badge "Voir stock ⓘ" + tooltip, PC + mobile OK) ===== */
+.title-line .title{
+  margin: 12px 0 6px !important; /* garde ton rendu habituel */
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+.title-line .stock-badge{
+  flex: 0 0 auto;
+  margin-left: auto;
+}
+
+/* Badge stock (premium) */
+.stock-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .2px;
+  white-space: nowrap;
+  color: rgba(255,255,255,0.90);
+  border: 1px solid rgba(201,162,77,0.45);
+  background: linear-gradient(135deg, rgba(201,162,77,0.18), rgba(255,255,255,0.05));
+  box-shadow: 0 10px 26px rgba(0,0,0,0.30);
+}
+
+.stock-badge .dot{
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #fff, #c9a24d 55%, rgba(201,162,77,0.25) 75%);
+  box-shadow: 0 0 0 0 rgba(201,162,77,0.35);
+  animation: pulseSoft 2.2s ease-in-out infinite;
+}
+
+/* Hors stock / délai plus long */
+.stock-badge.delay{
+  border-color: rgba(255,170,80,0.45);
+  background: linear-gradient(135deg, rgba(255,170,80,0.16), rgba(255,255,255,0.05));
+}
+
+/* Mobile : si vraiment trop long, on coupe proprement */
+@media (max-width: 420px){
+  .title-line .stock-badge{
+    max-width: 58%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+/* ===== FIN STOCK ===== */
+/* ===== STOCK : badge "Stock ⓘ" + tooltip ===== */
     .title-line{
       display:flex;
       align-items:center;
       gap:10px;
     }
     .title-line .title{
-      margin: 12px 0 6px;
+      margin: 12px 0 6px; /* conserve ton rendu */
       flex: 0 1 auto;
       min-width: 0;
     }
@@ -337,11 +395,9 @@
       border: 1px solid rgba(201,162,77,0.45);
       background: linear-gradient(135deg, rgba(201,162,77,0.18), rgba(255,255,255,0.05));
       box-shadow: 0 10px 26px rgba(0,0,0,0.30);
-      cursor: pointer;
+      cursor: help;
       margin-left: auto;
       user-select: none;
-      -webkit-tap-highlight-color: transparent;
-      touch-action: manipulation;
     }
 
     .stock-badge .info-dot{
@@ -377,7 +433,6 @@
       box-shadow: 0 14px 40px rgba(0,0,0,.65);
       border: 1px solid rgba(201,162,77,.42);
       z-index: 20;
-      max-width: 90vw;
     }
 
     .stock-badge .tooltip::after{
@@ -390,17 +445,17 @@
       filter: drop-shadow(0 2px 0 rgba(201,162,77,.18));
     }
 
-    /* Desktop hover */
     .stock-badge:hover .tooltip{
       opacity: 1;
       transform: translateY(0);
     }
 
-    /* Tap open state */
-    .stock-badge.open .tooltip{
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
+    /* Mobile : affichage au tap (active) */
+    @media (hover:none){
+      .stock-badge:active .tooltip{
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* Variantes */
@@ -408,109 +463,9 @@
       border-color: rgba(255,170,80,0.45);
       background: linear-gradient(135deg, rgba(255,170,80,0.16), rgba(255,255,255,0.05));
     }
-
-    /* Mobile portrait: tooltip centered BELOW the badge (always visible) */
-    @media (max-width: 768px) and (orientation: portrait){
-      .stock-badge .tooltip{
-        top: 125%;
-        bottom: auto;
-        left: 50%;
-        right: auto;
-        transform: translate(-50%, -6px);
-        white-space: normal;
-        text-align: center;
-      }
-      .stock-badge.open .tooltip{
-        transform: translate(-50%, 0);
-      }
-      .stock-badge .tooltip::after{
-        top: auto;
-        bottom: 100%;
-        left: 50%;
-        right: auto;
-        transform: translateX(-50%);
-        border: 7px solid transparent;
-        border-bottom-color: rgba(10,10,10,0.96);
-        border-top-color: transparent;
-      }
-    }
     /* ===== FIN STOCK ===== */
-/* ===== Voir stock (details/summary) - 100% mobile safe ===== */
-.stock-details{
-  margin-left:auto;
-  position: relative;
-}
 
-.stock-details summary{
-  list-style: none;
-  cursor: pointer;
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .2px;
-  white-space: nowrap;
-
-  color: rgba(255,255,255,0.90);
-  border: 1px solid rgba(201,162,77,0.45);
-  background: linear-gradient(135deg, rgba(201,162,77,0.18), rgba(255,255,255,0.05));
-  box-shadow: 0 10px 26px rgba(0,0,0,0.30);
-  -webkit-tap-highlight-color: transparent;
-}
-
-.stock-details summary::-webkit-details-marker{ display:none; }
-
-.stock-details .info-dot{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  width:16px;
-  height:16px;
-  border-radius:50%;
-  font-size:11px;
-  font-weight:900;
-  color:#111;
-  background: linear-gradient(135deg, #fff, #c9a24d);
-}
-
-.stock-pop{
-  position:absolute;
-  top: 125%;
-  right: 0;
-  background: rgba(10,10,10,0.96);
-  color: rgba(255,255,255,0.92);
-  padding: 9px 11px;
-  border-radius: 10px;
-  font-size: 12px;
-  line-height: 1.35;
-  border: 1px solid rgba(201,162,77,.42);
-  box-shadow: 0 14px 40px rgba(0,0,0,.65);
-  z-index: 30;
-  width: max-content;
-  max-width: 90vw;
-}
-
-.stock-details.delay summary{
-  border-color: rgba(255,170,80,0.45);
-  background: linear-gradient(135deg, rgba(255,170,80,0.16), rgba(255,255,255,0.05));
-}
-
-/* Mobile portrait : popup centré */
-@media (max-width: 768px) and (orientation: portrait){
-  .stock-pop{
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
-    text-align:center;
-    width: min(320px, 90vw);
-  }
-}
-/* ===== fin ===== */
-
-</style>
+  </style>
 </head>
 <body>
 <header>
@@ -540,21 +495,10 @@
               </svg>
               <span>Voir en 3D</span>
             </div>
-            <div class="title-line">
-  <div class="title">Pastille</div>
-
-  <details class="stock-details">
-    <summary>Voir stock <span class="info-dot">i</span></summary>
-    <div class="stock-pop">
-      2 disponibles<br>En cours de fabrication<br>Dispo rapidement
-    </div>
-  </details>
-</div>
-
           </div>
     <div class="title-line">
   <div class="title">Pastille</div>
-  <span class="stock-badge">Voir stock <span class="info-dot">i</span><span class="tooltip">2 disponibles<br>En cours de fabrication<br>Dispo rapidement</span></span>
+  <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip">2 disponibles<br>En cours de fabrication<br>Dispo rapidement</span></span>
 </div>
 
           <p class="desc">Format standard, passe partout ! .</p>
@@ -584,7 +528,7 @@
           </div>
           <div class="title-line">
   <div class="title">Abeille (gravée)</div>
-  <span class="stock-badge">Voir stock <span class="info-dot">i</span><span class="tooltip">1 disponible<br>En cours de fabrication<br>Dispo rapidement</span></span>
+  <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip">1 disponible<br>En cours de fabrication<br>Dispo rapidement</span></span>
 </div>
           <p class="desc">Signature “miel”, relief précis, rendu premium.</p>
 
@@ -613,7 +557,7 @@
           </div>
           <div class="title-line">
   <div class="title">Hexagone</div>
-  <span class="stock-badge">Voir stock <span class="info-dot">i</span><span class="tooltip">1 disponible<br>En cours de fabrication<br>Dispo rapidement</span></span>
+  <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip">1 disponible<br>En cours de fabrication<br>Dispo rapidement</span></span>
 </div>
           <p class="desc">Forme hexagonale élégante.</p>
 
@@ -642,7 +586,7 @@
           </div>
           <div class="title-line">
   <div class="title">Feuille</div>
-  <span class="stock-badge">Voir stock <span class="info-dot">i</span><span class="tooltip">1 disponible<br>En cours de fabrication<br>Dispo rapidement</span></span>
+  <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip">1 disponible<br>En cours de fabrication<br>Dispo rapidement</span></span>
 </div>
           <p class="desc">Motif naturel et élégant, très bon rendu visuel.</p>
 
@@ -688,7 +632,7 @@
           </div>
           <div class="title-line">
   <div class="title">Œuf</div>
-  <span class="stock-badge delay">Voir stock <span class="info-dot">i</span><span class="tooltip">Stock 0<br>Délai plus long</span></span>
+  <span class="stock-badge delay">Stock <span class="info-dot">i</span><span class="tooltip">Stock 0<br>Délai plus long</span></span>
 </div>
           <p class="desc">Forme douce et arrondie.</p>
 
@@ -717,7 +661,7 @@
           </div>
           <div class="title-line">
   <div class="title">Pastille ovale</div>
-  <span class="stock-badge delay">Voir stock <span class="info-dot">i</span><span class="tooltip">Stock 0<br>Délai plus long</span></span>
+  <span class="stock-badge delay">Stock <span class="info-dot">i</span><span class="tooltip">Stock 0<br>Délai plus long</span></span>
 </div>
           <p class="desc">Format élégant et allongé, excellente lisibilité des gravures.</p>
 
@@ -739,7 +683,7 @@
           </div>
           <div class="title-line">
   <div class="title">Perle Ø 15 mm</div>
-  <span class="stock-badge">Voir stock <span class="info-dot">i</span><span class="tooltip">2 disponibles<br>En cours de fabrication<br>Dispo rapidement</span></span>
+  <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip">2 disponibles<br>En cours de fabrication<br>Dispo rapidement</span></span>
 </div>
           <p class="desc">Forme polyvalente, démoulage propre, idéale pour bonbons en sucre cuit.</p>
 
@@ -869,40 +813,5 @@
       }, { passive: true });
     })();
   </script>
-
-  
-
-  <script>
-    // Tooltip Stock : pointerdown/touchstart (fiable en portrait) + click dehors pour fermer
-    (function(){
-      const badges = Array.from(document.querySelectorAll('.stock-badge'));
-      if (!badges.length) return;
-
-      const closeAll = () => badges.forEach(b => b.classList.remove('open'));
-
-      const toggle = (badge) => {
-        const isOpen = badge.classList.contains('open');
-        closeAll();
-        if (!isOpen) badge.classList.add('open');
-      };
-
-      const onBadge = (badge) => (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        toggle(badge);
-      };
-
-      badges.forEach(badge => {
-        badge.addEventListener('pointerdown', onBadge(badge), { passive: false });
-        badge.addEventListener('touchstart', onBadge(badge), { passive: false }); // safety
-        badge.addEventListener('click', onBadge(badge));
-      });
-
-      document.addEventListener('pointerdown', closeAll, { passive: true });
-      document.addEventListener('touchstart', closeAll, { passive: true });
-      window.addEventListener('scroll', closeAll, { passive: true });
-    })();
-  </script>
-
 </body>
 </html>
