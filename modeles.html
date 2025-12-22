@@ -2,253 +2,17 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <!DOCTYPE html>
-<html lang="fr">
   
-  <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-K4502PGZ0X"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-K4502PGZ0X');
-</script>
-
   <meta charset="UTF-8" />
-  <title>Machine de confiserie professionnelle – Bâti à cylindres | Atelier CAL</title>
-
-  <meta name="google-site-verification" content="A0dojKL5m35FOtxZXnqt33BbuTEnXFRBVb-cTb6grEY" />
-  <meta name="description" content="Atelier CAL conçoit et fabrique des machines professionnelles pour la confiserie : bâti à cylindres motorisé pour bonbons en sucre cuit, nougatine et miel. Conception française." />
-  <meta name="keywords" content="machine confiserie, machine bonbon, bâti à cylindres, machine nougatine, machine bonbon miel, confiseur professionnel" />
-  <meta name="author" content="Atelier CAL" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <style>
-    :root{
-      --text: rgba(255,255,255,0.92);
-      --muted: rgba(255,255,255,0.75);
-      --line: rgba(255,255,255,0.18);
-      --card: rgba(255,255,255,0.04);
-      --accent: #c9a24d;
-      --speed: 20s;
-    }
-
-    body{
-      margin:0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background: radial-gradient(circle at top, #1c1c1c 0%, #0b0b0b 45%, #000 100%);
-    }
-
-    /* ================= BANNIÈRE DÉFILANTE ================= */
-    .top-banner{
-      height: 48px;
-      overflow: hidden;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      background:#0f1115;
-      position: relative;
-    }
-
-    .banner-track{
-      display: flex;
-      align-items: center;
-      width: max-content;
-      height: 100%;
-      animation: marquee var(--speed) linear infinite;
-      gap: 32px;
-      padding-left: 20px;
-    }
-
-    .banner-clone{
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      white-space: nowrap;
-    }
-
-    .banner-text{
-      color: var(--accent);
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.3px;
-    }
-
-    .banner-candies{
-      display: flex;
-      gap: 16px;
-      align-items: center;
-    }
-
-    .candy{
-      width: calc(36px * 1.8);
-      height: calc(36px * 1.8);
-      object-fit: contain;
-      animation: spin linear infinite;
-      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.45));
-    }
-
-    .c1{ animation-duration: 2s; }
-    .c2{ animation-duration: 2.6s; }
-    .c3{ animation-duration: 2.2s; }
-    .c4{ animation-duration: 3s; }
-    .c5{ animation-duration: 2.4s; }
-
-    @keyframes spin{
-      from{ transform: rotate(0deg); }
-      to{ transform: rotate(360deg); }
-    }
-
-    @keyframes marquee{
-      from{ transform: translateX(0); }
-      to{ transform: translateX(-50%); }
-    }
-
-    /* ================= CONTENU ================= */
-    .container{
-      width: min(1120px, 92vw);
-      margin: 0 auto;
-    }
-
-    header{
-      padding: 92px 0 34px;
-      text-align:center;
-    }
-
-    .logo{
-      width: 320px;
-      max-width: 90%;
-      margin-bottom: 18px;
-    }
-
-    nav a{
-      color: rgba(255,255,255,0.85);
-      text-decoration: none;
-      margin: 0 8px;
-      font-size: 0.9rem;
-    }
-
-    nav a:hover{ text-decoration: underline; }
-
-    /* ===== AJOUT PREMIUM : lien discret + badge ===== */
-    nav a.nav-partner{
-      opacity: 0.82;
-      font-size: 0.92rem;
-    }
-    nav a.nav-partner:hover{
-      opacity: 1;
-    }
-
-    .nav-badge{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      margin-left:10px;
-      padding: 3px 8px;
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .2px;
-      color: rgba(255,255,255,0.88);
-      border: 1px solid rgba(201,162,77,0.35);
-      background: linear-gradient(135deg, rgba(201,162,77,0.16), rgba(255,255,255,0.06));
-      box-shadow: 0 10px 26px rgba(0,0,0,0.35);
-      vertical-align: middle;
-    }
-
-    .pulse-dot{
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95), rgba(201,162,77,0.85) 55%, rgba(201,162,77,0.25) 75%);
-      box-shadow: 0 0 0 0 rgba(201,162,77,0.35);
-      animation: pulseSoft 2.2s ease-in-out infinite;
-      flex: 0 0 auto;
-    }
-
-    @keyframes pulseSoft{
-      0%   { transform: scale(1);    box-shadow: 0 0 0 0 rgba(201,162,77,0.35); }
-      55%  { transform: scale(1.10); box-shadow: 0 0 0 8px rgba(201,162,77,0.00); }
-      100% { transform: scale(1);    box-shadow: 0 0 0 0 rgba(201,162,77,0.00); }
-    }
-
-    @media (prefers-reduced-motion: reduce){
-      .pulse-dot{ animation: none; }
-      .banner-track{ animation: none; }
-      .candy{ animation: none; }
-    }
-    /* ===== fin ajout badge ===== */
-
-    h1{
-      margin:14px 0 12px;
-      font-size: clamp(2.2rem, 4vw, 3.2rem);
-    }
-
-    .subtitle{
-      max-width: 920px;
-      margin: 0 auto;
-      color: var(--muted);
-      line-height: 1.65;
-    }
-
-    section{
-      padding: 58px 0;
-      text-align:center;
-    }
-
-    .block{
-      margin: 22px auto 0;
-      padding: 26px 22px;
-      background: var(--card);
-      border: 1px solid var(--line);
-    }
-
-    .hero-video{
-      width: 100%;
-      max-width: 1000px;
-      aspect-ratio: 16/9;
-      margin-bottom: 18px;
-      border: 1px solid rgba(255,255,255,0.18);
-      background:#000;
-    }
-
-    .cta{
-      display:inline-block;
-      padding: 16px 44px;
-      border: 1px solid rgba(255,255,255,0.28);
-      color:#fff;
-      text-decoration:none;
-      margin: 8px;
-      text-transform: uppercase;
-    }
-
-    footer{
-      padding: 28px 0 38px;
-      text-align:center;
-      color: rgba(255,255,255,0.55);
-    }
-
-    /* Couleur email et téléphone */
-    a[href^="mailto"],
-    a[href^="tel"]{
-      color: rgba(255,255,255,0.65);
-      text-decoration: none;
-    }
-
-    a[href^="mailto"]:hover,
-    a[href^="tel"]:hover{
-      color: rgba(255,255,255,0.9);
-    }
-  </style>
-</head>
-
   <title>Atelier CAL – Modèles disponibles</title>
+  <meta name="google-site-verification" content="A0dojKL5m35FOtxZXnqt33BbuTEnXFRBVb-cTb6grEY" /> <meta name="description" content="Atelier CAL conçoit et fabrique des machines professionnelles pour la confiserie : bâti à cylindres motorisé pour bonbons en sucre cuit, nougatine et miel. Conception française." /> <meta name="keywords" content="machine confiserie, machine bonbon, bâti à cylindres, machine nougatine, machine bonbon miel, confiseur professionnel" /> <meta name="author" content="Atelier CAL" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- viewer 3D (model-viewer) -->
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
   <style>
-    :root{
+:root{
       --text: rgba(255,255,255,0.92);
       --muted: rgba(255,255,255,0.75);
       --line: rgba(255,255,255,0.18);
@@ -604,11 +368,107 @@
   }
 }
 /* ===== FIN STOCK ===== */
-</style>
-</head>
+/* ===== STOCK : badge "Stock ⓘ" + tooltip ===== */
+    .title-line{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .title-line .title{
+      margin: 12px 0 6px; /* conserve ton rendu */
+      flex: 0 1 auto;
+      min-width: 0;
+    }
 
+    .stock-badge{
+      position: relative;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .2px;
+      white-space: nowrap;
+      color: rgba(255,255,255,0.90);
+      border: 1px solid rgba(201,162,77,0.45);
+      background: linear-gradient(135deg, rgba(201,162,77,0.18), rgba(255,255,255,0.05));
+      box-shadow: 0 10px 26px rgba(0,0,0,0.30);
+      cursor: help;
+      margin-left: auto;
+      user-select: none;
+    }
+
+    .stock-badge .info-dot{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:16px;
+      height:16px;
+      border-radius:50%;
+      font-size:11px;
+      font-weight:900;
+      color:#111;
+      background: linear-gradient(135deg, #fff, #c9a24d);
+      margin-left: 2px;
+      flex: 0 0 auto;
+    }
+
+    .stock-badge .tooltip{
+      position:absolute;
+      bottom: 125%;
+      right: 0;
+      transform: translateY(6px);
+      background: rgba(10,10,10,0.96);
+      color: rgba(255,255,255,0.92);
+      padding: 9px 11px;
+      border-radius: 10px;
+      font-size: 12px;
+      line-height: 1.35;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: .22s ease;
+      box-shadow: 0 14px 40px rgba(0,0,0,.65);
+      border: 1px solid rgba(201,162,77,.42);
+      z-index: 20;
+    }
+
+    .stock-badge .tooltip::after{
+      content:"";
+      position:absolute;
+      top: 100%;
+      right: 14px;
+      border: 7px solid transparent;
+      border-top-color: rgba(10,10,10,0.96);
+      filter: drop-shadow(0 2px 0 rgba(201,162,77,.18));
+    }
+
+    .stock-badge:hover .tooltip{
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Mobile : affichage au tap (active) */
+    @media (hover:none){
+      .stock-badge:active .tooltip{
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Variantes */
+    .stock-badge.delay{
+      border-color: rgba(255,170,80,0.45);
+      background: linear-gradient(135deg, rgba(255,170,80,0.16), rgba(255,255,255,0.05));
+    }
+    /* ===== FIN STOCK ===== */
+
+  </style>
+</head>
 <body>
-  <header>
+<header>
     <div class="container">
       <h1>Modèles disponibles</h1>
       <p class="subtitle"></p>
@@ -638,7 +498,7 @@
           </div>
     <div class="title-line">
   <div class="title">Pastille</div>
-  <span class="stock-badge"><span class="dot"></span>Stock dispo rapidement 2 en cours de fabrication</span>
+  <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip">2 disponibles<br>En cours de fabrication<br>Dispo rapidement</span></span>
 </div>
 
           <p class="desc">Format standard, passe partout ! .</p>
@@ -668,7 +528,7 @@
           </div>
           <div class="title-line">
   <div class="title">Abeille (gravée)</div>
-  <span class="stock-badge"><span class="dot"></span>Stock dispo rapidement 1 en cours de fabrication</span>
+  <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip">1 disponible<br>En cours de fabrication<br>Dispo rapidement</span></span>
 </div>
           <p class="desc">Signature “miel”, relief précis, rendu premium.</p>
 
@@ -697,7 +557,7 @@
           </div>
           <div class="title-line">
   <div class="title">Hexagone</div>
-  <span class="stock-badge"><span class="dot"></span>Stock dispo rapidement 1 en cours de fabrication</span>
+  <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip">1 disponible<br>En cours de fabrication<br>Dispo rapidement</span></span>
 </div>
           <p class="desc">Forme hexagonale élégante.</p>
 
@@ -726,7 +586,7 @@
           </div>
           <div class="title-line">
   <div class="title">Feuille</div>
-  <span class="stock-badge"><span class="dot"></span>Stock dispo rapidement 1 en cours de fabrication</span>
+  <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip">1 disponible<br>En cours de fabrication<br>Dispo rapidement</span></span>
 </div>
           <p class="desc">Motif naturel et élégant, très bon rendu visuel.</p>
 
@@ -772,7 +632,7 @@
           </div>
           <div class="title-line">
   <div class="title">Œuf</div>
-  <span class="stock-badge delay"><span class="dot"></span>Stock 0 • délai plus long</span>
+  <span class="stock-badge delay">Stock <span class="info-dot">i</span><span class="tooltip">Stock 0<br>Délai plus long</span></span>
 </div>
           <p class="desc">Forme douce et arrondie.</p>
 
@@ -801,7 +661,7 @@
           </div>
           <div class="title-line">
   <div class="title">Pastille ovale</div>
-  <span class="stock-badge delay"><span class="dot"></span>Stock 0 • délai plus long</span>
+  <span class="stock-badge delay">Stock <span class="info-dot">i</span><span class="tooltip">Stock 0<br>Délai plus long</span></span>
 </div>
           <p class="desc">Format élégant et allongé, excellente lisibilité des gravures.</p>
 
@@ -823,7 +683,7 @@
           </div>
           <div class="title-line">
   <div class="title">Perle Ø 15 mm</div>
-  <span class="stock-badge"><span class="dot"></span>2 en cours de fabrication</span>
+  <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip">2 disponibles<br>En cours de fabrication<br>Dispo rapidement</span></span>
 </div>
           <p class="desc">Forme polyvalente, démoulage propre, idéale pour bonbons en sucre cuit.</p>
 
@@ -953,6 +813,5 @@
       }, { passive: true });
     })();
   </script>
-  
 </body>
 </html>
