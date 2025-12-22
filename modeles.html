@@ -545,34 +545,40 @@
       backdrop-filter: blur(4px);
       pointer-events: none;
     }
-    /* ===== BADGE STOCK PREMIUM ===== */
-.stock-pill{
+    /* ===== Stock à droite du titre ===== */
+.title-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.stock-badge{
   display:inline-flex;
   align-items:center;
   gap:6px;
-  padding: 6px 10px;
+  padding: 4px 8px;
   border-radius: 999px;
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: .25px;
+  letter-spacing: .2px;
   white-space: nowrap;
 
-  color: rgba(255,255,255,0.92);
+  color: rgba(255,255,255,0.90);
   border: 1px solid rgba(201,162,77,0.45);
-  background: linear-gradient(135deg, rgba(201,162,77,0.20), rgba(255,255,255,0.05));
-  box-shadow: 0 10px 26px rgba(0,0,0,0.35);
+  background: linear-gradient(135deg, rgba(201,162,77,0.18), rgba(255,255,255,0.05));
+  box-shadow: 0 10px 26px rgba(0,0,0,0.30);
 }
 
-.stock-pill .dot{
-  width: 7px;
-  height: 7px;
+.stock-badge .dot{
+  width: 6px;
+  height: 6px;
   border-radius: 999px;
   background: radial-gradient(circle at 30% 30%, #fff, #c9a24d 55%, rgba(201,162,77,0.25) 75%);
   box-shadow: 0 0 0 0 rgba(201,162,77,0.35);
   animation: pulseSoft 2.2s ease-in-out infinite;
 }
-/* ===== FIN BADGE STOCK ===== */
-
+/* ===== fin stock ===== */
 
   </style>
 </head>
@@ -607,19 +613,24 @@
             </div>
           </div>
           <div class="title">Pastille</div>
-          <p class="desc">Format standard, passe partout ! .</p>
-
-         <div class="tag-row">
-  <span class="tag">Standard</span>
-
-  <span class="stock-pill">
-    <span class="dot"></span>
-    En cours de fabrication • dispo rapidement (2)
+          <div class="title-line">
+  <div class="title">Pastille</div>
+  <span class="stock-badge">
+    <span class="dot"></span>2 dispo
   </span>
-
-  <a class="buy-pill" href="...">Acheter</a>
 </div>
 
+          <p class="desc">Format standard, passe partout ! .</p>
+
+          <div class="tag-row">
+            <span class="tag">Standard</span>
+            <a class="buy-pill"
+               href="https://buy.stripe.com/eVqaEYd2Xb1fbws547cZa04"
+               target="_blank"
+               rel="noopener">
+              Acheter
+            </a>
+          </div>
         </div>
 
         <!-- ABEILLE -> 3D -->
