@@ -464,13 +464,24 @@
       background: linear-gradient(135deg, rgba(255,170,80,0.16), rgba(255,255,255,0.05));
     }
     /* ===== FIN STOCK ===== */
-/* ===== Fix position tooltip mobile ===== */
+/* ===== Tooltip mobile portrait : toujours visible ===== */
 @media (max-width: 768px){
   .stock-badge .tooltip{
+    left: 50%;
     right: auto;
-    left: 0;
-    transform: translateY(6px);
+    transform: translate(-50%, 6px);
+    text-align: center;
+    max-width: 90vw;
+    white-space: normal; /* permet retour à la ligne si besoin */
   }
+
+  .stock-badge .tooltip::after{
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+}
+
 
   .stock-badge .tooltip::after{
     right: auto;
