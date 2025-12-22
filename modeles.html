@@ -545,20 +545,34 @@
       backdrop-filter: blur(4px);
       pointer-events: none;
     }
-    /* ===== STOCK (ajout discret) ===== */
-.stock-mini{
-  margin-top: 8px;
-  font-size: 12px;
-  letter-spacing: .2px;
-  color: rgba(201,162,77,0.95); /* doré Atelier CAL */
-  text-align: right;            /* aligné côté bouton Acheter */
+    /* ===== BADGE STOCK PREMIUM ===== */
+.stock-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .25px;
+  white-space: nowrap;
+
+  color: rgba(255,255,255,0.92);
+  border: 1px solid rgba(201,162,77,0.45);
+  background: linear-gradient(135deg, rgba(201,162,77,0.20), rgba(255,255,255,0.05));
+  box-shadow: 0 10px 26px rgba(0,0,0,0.35);
 }
 
-.stock-mini b{
-  color: rgba(255,255,255,0.92);
-  font-weight: 700;
+.stock-pill .dot{
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #fff, #c9a24d 55%, rgba(201,162,77,0.25) 75%);
+  box-shadow: 0 0 0 0 rgba(201,162,77,0.35);
+  animation: pulseSoft 2.2s ease-in-out infinite;
 }
-/* ===== fin stock ===== */
+/* ===== FIN BADGE STOCK ===== */
+
 
   </style>
 </head>
@@ -595,17 +609,17 @@
           <div class="title">Pastille</div>
           <p class="desc">Format standard, passe partout ! .</p>
 
-          <div class="tag-row">
-            <div class="stock-mini"><b>2</b> en stock – disponible rapidement</div>
+         <div class="tag-row">
+  <span class="tag">Standard</span>
 
-            <span class="tag">Standard</span>
-            <a class="buy-pill"
-               href="https://buy.stripe.com/eVqaEYd2Xb1fbws547cZa04"
-               target="_blank"
-               rel="noopener">
-              Acheter
-            </a>
-          </div>
+  <span class="stock-pill">
+    <span class="dot"></span>
+    En cours de fabrication • dispo rapidement (2)
+  </span>
+
+  <a class="buy-pill" href="...">Acheter</a>
+</div>
+
         </div>
 
         <!-- ABEILLE -> 3D -->
