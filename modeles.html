@@ -464,22 +464,7 @@
       background: linear-gradient(135deg, rgba(255,170,80,0.16), rgba(255,255,255,0.05));
     }
     /* ===== FIN STOCK ===== */
-/* Portrait mobile : tooltip sous le badge (toujours visible) */
-@media (max-width: 768px) and (orientation: portrait){
-  .stock-badge .tooltip{
-    top: 125%;
-    bottom: auto;
-
-    left: 50%;
-    right: auto;
-    transform: translate(-50%, -6px);
-
-    max-width: 90vw;
-    white-space: normal;
-    text-align: center;
-  }
-
-  /* flèche au-dessus de la bulle */
+/* flèche au-dessus de la bulle */
   .stock-badge .tooltip::after{
     top: auto;
     bottom: 100%;
@@ -491,12 +476,133 @@
     border-top-color: transparent;
   }
 }
-.stock-badge.open .tooltip{
-  opacity: 1;
-  transform: translate(-50%, 0);
-}
 
-  </style>
+    /* ===== STOCK (badge "Stock ⓘ" + tooltip, PC + mobile OK) ===== */
+    .title-line{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .title-line .title{
+      margin: 12px 0 6px;
+      flex: 0 1 auto;
+      min-width: 0;
+    }
+
+    .stock-badge{
+      position: relative;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .2px;
+      white-space: nowrap;
+      color: rgba(255,255,255,0.90);
+      border: 1px solid rgba(201,162,77,0.45);
+      background: linear-gradient(135deg, rgba(201,162,77,0.18), rgba(255,255,255,0.05));
+      box-shadow: 0 10px 26px rgba(0,0,0,0.30);
+      cursor: pointer;
+      margin-left: auto;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .stock-badge .info-dot{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:16px;
+      height:16px;
+      border-radius:50%;
+      font-size:11px;
+      font-weight:900;
+      color:#111;
+      background: linear-gradient(135deg, #fff, #c9a24d);
+      margin-left: 2px;
+      flex: 0 0 auto;
+    }
+
+    .stock-badge .tooltip{
+      position:absolute;
+      bottom: 125%;
+      right: 0;
+      transform: translateY(6px);
+      background: rgba(10,10,10,0.96);
+      color: rgba(255,255,255,0.92);
+      padding: 9px 11px;
+      border-radius: 10px;
+      font-size: 12px;
+      line-height: 1.35;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: .22s ease;
+      box-shadow: 0 14px 40px rgba(0,0,0,.65);
+      border: 1px solid rgba(201,162,77,.42);
+      z-index: 20;
+      max-width: 90vw;
+    }
+
+    .stock-badge .tooltip::after{
+      content:"";
+      position:absolute;
+      top: 100%;
+      right: 14px;
+      border: 7px solid transparent;
+      border-top-color: rgba(10,10,10,0.96);
+      filter: drop-shadow(0 2px 0 rgba(201,162,77,.18));
+    }
+
+    /* Desktop hover */
+    .stock-badge:hover .tooltip{
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Tap open state */
+    .stock-badge.open .tooltip{
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    /* Variantes */
+    .stock-badge.delay{
+      border-color: rgba(255,170,80,0.45);
+      background: linear-gradient(135deg, rgba(255,170,80,0.16), rgba(255,255,255,0.05));
+    }
+
+    /* Mobile portrait: tooltip centered BELOW the badge (always visible) */
+    @media (max-width: 768px) and (orientation: portrait){
+      .stock-badge .tooltip{
+        top: 125%;
+        bottom: auto;
+        left: 50%;
+        right: auto;
+        transform: translate(-50%, -6px);
+        white-space: normal;
+        text-align: center;
+      }
+      .stock-badge.open .tooltip{
+        transform: translate(-50%, 0);
+      }
+      .stock-badge .tooltip::after{
+        top: auto;
+        bottom: 100%;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        border: 7px solid transparent;
+        border-bottom-color: rgba(10,10,10,0.96);
+        border-top-color: transparent;
+      }
+    }
+    /* ===== FIN STOCK ===== */
+
+</style>
 </head>
 <body>
 <header>
@@ -844,5 +950,31 @@
       }, { passive: true });
     })();
   </script>
+
+  <script>
+    // Tooltip Stock : click/tap to open, click outside to close
+    (function(){
+      const badges = Array.from(document.querySelectorAll('.stock-badge'));
+      if (!badges.length) return;
+
+      badges.forEach(badge => {
+        badge.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const isOpen = badge.classList.contains('open');
+          badges.forEach(b => b.classList.remove('open'));
+          if (!isOpen) badge.classList.add('open');
+        });
+      });
+
+      document.addEventListener('click', () => {
+        badges.forEach(b => b.classList.remove('open'));
+      });
+
+      window.addEventListener('scroll', () => {
+        badges.forEach(b => b.classList.remove('open'));
+      }, { passive: true });
+    })();
+  </script>
+
 </body>
 </html>
