@@ -464,30 +464,36 @@
       background: linear-gradient(135deg, rgba(255,170,80,0.16), rgba(255,255,255,0.05));
     }
     /* ===== FIN STOCK ===== */
-/* ===== Tooltip mobile portrait : toujours visible ===== */
-@media (max-width: 768px){
+/* Portrait mobile : tooltip sous le badge (toujours visible) */
+@media (max-width: 768px) and (orientation: portrait){
   .stock-badge .tooltip{
+    top: 125%;
+    bottom: auto;
+
     left: 50%;
     right: auto;
-    transform: translate(-50%, 6px);
-    text-align: center;
+    transform: translate(-50%, -6px);
+
     max-width: 90vw;
-    white-space: normal; /* permet retour à la ligne si besoin */
+    white-space: normal;
+    text-align: center;
   }
 
+  /* flèche au-dessus de la bulle */
   .stock-badge .tooltip::after{
+    top: auto;
+    bottom: 100%;
     left: 50%;
     right: auto;
     transform: translateX(-50%);
+    border: 7px solid transparent;
+    border-bottom-color: rgba(10,10,10,0.96);
+    border-top-color: transparent;
   }
 }
-
-
-  .stock-badge .tooltip::after{
-    right: auto;
-    left: 14px;
-    border-top-color: rgba(10,10,10,0.96);
-  }
+.stock-badge.open .tooltip{
+  opacity: 1;
+  transform: translate(-50%, 0);
 }
 
   </style>
