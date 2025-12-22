@@ -545,6 +545,21 @@
       backdrop-filter: blur(4px);
       pointer-events: none;
     }
+    /* ===== STOCK (ajout discret) ===== */
+.stock-mini{
+  margin-top: 8px;
+  font-size: 12px;
+  letter-spacing: .2px;
+  color: rgba(201,162,77,0.95); /* doré Atelier CAL */
+  text-align: right;            /* aligné côté bouton Acheter */
+}
+
+.stock-mini b{
+  color: rgba(255,255,255,0.92);
+  font-weight: 700;
+}
+/* ===== fin stock ===== */
+
   </style>
 </head>
 
@@ -581,6 +596,8 @@
           <p class="desc">Format standard, passe partout ! .</p>
 
           <div class="tag-row">
+            <div class="stock-mini"><b>2</b> en stock – disponible rapidement</div>
+
             <span class="tag">Standard</span>
             <a class="buy-pill"
                href="https://buy.stripe.com/eVqaEYd2Xb1fbws547cZa04"
