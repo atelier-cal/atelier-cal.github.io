@@ -545,14 +545,25 @@
       backdrop-filter: blur(4px);
       pointer-events: none;
     }
-    /* ===== Stock à droite du titre ===== */
-.title-row{
-  display:flex;
+    /* ===== STOCK (badge à côté du titre) ===== */
+.title-line{
+  display:flex !important;
   align-items:center;
-  justify-content:space-between;
   gap:10px;
 }
 
+.title-line .title{
+  margin: 12px 0 6px !important; /* garde ton rendu habituel */
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+.title-line .stock-badge{
+  flex: 0 0 auto;
+  margin-left: auto;
+}
+
+/* Badge stock (premium) */
 .stock-badge{
   display:inline-flex;
   align-items:center;
@@ -563,7 +574,6 @@
   font-weight: 700;
   letter-spacing: .2px;
   white-space: nowrap;
-
   color: rgba(255,255,255,0.90);
   border: 1px solid rgba(201,162,77,0.45);
   background: linear-gradient(135deg, rgba(201,162,77,0.18), rgba(255,255,255,0.05));
@@ -578,19 +588,23 @@
   box-shadow: 0 0 0 0 rgba(201,162,77,0.35);
   animation: pulseSoft 2.2s ease-in-out infinite;
 }
-/* Fix définitif : titre + badge sur la même ligne */
-.title-line{
-  display:flex !important;
-  align-items:center;
-  gap:10px;
+
+/* Hors stock / délai plus long */
+.stock-badge.delay{
+  border-color: rgba(255,170,80,0.45);
+  background: linear-gradient(135deg, rgba(255,170,80,0.16), rgba(255,255,255,0.05));
 }
 
-
-.title-line .stock-badge{
-  flex: 0 0 auto;    /* le badge garde sa taille */
-  margin-left: auto; /* pousse le badge à droite */
+/* Mobile : si vraiment trop long, on coupe proprement */
+@media (max-width: 420px){
+  .title-line .stock-badge{
+    max-width: 58%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
-  </style>
+/* ===== FIN STOCK ===== */
+</style>
 </head>
 
 <body>
@@ -624,9 +638,7 @@
           </div>
     <div class="title-line">
   <div class="title">Pastille</div>
-  <span class="stock-badge">
-    <span class="dot"></span>2 en cours de fabrication
-  </span>
+  <span class="stock-badge"><span class="dot"></span>Stock dispo rapidement 2 en cours de fabrication</span>
 </div>
 
           <p class="desc">Format standard, passe partout ! .</p>
@@ -654,7 +666,10 @@
               <span>Voir en 3D</span>
             </div>
           </div>
-          <div class="title">Abeille (gravée)</div>
+          <div class="title-line">
+  <div class="title">Abeille (gravée)</div>
+  <span class="stock-badge"><span class="dot"></span>Stock dispo rapidement 1 en cours de fabrication</span>
+</div>
           <p class="desc">Signature “miel”, relief précis, rendu premium.</p>
 
           <div class="tag-row">
@@ -680,7 +695,10 @@
               <span>Voir en 3D</span>
             </div>
           </div>
-          <div class="title">Hexagone</div>
+          <div class="title-line">
+  <div class="title">Hexagone</div>
+  <span class="stock-badge"><span class="dot"></span>Stock dispo rapidement 1 en cours de fabrication</span>
+</div>
           <p class="desc">Forme hexagonale élégante.</p>
 
           <div class="tag-row">
@@ -706,7 +724,10 @@
               <span>Voir en 3D</span>
             </div>
           </div>
-          <div class="title">Feuille</div>
+          <div class="title-line">
+  <div class="title">Feuille</div>
+  <span class="stock-badge"><span class="dot"></span>Stock dispo rapidement 1 en cours de fabrication</span>
+</div>
           <p class="desc">Motif naturel et élégant, très bon rendu visuel.</p>
 
           <div class="tag-row">
@@ -749,7 +770,10 @@
               <span>Voir en 3D</span>
             </div>
           </div>
-          <div class="title">Œuf</div>
+          <div class="title-line">
+  <div class="title">Œuf</div>
+  <span class="stock-badge delay"><span class="dot"></span>Stock 0 • délai plus long</span>
+</div>
           <p class="desc">Forme douce et arrondie.</p>
 
           <div class="tag-row">
@@ -775,7 +799,10 @@
               <span>Voir en 3D</span>
             </div>
           </div>
-          <div class="title">Pastille ovale</div>
+          <div class="title-line">
+  <div class="title">Pastille ovale</div>
+  <span class="stock-badge delay"><span class="dot"></span>Stock 0 • délai plus long</span>
+</div>
           <p class="desc">Format élégant et allongé, excellente lisibilité des gravures.</p>
 
           <div class="tag-row">
@@ -794,7 +821,10 @@
           <div class="img-wrap">
             <img class="img" src="modele-perle.png" alt="Modèle Perle 15 mm">
           </div>
-          <div class="title">Perle Ø 15 mm</div>
+          <div class="title-line">
+  <div class="title">Perle Ø 15 mm</div>
+  <span class="stock-badge"><span class="dot"></span>2 en cours de fabrication</span>
+</div>
           <p class="desc">Forme polyvalente, démoulage propre, idéale pour bonbons en sucre cuit.</p>
 
           <div class="tag-row">
