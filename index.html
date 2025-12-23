@@ -242,13 +242,13 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
       color:rgba(255,255,255,0.65);
       text-decoration:none;
     }
-/* Ajustement mobile : lien Partenariat formateurs */
+/* Mobile uniquement : décaler UNIQUEMENT le mot "formateurs" */
 @media (max-width: 768px) {
-  .top-nav a[href="partenaires-formateurs.html"] {
-    margin-left: 50px; /* ajuste si besoin : 12px / 18px */
+  .word-formateurs {
+    display: inline-block;
+    margin-left: 6px; /* ajuste : 4 à 8 px */
   }
 }
-
 
   </style>
 </head>
@@ -275,7 +275,10 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
 <nav class="top-nav">
   <a href="index.html">Accueil</a> |
   <a href="modeles.html">Voir les modèles</a> |
-  <a href="partenaires-formateurs.html">Partenariat formateurs</a>
+<a href="partenaires-formateurs.html">
+  Partenariat <span class="word-formateurs">formateurs</span>
+</a>
+
 </nav>
 
 <header>
