@@ -490,49 +490,15 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
     }
     /* ===== FIN STOCK ===== */
 
-    /* ===== AJOUT : HINT "BOUGE AVEC LE DOIGT" (overlay) ===== */
+    /* ===== AJOUT : HINT TEXTE SEUL (3D) ===== */
     .drag-hint{
       position:absolute;
       left:50%;
       top:55%;
       transform:translate(-50%,-50%);
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap:10px;
       pointer-events:none;
       z-index:4;
-      opacity:1;
-      transition:opacity .25s ease, transform .25s ease;
-    }
-    .drag-hint.hide{
-      opacity:0;
-      transform:translate(-50%,-50%) scale(.98);
-    }
-    .drag-hint .hint-arrow{
-      width:46px;
-      height:46px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,0.35);
-      background: rgba(0,0,0,0.35);
-      backdrop-filter: blur(6px);
-      position:relative;
-      animation:hintPulse 1.25s ease-in-out infinite;
-      box-shadow: 0 0 20px rgba(255,255,255,0.08);
-    }
-    .drag-hint .hint-arrow::after{
-      content:"";
-      position:absolute;
-      left:50%;
-      top:50%;
-      width:16px;
-      height:16px;
-      border-right:3px solid rgba(255,255,255,0.85);
-      border-bottom:3px solid rgba(255,255,255,0.85);
-      transform:translate(-50%,-50%) rotate(-45deg);
-      animation:hintSwipe 1.25s ease-in-out infinite;
-    }
-    .drag-hint .hint-text{
+
       font: 700 12px/1.2 Arial, Helvetica, sans-serif;
       letter-spacing:.6px;
       text-transform: uppercase;
@@ -540,20 +506,18 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
       text-shadow: 0 2px 12px rgba(0,0,0,0.55);
       background: rgba(0,0,0,0.28);
       border: 1px solid rgba(255,255,255,0.16);
-      padding: 7px 10px;
+      padding: 8px 12px;
       border-radius: 999px;
       backdrop-filter: blur(6px);
+
+      opacity:1;
+      transition:opacity .25s ease, transform .25s ease;
     }
-    @keyframes hintPulse{
-      0%,100%{ transform:scale(1); opacity:.85; }
-      50%{ transform:scale(1.07); opacity:1; }
+    .drag-hint.hide{
+      opacity:0;
+      transform:translate(-50%,-50%) scale(.98);
     }
-    @keyframes hintSwipe{
-      0%{ transform:translate(-50%,-50%) rotate(-45deg) translateX(-12px); opacity:.25; }
-      50%{ transform:translate(-50%,-50%) rotate(-45deg) translateX(12px); opacity:1; }
-      100%{ transform:translate(-50%,-50%) rotate(-45deg) translateX(-12px); opacity:.25; }
-    }
-    /* ===== FIN AJOUT HINT ===== */
+    /* ===== FIN AJOUT ===== */
 
   </style>
 </head>
@@ -805,11 +769,8 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
       <button class="viewer3d-close" onclick="close3D(null, true)">✕</button>
       <div class="recenter-hint">⌖</div>
 
-      <!-- AJOUT : hint drag -->
-      <div id="dragHint" class="drag-hint">
-        <div class="hint-arrow"></div>
-        <div class="hint-text">Bouge avec le doigt</div>
-      </div>
+      <!-- AJOUT : texte hint -->
+      <div id="dragHint" class="drag-hint">Bouger avec le doight</div>
       <!-- FIN AJOUT -->
 
       <model-viewer
@@ -835,18 +796,18 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
     const DEFAULT_ORBIT = "0deg 75deg 4m";
     const DEFAULT_FOV = "30deg";
 
-    /* AJOUT : fonctions hint */
+    /* AJOUT : show/hide du texte */
     function showDragHint(){
       const hint = document.getElementById('dragHint');
       if(!hint) return;
-      hint.style.display = 'flex';
+      hint.style.display = 'block';
       hint.classList.remove('hide');
     }
     function hideDragHint(){
       const hint = document.getElementById('dragHint');
       if(!hint) return;
       hint.classList.add('hide');
-      setTimeout(() => { if(hint) hint.style.display = 'none'; }, 260);
+      setTimeout(()=>{ if(hint) hint.style.display='none'; }, 260);
     }
     /* FIN AJOUT */
 
@@ -857,7 +818,7 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
       overlay.style.display = 'flex';
       document.body.style.overflow = 'hidden';
 
-      /* AJOUT : afficher le hint à chaque ouverture */
+      /* AJOUT : afficher hint à l’ouverture */
       showDragHint();
       /* FIN AJOUT */
 
@@ -893,7 +854,7 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
       document.getElementById('viewer3D').style.display = 'none';
       document.body.style.overflow = '';
 
-      /* AJOUT : reset (pour la prochaine ouverture) */
+      /* AJOUT : reset pour la prochaine ouverture */
       showDragHint();
       /* FIN AJOUT */
     }
@@ -933,7 +894,7 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
       }, { passive: true });
     })();
 
-    /* AJOUT : cacher le hint dès la 1ère interaction */
+    /* AJOUT : cache le hint au 1er geste */
     (function(){
       const model = document.getElementById('model3d');
       if(!model) return;
@@ -942,7 +903,6 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
       });
     })();
     /* FIN AJOUT */
-
   </script>
 </body>
 </html>
