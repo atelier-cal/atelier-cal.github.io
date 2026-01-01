@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-   <!-- Google Analytics -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-K4502PGZ0X"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -9,35 +9,38 @@
     gtag('js', new Date());
     gtag('config', 'G-K4502PGZ0X');
   </script>
+
   <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2222911094866542');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-  <meta charset="UTF-8" />
-  
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2222911094866542');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
   <meta charset="UTF-8" />
   <title>Atelier CAL – Modèles disponibles</title>
-  <meta name="google-site-verification" content="A0dojKL5m35FOtxZXnqt33BbuTEnXFRBVb-cTb6grEY" /> <meta name="description" content="Atelier CAL conçoit et fabrique des machines professionnelles pour la confiserie : bâti à cylindres motorisé pour bonbons en sucre cuit, nougatine et miel. Conception française." /> <meta name="keywords" content="machine confiserie, machine bonbon, bâti à cylindres, machine nougatine, machine bonbon miel, confiseur professionnel" /> <meta name="author" content="Atelier CAL" />
+  <meta name="google-site-verification" content="A0dojKL5m35FOtxZXnqt33BbuTEnXFRBVb-cTb6grEY" />
+  <meta name="description" content="Atelier CAL conçoit et fabrique des machines professionnelles pour la confiserie : bâti à cylindres motorisé pour bonbons en sucre cuit, nougatine et miel. Conception française." />
+  <meta name="keywords" content="machine confiserie, machine bonbon, bâti à cylindres, machine nougatine, machine bonbon miel, confiseur professionnel" />
+  <meta name="author" content="Atelier CAL" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- viewer 3D (model-viewer) -->
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
   <style>
-:root{
+    :root{
       --text: rgba(255,255,255,0.92);
       --muted: rgba(255,255,255,0.75);
       --line: rgba(255,255,255,0.18);
@@ -151,13 +154,14 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
       text-transform: uppercase;
     }
 
-    /* === AJOUT (MINI) : ligne TAG + bulle ACHETER === */
+    /* === ligne TAG + actions === */
     .tag-row{
       margin-top: 10px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
+      flex-wrap: wrap;
     }
     .tag-row .tag{ margin-top: 0; }
 
@@ -183,7 +187,6 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
       transform: translateY(-1px);
       box-shadow: 0 0 20px rgba(255,255,255,0.10);
     }
-    /* === FIN AJOUT === */
 
     .contact{
       margin-top: 26px;
@@ -218,9 +221,7 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
     }
 
     /* ===== BADGE 3D PREMIUM (FIABLE) ===== */
-    .img-wrap.has-3d{
-      cursor: pointer;
-    }
+    .img-wrap.has-3d{ cursor: pointer; }
 
     .badge-3d{
       position: absolute;
@@ -334,73 +335,15 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
       backdrop-filter: blur(4px);
       pointer-events: none;
     }
-    /* ===== STOCK (badge à côté du titre) ===== */
-.title-line{
-  display:flex !important;
-  align-items:center;
-  gap:10px;
-}
 
-.title-line .title{
-  margin: 12px 0 6px !important; /* garde ton rendu habituel */
-  flex: 0 1 auto;
-  min-width: 0;
-}
-
-.title-line .stock-badge{
-  flex: 0 0 auto;
-  margin-left: auto;
-}
-
-/* Badge stock (premium) */
-.stock-badge{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  padding: 4px 8px;
-  border-radius: 999px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .2px;
-  white-space: nowrap;
-  color: rgba(255,255,255,0.90);
-  border: 1px solid rgba(201,162,77,0.45);
-  background: linear-gradient(135deg, rgba(201,162,77,0.18), rgba(255,255,255,0.05));
-  box-shadow: 0 10px 26px rgba(0,0,0,0.30);
-}
-
-.stock-badge .dot{
-  width: 6px;
-  height: 6px;
-  border-radius: 999px;
-  background: radial-gradient(circle at 30% 30%, #fff, #c9a24d 55%, rgba(201,162,77,0.25) 75%);
-  box-shadow: 0 0 0 0 rgba(201,162,77,0.35);
-  animation: pulseSoft 2.2s ease-in-out infinite;
-}
-
-/* Hors stock / délai plus long */
-.stock-badge.delay{
-  border-color: rgba(255,170,80,0.45);
-  background: linear-gradient(135deg, rgba(255,170,80,0.16), rgba(255,255,255,0.05));
-}
-
-/* Mobile : si vraiment trop long, on coupe proprement */
-@media (max-width: 420px){
-  .title-line .stock-badge{
-    max-width: 58%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-}
-/* ===== FIN STOCK ===== */
-/* ===== STOCK : badge "Stock ⓘ" + tooltip ===== */
+    /* ===== STOCK : badge "Stock ⓘ" + tooltip ===== */
     .title-line{
       display:flex;
       align-items:center;
       gap:10px;
     }
     .title-line .title{
-      margin: 12px 0 6px; /* conserve ton rendu */
+      margin: 12px 0 6px;
       flex: 0 1 auto;
       min-width: 0;
     }
@@ -475,7 +418,6 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
       transform: translateY(0);
     }
 
-    /* Mobile : affichage au tap (active) */
     @media (hover:none){
       .stock-badge:active .tooltip{
         opacity: 1;
@@ -483,12 +425,10 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
       }
     }
 
-    /* Variantes */
     .stock-badge.delay{
       border-color: rgba(255,170,80,0.45);
       background: linear-gradient(135deg, rgba(255,170,80,0.16), rgba(255,255,255,0.05));
     }
-    /* ===== FIN STOCK ===== */
 
     /* ===== AJOUT : HINT TEXTE SEUL (3D) ===== */
     .drag-hint{
@@ -517,403 +457,406 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
       opacity:0;
       transform:translate(-50%,-50%) scale(.98);
     }
+
+    .stock-note{
+      margin: 10px auto 0;
+      max-width: 860px;
+      color: rgba(255,255,255,0.65);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+    .stock-note b{ color: rgba(255,255,255,0.82); font-weight: 700; }
+
+    /* ===== AJOUT : BULLE CONTACT (bas droite) ===== */
+    .contact-fab{
+      position: fixed;
+      right: 14px;
+      bottom: 14px;
+      z-index: 99999;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .contact-fab a{
+      border-bottom: none !important;
+    }
     /* ===== FIN AJOUT ===== */
-     .stock-note{
-  margin: 10px auto 0;
-  max-width: 860px;
-  color: rgba(255,255,255,0.65);
-  font-size: 12px;
-  line-height: 1.35;
-}
-.stock-note b{ color: rgba(255,255,255,0.82); font-weight: 700; }
-
-
   </style>
 </head>
+
 <body>
 <header>
-    <div class="container">
-      <h1>Modèles disponibles</h1>
-       <div class="stock-note">* <b>Stock</b> : si les stocks n’apparaissent pas, tournez votre téléphone en mode paysage.</div>
+  <div class="container">
+    <h1>Modèles disponibles</h1>
+    <div class="stock-note">* <b>Stock</b> : si les stocks n’apparaissent pas, tournez votre téléphone en mode paysage.</div>
 
-      <p class="subtitle"></p>
+    <p class="subtitle"></p>
 
-      <div class="top-actions">
-        <a class="btn" href="index.html">Retour</a>
-        <a class="btn" href="#contact">Demander un devis</a>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <div class="container">
-      <div class="grid">
-
-        <!-- PASTILLE -> 3D -->
-        <div class="card">
-          <div class="img-wrap has-3d" onclick="open3D('pastille.glb')">
-            <img class="img" src="modele-pastille.png" alt="Modèle Pastille">
-            <div class="badge-3d">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
-                <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
-              </svg>
-              <span>Voir en 3D</span>
-            </div>
-          </div>
-    <div class="title-line">
-  <div class="title">Pastille</div>
-  <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip">Plus qu'un disponible<br>En cours de fabrication<br>Dispo rapidement</span></span>
-</div>
-
-          <p class="desc">Format standard, passe partout ! .</p>
-
-          <div class="tag-row">
-            <span class="tag">Standard</span>
-            <a class="buy-pill"
-               href="https://buy.stripe.com/eVqaEYd2Xb1fbws547cZa04"
-               target="_blank"
-               rel="noopener">
-              Acheter
-            </a>
-          </div>
-        </div>
-
-        <!-- ABEILLE -> 3D -->
-        <div class="card">
-          <div class="img-wrap has-3d" onclick="open3D('abeille.glb')">
-            <img class="img" src="modele-abeille.png" alt="Modèle Abeille">
-            <div class="badge-3d">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
-                <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
-              </svg>
-              <span>Voir en 3D</span>
-            </div>
-          </div>
-          <div class="title-line">
-  <div class="title">Abeille (gravée)</div>
-  <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip"> Plus qu'un disponible<br>En cours de fabrication<br>Dispo rapidement</span></span>
-</div>
-          <p class="desc">Signature “miel”, relief précis, rendu premium.</p>
-
-          <div class="tag-row">
-            <span class="tag">Signature</span>
-            <a class="buy-pill"
-               href="https://buy.stripe.com/9B6fZi5Avc5jaso2VZcZa09"
-               target="_blank"
-               rel="noopener">
-              Acheter
-            </a>
-          </div>
-        </div>
-
-        <!-- HEXAGONE -> 3D -->
-        <div class="card">
-          <div class="img-wrap has-3d" onclick="open3D('hexagone.glb')">
-            <img class="img" src="modèle-hexagone.png" alt="Modèle Hexagone">
-            <div class="badge-3d">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
-                <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
-              </svg>
-              <span>Voir en 3D</span>
-            </div>
-          </div>
-          <div class="title-line">
-  <div class="title">Hexagone</div>
-  <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip">Plus qu'un disponible<br>En cours de fabrication<br>Dispo rapidement</span></span>
-</div>
-          <p class="desc">Forme hexagonale élégante.</p>
-
-          <div class="tag-row">
-            <span class="tag">Géométrique</span>
-            <a class="buy-pill"
-               href="https://buy.stripe.com/00wbJ2bYT8T72ZW547cZa06"
-               target="_blank"
-               rel="noopener">
-              Acheter
-            </a>
-          </div>
-        </div>
-
-        <!-- FEUILLE -> 3D -->
-        <div class="card">
-          <div class="img-wrap has-3d" onclick="open3D('feuille.glb')">
-            <img class="img" src="modele-feuille.png" alt="Modèle Feuille">
-            <div class="badge-3d">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
-                <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
-              </svg>
-              <span>Voir en 3D</span>
-            </div>
-          </div>
-          <div class="title-line">
-  <div class="title">Feuille</div>
-  <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip">1 disponible<br>En cours de fabrication<br>Dispo rapidement</span></span>
-</div>
-          <p class="desc">Motif naturel et élégant, très bon rendu visuel.</p>
-
-          <div class="tag-row">
-            <span class="tag">Nature</span>
-            <a class="buy-pill"
-               href="https://buy.stripe.com/3cI9AUfb5d9n2ZWdADcZa08"
-               target="_blank"
-               rel="noopener">
-              Acheter
-            </a>
-          </div>
-        </div>
-
-        <!-- PERSONNALISATION -> 3D -->
-        <div class="card">
-          <div class="img-wrap has-3d" onclick="open3D('surmesure.glb')">
-            <img class="img" src="modele-personnalise.png" alt="Modèle personnalisable">
-            <div class="badge-3d">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
-                <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
-              </svg>
-              <span>Voir en 3D</span>
-            </div>
-          </div>
-          <div class="title">Personnalisation</div>
-          <p class="desc">Logo, motif, format sur demande. Étude rapide et faisabilité selon recette.</p>
-          <span class="tag">Sur mesure</span>
-        </div>
-
-        <!-- OEUF -> 3D -->
-        <div class="card">
-          <div class="img-wrap has-3d" onclick="open3D('oeuf.glb')">
-            <img class="img" src="modele-oeuf.png" alt="Modèle Œuf">
-            <div class="badge-3d">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
-                <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
-              </svg>
-              <span>Voir en 3D</span>
-            </div>
-          </div>
-          <div class="title-line">
-  <div class="title">Œuf</div>
-  <span class="stock-badge delay">Stock <span class="info-dot">i</span><span class="tooltip">Stock 0<br>Délai plus long</span></span>
-</div>
-          <p class="desc">Forme douce et arrondie.</p>
-
-          <div class="tag-row">
-            <span class="tag">Standard</span>
-            <a class="buy-pill"
-               href="https://buy.stripe.com/9B65kE5Avb1ffMI68bcZa07"
-               target="_blank"
-               rel="noopener">
-              Acheter
-            </a>
-          </div>
-        </div>
-
-        <!-- OVALE -> 3D -->
-        <div class="card">
-          <div class="img-wrap has-3d" onclick="open3D('ovale.glb')">
-            <img class="img" src="modele-pastille-ovale.png" alt="Modèle Pastille ovale">
-            <div class="badge-3d">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
-                <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
-              </svg>
-              <span>Voir en 3D</span>
-            </div>
-          </div>
-          <div class="title-line">
-  <div class="title">Pastille ovale</div>
-  <span class="stock-badge delay">Stock <span class="info-dot">i</span><span class="tooltip">Stock 0<br>Délai plus long</span></span>
-</div>
-          <p class="desc">Format élégant et allongé, excellente lisibilité des gravures.</p>
-
-          <div class="tag-row">
-            <span class="tag">Standard</span>
-            <a class="buy-pill"
-               href="https://buy.stripe.com/00w3cw3snb1f9okdADcZa0a"
-               target="_blank"
-               rel="noopener">
-              Acheter
-            </a>
-          </div>
-        </div>
-
-        <!-- PERLE (EN DERNIER) -->
-        <div class="card">
-          <div class="img-wrap">
-            <img class="img" src="modele-perle.png" alt="Modèle Perle 15 mm">
-          </div>
-          <div class="title-line">
-  <div class="title">Perle Ø 15 mm</div>
-  <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip">Plus qu'un disponibles<br>En cours de fabrication<br>Dispo rapidement</span></span>
-</div>
-          <p class="desc">Forme polyvalente, démoulage propre, idéale pour bonbons en sucre cuit.</p>
-
-          <div class="tag-row">
-            <span class="tag">Standard</span>
-            <a class="buy-pill"
-               href="https://buy.stripe.com/14AdRa1kf4CRcAw403cZa05"
-               target="_blank"
-               rel="noopener">
-              Acheter
-            </a>
-          </div>
-        </div>
-
-      </div>
-
-      <div id="contact" class="contact">
-        Contact : <a href="mailto:contact@atelier-cal.fr">contact@atelier-cal.fr</a> ·
-        <a href="tel:+33677845435">06 77 84 54 35</a>
-      </div>
-    </div>
-  </main>
-
-  <footer>Atelier CAL – Tous droits réservés</footer>
-
-  <!-- MODAL 3D -->
-  <div id="viewer3D" class="viewer3d-overlay" onclick="close3D(event)">
-    <div class="viewer3d-box">
-      <button class="viewer3d-close" onclick="close3D(null, true)">✕</button>
-      <div class="recenter-hint">⌖</div>
-
-      <!-- AJOUT : texte hint -->
-      <div id="dragHint" class="drag-hint">Bouger avec le doight</div>
-      <!-- FIN AJOUT -->
-
-      <model-viewer
-        id="model3d"
-        src=""
-        camera-controls
-        auto-rotate
-        interaction-prompt="none"
-        environment-image="neutral"
-        exposure="1.05"
-        shadow-intensity="0.35"
-        camera-orbit="0deg 75deg 4m"
-        field-of-view="30deg"
-        style="width:100%; height:100%; background: radial-gradient(circle at center, #1a1a1a, #000);">
-        <div slot="poster" style="color:white;opacity:.85;font-family:Arial;padding:14px;">
-          Chargement du modèle 3D…
-        </div>
-      </model-viewer>
+    <div class="top-actions">
+      <a class="btn" href="index.html">Retour</a>
+      <a class="btn" href="#contact">Demander un devis</a>
     </div>
   </div>
+</header>
 
-  <script>
-    const DEFAULT_ORBIT = "0deg 75deg 4m";
-    const DEFAULT_FOV = "30deg";
+<main>
+  <div class="container">
+    <div class="grid">
 
-    /* AJOUT : show/hide du texte */
-    function showDragHint(){
-      const hint = document.getElementById('dragHint');
-      if(!hint) return;
-      hint.style.display = 'block';
-      hint.classList.remove('hide');
-    }
-    function hideDragHint(){
-      const hint = document.getElementById('dragHint');
-      if(!hint) return;
-      hint.classList.add('hide');
-      setTimeout(()=>{ if(hint) hint.style.display='none'; }, 260);
-    }
-    /* FIN AJOUT */
+      <!-- PASTILLE -> 3D -->
+      <div class="card">
+        <div class="img-wrap has-3d" onclick="open3D('pastille.glb')">
+          <img class="img" src="modele-pastille.png" alt="Modèle Pastille">
+          <div class="badge-3d">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+              <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
+            </svg>
+            <span>Voir en 3D</span>
+          </div>
+        </div>
 
-    function open3D(glbPath){
-      const overlay = document.getElementById('viewer3D');
-      const model = document.getElementById('model3d');
+        <div class="title-line">
+          <div class="title">Pastille</div>
+          <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip">Plus qu'un disponible<br>En cours de fabrication<br>Dispo rapidement</span></span>
+        </div>
 
-      overlay.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
+        <p class="desc">Format standard, passe partout ! .</p>
 
-      /* AJOUT : afficher hint à l’ouverture */
-      showDragHint();
-      /* FIN AJOUT */
+        <div class="tag-row">
+          <span class="tag">Standard</span>
+          <a class="buy-pill" href="tel:+33677845435">Appeler</a>
+          <a class="buy-pill" href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20Pastille).">SMS</a>
+        </div>
+      </div>
 
-      model.autoRotate = true;
-      model.cameraOrbit = DEFAULT_ORBIT;
-      model.fieldOfView = DEFAULT_FOV;
-      if (model.jumpCameraToGoal) model.jumpCameraToGoal();
+      <!-- ABEILLE -> 3D -->
+      <div class="card">
+        <div class="img-wrap has-3d" onclick="open3D('abeille.glb')">
+          <img class="img" src="modele-abeille.png" alt="Modèle Abeille">
+          <div class="badge-3d">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+              <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
+            </svg>
+            <span>Voir en 3D</span>
+          </div>
+        </div>
 
-      model.src = '';
+        <div class="title-line">
+          <div class="title">Abeille (gravée)</div>
+          <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip">Plus qu'un disponible<br>En cours de fabrication<br>Dispo rapidement</span></span>
+        </div>
 
-      requestAnimationFrame(() => {
-        model.src = glbPath + '?v=' + Date.now();
+        <p class="desc">Signature “miel”, relief précis, rendu premium.</p>
 
-        const onLoad = () => {
-          model.cameraOrbit = DEFAULT_ORBIT;
-          model.fieldOfView = DEFAULT_FOV;
-          model.autoRotate = true;
-          model.removeEventListener('load', onLoad);
-        };
-        model.addEventListener('load', onLoad);
-      });
-    }
+        <div class="tag-row">
+          <span class="tag">Signature</span>
+          <a class="buy-pill" href="tel:+33677845435">Appeler</a>
+          <a class="buy-pill" href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20Abeille%20grav%C3%A9e).">SMS</a>
+        </div>
+      </div>
 
-    function close3D(e, force){
-      if (!force && e && e.target && e.target.id !== 'viewer3D') return;
+      <!-- HEXAGONE -> 3D -->
+      <div class="card">
+        <div class="img-wrap has-3d" onclick="open3D('hexagone.glb')">
+          <img class="img" src="modèle-hexagone.png" alt="Modèle Hexagone">
+          <div class="badge-3d">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+              <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
+            </svg>
+            <span>Voir en 3D</span>
+          </div>
+        </div>
 
-      const model = document.getElementById('model3d');
-      model.autoRotate = false;
-      model.src = '';
-      model.cameraOrbit = DEFAULT_ORBIT;
-      model.fieldOfView = DEFAULT_FOV;
+        <div class="title-line">
+          <div class="title">Hexagone</div>
+          <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip">Plus qu'un disponible<br>En cours de fabrication<br>Dispo rapidement</span></span>
+        </div>
 
-      document.getElementById('viewer3D').style.display = 'none';
-      document.body.style.overflow = '';
+        <p class="desc">Forme hexagonale élégante.</p>
 
-      /* AJOUT : reset pour la prochaine ouverture */
-      showDragHint();
-      /* FIN AJOUT */
-    }
+        <div class="tag-row">
+          <span class="tag">Géométrique</span>
+          <a class="buy-pill" href="tel:+33677845435">Appeler</a>
+          <a class="buy-pill" href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20Hexagone).">SMS</a>
+        </div>
+      </div>
 
-    window.addEventListener('keydown', (ev) => {
-      if (ev.key === 'Escape') close3D(null, true);
-    });
+      <!-- FEUILLE -> 3D -->
+      <div class="card">
+        <div class="img-wrap has-3d" onclick="open3D('feuille.glb')">
+          <img class="img" src="modele-feuille.png" alt="Modèle Feuille">
+          <div class="badge-3d">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+              <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
+            </svg>
+            <span>Voir en 3D</span>
+          </div>
+        </div>
 
-    (function(){
-      const targets = document.querySelectorAll('.img-wrap.has-3d');
-      if (!('IntersectionObserver' in window) || targets.length === 0) return;
+        <div class="title-line">
+          <div class="title">Feuille</div>
+          <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip">1 disponible<br>En cours de fabrication<br>Dispo rapidement</span></span>
+        </div>
 
-      const pulseOnce = (el) => {
-        el.classList.remove('pulse');
-        void el.offsetWidth;
-        el.classList.add('pulse');
+        <p class="desc">Motif naturel et élégant, très bon rendu visuel.</p>
+
+        <div class="tag-row">
+          <span class="tag">Nature</span>
+          <a class="buy-pill" href="tel:+33677845435">Appeler</a>
+          <a class="buy-pill" href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20Feuille).">SMS</a>
+        </div>
+      </div>
+
+      <!-- PERSONNALISATION -> 3D -->
+      <div class="card">
+        <div class="img-wrap has-3d" onclick="open3D('surmesure.glb')">
+          <img class="img" src="modele-personnalise.png" alt="Modèle personnalisable">
+          <div class="badge-3d">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+              <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
+            </svg>
+            <span>Voir en 3D</span>
+          </div>
+        </div>
+        <div class="title">Personnalisation</div>
+        <p class="desc">Logo, motif, format sur demande. Étude rapide et faisabilité selon recette.</p>
+
+        <div class="tag-row">
+          <span class="tag">Sur mesure</span>
+          <a class="buy-pill" href="#contact">Contacter</a>
+        </div>
+      </div>
+
+      <!-- OEUF -> 3D -->
+      <div class="card">
+        <div class="img-wrap has-3d" onclick="open3D('oeuf.glb')">
+          <img class="img" src="modele-oeuf.png" alt="Modèle Œuf">
+          <div class="badge-3d">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+              <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
+            </svg>
+            <span>Voir en 3D</span>
+          </div>
+        </div>
+
+        <div class="title-line">
+          <div class="title">Œuf</div>
+          <span class="stock-badge delay">Stock <span class="info-dot">i</span><span class="tooltip">Stock 0<br>Délai plus long</span></span>
+        </div>
+
+        <p class="desc">Forme douce et arrondie.</p>
+
+        <div class="tag-row">
+          <span class="tag">Standard</span>
+          <a class="buy-pill" href="tel:+33677845435">Appeler</a>
+          <a class="buy-pill" href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20%C5%92uf).">SMS</a>
+        </div>
+      </div>
+
+      <!-- OVALE -> 3D -->
+      <div class="card">
+        <div class="img-wrap has-3d" onclick="open3D('ovale.glb')">
+          <img class="img" src="modele-pastille-ovale.png" alt="Modèle Pastille ovale">
+          <div class="badge-3d">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+              <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
+            </svg>
+            <span>Voir en 3D</span>
+          </div>
+        </div>
+
+        <div class="title-line">
+          <div class="title">Pastille ovale</div>
+          <span class="stock-badge delay">Stock <span class="info-dot">i</span><span class="tooltip">Stock 0<br>Délai plus long</span></span>
+        </div>
+
+        <p class="desc">Format élégant et allongé, excellente lisibilité des gravures.</p>
+
+        <div class="tag-row">
+          <span class="tag">Standard</span>
+          <a class="buy-pill" href="tel:+33677845435">Appeler</a>
+          <a class="buy-pill" href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20Pastille%20ovale).">SMS</a>
+        </div>
+      </div>
+
+      <!-- PERLE -->
+      <div class="card">
+        <div class="img-wrap">
+          <img class="img" src="modele-perle.png" alt="Modèle Perle 15 mm">
+        </div>
+
+        <div class="title-line">
+          <div class="title">Perle Ø 15 mm</div>
+          <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip">Plus qu'un disponibles<br>En cours de fabrication<br>Dispo rapidement</span></span>
+        </div>
+
+        <p class="desc">Forme polyvalente, démoulage propre, idéale pour bonbons en sucre cuit.</p>
+
+        <div class="tag-row">
+          <span class="tag">Standard</span>
+          <a class="buy-pill" href="tel:+33677845435">Appeler</a>
+          <a class="buy-pill" href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20Perle%2015%20mm).">SMS</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="contact" class="contact">
+      Contact :
+      <a href="mailto:contact@atelier-cal.fr">contact@atelier-cal.fr</a> ·
+      <a href="tel:+33677845435">Appeler</a> ·
+      <a href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC.">SMS</a>
+    </div>
+  </div>
+</main>
+
+<footer>Atelier CAL – Tous droits réservés</footer>
+
+<!-- BULLE CONTACT (bas droite) -->
+<div class="contact-fab">
+  <a class="buy-pill" href="tel:+33677845435">Appeler</a>
+  <a class="buy-pill" href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC.">SMS</a>
+</div>
+
+<!-- MODAL 3D -->
+<div id="viewer3D" class="viewer3d-overlay" onclick="close3D(event)">
+  <div class="viewer3d-box">
+    <button class="viewer3d-close" onclick="close3D(null, true)">✕</button>
+    <div class="recenter-hint">⌖</div>
+
+    <!-- AJOUT : texte hint -->
+    <div id="dragHint" class="drag-hint">Bouger avec le doigt</div>
+    <!-- FIN AJOUT -->
+
+    <model-viewer
+      id="model3d"
+      src=""
+      camera-controls
+      auto-rotate
+      interaction-prompt="none"
+      environment-image="neutral"
+      exposure="1.05"
+      shadow-intensity="0.35"
+      camera-orbit="0deg 75deg 4m"
+      field-of-view="30deg"
+      style="width:100%; height:100%; background: radial-gradient(circle at center, #1a1a1a, #000);">
+      <div slot="poster" style="color:white;opacity:.85;font-family:Arial;padding:14px;">
+        Chargement du modèle 3D…
+      </div>
+    </model-viewer>
+  </div>
+</div>
+
+<script>
+  const DEFAULT_ORBIT = "0deg 75deg 4m";
+  const DEFAULT_FOV = "30deg";
+
+  function showDragHint(){
+    const hint = document.getElementById('dragHint');
+    if(!hint) return;
+    hint.style.display = 'block';
+    hint.classList.remove('hide');
+  }
+  function hideDragHint(){
+    const hint = document.getElementById('dragHint');
+    if(!hint) return;
+    hint.classList.add('hide');
+    setTimeout(()=>{ if(hint) hint.style.display='none'; }, 260);
+  }
+
+  function open3D(glbPath){
+    const overlay = document.getElementById('viewer3D');
+    const model = document.getElementById('model3d');
+
+    overlay.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+
+    showDragHint();
+
+    model.autoRotate = true;
+    model.cameraOrbit = DEFAULT_ORBIT;
+    model.fieldOfView = DEFAULT_FOV;
+    if (model.jumpCameraToGoal) model.jumpCameraToGoal();
+
+    model.src = '';
+
+    requestAnimationFrame(() => {
+      model.src = glbPath + '?v=' + Date.now();
+
+      const onLoad = () => {
+        model.cameraOrbit = DEFAULT_ORBIT;
+        model.fieldOfView = DEFAULT_FOV;
+        model.autoRotate = true;
+        model.removeEventListener('load', onLoad);
       };
+      model.addEventListener('load', onLoad);
+    });
+  }
 
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) pulseOnce(entry.target);
-        });
-      }, { threshold: 0.45 });
+  function close3D(e, force){
+    if (!force && e && e.target && e.target.id !== 'viewer3D') return;
 
-      targets.forEach(t => io.observe(t));
+    const model = document.getElementById('model3d');
+    model.autoRotate = false;
+    model.src = '';
+    model.cameraOrbit = DEFAULT_ORBIT;
+    model.fieldOfView = DEFAULT_FOV;
 
-      let tmr;
-      window.addEventListener('scroll', () => {
-        clearTimeout(tmr);
-        tmr = setTimeout(() => {
-          targets.forEach(el => {
-            const r = el.getBoundingClientRect();
-            const mid = window.innerHeight * 0.55;
-            if (r.top < mid && r.bottom > mid) pulseOnce(el);
-          });
-        }, 160);
-      }, { passive: true });
-    })();
+    document.getElementById('viewer3D').style.display = 'none';
+    document.body.style.overflow = '';
 
-    /* AJOUT : cache le hint au 1er geste */
-    (function(){
-      const model = document.getElementById('model3d');
-      if(!model) return;
-      ['pointerdown','touchstart','mousedown','wheel'].forEach(evt=>{
-        model.addEventListener(evt, hideDragHint, { passive:true });
+    showDragHint();
+  }
+
+  window.addEventListener('keydown', (ev) => {
+    if (ev.key === 'Escape') close3D(null, true);
+  });
+
+  (function(){
+    const targets = document.querySelectorAll('.img-wrap.has-3d');
+    if (!('IntersectionObserver' in window) || targets.length === 0) return;
+
+    const pulseOnce = (el) => {
+      el.classList.remove('pulse');
+      void el.offsetWidth;
+      el.classList.add('pulse');
+    };
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) pulseOnce(entry.target);
       });
-    })();
-    /* FIN AJOUT */
-  </script>
+    }, { threshold: 0.45 });
+
+    targets.forEach(t => io.observe(t));
+
+    let tmr;
+    window.addEventListener('scroll', () => {
+      clearTimeout(tmr);
+      tmr = setTimeout(() => {
+        targets.forEach(el => {
+          const r = el.getBoundingClientRect();
+          const mid = window.innerHeight * 0.55;
+          if (r.top < mid && r.bottom > mid) pulseOnce(el);
+        });
+      }, 160);
+    }, { passive: true });
+  })();
+
+  (function(){
+    const model = document.getElementById('model3d');
+    if(!model) return;
+    ['pointerdown','touchstart','mousedown','wheel'].forEach(evt=>{
+      model.addEventListener(evt, hideDragHint, { passive:true });
+    });
+  })();
+</script>
 </body>
 </html>
