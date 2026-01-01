@@ -94,6 +94,7 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
       text-transform: uppercase;
       background: transparent;
       transition: all .25s ease;
+      cursor: pointer;
     }
     .btn:hover{
       background:#fff;
@@ -498,7 +499,9 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
 
       <div class="top-actions">
         <a class="btn" href="index.html">Retour</a>
-        <a class="btn" href="#contact">Demander un devis</a>
+
+        <!-- ✅ MODIF : bouton devis (mobile=appel / pc=form) -->
+        <a class="btn" href="#" onclick="devisAction(event)">Demander un devis</a>
       </div>
     </div>
   </header>
@@ -528,7 +531,6 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
 
           <div class="tag-row">
             <span class="tag">Standard</span>
-            <!-- ✅ remplace Stripe par SMS -->
             <a class="buy-pill"
                href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20Pastille).">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -731,6 +733,49 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
 
       </div>
 
+      <!-- ✅ AJOUT MINIMAL : formulaire devis (PC uniquement, affiché par JS) -->
+      <div id="devisBox" class="contact" style="display:none; text-align:left;">
+        <div style="text-align:center; font-weight:700; color:rgba(255,255,255,0.92); margin-bottom:10px;">
+          Demande de devis
+        </div>
+
+        <form action="mailto:contact@atelier-cal.fr" method="post" enctype="text/plain">
+          <div style="margin-bottom:10px;">
+            <label>Nom / Entreprise</label><br>
+            <input required name="Nom"
+              style="width:100%;padding:10px;margin-top:6px;background:#0f0f0f;border:1px solid rgba(255,255,255,0.22);color:#fff;outline:none;">
+          </div>
+
+          <div style="margin-bottom:10px;">
+            <label>Email</label><br>
+            <input required type="email" name="Email"
+              style="width:100%;padding:10px;margin-top:6px;background:#0f0f0f;border:1px solid rgba(255,255,255,0.22);color:#fff;outline:none;">
+          </div>
+
+          <div style="margin-bottom:10px;">
+            <label>Téléphone (optionnel)</label><br>
+            <input name="Telephone"
+              style="width:100%;padding:10px;margin-top:6px;background:#0f0f0f;border:1px solid rgba(255,255,255,0.22);color:#fff;outline:none;">
+          </div>
+
+          <div style="margin-bottom:12px;">
+            <label>Infos (modèle / recette / quantité)</label><br>
+            <textarea name="Infos" rows="4"
+              style="width:100%;padding:10px;margin-top:6px;background:#0f0f0f;border:1px solid rgba(255,255,255,0.22);color:#fff;outline:none;resize:vertical;"></textarea>
+          </div>
+
+          <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+            <button class="btn" type="submit">Envoyer</button>
+            <a class="btn" href="#" onclick="closeDevis(event)">Fermer</a>
+          </div>
+
+          <div style="margin-top:10px; font-size:12px; color: rgba(255,255,255,0.65); text-align:center;">
+            (Sur PC, ce formulaire ouvre votre logiciel email.)
+          </div>
+        </form>
+      </div>
+      <!-- ✅ FIN AJOUT -->
+
       <div id="contact" class="contact">
         Contact : <a href="mailto:contact@atelier-cal.fr">contact@atelier-cal.fr</a> ·
         <a href="tel:+33677845435">06 77 84 54 35</a>
@@ -872,6 +917,32 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
         model.addEventListener(evt, hideDragHint, { passive:true });
       });
     })();
+
+    /* ✅ AJOUT MINIMAL : Demander un devis (mobile=appel / pc=form) */
+    function isMobile(){
+      return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    }
+
+    function devisAction(e){
+      e.preventDefault();
+
+      if(isMobile()){
+        window.location.href = "tel:+33677845435";
+        return;
+      }
+
+      const box = document.getElementById('devisBox');
+      if(box){
+        box.style.display = "block";
+        box.scrollIntoView({behavior:"smooth", block:"center"});
+      }
+    }
+
+    function closeDevis(e){
+      e.preventDefault();
+      const box = document.getElementById('devisBox');
+      if(box) box.style.display = "none";
+    }
   </script>
 </body>
 </html>
