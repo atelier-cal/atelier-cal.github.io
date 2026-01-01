@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-   <!-- Google Analytics -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-K4502PGZ0X"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -9,25 +9,25 @@
     gtag('js', new Date());
     gtag('config', 'G-K4502PGZ0X');
   </script>
-  <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2222911094866542');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
 
-  <meta charset="UTF-8" />
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2222911094866542');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
   <meta charset="UTF-8" />
   <title>Atelier CAL – Modèles disponibles</title>
   <meta name="google-site-verification" content="A0dojKL5m35FOtxZXnqt33BbuTEnXFRBVb-cTb6grEY" />
@@ -165,7 +165,7 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
     }
     .tag-row .tag{ margin-top: 0; }
 
-    /* ====== MODIF MINIMALE : .buy-pill devient bulle message animée ====== */
+    /* ====== bulle message animée ====== */
     .buy-pill{
       width: 40px;
       height: 40px;
@@ -187,7 +187,7 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
       background: rgba(255,255,255,0.12);
       transform: translateY(-1px);
       box-shadow: 0 0 20px rgba(255,255,255,0.12);
-      animation: none; /* au hover on stoppe le pulse */
+      animation: none;
     }
     .buy-pill svg{
       width: 18px;
@@ -204,7 +204,6 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
       50%  { transform: scale(1.08); box-shadow: 0 0 18px rgba(255,255,255,0.12); }
       100% { transform: scale(1);   box-shadow: 0 0 0 rgba(255,255,255,0.00); }
     }
-    /* ====== FIN MODIF ====== */
 
     .contact{
       margin-top: 26px;
@@ -486,463 +485,434 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
       line-height: 1.35;
     }
     .stock-note b{ color: rgba(255,255,255,0.82); font-weight: 700; }
-
   </style>
 </head>
 <body>
 <header>
-    <div class="container">
-      <h1>Modèles disponibles</h1>
-       <div class="stock-note">* <b>Stock</b> : si les stocks n’apparaissent pas, tournez votre téléphone en mode paysage.</div>
+  <div class="container">
+    <h1>Modèles disponibles</h1>
+    <div class="stock-note">* <b>Stock</b> : si les stocks n’apparaissent pas, tournez votre téléphone en mode paysage.</div>
 
-      <p class="subtitle"></p>
+    <p class="subtitle"></p>
 
-      <div class="top-actions">
-        <a class="btn" href="index.html">Retour</a>
+    <div class="top-actions">
+      <a class="btn" href="index.html">Retour</a>
 
-        <!-- ✅ MODIF : bouton devis (mobile=appel / pc=form) -->
-        <a class="btn" href="#" onclick="devisAction(event)">Demander un devis</a>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <div class="container">
-      <div class="grid">
-
-        <!-- PASTILLE -> 3D -->
-        <div class="card">
-          <div class="img-wrap has-3d" onclick="open3D('pastille.glb')">
-            <img class="img" src="modele-pastille.png" alt="Modèle Pastille">
-            <div class="badge-3d">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
-                <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
-              </svg>
-              <span>Voir en 3D</span>
-            </div>
-          </div>
-          <div class="title-line">
-            <div class="title">Pastille</div>
-            <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip">Plus qu'un disponible<br>En cours de fabrication<br>Dispo rapidement</span></span>
-          </div>
-
-          <p class="desc">Format standard, passe partout ! .</p>
-
-          <div class="tag-row">
-            <span class="tag">Standard</span>
-            <a class="buy-pill"
-               href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20Pastille).">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
-                <path d="M7.5 8.5h9M7.5 12h6"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- ABEILLE -> 3D -->
-        <div class="card">
-          <div class="img-wrap has-3d" onclick="open3D('abeille.glb')">
-            <img class="img" src="modele-abeille.png" alt="Modèle Abeille">
-            <div class="badge-3d">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
-                <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
-              </svg>
-              <span>Voir en 3D</span>
-            </div>
-          </div>
-          <div class="title-line">
-            <div class="title">Abeille (gravée)</div>
-            <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip"> Plus qu'un disponible<br>En cours de fabrication<br>Dispo rapidement</span></span>
-          </div>
-          <p class="desc">Signature “miel”, relief précis, rendu premium.</p>
-
-          <div class="tag-row">
-            <span class="tag">Signature</span>
-            <a class="buy-pill"
-               href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20Abeille%20grav%C3%A9e).">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
-                <path d="M7.5 8.5h9M7.5 12h6"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- HEXAGONE -> 3D -->
-        <div class="card">
-          <div class="img-wrap has-3d" onclick="open3D('hexagone.glb')">
-            <img class="img" src="modèle-hexagone.png" alt="Modèle Hexagone">
-            <div class="badge-3d">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
-                <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
-              </svg>
-              <span>Voir en 3D</span>
-            </div>
-          </div>
-          <div class="title-line">
-            <div class="title">Hexagone</div>
-            <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip">Plus qu'un disponible<br>En cours de fabrication<br>Dispo rapidement</span></span>
-          </div>
-          <p class="desc">Forme hexagonale élégante.</p>
-
-          <div class="tag-row">
-            <span class="tag">Géométrique</span>
-            <a class="buy-pill"
-               href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20Hexagone).">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
-                <path d="M7.5 8.5h9M7.5 12h6"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- FEUILLE -> 3D -->
-        <div class="card">
-          <div class="img-wrap has-3d" onclick="open3D('feuille.glb')">
-            <img class="img" src="modele-feuille.png" alt="Modèle Feuille">
-            <div class="badge-3d">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
-                <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
-              </svg>
-              <span>Voir en 3D</span>
-            </div>
-          </div>
-          <div class="title-line">
-            <div class="title">Feuille</div>
-            <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip">1 disponible<br>En cours de fabrication<br>Dispo rapidement</span></span>
-          </div>
-          <p class="desc">Motif naturel et élégant, très bon rendu visuel.</p>
-
-          <div class="tag-row">
-            <span class="tag">Nature</span>
-            <a class="buy-pill"
-               href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20Feuille).">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
-                <path d="M7.5 8.5h9M7.5 12h6"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- PERSONNALISATION -> 3D -->
-        <div class="card">
-          <div class="img-wrap has-3d" onclick="open3D('surmesure.glb')">
-            <img class="img" src="modele-personnalise.png" alt="Modèle personnalisable">
-            <div class="badge-3d">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
-                <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
-              </svg>
-              <span>Voir en 3D</span>
-            </div>
-          </div>
-          <div class="title">Personnalisation</div>
-          <p class="desc">Logo, motif, format sur demande. Étude rapide et faisabilité selon recette.</p>
-          <span class="tag">Sur mesure</span>
-        </div>
-
-        <!-- OEUF -> 3D -->
-        <div class="card">
-          <div class="img-wrap has-3d" onclick="open3D('oeuf.glb')">
-            <img class="img" src="modele-oeuf.png" alt="Modèle Œuf">
-            <div class="badge-3d">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
-                <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
-              </svg>
-              <span>Voir en 3D</span>
-            </div>
-          </div>
-          <div class="title-line">
-            <div class="title">Œuf</div>
-            <span class="stock-badge delay">Stock <span class="info-dot">i</span><span class="tooltip">Stock 0<br>Délai plus long</span></span>
-          </div>
-          <p class="desc">Forme douce et arrondie.</p>
-
-          <div class="tag-row">
-            <span class="tag">Standard</span>
-            <a class="buy-pill"
-               href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20%C5%92uf).">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
-                <path d="M7.5 8.5h9M7.5 12h6"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- OVALE -> 3D -->
-        <div class="card">
-          <div class="img-wrap has-3d" onclick="open3D('ovale.glb')">
-            <img class="img" src="modele-pastille-ovale.png" alt="Modèle Pastille ovale">
-            <div class="badge-3d">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
-                <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
-              </svg>
-              <span>Voir en 3D</span>
-            </div>
-          </div>
-          <div class="title-line">
-            <div class="title">Pastille ovale</div>
-            <span class="stock-badge delay">Stock <span class="info-dot">i</span><span class="tooltip">Stock 0<br>Délai plus long</span></span>
-          </div>
-          <p class="desc">Format élégant et allongé, excellente lisibilité des gravures.</p>
-
-          <div class="tag-row">
-            <span class="tag">Standard</span>
-            <a class="buy-pill"
-               href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20Pastille%20ovale).">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
-                <path d="M7.5 8.5h9M7.5 12h6"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- PERLE (EN DERNIER) -->
-        <div class="card">
-          <div class="img-wrap">
-            <img class="img" src="modele-perle.png" alt="Modèle Perle 15 mm">
-          </div>
-          <div class="title-line">
-            <div class="title">Perle Ø 15 mm</div>
-            <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip">Plus qu'un disponibles<br>En cours de fabrication<br>Dispo rapidement</span></span>
-          </div>
-          <p class="desc">Forme polyvalente, démoulage propre, idéale pour bonbons en sucre cuit.</p>
-
-          <div class="tag-row">
-            <span class="tag">Standard</span>
-            <a class="buy-pill"
-               href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20Perle%2015%20mm).">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
-                <path d="M7.5 8.5h9M7.5 12h6"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- ✅ AJOUT MINIMAL : formulaire devis (PC uniquement, affiché par JS) -->
-      <div id="devisBox" class="contact" style="display:none; text-align:left;">
-        <div style="text-align:center; font-weight:700; color:rgba(255,255,255,0.92); margin-bottom:10px;">
-          Demande de devis
-        </div>
-
-        <form action="mailto:contact@atelier-cal.fr" method="post" enctype="text/plain">
-          <div style="margin-bottom:10px;">
-            <label>Nom / Entreprise</label><br>
-            <input required name="Nom"
-              style="width:100%;padding:10px;margin-top:6px;background:#0f0f0f;border:1px solid rgba(255,255,255,0.22);color:#fff;outline:none;">
-          </div>
-
-          <div style="margin-bottom:10px;">
-            <label>Email</label><br>
-            <input required type="email" name="Email"
-              style="width:100%;padding:10px;margin-top:6px;background:#0f0f0f;border:1px solid rgba(255,255,255,0.22);color:#fff;outline:none;">
-          </div>
-
-          <div style="margin-bottom:10px;">
-            <label>Téléphone (optionnel)</label><br>
-            <input name="Telephone"
-              style="width:100%;padding:10px;margin-top:6px;background:#0f0f0f;border:1px solid rgba(255,255,255,0.22);color:#fff;outline:none;">
-          </div>
-
-          <div style="margin-bottom:12px;">
-            <label>Infos (modèle / recette / quantité)</label><br>
-            <textarea name="Infos" rows="4"
-              style="width:100%;padding:10px;margin-top:6px;background:#0f0f0f;border:1px solid rgba(255,255,255,0.22);color:#fff;outline:none;resize:vertical;"></textarea>
-          </div>
-
-          <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
-            <button class="btn" type="submit">Envoyer</button>
-            <a class="btn" href="#" onclick="closeDevis(event)">Fermer</a>
-          </div>
-
-          <div style="margin-top:10px; font-size:12px; color: rgba(255,255,255,0.65); text-align:center;">
-            (Sur PC, ce formulaire ouvre votre logiciel email.)
-          </div>
-        </form>
-      </div>
-      <!-- ✅ FIN AJOUT -->
-
-      <div id="contact" class="contact">
-        Contact : <a href="mailto:contact@atelier-cal.fr">contact@atelier-cal.fr</a> ·
-        <a href="tel:+33677845435">06 77 84 54 35</a>
-      </div>
-    </div>
-  </main>
-
-  <footer>Atelier CAL – Tous droits réservés</footer>
-
-  <!-- MODAL 3D -->
-  <div id="viewer3D" class="viewer3d-overlay" onclick="close3D(event)">
-    <div class="viewer3d-box">
-      <button class="viewer3d-close" onclick="close3D(null, true)">✕</button>
-      <div class="recenter-hint">⌖</div>
-
-      <!-- AJOUT : texte hint -->
-      <div id="dragHint" class="drag-hint">Bouger avec le doight</div>
-      <!-- FIN AJOUT -->
-
-      <model-viewer
-        id="model3d"
-        src=""
-        camera-controls
-        auto-rotate
-        interaction-prompt="none"
-        environment-image="neutral"
-        exposure="1.05"
-        shadow-intensity="0.35"
-        camera-orbit="0deg 75deg 4m"
-        field-of-view="30deg"
-        style="width:100%; height:100%; background: radial-gradient(circle at center, #1a1a1a, #000);">
-        <div slot="poster" style="color:white;opacity:.85;font-family:Arial;padding:14px;">
-          Chargement du modèle 3D…
-        </div>
-      </model-viewer>
+      <!-- ✅ MODIF : bouton devis -> scroll vers le formulaire (PC + mobile) -->
+      <a class="btn" href="#devisBox">Demander un devis</a>
     </div>
   </div>
+</header>
 
-  <script>
-    const DEFAULT_ORBIT = "0deg 75deg 4m";
-    const DEFAULT_FOV = "30deg";
+<main>
+  <div class="container">
+    <div class="grid">
 
-    function showDragHint(){
-      const hint = document.getElementById('dragHint');
-      if(!hint) return;
-      hint.style.display = 'block';
-      hint.classList.remove('hide');
-    }
-    function hideDragHint(){
-      const hint = document.getElementById('dragHint');
-      if(!hint) return;
-      hint.classList.add('hide');
-      setTimeout(()=>{ if(hint) hint.style.display='none'; }, 260);
-    }
+      <!-- PASTILLE -> 3D -->
+      <div class="card">
+        <div class="img-wrap has-3d" onclick="open3D('pastille.glb')">
+          <img class="img" src="modele-pastille.png" alt="Modèle Pastille">
+          <div class="badge-3d">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+              <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
+            </svg>
+            <span>Voir en 3D</span>
+          </div>
+        </div>
+        <div class="title-line">
+          <div class="title">Pastille</div>
+          <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip">Plus qu'un disponible<br>En cours de fabrication<br>Dispo rapidement</span></span>
+        </div>
 
-    function open3D(glbPath){
-      const overlay = document.getElementById('viewer3D');
-      const model = document.getElementById('model3d');
+        <p class="desc">Format standard, passe partout ! .</p>
 
-      overlay.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
+        <div class="tag-row">
+          <span class="tag">Standard</span>
+          <a class="buy-pill"
+             href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20Pastille).">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
+              <path d="M7.5 8.5h9M7.5 12h6"/>
+            </svg>
+          </a>
+        </div>
+      </div>
 
-      showDragHint();
+      <!-- ABEILLE -> 3D -->
+      <div class="card">
+        <div class="img-wrap has-3d" onclick="open3D('abeille.glb')">
+          <img class="img" src="modele-abeille.png" alt="Modèle Abeille">
+          <div class="badge-3d">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+              <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
+            </svg>
+            <span>Voir en 3D</span>
+          </div>
+        </div>
+        <div class="title-line">
+          <div class="title">Abeille (gravée)</div>
+          <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip"> Plus qu'un disponible<br>En cours de fabrication<br>Dispo rapidement</span></span>
+        </div>
+        <p class="desc">Signature “miel”, relief précis, rendu premium.</p>
 
-      model.autoRotate = true;
-      model.cameraOrbit = DEFAULT_ORBIT;
-      model.fieldOfView = DEFAULT_FOV;
-      if (model.jumpCameraToGoal) model.jumpCameraToGoal();
+        <div class="tag-row">
+          <span class="tag">Signature</span>
+          <a class="buy-pill"
+             href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20Abeille%20grav%C3%A9e).">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
+              <path d="M7.5 8.5h9M7.5 12h6"/>
+            </svg>
+          </a>
+        </div>
+      </div>
 
-      model.src = '';
+      <!-- HEXAGONE -> 3D -->
+      <div class="card">
+        <div class="img-wrap has-3d" onclick="open3D('hexagone.glb')">
+          <img class="img" src="modèle-hexagone.png" alt="Modèle Hexagone">
+          <div class="badge-3d">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+              <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
+            </svg>
+            <span>Voir en 3D</span>
+          </div>
+        </div>
+        <div class="title-line">
+          <div class="title">Hexagone</div>
+          <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip">Plus qu'un disponible<br>En cours de fabrication<br>Dispo rapidement</span></span>
+        </div>
+        <p class="desc">Forme hexagonale élégante.</p>
 
-      requestAnimationFrame(() => {
-        model.src = glbPath + '?v=' + Date.now();
+        <div class="tag-row">
+          <span class="tag">Géométrique</span>
+          <a class="buy-pill"
+             href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20Hexagone).">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
+              <path d="M7.5 8.5h9M7.5 12h6"/>
+            </svg>
+          </a>
+        </div>
+      </div>
 
-        const onLoad = () => {
-          model.cameraOrbit = DEFAULT_ORBIT;
-          model.fieldOfView = DEFAULT_FOV;
-          model.autoRotate = true;
-          model.removeEventListener('load', onLoad);
-        };
-        model.addEventListener('load', onLoad);
-      });
-    }
+      <!-- FEUILLE -> 3D -->
+      <div class="card">
+        <div class="img-wrap has-3d" onclick="open3D('feuille.glb')">
+          <img class="img" src="modele-feuille.png" alt="Modèle Feuille">
+          <div class="badge-3d">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+              <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
+            </svg>
+            <span>Voir en 3D</span>
+          </div>
+        </div>
+        <div class="title-line">
+          <div class="title">Feuille</div>
+          <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip">1 disponible<br>En cours de fabrication<br>Dispo rapidement</span></span>
+        </div>
+        <p class="desc">Motif naturel et élégant, très bon rendu visuel.</p>
 
-    function close3D(e, force){
-      if (!force && e && e.target && e.target.id !== 'viewer3D') return;
+        <div class="tag-row">
+          <span class="tag">Nature</span>
+          <a class="buy-pill"
+             href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20Feuille).">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
+              <path d="M7.5 8.5h9M7.5 12h6"/>
+            </svg>
+          </a>
+        </div>
+      </div>
 
-      const model = document.getElementById('model3d');
-      model.autoRotate = false;
-      model.src = '';
-      model.cameraOrbit = DEFAULT_ORBIT;
-      model.fieldOfView = DEFAULT_FOV;
+      <!-- PERSONNALISATION -> 3D -->
+      <div class="card">
+        <div class="img-wrap has-3d" onclick="open3D('surmesure.glb')">
+          <img class="img" src="modele-personnalise.png" alt="Modèle personnalisable">
+          <div class="badge-3d">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+              <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
+            </svg>
+            <span>Voir en 3D</span>
+          </div>
+        </div>
+        <div class="title">Personnalisation</div>
+        <p class="desc">Logo, motif, format sur demande. Étude rapide et faisabilité selon recette.</p>
+        <span class="tag">Sur mesure</span>
+      </div>
 
-      document.getElementById('viewer3D').style.display = 'none';
-      document.body.style.overflow = '';
+      <!-- OEUF -> 3D -->
+      <div class="card">
+        <div class="img-wrap has-3d" onclick="open3D('oeuf.glb')">
+          <img class="img" src="modele-oeuf.png" alt="Modèle Œuf">
+          <div class="badge-3d">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+              <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
+            </svg>
+            <span>Voir en 3D</span>
+          </div>
+        </div>
+        <div class="title-line">
+          <div class="title">Œuf</div>
+          <span class="stock-badge delay">Stock <span class="info-dot">i</span><span class="tooltip">Stock 0<br>Délai plus long</span></span>
+        </div>
+        <p class="desc">Forme douce et arrondie.</p>
 
-      showDragHint();
-    }
+        <div class="tag-row">
+          <span class="tag">Standard</span>
+          <a class="buy-pill"
+             href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20%C5%92uf).">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
+              <path d="M7.5 8.5h9M7.5 12h6"/>
+            </svg>
+          </a>
+        </div>
+      </div>
 
-    window.addEventListener('keydown', (ev) => {
-      if (ev.key === 'Escape') close3D(null, true);
-    });
+      <!-- OVALE -> 3D -->
+      <div class="card">
+        <div class="img-wrap has-3d" onclick="open3D('ovale.glb')">
+          <img class="img" src="modele-pastille-ovale.png" alt="Modèle Pastille ovale">
+          <div class="badge-3d">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+              <path d="M3.3 7.3 12 12l8.7-4.7"/><path d="M12 22V12"/>
+            </svg>
+            <span>Voir en 3D</span>
+          </div>
+        </div>
+        <div class="title-line">
+          <div class="title">Pastille ovale</div>
+          <span class="stock-badge delay">Stock <span class="info-dot">i</span><span class="tooltip">Stock 0<br>Délai plus long</span></span>
+        </div>
+        <p class="desc">Format élégant et allongé, excellente lisibilité des gravures.</p>
 
-    (function(){
-      const targets = document.querySelectorAll('.img-wrap.has-3d');
-      if (!('IntersectionObserver' in window) || targets.length === 0) return;
+        <div class="tag-row">
+          <span class="tag">Standard</span>
+          <a class="buy-pill"
+             href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20Pastille%20ovale).">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
+              <path d="M7.5 8.5h9M7.5 12h6"/>
+            </svg>
+          </a>
+        </div>
+      </div>
 
-      const pulseOnce = (el) => {
-        el.classList.remove('pulse');
-        void el.offsetWidth;
-        el.classList.add('pulse');
+      <!-- PERLE (EN DERNIER) -->
+      <div class="card">
+        <div class="img-wrap">
+          <img class="img" src="modele-perle.png" alt="Modèle Perle 15 mm">
+        </div>
+        <div class="title-line">
+          <div class="title">Perle Ø 15 mm</div>
+          <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip">Plus qu'un disponibles<br>En cours de fabrication<br>Dispo rapidement</span></span>
+        </div>
+        <p class="desc">Forme polyvalente, démoulage propre, idéale pour bonbons en sucre cuit.</p>
+
+        <div class="tag-row">
+          <span class="tag">Standard</span>
+          <a class="buy-pill"
+             href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20Perle%2015%20mm).">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
+              <path d="M7.5 8.5h9M7.5 12h6"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ✅ FORMULAIRE DEVIS (Formspree) : visible + pro -->
+    <div id="devisBox" class="contact" style="text-align:left;">
+      <div style="text-align:center; font-weight:700; color:rgba(255,255,255,0.92); margin-bottom:10px;">
+        Demande de devis
+      </div>
+
+      <form action="https://formspree.io/f/xojaqvav" method="POST">
+        <input type="hidden" name="page" value="modeles">
+        <input type="hidden" name="source" value="Demander un devis">
+
+        <div style="margin-bottom:10px;">
+          <label>Nom / Entreprise</label><br>
+          <input required name="nom"
+            style="width:100%;padding:10px;margin-top:6px;background:#0f0f0f;border:1px solid rgba(255,255,255,0.22);color:#fff;outline:none;">
+        </div>
+
+        <div style="margin-bottom:10px;">
+          <label>Email</label><br>
+          <input required type="email" name="email"
+            style="width:100%;padding:10px;margin-top:6px;background:#0f0f0f;border:1px solid rgba(255,255,255,0.22);color:#fff;outline:none;">
+        </div>
+
+        <div style="margin-bottom:10px;">
+          <label>Téléphone (optionnel)</label><br>
+          <input name="telephone"
+            style="width:100%;padding:10px;margin-top:6px;background:#0f0f0f;border:1px solid rgba(255,255,255,0.22);color:#fff;outline:none;">
+        </div>
+
+        <div style="margin-bottom:12px;">
+          <label>Votre demande</label><br>
+          <textarea name="message" rows="4"
+            style="width:100%;padding:10px;margin-top:6px;background:#0f0f0f;border:1px solid rgba(255,255,255,0.22);color:#fff;outline:none;resize:vertical;"></textarea>
+        </div>
+
+        <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+          <button class="btn" type="submit">Envoyer</button>
+        </div>
+      </form>
+    </div>
+    <!-- ✅ FIN FORMULAIRE -->
+
+    <div id="contact" class="contact">
+      Contact : <a href="mailto:contact@atelier-cal.fr">contact@atelier-cal.fr</a> ·
+      <a href="tel:+33677845435">06 77 84 54 35</a>
+    </div>
+  </div>
+</main>
+
+<footer>Atelier CAL – Tous droits réservés</footer>
+
+<!-- MODAL 3D -->
+<div id="viewer3D" class="viewer3d-overlay" onclick="close3D(event)">
+  <div class="viewer3d-box">
+    <button class="viewer3d-close" onclick="close3D(null, true)">✕</button>
+    <div class="recenter-hint">⌖</div>
+
+    <!-- AJOUT : texte hint -->
+    <div id="dragHint" class="drag-hint">Bouger avec le doight</div>
+    <!-- FIN AJOUT -->
+
+    <model-viewer
+      id="model3d"
+      src=""
+      camera-controls
+      auto-rotate
+      interaction-prompt="none"
+      environment-image="neutral"
+      exposure="1.05"
+      shadow-intensity="0.35"
+      camera-orbit="0deg 75deg 4m"
+      field-of-view="30deg"
+      style="width:100%; height:100%; background: radial-gradient(circle at center, #1a1a1a, #000);">
+      <div slot="poster" style="color:white;opacity:.85;font-family:Arial;padding:14px;">
+        Chargement du modèle 3D…
+      </div>
+    </model-viewer>
+  </div>
+</div>
+
+<script>
+  const DEFAULT_ORBIT = "0deg 75deg 4m";
+  const DEFAULT_FOV = "30deg";
+
+  function showDragHint(){
+    const hint = document.getElementById('dragHint');
+    if(!hint) return;
+    hint.style.display = 'block';
+    hint.classList.remove('hide');
+  }
+  function hideDragHint(){
+    const hint = document.getElementById('dragHint');
+    if(!hint) return;
+    hint.classList.add('hide');
+    setTimeout(()=>{ if(hint) hint.style.display='none'; }, 260);
+  }
+
+  function open3D(glbPath){
+    const overlay = document.getElementById('viewer3D');
+    const model = document.getElementById('model3d');
+
+    overlay.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+
+    showDragHint();
+
+    model.autoRotate = true;
+    model.cameraOrbit = DEFAULT_ORBIT;
+    model.fieldOfView = DEFAULT_FOV;
+    if (model.jumpCameraToGoal) model.jumpCameraToGoal();
+
+    model.src = '';
+
+    requestAnimationFrame(() => {
+      model.src = glbPath + '?v=' + Date.now();
+
+      const onLoad = () => {
+        model.cameraOrbit = DEFAULT_ORBIT;
+        model.fieldOfView = DEFAULT_FOV;
+        model.autoRotate = true;
+        model.removeEventListener('load', onLoad);
       };
+      model.addEventListener('load', onLoad);
+    });
+  }
 
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) pulseOnce(entry.target);
-        });
-      }, { threshold: 0.45 });
+  function close3D(e, force){
+    if (!force && e && e.target && e.target.id !== 'viewer3D') return;
 
-      targets.forEach(t => io.observe(t));
+    const model = document.getElementById('model3d');
+    model.autoRotate = false;
+    model.src = '';
+    model.cameraOrbit = DEFAULT_ORBIT;
+    model.fieldOfView = DEFAULT_FOV;
 
-      let tmr;
-      window.addEventListener('scroll', () => {
-        clearTimeout(tmr);
-        tmr = setTimeout(() => {
-          targets.forEach(el => {
-            const r = el.getBoundingClientRect();
-            const mid = window.innerHeight * 0.55;
-            if (r.top < mid && r.bottom > mid) pulseOnce(el);
-          });
-        }, 160);
-      }, { passive: true });
-    })();
+    document.getElementById('viewer3D').style.display = 'none';
+    document.body.style.overflow = '';
 
-    (function(){
-      const model = document.getElementById('model3d');
-      if(!model) return;
-      ['pointerdown','touchstart','mousedown','wheel'].forEach(evt=>{
-        model.addEventListener(evt, hideDragHint, { passive:true });
+    showDragHint();
+  }
+
+  window.addEventListener('keydown', (ev) => {
+    if (ev.key === 'Escape') close3D(null, true);
+  });
+
+  (function(){
+    const targets = document.querySelectorAll('.img-wrap.has-3d');
+    if (!('IntersectionObserver' in window) || targets.length === 0) return;
+
+    const pulseOnce = (el) => {
+      el.classList.remove('pulse');
+      void el.offsetWidth;
+      el.classList.add('pulse');
+    };
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) pulseOnce(entry.target);
       });
-    })();
+    }, { threshold: 0.45 });
 
-    /* ✅ AJOUT MINIMAL : Demander un devis (mobile=appel / pc=form) */
-    function isMobile(){
-      return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-    }
+    targets.forEach(t => io.observe(t));
 
-    function devisAction(e){
-      e.preventDefault();
+    let tmr;
+    window.addEventListener('scroll', () => {
+      clearTimeout(tmr);
+      tmr = setTimeout(() => {
+        targets.forEach(el => {
+          const r = el.getBoundingClientRect();
+          const mid = window.innerHeight * 0.55;
+          if (r.top < mid && r.bottom > mid) pulseOnce(el);
+        });
+      }, 160);
+    }, { passive: true });
+  })();
 
-      if(isMobile()){
-        window.location.href = "tel:+33677845435";
-        return;
-      }
-
-      const box = document.getElementById('devisBox');
-      if(box){
-        box.style.display = "block";
-        box.scrollIntoView({behavior:"smooth", block:"center"});
-      }
-    }
-
-    function closeDevis(e){
-      e.preventDefault();
-      const box = document.getElementById('devisBox');
-      if(box) box.style.display = "none";
-    }
-  </script>
+  (function(){
+    const model = document.getElementById('model3d');
+    if(!model) return;
+    ['pointerdown','touchstart','mousedown','wheel'].forEach(evt=>{
+      model.addEventListener(evt, hideDragHint, { passive:true });
+    });
+  })();
+</script>
 </body>
 </html>
