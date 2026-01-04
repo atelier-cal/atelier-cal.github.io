@@ -913,6 +913,35 @@
       model.addEventListener(evt, hideDragHint, { passive:true });
     });
   })();
+  <script>
+  /* ... ton code actuel ... */
+
+  // ✅ PC: clic sur icône message => scroll vers le formulaire devis
+  // ✅ Mobile: on laisse le lien sms: fonctionner normalement
+  (function () {
+    const isDesktop = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+    if (!isDesktop) return; // mobile / tablette tactile -> ne rien changer
+
+    const devisBox = document.getElementById("devisBox");
+    if (!devisBox) return;
+
+    document.querySelectorAll('a.buy-pill[href^="sms:"]').forEach((a) => {
+      a.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        devisBox.scrollIntoView({ behavior: "smooth", block: "start" });
+
+        // focus sur le 1er champ (Nom / Entreprise)
+        setTimeout(() => {
+          const firstInput = devisBox.querySelector('input[name="nom"]');
+          if (firstInput) firstInput.focus({ preventScroll: true });
+        }, 350);
+      });
+    });
+  })();
+</script>
+
 </script>
 </body>
 </html>
