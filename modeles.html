@@ -913,34 +913,39 @@
       model.addEventListener(evt, hideDragHint, { passive:true });
     });
   })();
-  <script>
-  /* ... ton code actuel ... */
 
-  // ✅ PC: clic sur icône message => scroll vers le formulaire devis
-  // ✅ Mobile: on laisse le lien sms: fonctionner normalement
+
+  // ✅ PC: clic sur les boutons "message" (liens sms:) -> scroll vers le formulaire devis
+  // ✅ Mobile: on laisse le lien sms: ouvrir l'app SMS
   (function () {
-    const isDesktop = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (isMobile) return;
 
-    if (!isDesktop) return; // mobile / tablette tactile -> ne rien changer
-
-    const devisBox = document.getElementById("devisBox");
+    const devisBox = document.getElementById('devisBox');
     if (!devisBox) return;
 
-    document.querySelectorAll('a.buy-pill[href^="sms:"]').forEach((a) => {
-      a.addEventListener("click", (e) => {
+    const messageLinks = document.querySelectorAll('a.buy-pill[href^="sms:"]');
+    if (!messageLinks.length) return;
+
+    messageLinks.forEach((a) => {
+      a.addEventListener('click', (e) => {
         e.preventDefault();
+        e.stopPropagation();
 
-        devisBox.scrollIntoView({ behavior: "smooth", block: "start" });
+        devisBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-        // focus sur le 1er champ (Nom / Entreprise)
+        // Focus sur le premier champ du formulaire (si présent)
         setTimeout(() => {
-          const firstInput = devisBox.querySelector('input[name="nom"]');
+          const firstInput =
+            devisBox.querySelector('input[name="nom"]') ||
+            devisBox.querySelector('input[type="text"]') ||
+            devisBox.querySelector('input, textarea, select');
+
           if (firstInput) firstInput.focus({ preventScroll: true });
-        }, 350);
-      });
+        }, 400);
+      }, true);
     });
   })();
-</script>
 
 </script>
 </body>
