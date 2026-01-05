@@ -14,8 +14,9 @@
       --text:rgba(255,255,255,0.92);
       --muted:rgba(255,255,255,0.7);
       --accent:#c9a24d;
-      --shadow: 0 24px 80px rgba(0,0,0,.65);
+      --shadow: 0 26px 90px rgba(0,0,0,.70);
     }
+
     *{ box-sizing:border-box; }
 
     body{
@@ -27,121 +28,35 @@
         radial-gradient(circle at top, var(--bg2), var(--bg1));
     }
 
-    /* ====== HERO VIDEO CINÉMA ====== */
-    .hero{
-      width:100%;
-      padding:34px 18px 18px;
-    }
-
-    .hero-inner{
-      max-width:1200px;
-      margin:0 auto;
-    }
-
-    .hero-title{
+    /* ===== Header ===== */
+    header{
       text-align:center;
-      padding:10px 0 16px;
+      padding:52px 20px 26px;
     }
 
-    .hero-title h1{
+    h1{
       margin:0 0 10px;
       font-size:clamp(2.0rem, 4vw, 3.1rem);
       letter-spacing:.25px;
     }
 
-    .hero-title p{
-      margin:0 auto;
+    .subtitle{
       max-width:920px;
+      margin:0 auto;
       color:var(--muted);
       line-height:1.6;
     }
 
-    .video-frame{
-      margin:18px auto 0;
-      border:1px solid var(--line);
-      background:rgba(0,0,0,.35);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      position:relative;
+    /* ===== Layout ===== */
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 18px 80px;
     }
 
-    /* petite “lueur” premium */
-    .video-frame::before{
-      content:"";
-      position:absolute;
-      inset:-120px -120px auto -120px;
-      height:220px;
-      background: radial-gradient(circle at 50% 40%, rgba(201,162,77,.20), transparent 60%);
-      pointer-events:none;
-      filter: blur(6px);
-    }
-
-    .video-frame video{
-      width:100%;
-      display:block;
-      background:#000;
-      aspect-ratio: 21/9; /* cinéma */
-    }
-
-    /* Sur mobile, 21/9 peut être trop plat -> on passe en 16/9 */
-    @media (max-width: 768px){
-      .video-frame video{ aspect-ratio:16/9; }
-    }
-
-    /* ====== SECTION CAROUSEL ====== */
-    .section{
-      max-width:1200px;
-      margin:26px auto 80px;
-      padding:0 18px;
-    }
-
-    .bar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      margin:0 0 12px;
-    }
-
-    .bar-left{
-      display:flex;
-      flex-direction:column;
-      gap:4px;
-    }
-
-    .bar-title{
-      font-weight:800;
-      letter-spacing:.25px;
-      color:rgba(255,255,255,0.88);
-    }
-
-    .bar-hint{
-      font-size:.92rem;
-      color:var(--muted);
-    }
-
-    .bar-right{
-      display:flex;
-      gap:10px;
-      align-items:center;
-    }
-
-    .navbtn{
-      appearance:none;
-      border:1px solid rgba(255,255,255,0.25);
-      background:rgba(0,0,0,0.35);
-      color:#fff;
-      padding:10px 14px;
-      cursor:pointer;
-      transition:.2s;
-    }
-    .navbtn:hover{
-      border-color: var(--accent);
-      color:#000;
-      background: var(--accent);
-    }
-
-    .carousel-shell{
+    /* ===== “Cinema stack” sections ===== */
+    .shot{
+      margin: 28px auto;
       border:1px solid var(--line);
       background:rgba(255,255,255,0.03);
       box-shadow: var(--shadow);
@@ -149,146 +64,68 @@
       position:relative;
     }
 
-    /* effet “bords floutés” pour style cinéma */
-    .carousel-shell::before,
-    .carousel-shell::after{
+    /* petite lueur premium sur le haut */
+    .shot::before{
       content:"";
       position:absolute;
-      top:0; bottom:0;
-      width:110px;
+      inset:-140px -140px auto -140px;
+      height:240px;
+      background: radial-gradient(circle at 50% 40%, rgba(201,162,77,.18), transparent 62%);
       pointer-events:none;
-      z-index:2;
-    }
-    .carousel-shell::before{
-      left:0;
-      background: linear-gradient(to right, rgba(7,7,7,.95), rgba(7,7,7,0));
-    }
-    .carousel-shell::after{
-      right:0;
-      background: linear-gradient(to left, rgba(7,7,7,.95), rgba(7,7,7,0));
+      filter: blur(6px);
     }
 
-    .carousel{
-      display:flex;
-      gap:18px;
-      overflow-x:auto;
-      scroll-snap-type:x mandatory;
-      scroll-behavior:smooth;
-      padding:18px;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    /* barre de scroll discrète */
-    .carousel::-webkit-scrollbar{ height:10px; }
-    .carousel::-webkit-scrollbar-track{ background:rgba(255,255,255,0.06); border-radius:999px; }
-    .carousel::-webkit-scrollbar-thumb{ background:rgba(201,162,77,0.55); border-radius:999px; }
-
-    .slide{
-      flex:0 0 auto;
-      width:min(84vw, 720px);
-      scroll-snap-align:center;
-      border:1px solid rgba(255,255,255,0.16);
-      background:rgba(0,0,0,0.28);
-      overflow:hidden;
-      position:relative;
-      transform: translateZ(0);
-    }
-
-    .slide img{
+    .shot img,
+    .shot video{
       width:100%;
-      height:auto;
       display:block;
       background:#000;
-      user-select:none;
-      -webkit-user-drag:none;
-      cursor: zoom-in;
-      transition: transform .25s ease, filter .25s ease;
     }
 
+    /* Effet “cinéma” : un peu de marge noire autour sur écran large */
+    .media{
+      position:relative;
+      padding:14px;
+      background: rgba(0,0,0,0.25);
+    }
+
+    /* Responsive: padding plus petit sur mobile */
+    @media (max-width: 768px){
+      .media{ padding:10px; }
+    }
+
+    /* ===== Animation à l’apparition (scroll) ===== */
+    .reveal{
+      opacity:0;
+      transform: translateY(22px) scale(0.985);
+      filter: blur(1px);
+      transition:
+        opacity .70s ease,
+        transform .70s ease,
+        filter .70s ease;
+      will-change: opacity, transform, filter;
+    }
+
+    .reveal.is-visible{
+      opacity:1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+    }
+
+    /* léger “zoom premium” au survol PC */
     @media (hover:hover){
-      .slide:hover img{
-        transform: scale(1.03);
-        filter: contrast(1.02) saturate(1.02);
+      .shot:hover img{
+        transform: scale(1.01);
+        transition: transform .25s ease;
       }
     }
 
-    /* Progress bar (position carrousel) */
-    .progress-wrap{
-      margin-top:12px;
-      display:flex;
-      align-items:center;
-      gap:12px;
-    }
-
-    .progress{
-      flex:1;
-      height:6px;
-      border-radius:999px;
-      background:rgba(255,255,255,0.10);
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,0.10);
-    }
-
-    .progress > span{
-      display:block;
-      height:100%;
-      width:0%;
-      background:rgba(201,162,77,0.75);
-      border-radius:999px;
-      transition: width .1s linear;
-    }
-
-    .progress-txt{
-      font-size:.9rem;
-      color:var(--muted);
-      min-width:70px;
-      text-align:right;
-    }
-
-    /* ====== LIGHTBOX ====== */
-    .lightbox{
-      position:fixed;
-      inset:0;
-      background:rgba(0,0,0,0.88);
-      display:none;
-      align-items:center;
-      justify-content:center;
-      padding:18px;
-      z-index:9999;
-    }
-    .lightbox.open{ display:flex; }
-
-    .lightbox img{
-      max-width:min(1200px, 96vw);
-      max-height:92vh;
-      width:auto;
-      height:auto;
-      border:1px solid rgba(255,255,255,0.18);
-      background:#000;
-      box-shadow: 0 30px 90px rgba(0,0,0,.7);
-    }
-
-    .lightbox-close{
-      position:absolute;
-      top:14px;
-      right:14px;
-      border:1px solid rgba(255,255,255,0.22);
-      background:rgba(0,0,0,0.4);
-      color:#fff;
-      padding:10px 12px;
-      cursor:pointer;
-    }
-    .lightbox-close:hover{
-      border-color: var(--accent);
-      background: var(--accent);
-      color:#000;
-    }
-
-    /* ====== BACK ====== */
+    /* ===== Back link ===== */
     .back{
       text-align:center;
-      margin-top:26px;
+      margin-top:34px;
     }
+
     .back a{
       color:var(--accent);
       text-decoration:none;
@@ -296,132 +133,84 @@
     }
     .back a:hover{ text-decoration:underline; }
 
-    /* mobile: on diminue les bords floutés */
-    @media (max-width: 768px){
-      .carousel-shell::before,
-      .carousel-shell::after{ width:60px; }
-      .bar-hint{ display:none; }
-      .navbtn{ padding:10px 12px; }
-    }
   </style>
 </head>
 
 <body>
 
-  <!-- HERO -->
-  <div class="hero">
-    <div class="hero-inner">
-      <div class="hero-title">
-        <h1>Galerie photos</h1>
-        <p>Machine Atelier CAL – photos réelles, détails mécaniques, rouleaux et finitions.</p>
-      </div>
+<header>
+  <h1>Galerie photos</h1>
+  <p class="subtitle">Machine Atelier CAL – photos réelles, détails mécaniques, rouleaux et finitions.</p>
+</header>
 
-      <div class="video-frame">
-        <video controls playsinline preload="metadata">
-          <source src="photos/video01.mp4" type="video/mp4">
-          Votre navigateur ne supporte pas la vidéo.
-        </video>
-      </div>
+<div class="wrap">
+
+  <!-- PHOTO 01 -->
+  <section class="shot reveal">
+    <div class="media">
+      <img src="photos/photo01.jpeg" alt="Atelier CAL - photo 01">
     </div>
+  </section>
+
+  <!-- PHOTO 02 -->
+  <section class="shot reveal">
+    <div class="media">
+      <img src="photos/photo02.jpeg" alt="Atelier CAL - photo 02">
+    </div>
+  </section>
+
+  <!-- PHOTO 03 -->
+  <section class="shot reveal">
+    <div class="media">
+      <img src="photos/photo03.jpeg" alt="Atelier CAL - photo 03">
+    </div>
+  </section>
+
+  <!-- PHOTO 04 -->
+  <section class="shot reveal">
+    <div class="media">
+      <img src="photos/photo04.jpeg" alt="Atelier CAL - photo 04">
+    </div>
+  </section>
+
+  <!-- PHOTO 05 -->
+  <section class="shot reveal">
+    <div class="media">
+      <img src="photos/photo05.jpeg" alt="Atelier CAL - photo 05">
+    </div>
+  </section>
+
+  <!-- VIDEO (en bas) -->
+  <section class="shot reveal">
+    <div class="media">
+      <video controls playsinline preload="metadata">
+        <source src="photos/video01.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la vidéo.
+      </video>
+    </div>
+  </section>
+
+  <div class="back">
+    <a href="index.html">← Retour à l’accueil</a>
   </div>
 
-  <!-- CAROUSEL -->
-  <div class="section">
+</div>
 
-    <div class="bar">
-      <div class="bar-left">
-        <div class="bar-title">Photos</div>
-        <div class="bar-hint">Glisser pour défiler • Clic pour zoom</div>
-      </div>
+<script>
+  // Apparition au scroll (IntersectionObserver)
+  const items = document.querySelectorAll('.reveal');
 
-      <div class="bar-right">
-        <button class="navbtn" type="button" id="prevBtn">◀</button>
-        <button class="navbtn" type="button" id="nextBtn">▶</button>
-      </div>
-    </div>
-
-    <div class="carousel-shell">
-      <div class="carousel" id="carousel">
-        <div class="slide"><img src="photos/photo01.jpeg" alt="Atelier CAL - photo 01"></div>
-        <div class="slide"><img src="photos/photo02.jpeg" alt="Atelier CAL - photo 02"></div>
-        <div class="slide"><img src="photos/photo03.jpeg" alt="Atelier CAL - photo 03"></div>
-        <div class="slide"><img src="photos/photo04.jpeg" alt="Atelier CAL - photo 04"></div>
-        <div class="slide"><img src="photos/photo05.jpeg" alt="Atelier CAL - photo 05"></div>
-      </div>
-    </div>
-
-    <div class="progress-wrap">
-      <div class="progress"><span id="progressBar"></span></div>
-      <div class="progress-txt" id="progressTxt">0%</div>
-    </div>
-
-    <div class="back">
-      <a href="index.html">← Retour à l’accueil</a>
-    </div>
-
-  </div>
-
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="lightbox-close" id="closeLightbox" type="button">Fermer ✕</button>
-    <img id="lightboxImg" src="" alt="Zoom photo">
-  </div>
-
-  <script>
-    // --- Carousel controls ---
-    const carousel = document.getElementById('carousel');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-
-    function scrollByOne(direction){
-      const slide = carousel.querySelector('.slide');
-      if(!slide) return;
-      const gap = 18; // doit matcher le CSS
-      const amount = slide.getBoundingClientRect().width + gap;
-      carousel.scrollBy({ left: direction * amount, behavior: 'smooth' });
-    }
-    prevBtn.addEventListener('click', () => scrollByOne(-1));
-    nextBtn.addEventListener('click', () => scrollByOne(1));
-
-    // --- Progress bar ---
-    const progressBar = document.getElementById('progressBar');
-    const progressTxt = document.getElementById('progressTxt');
-
-    function updateProgress(){
-      const maxScroll = carousel.scrollWidth - carousel.clientWidth;
-      const pct = maxScroll <= 0 ? 0 : (carousel.scrollLeft / maxScroll) * 100;
-      const clamped = Math.max(0, Math.min(100, pct));
-      progressBar.style.width = clamped.toFixed(1) + '%';
-      progressTxt.textContent = Math.round(clamped) + '%';
-    }
-    carousel.addEventListener('scroll', updateProgress, { passive:true });
-    window.addEventListener('resize', updateProgress);
-    updateProgress();
-
-    // --- Lightbox ---
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightboxImg');
-    const closeLightbox = document.getElementById('closeLightbox');
-
-    carousel.addEventListener('click', (e) => {
-      const img = e.target.closest('img');
-      if(!img) return;
-      lightboxImg.src = img.src;
-      lightbox.classList.add('open');
-      lightbox.setAttribute('aria-hidden', 'false');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target); // une seule fois = plus fluide
+      }
     });
+  }, { threshold: 0.18 });
 
-    function close(){
-      lightbox.classList.remove('open');
-      lightbox.setAttribute('aria-hidden', 'true');
-      lightboxImg.src = '';
-    }
-    closeLightbox.addEventListener('click', close);
-    lightbox.addEventListener('click', (e) => { if(e.target === lightbox) close(); });
-    document.addEventListener('keydown', (e) => {
-      if(e.key === 'Escape' && lightbox.classList.contains('open')) close();
-    });
-  </script>
+  items.forEach(el => io.observe(el));
+</script>
 
 </body>
 </html>
