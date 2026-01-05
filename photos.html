@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Photos – Atelier CAL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: radial-gradient(circle at top, #151515, #0b0b0b);
+      color: rgba(255,255,255,0.92);
+    }
+
+    header{
+      text-align:center;
+      padding:50px 20px 30px;
+    }
+
+    h1{
+      font-size:clamp(2rem,4vw,3rem);
+      margin-bottom:10px;
+    }
+
+    .subtitle{
+      color:rgba(255,255,255,0.7);
+    }
+
+    .gallery{
+      max-width:1200px;
+      margin:40px auto 80px;
+      padding:0 20px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+      gap:22px;
+    }
+
+    .photo-card{
+      border:1px solid rgba(255,255,255,0.16);
+      background:rgba(255,255,255,0.04);
+      overflow:hidden;
+      transition:.25s;
+    }
+
+    .photo-card:hover{
+      transform:translateY(-4px);
+      border-color:#c9a24d;
+    }
+
+    .photo-card img{
+      width:100%;
+      display:block;
+      cursor:zoom-in;
+    }
+
+    .caption{
+      padding:12px 14px;
+      font-size:.9rem;
+      color:rgba(255,255,255,0.7);
+      text-align:center;
+    }
+
+    .back{
+      text-align:center;
+      margin-bottom:50px;
+    }
+
+    .back a{
+      color:#c9a24d;
+      text-decoration:none;
+      font-size:.9rem;
+    }
+
+    .back a:hover{
+      text-decoration:underline;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Galerie photos</h1>
+  <p class="subtitle">Machine Atelier CAL – détails, rouleaux et finitions</p>
+</header>
+
+<section class="gallery">
+
+  <div class="photo-card">
+    <img src="photos/machine-1.jpg" alt="Machine confiserie Atelier CAL">
+    <div class="caption">Vue générale de la machine</div>
+  </div>
+
+  <div class="photo-card">
+    <img src="photos/rouleaux.jpg" alt="Rouleaux en bronze">
+    <div class="caption">Rouleaux en bronze poli</div>
+  </div>
+
+  <div class="photo-card">
+    <img src="photos/detail.jpg" alt="Détail mécanique">
+    <div class="caption">Détails mécaniques et finitions</div>
+  </div>
+
+</section>
+
+<div class="back">
+  <a href="index.html">← Retour à l’accueil</a>
+</div>
+
+</body>
+</html>
