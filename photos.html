@@ -7,149 +7,125 @@
 
   <style>
     :root{
-      --bg1:#0b0b0b;
-      --bg2:#151515;
+      --bg1:#070707;
+      --bg2:#141414;
       --card:rgba(255,255,255,0.04);
       --line:rgba(255,255,255,0.16);
       --text:rgba(255,255,255,0.92);
       --muted:rgba(255,255,255,0.7);
       --accent:#c9a24d;
+      --shadow: 0 24px 80px rgba(0,0,0,.65);
     }
-
-    *{ box-sizing:border-box }
+    *{ box-sizing:border-box; }
 
     body{
       margin:0;
       font-family: Arial, Helvetica, sans-serif;
-      background: radial-gradient(circle at top, var(--bg2), var(--bg1));
-      color: var(--text);
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 50% -20%, rgba(201,162,77,.10), transparent 60%),
+        radial-gradient(circle at top, var(--bg2), var(--bg1));
     }
 
-    header{
-      text-align:center;
-      padding:50px 20px 30px;
+    /* ====== HERO VIDEO CINÉMA ====== */
+    .hero{
+      width:100%;
+      padding:34px 18px 18px;
     }
 
-    h1{
-      font-size:clamp(2rem,4vw,3rem);
-      margin:0 0 10px;
-    }
-
-    .subtitle{
-      max-width:900px;
+    .hero-inner{
+      max-width:1200px;
       margin:0 auto;
+    }
+
+    .hero-title{
+      text-align:center;
+      padding:10px 0 16px;
+    }
+
+    .hero-title h1{
+      margin:0 0 10px;
+      font-size:clamp(2.0rem, 4vw, 3.1rem);
+      letter-spacing:.25px;
+    }
+
+    .hero-title p{
+      margin:0 auto;
+      max-width:920px;
       color:var(--muted);
       line-height:1.6;
     }
 
-    .gallery{
-      max-width:1200px;
-      margin:40px auto 80px;
-      padding:0 20px;
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
-      gap:22px;
-    }
-
-    .photo-card{
+    .video-frame{
+      margin:18px auto 0;
       border:1px solid var(--line);
-      background:var(--card);
+      background:rgba(0,0,0,.35);
+      box-shadow: var(--shadow);
       overflow:hidden;
-      transition:.25s;
+      position:relative;
     }
 
-    .photo-card:hover{
-      transform:translateY(-4px);
-      border-color:var(--accent);
+    /* petite “lueur” premium */
+    .video-frame::before{
+      content:"";
+      position:absolute;
+      inset:-120px -120px auto -120px;
+      height:220px;
+      background: radial-gradient(circle at 50% 40%, rgba(201,162,77,.20), transparent 60%);
+      pointer-events:none;
+      filter: blur(6px);
     }
 
-    .photo-card img,
-    .photo-card video{
+    .video-frame video{
       width:100%;
       display:block;
       background:#000;
+      aspect-ratio: 21/9; /* cinéma */
     }
 
-    .photo-card img{
-      cursor:zoom-in;
+    /* Sur mobile, 21/9 peut être trop plat -> on passe en 16/9 */
+    @media (max-width: 768px){
+      .video-frame video{ aspect-ratio:16/9; }
     }
 
-    .caption{
-      padding:12px 14px;
-      font-size:.9rem;
+    /* ====== SECTION CAROUSEL ====== */
+    .section{
+      max-width:1200px;
+      margin:26px auto 80px;
+      padding:0 18px;
+    }
+
+    .bar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin:0 0 12px;
+    }
+
+    .bar-left{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+    }
+
+    .bar-title{
+      font-weight:800;
+      letter-spacing:.25px;
+      color:rgba(255,255,255,0.88);
+    }
+
+    .bar-hint{
+      font-size:.92rem;
       color:var(--muted);
-      text-align:center;
-      border-top:1px solid rgba(255,255,255,0.08);
     }
 
-    .back{
-      text-align:center;
-      margin-bottom:60px;
+    .bar-right{
+      display:flex;
+      gap:10px;
+      align-items:center;
     }
 
-    .back a{
-      color:var(--accent);
-      text-decoration:none;
-      font-size:.95rem;
-    }
-
-    .back a:hover{
-      text-decoration:underline;
-    }
-  </style>
-</head>
-
-<body>
-
-<header>
-  <h1>Galerie photos</h1>
-  <p class="subtitle">
-    Machine Atelier CAL – photos réelles, détails mécaniques, rouleaux et finitions.
-  </p>
-</header>
-
-<section class="gallery">
-
-  <!-- VIDEO -->
-  <div class="photo-card">
-    <video controls playsinline preload="metadata">
-      <source src="photos/video01.mp4" type="video/mp4">
-      Votre navigateur ne supporte pas la vidéo.
-    </video>
-    <div class="caption">Vidéo – machine en fonctionnement</div>
-  </div>
-
-  <!-- PHOTOS -->
-  <div class="photo-card">
-    <img src="photos/photo01.jpeg" alt="Atelier CAL – photo 01">
-    <div class="caption">Vue générale de la machine</div>
-  </div>
-
-  <div class="photo-card">
-    <img src="photos/photo02.jpeg" alt="Atelier CAL – photo 02">
-    <div class="caption">Vue latérale du bâti</div>
-  </div>
-
-  <div class="photo-card">
-    <img src="photos/photo03.jpeg" alt="Atelier CAL – photo 03">
-    <div class="caption">Détails mécaniques</div>
-  </div>
-
-  <div class="photo-card">
-    <img src="photos/photo04.jpeg" alt="Atelier CAL – photo 04">
-    <div class="caption">Rouleaux en bronze poli</div>
-  </div>
-
-  <div class="photo-card">
-    <img src="photos/photo05.jpeg" alt="Atelier CAL – photo 05">
-    <div class="caption">Finitions et conception</div>
-  </div>
-
-</section>
-
-<div class="back">
-  <a href="index.html">← Retour à l’accueil</a>
-</div>
-
-</body>
-</html>
+    .navbtn{
+      appearance:none;
+      border:1px solid rgba(255,255,255,0.25);
