@@ -6,11 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+    :root{
+      --bg1:#0b0b0b;
+      --bg2:#151515;
+      --card:rgba(255,255,255,0.04);
+      --line:rgba(255,255,255,0.16);
+      --text:rgba(255,255,255,0.92);
+      --muted:rgba(255,255,255,0.7);
+      --accent:#c9a24d;
+    }
+
+    *{ box-sizing:border-box }
+
     body{
       margin:0;
       font-family: Arial, Helvetica, sans-serif;
-      background: radial-gradient(circle at top, #151515, #0b0b0b);
-      color: rgba(255,255,255,0.92);
+      background: radial-gradient(circle at top, var(--bg2), var(--bg1));
+      color: var(--text);
     }
 
     header{
@@ -20,11 +32,14 @@
 
     h1{
       font-size:clamp(2rem,4vw,3rem);
-      margin-bottom:10px;
+      margin:0 0 10px;
     }
 
     .subtitle{
-      color:rgba(255,255,255,0.7);
+      max-width:900px;
+      margin:0 auto;
+      color:var(--muted);
+      line-height:1.6;
     }
 
     .gallery{
@@ -37,39 +52,45 @@
     }
 
     .photo-card{
-      border:1px solid rgba(255,255,255,0.16);
-      background:rgba(255,255,255,0.04);
+      border:1px solid var(--line);
+      background:var(--card);
       overflow:hidden;
       transition:.25s;
     }
 
     .photo-card:hover{
       transform:translateY(-4px);
-      border-color:#c9a24d;
+      border-color:var(--accent);
+    }
+
+    .photo-card img,
+    .photo-card video{
+      width:100%;
+      display:block;
+      background:#000;
     }
 
     .photo-card img{
-      width:100%;
-      display:block;
       cursor:zoom-in;
     }
 
     .caption{
       padding:12px 14px;
       font-size:.9rem;
-      color:rgba(255,255,255,0.7);
+      color:var(--muted);
       text-align:center;
+      border-top:1px solid rgba(255,255,255,0.08);
     }
 
     .back{
       text-align:center;
-      margin-bottom:50px;
+      margin-bottom:60px;
     }
 
     .back a{
-      color:#c9a24d;
+      color:var(--accent);
       text-decoration:none;
-      font-size:.9rem;
+      font-size:.95rem;
     }
 
     .back a:hover{
@@ -82,24 +103,46 @@
 
 <header>
   <h1>Galerie photos</h1>
-  <p class="subtitle">Machine Atelier CAL – détails, rouleaux et finitions</p>
+  <p class="subtitle">
+    Machine Atelier CAL – photos réelles, détails mécaniques, rouleaux et finitions.
+  </p>
 </header>
 
 <section class="gallery">
 
+  <!-- VIDEO -->
   <div class="photo-card">
-    <img src="photos/machine-1.jpg" alt="Machine confiserie Atelier CAL">
+    <video controls playsinline preload="metadata">
+      <source src="photos/video01.mp4" type="video/mp4">
+      Votre navigateur ne supporte pas la vidéo.
+    </video>
+    <div class="caption">Vidéo – machine en fonctionnement</div>
+  </div>
+
+  <!-- PHOTOS -->
+  <div class="photo-card">
+    <img src="photos/photo01.jpeg" alt="Atelier CAL – photo 01">
     <div class="caption">Vue générale de la machine</div>
   </div>
 
   <div class="photo-card">
-    <img src="photos/rouleaux.jpg" alt="Rouleaux en bronze">
+    <img src="photos/photo02.jpeg" alt="Atelier CAL – photo 02">
+    <div class="caption">Vue latérale du bâti</div>
+  </div>
+
+  <div class="photo-card">
+    <img src="photos/photo03.jpeg" alt="Atelier CAL – photo 03">
+    <div class="caption">Détails mécaniques</div>
+  </div>
+
+  <div class="photo-card">
+    <img src="photos/photo04.jpeg" alt="Atelier CAL – photo 04">
     <div class="caption">Rouleaux en bronze poli</div>
   </div>
 
   <div class="photo-card">
-    <img src="photos/detail.jpg" alt="Détail mécanique">
-    <div class="caption">Détails mécaniques et finitions</div>
+    <img src="photos/photo05.jpeg" alt="Atelier CAL – photo 05">
+    <div class="caption">Finitions et conception</div>
   </div>
 
 </section>
