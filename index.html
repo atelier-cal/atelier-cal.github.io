@@ -12,6 +12,7 @@
       --muted:rgba(255,255,255,0.72);
       --line:rgba(255,255,255,0.1);
       --accent:#c9a24d;
+      --whatsapp:#25D366;
     }
 
     *{box-sizing:border-box}
@@ -283,6 +284,43 @@
       text-decoration:none;
     }
 
+    /* WHATSAPP FIXE */
+    .whatsapp-float{
+      position:fixed;
+      left:20px;
+      bottom:20px;
+      width:62px;
+      height:62px;
+      border-radius:50%;
+      background:var(--whatsapp);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 10px 28px rgba(0,0,0,0.35);
+      z-index:2000;
+      text-decoration:none;
+      transition:transform 0.25s ease, box-shadow 0.25s ease;
+      animation:whatsappPulse 2.2s infinite;
+    }
+
+    .whatsapp-float:hover{
+      transform:scale(1.08);
+      box-shadow:0 14px 34px rgba(0,0,0,0.45);
+    }
+
+    .whatsapp-float svg{
+      width:30px;
+      height:30px;
+      fill:#fff;
+      display:block;
+    }
+
+    @keyframes whatsappPulse{
+      0%{transform:scale(1);}
+      50%{transform:scale(1.06);}
+      100%{transform:scale(1);}
+    }
+
     @media (max-width: 900px){
       .section-inner,
       .section.reverse .section-inner{
@@ -298,6 +336,20 @@
         justify-content:center;
       }
     }
+
+    @media (max-width: 600px){
+      .whatsapp-float{
+        left:14px;
+        bottom:14px;
+        width:56px;
+        height:56px;
+      }
+
+      .whatsapp-float svg{
+        width:27px;
+        height:27px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -306,7 +358,7 @@
     <div class="top-nav-inner">
       <a href="index.html" class="brand">Atelier CAL</a>
       <div class="nav-links">
-        <a href="#machine">La machine</a>
+        <a href="machine.html">La machine</a>
         <a href="#modeles">Les modèles</a>
         <a href="photos.html">Photos</a>
         <a href="qui-sommes-nous.html">Qui sommes-nous</a>
@@ -322,7 +374,7 @@
         le miel et la nougatine.
       </p>
       <div class="hero-buttons">
-        <a href="#machine" class="btn btn-gold">Voir la machine</a>
+        <a href="machine.html" class="btn btn-gold">Voir la machine</a>
         <a href="#modeles" class="btn">Voir les modèles</a>
       </div>
     </div>
@@ -335,7 +387,7 @@
       </div>
       <div class="text-block reveal">
         <div class="eyebrow">La machine</div>
-        <h2>Un bâti compact et robuste </h2>
+        <h2>Un bâti compact et robuste</h2>
         <p>
           Pensée pour la confiserie artisanale et professionnelle, la machine Atelier CAL
           associe précision, sécurité et qualité de fabrication dans un format compact
@@ -392,6 +444,20 @@
     <a href="mentions-legales.html">Mentions légales</a><br>
     contact@atelier-cal.fr · 06 77 84 54 35
   </footer>
+
+  <!-- BOUTON WHATSAPP -->
+  <a
+    href="https://wa.me/33677845435"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contacter Atelier CAL sur WhatsApp"
+    title="WhatsApp"
+  >
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M19.11 17.24c-.27-.13-1.58-.78-1.83-.87-.24-.09-.42-.13-.6.14-.18.27-.69.87-.85 1.05-.16.18-.31.2-.58.07-.27-.13-1.12-.41-2.14-1.3-.79-.7-1.33-1.56-1.48-1.83-.16-.27-.02-.42.11-.55.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.6-1.45-.82-1.98-.22-.53-.44-.45-.6-.46h-.51c-.18 0-.47.07-.71.34-.24.27-.93.91-.93 2.22 0 1.31.96 2.58 1.09 2.76.13.18 1.88 2.87 4.56 4.02.64.28 1.14.45 1.53.57.64.2 1.22.17 1.68.1.51-.08 1.58-.65 1.81-1.28.22-.63.22-1.18.16-1.28-.07-.11-.24-.18-.51-.31zM16.02 2.67c-7.36 0-13.33 5.97-13.33 13.33 0 2.34.61 4.63 1.77 6.65L2.67 29.33l6.84-1.74a13.27 13.27 0 0 0 6.51 1.67h.01c7.36 0 13.33-5.97 13.33-13.33 0-3.57-1.39-6.92-3.92-9.44a13.23 13.23 0 0 0-9.42-3.82zm0 24.2h-.01a11.1 11.1 0 0 1-5.66-1.55l-.41-.24-4.06 1.03 1.08-3.96-.27-.41a11.08 11.08 0 0 1-1.71-5.93c0-6.13 4.99-11.11 11.12-11.11 2.97 0 5.76 1.16 7.86 3.26a11.03 11.03 0 0 1 3.25 7.86c0 6.13-4.99 11.11-11.19 11.11z"/>
+    </svg>
+  </a>
 
   <script>
     const reveals = document.querySelectorAll('.reveal');
