@@ -3,334 +3,408 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Atelier CAL – Machine de confiserie professionnelle</title>
-
-  <!-- SEO -->
-  <meta name="description" content="Atelier CAL conçoit et fabrique des machines professionnelles pour la confiserie : bâti à cylindres motorisé pour bonbons, nougatine et miel.">
-  <meta name="keywords" content="machine confiserie, bâti à cylindres, machine bonbon, nougatine, miel">
-  <meta name="author" content="Atelier CAL">
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K4502PGZ0X"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-K4502PGZ0X');
-  </script>
-  <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2222911094866542');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-
+  <title>Atelier CAL</title>
   <style>
     :root{
-      --bg1:#0b0b0b;
-      --bg2:#151515;
-      --card:rgba(255,255,255,0.04);
-      --line:rgba(255,255,255,0.16);
-      --text:rgba(255,255,255,0.92);
-      --muted:rgba(255,255,255,0.7);
+      --bg:#070707;
+      --bg-soft:#101010;
+      --text:#f5f5f5;
+      --muted:rgba(255,255,255,0.72);
+      --line:rgba(255,255,255,0.1);
       --accent:#c9a24d;
     }
 
     *{box-sizing:border-box}
 
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
       margin:0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: radial-gradient(circle at top, var(--bg2), var(--bg1));
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--bg);
       color:var(--text);
     }
 
-    /* ===== BANDE DÉFILANTE ===== */
-    .top-banner{
-      height:46px;
-      overflow:hidden;
-      background:#0f1115;
-      border-bottom:1px solid rgba(255,255,255,0.1);
-    }
-
-    .banner-track{
-      display:flex;
-      align-items:center;
-      height:100%;
-      width:max-content;
-      animation:scroll 22s linear infinite;
-      gap:30px;
-      padding-left:20px;
-    }
-
-    .banner-item{
-      white-space:nowrap;
-      color:var(--accent);
-      font-size:14px;
-      font-weight:600;
-      letter-spacing:.3px;
-    }
-
-    @keyframes scroll{
-      from{transform:translateX(0)}
-      to{transform:translateX(-50%)}
-    }
-
-    /* ===== MENU ===== */
+    /* NAV */
     .top-nav{
-      padding:16px 20px;
-      text-align:center;
-    }
-
-    .top-nav a{
-      color:rgba(255,255,255,0.85);
-      text-decoration:none;
-      margin:0 10px;
-      font-size:.9rem;
-    }
-
-    .top-nav a:hover{
-      text-decoration:underline;
-    }
-
-    /* ===== HEADER ===== */
-    header{
-      padding:50px 20px 30px;
-      text-align:center;
-    }
-
-    .logo{
-      width:300px;
-      max-width:90%;
-      margin-bottom:18px;
-    }
-
-    h1{
-      font-size:clamp(2.2rem,4vw,3.1rem);
-      margin:14px 0 10px;
-    }
-
-    .subtitle{
-      max-width:900px;
-      margin:0 auto;
-      color:var(--muted);
-      line-height:1.6;
-    }
-
-    /* ===== AJOUT : CADRE AUTOUR VIDEO + CASES (sans toucher au reste) ===== */
-    .main-block{
-      max-width:1100px;
-      margin:40px auto 70px;
-      padding:26px 20px;
-      border:1px solid var(--line);
-      background: var(--card);
-    }
-
-    /* ===== VIDEO ===== */
-    .video-wrapper{
-      max-width:1100px;
-      margin:0 auto 20px; /* modif: était 40px auto 20px, pour être propre dans le cadre */
-      padding:0;          /* modif: était 0 20px, inutile dans le cadre */
-    }
-
-    .hero-video{
+      position:fixed;
+      top:0;
+      left:0;
       width:100%;
-      aspect-ratio:16/9;
-      border:1px solid var(--line);
-      background:#000;
+      z-index:1000;
+      background:rgba(8,8,8,0.72);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);
     }
 
-    /* ===== GRID ACTIONS ===== */
-    .actions{
-      max-width:1100px;
-      margin:20px auto 0; /* modif: était 40px auto 70px, géré par le cadre */
-      padding:0;          /* modif: était 0 20px, inutile dans le cadre */
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
-      gap:22px;
-    }
-
-    .action-card{
-      background:var(--card);
-      border:1px solid var(--line);
-      padding:26px 22px;
-      text-align:center;
+    .top-nav-inner{
+      max-width:1200px;
+      margin:0 auto;
+      padding:16px 22px;
       display:flex;
-      flex-direction:column;
       justify-content:space-between;
-      min-height:190px;
-      transition:.25s;
+      align-items:center;
+      gap:20px;
     }
 
-    .action-card:hover{
-      transform:translateY(-4px);
-      border-color:var(--accent);
-    }
-
-    .action-card h3{
-      margin:0 0 10px;
-      font-size:1.15rem;
-    }
-
-    .action-card p{
-      margin:0 0 18px;
-      font-size:.95rem;
-      color:var(--muted);
-      line-height:1.5;
-    }
-
-    .action-btn{
-      padding:12px 18px;
-      border:1px solid rgba(255,255,255,0.35);
+    .brand{
       color:#fff;
       text-decoration:none;
-      text-transform:uppercase;
-      font-size:.85rem;
-      letter-spacing:.8px;
-      transition:.25s;
+      font-weight:700;
+      letter-spacing:0.5px;
     }
 
-    .action-btn:hover{
+    .nav-links{
+      display:flex;
+      gap:24px;
+      flex-wrap:wrap;
+    }
+
+    .nav-links a{
+      color:rgba(255,255,255,0.86);
+      text-decoration:none;
+      font-size:0.95rem;
+      position:relative;
+    }
+
+    .nav-links a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-5px;
+      width:0;
+      height:1px;
+      background:var(--accent);
+      transition:0.25s;
+    }
+
+    .nav-links a:hover::after{
+      width:100%;
+    }
+
+    /* HERO */
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      overflow:hidden;
+      padding:100px 20px 50px;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.58)),
+        url("voirmachine.JPG") center center / cover no-repeat;
+      transform:scale(1.04);
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      max-width:900px;
+      text-align:center;
+    }
+
+    .hero h1{
+      font-size:clamp(2.5rem, 6vw, 5rem);
+      margin:0 0 16px;
+      line-height:1.05;
+    }
+
+    .hero p{
+      font-size:clamp(1rem, 2vw, 1.2rem);
+      color:var(--muted);
+      max-width:760px;
+      margin:0 auto 30px;
+      line-height:1.7;
+    }
+
+    .hero-buttons{
+      display:flex;
+      gap:14px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:14px 22px;
+      text-decoration:none;
+      border:1px solid rgba(255,255,255,0.25);
+      color:#fff;
+      text-transform:uppercase;
+      font-size:0.84rem;
+      letter-spacing:1px;
+      transition:0.25s;
+    }
+
+    .btn:hover{
+      background:#fff;
+      color:#000;
+    }
+
+    .btn-gold{
+      border-color:rgba(201,162,77,0.55);
+      color:var(--accent);
+    }
+
+    .btn-gold:hover{
       background:var(--accent);
       color:#000;
       border-color:var(--accent);
     }
 
-    .buy{
-      border:1px solid rgba(201,162,77,0.55);
-      background:linear-gradient(145deg, rgba(201,162,77,.12), rgba(255,255,255,.04));
+    /* SECTIONS */
+    .section{
+      padding:110px 20px;
+      border-top:1px solid var(--line);
+      background:linear-gradient(to bottom, #090909, #0d0d0d);
     }
 
-    .buy h3{color:var(--accent)}
-    .who-link{
-  text-align:center;
-  margin:30px 0 10px;
-}
+    .section-inner{
+      max-width:1200px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:1.1fr 0.9fr;
+      gap:48px;
+      align-items:center;
+    }
 
-.who-link a{
-  font-size:1rem; /* taille moyenne */
-  color:rgba(255,255,255,0.75);
-  text-decoration:none;
-  letter-spacing:0.3px;
-}
+    .section.reverse .section-inner{
+      grid-template-columns:0.9fr 1.1fr;
+    }
 
-.who-link a:hover{
-  color:#fff;
-  text-decoration:underline;
-}
+    .visual{
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:#000;
+    }
 
+    .visual img{
+      width:100%;
+      display:block;
+      height:100%;
+      object-fit:cover;
+      transition:transform 0.9s ease;
+    }
+
+    .section:hover .visual img{
+      transform:scale(1.04);
+    }
+
+    .text-block{
+      opacity:0;
+      transform:translateY(40px);
+      transition:0.8s ease;
+    }
+
+    .text-block.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    .eyebrow{
+      color:var(--accent);
+      text-transform:uppercase;
+      letter-spacing:1.8px;
+      font-size:0.8rem;
+      margin-bottom:12px;
+    }
+
+    .text-block h2{
+      font-size:clamp(2rem, 4vw, 3.1rem);
+      margin:0 0 18px;
+      line-height:1.1;
+    }
+
+    .text-block p{
+      color:var(--muted);
+      line-height:1.8;
+      font-size:1rem;
+      margin-bottom:20px;
+    }
+
+    .features{
+      display:grid;
+      gap:10px;
+      color:rgba(255,255,255,0.88);
+      font-size:0.98rem;
+    }
+
+    .features span{
+      padding-bottom:10px;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    /* CTA */
+    .cta{
+      padding:110px 20px;
+      text-align:center;
+      background:
+        radial-gradient(circle at top, rgba(201,162,77,0.10), transparent 40%),
+        #080808;
+      border-top:1px solid var(--line);
+    }
+
+    .cta-inner{
+      max-width:900px;
+      margin:0 auto;
+    }
+
+    .cta h2{
+      font-size:clamp(2rem,4vw,3.4rem);
+      margin:0 0 16px;
+    }
+
+    .cta p{
+      color:var(--muted);
+      line-height:1.7;
+      margin:0 auto 28px;
+      max-width:700px;
+    }
 
     footer{
-      padding:28px 20px 36px;
       text-align:center;
-      font-size:.85rem;
-      color:rgba(255,255,255,0.55);
+      padding:30px 20px 40px;
+      color:rgba(255,255,255,0.56);
+      border-top:1px solid var(--line);
+      font-size:0.88rem;
     }
 
     footer a{
-      color:rgba(255,255,255,0.65);
+      color:rgba(255,255,255,0.72);
       text-decoration:none;
     }
-/* Mobile uniquement : décaler UNIQUEMENT le mot "formateurs" */
-@media (max-width: 768px) {
-  .word-formateurs {
-    display: inline-block;
-    margin-left: 238px; /* ajuste : 4 à 8 px */
-  }
-}
 
+    @media (max-width: 900px){
+      .section-inner,
+      .section.reverse .section-inner{
+        grid-template-columns:1fr;
+      }
+
+      .top-nav-inner{
+        flex-direction:column;
+        gap:12px;
+      }
+
+      .nav-links{
+        justify-content:center;
+      }
+    }
   </style>
 </head>
-
 <body>
 
-<!-- MENU -->
-<nav class="top-nav">
-  <a href="index.html">Accueil</a> |
-  <a href="modeles.html">Voir les modèles</a> |
-<a href="partenaires-formateurs.html">
-  Partenariat <span class="word-formateurs">formateurs</span>
-</a>
-
-</nav>
-
-<header>
-  <img src="logo-atelier-cal.png" class="logo" alt="Atelier CAL">
-  <h1>Atelier CAL</h1>
-  <p class="subtitle">
-    Conception et fabrication de machines professionnelles pour la confiserie.<br>
-    Bâti à cylindres SRC – sucre cuit, miel et nougatine.
-  </p>
-</header>
-
-<!-- ===== CADRE VIDEO + CASES ===== -->
-<div class="main-block">
-
-  <!-- VIDEO -->
-  <div class="video-wrapper">
-    <video class="hero-video" autoplay loop muted playsinline controls>
-      <source src="machine.mp4" type="video/mp4">
-    </video>
-  </div>
-
-  <!-- ACTIONS -->
-  <section class="actions">
-
-    <div class="action-card">
-      <h3>Voir la machine</h3>
-      <p>Présentation complète du bâti à cylindres SRC.</p>
-      <a href="machine.html" class="action-btn">Accéder</a>
+  <nav class="top-nav">
+    <div class="top-nav-inner">
+      <a href="index.html" class="brand">Atelier CAL</a>
+      <div class="nav-links">
+        <a href="#machine">La machine</a>
+        <a href="#modeles">Les modèles</a>
+        <a href="photos.html">Photos</a>
+        <a href="qui-sommes-nous.html">Qui sommes-nous</a>
+      </div>
     </div>
+  </nav>
 
-    <div class="action-card">
-      <h3>Voir les rouleaux</h3>
-      <p>Pastille, perle, hexagone, feuille et gravures.</p>
-      <a href="modeles.html" class="action-btn">Voir</a>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Machines de confiserie professionnelles</h1>
+      <p>
+        Conception et fabrication de bâtis à cylindres haut de gamme pour le sucre cuit,
+        le miel et la nougatine.
+      </p>
+      <div class="hero-buttons">
+        <a href="#machine" class="btn btn-gold">Voir la machine</a>
+        <a href="#modeles" class="btn">Voir les modèles</a>
+      </div>
     </div>
-
-     <div class="action-card">
-  <h3>Voir les photos</h3>
-  <p>Photos réelles de la machine, des rouleaux et des détails.</p>
-  <a href="photos.html" class="action-btn">Voir</a>
-</div>
-
-
-    <!-- ORDRE MODIFIÉ : Acheter en 3e -->
-    <div class="action-card buy">
-      <h3>Acheter / Précommande</h3>
-      <a href="modeles.html" class="action-btn">Acheter</a>
-    </div>
-
-    <!-- ORDRE MODIFIÉ : Simulateur en dernier -->
-    <div class="action-card">
-      <h3>Simulateur de rentabilité</h3>
-      <p>Calculez l’amortissement de votre machine.</p>
-      <a href="calculer.html" class="action-btn">Simuler</a>
-
-
   </section>
 
+  <section class="section" id="machine">
+    <div class="section-inner">
+      <div class="visual">
+        <img src="voirmachine.JPG" alt="Machine Atelier CAL">
       </div>
-      <div class="who-link">
-  <a href="qui-sommes-nous.html">Qui sommes-nous</a>
-</div>
+      <div class="text-block reveal">
+        <div class="eyebrow">La machine</div>
+        <h2>Un bâti compact, robuste et visuellement premium</h2>
+        <p>
+          Pensée pour la confiserie artisanale et professionnelle, la machine Atelier CAL
+          associe précision, sécurité et qualité de fabrication dans un format compact
+          et élégant.
+        </p>
+        <div class="features">
+          <span>Rouleaux bronze gravés</span>
+          <span>Motorisation adaptée à la production</span>
+          <span>Utilisation pour miel, sucre cuit et nougatine</span>
+          <span>Conception sérieuse et finitions soignées</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  Atelier CAL – Tous droits réservés ·
-  <a href="mentions-legales.html">Mentions légales</a><br>
-  contact@atelier-cal.fr · 06 77 84 54 35
-</footer>
+  <section class="section reverse" id="modeles">
+    <div class="section-inner">
+      <div class="text-block reveal">
+        <div class="eyebrow">Les rouleaux</div>
+        <h2>Des gravures nettes et une vraie mise en valeur du produit</h2>
+        <p>
+          Chaque rouleau est conçu pour offrir une empreinte propre, esthétique et régulière.
+          Formes, motifs et personnalisations permettent de créer des bonbons à forte identité visuelle.
+        </p>
+        <div class="features">
+          <span>Modèles gravés et personnalisables</span>
+          <span>Empreintes précises et élégantes</span>
+          <span>Finition haut de gamme</span>
+          <span>Adapté aux créations artisanales distinctives</span>
+        </div>
+      </div>
+      <div class="visual">
+        <img src="voirmodele.JPG" alt="Rouleaux gravés Atelier CAL">
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="cta-inner">
+      <h2>Découvrez les modèles Atelier CAL</h2>
+      <p>
+        Explorez les différentes gravures, visualisez la machine en détail
+        et contactez-nous pour une demande ou une précommande.
+      </p>
+      <div class="hero-buttons">
+        <a href="modeles.html" class="btn btn-gold">Voir les modèles</a>
+        <a href="photos.html" class="btn">Voir les photos</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Atelier CAL – Tous droits réservés ·
+    <a href="mentions-legales.html">Mentions légales</a><br>
+    contact@atelier-cal.fr · 06 77 84 54 35
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    reveals.forEach(el => observer.observe(el));
   </script>
 
 </body>
