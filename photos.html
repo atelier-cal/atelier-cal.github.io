@@ -9,18 +9,18 @@
     :root{
       --bg1:#070707;
       --bg2:#141414;
-      --line:rgba(255,255,255,0.16);
-      --text:rgba(255,255,255,0.92);
-      --muted:rgba(255,255,255,0.7);
+      --line:rgba(255,255,255,0.12);
+      --text:rgba(255,255,255,0.94);
+      --muted:rgba(255,255,255,0.70);
       --accent:#c9a24d;
-      --shadow: 0 26px 90px rgba(0,0,0,.70);
+      --shadow:0 26px 90px rgba(0,0,0,.70);
     }
 
-    *{ box-sizing:border-box; }
+    *{box-sizing:border-box}
 
     body{
       margin:0;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:Arial, Helvetica, sans-serif;
       color:var(--text);
       background:
         radial-gradient(1200px 600px at 50% -20%, rgba(201,162,77,.10), transparent 60%),
@@ -29,33 +29,42 @@
 
     header{
       text-align:center;
-      padding:52px 20px 26px;
+      padding:58px 20px 28px;
+    }
+
+    .eyebrow{
+      color:var(--accent);
+      text-transform:uppercase;
+      letter-spacing:2px;
+      font-size:.78rem;
+      margin-bottom:12px;
     }
 
     h1{
-      margin:0 0 10px;
-      font-size:clamp(2.0rem, 4vw, 3.1rem);
+      margin:0 0 12px;
+      font-size:clamp(2.1rem, 4vw, 3.3rem);
+      line-height:1.05;
     }
 
     .subtitle{
       max-width:920px;
       margin:0 auto;
       color:var(--muted);
-      line-height:1.6;
+      line-height:1.7;
+      font-size:1rem;
     }
 
     .wrap{
-      max-width:1100px;
+      max-width:1120px;
       margin:0 auto;
-      padding:0 18px 80px;
+      padding:0 18px 90px;
     }
 
-    /* Bloc cinéma */
     .shot{
-      margin: 28px auto;
+      margin:32px auto;
       border:1px solid var(--line);
       background:rgba(255,255,255,0.03);
-      box-shadow: var(--shadow);
+      box-shadow:var(--shadow);
       overflow:hidden;
       position:relative;
     }
@@ -65,18 +74,26 @@
       position:absolute;
       inset:-140px -140px auto -140px;
       height:240px;
-      background: radial-gradient(circle at 50% 40%, rgba(201,162,77,.18), transparent 62%);
+      background:radial-gradient(circle at 50% 40%, rgba(201,162,77,.16), transparent 62%);
       pointer-events:none;
-      filter: blur(6px);
+      filter:blur(6px);
+    }
+
+    .shot-head{
+      padding:18px 22px 8px;
+    }
+
+    .shot-kicker{
+      color:var(--accent);
+      text-transform:uppercase;
+      letter-spacing:1.6px;
+      font-size:.72rem;
+      margin:0;
     }
 
     .media{
       padding:14px;
-      background: rgba(0,0,0,0.25);
-    }
-
-    @media (max-width:768px){
-      .media{ padding:10px; }
+      background:rgba(0,0,0,0.22);
     }
 
     .shot img,
@@ -86,11 +103,10 @@
       background:#000;
     }
 
-    /* Apparition au scroll */
     .reveal{
       opacity:0;
-      transform: translateY(22px) scale(0.985);
-      filter: blur(1px);
+      transform:translateY(22px) scale(0.985);
+      filter:blur(1px);
       transition:
         opacity .70s ease,
         transform .70s ease,
@@ -99,48 +115,68 @@
 
     .reveal.is-visible{
       opacity:1;
-      transform: translateY(0) scale(1);
-      filter: blur(0);
+      transform:translateY(0) scale(1);
+      filter:blur(0);
     }
 
-    /* Survol PC léger */
     @media (hover:hover){
-      .shot img{
-        transition: transform .25s ease, filter .25s ease;
+      .shot img,
+      .shot video{
+        transition:transform .28s ease, filter .28s ease;
       }
-      .shot:hover img{
-        transform: scale(1.01);
-        filter: contrast(1.02) saturate(1.02);
+
+      .shot:hover img,
+      .shot:hover video{
+        transform:scale(1.01);
+        filter:contrast(1.02) saturate(1.03);
       }
     }
 
     .back{
       text-align:center;
-      margin-top:34px;
+      margin-top:38px;
     }
 
     .back a{
+      display:inline-block;
       color:var(--accent);
       text-decoration:none;
-      font-size:.95rem;
+      font-size:.94rem;
+      padding:12px 18px;
+      border:1px solid rgba(201,162,77,.35);
+      transition:.25s ease;
     }
-    .back a:hover{ text-decoration:underline; }
+
+    .back a:hover{
+      background:var(--accent);
+      color:#000;
+      border-color:var(--accent);
+      text-decoration:none;
+    }
+
+    @media (max-width:768px){
+      .media{padding:10px}
+      .shot-head{padding:16px 16px 8px}
+    }
   </style>
 </head>
 
 <body>
 
 <header>
+  <div class="eyebrow">Atelier CAL</div>
   <h1>Galerie photos</h1>
   <p class="subtitle">
-    Machine Atelier CAL – photos réelles, détails mécaniques, rouleaux et finitions.
+    Machine Atelier CAL, rouleaux en bronze gravé, détails techniques, sécurité et finitions.
   </p>
 </header>
 
 <div class="wrap">
 
-  <!-- VIDEO -->
   <section class="shot reveal">
+    <div class="shot-head">
+      <p class="shot-kicker">Présentation vidéo</p>
+    </div>
     <div class="media">
       <video controls playsinline preload="metadata">
         <source src="photos/video01.mp4" type="video/mp4">
@@ -149,38 +185,111 @@
     </div>
   </section>
 
-  <!-- MACHINE COMPLETE -->
   <section class="shot reveal">
+    <div class="shot-head">
+      <p class="shot-kicker">Vue générale</p>
+    </div>
     <div class="media">
-      <img src="photos/photo03.JPG" alt="Machine Atelier CAL">
+      <img src="photos/photo03.JPG" alt="Machine complète Atelier CAL">
     </div>
   </section>
 
-  <!-- DETAILS MECANIQUES -->
   <section class="shot reveal">
+    <div class="shot-head">
+      <p class="shot-kicker">Mise en situation</p>
+    </div>
     <div class="media">
-      <img src="photos/photo04.JPG" alt="Détails mécaniques">
+      <img src="photos/photo dusine.JPG" alt="Rouleaux installés sur la machine">
     </div>
   </section>
 
-  <!-- SECURITE / ARRET URGENCE -->
   <section class="shot reveal">
+    <div class="shot-head">
+      <p class="shot-kicker">Protection en polycarbonate</p>
+    </div>
     <div class="media">
-      <img src="photos/photo02.JPG" alt="Sécurité et arrêt d’urgence">
+      <img src="photos/protectionpolycarbo.JPG" alt="Protection en polycarbonate">
     </div>
   </section>
 
-  <!-- PROTECTION / FINITION -->
   <section class="shot reveal">
+    <div class="shot-head">
+      <p class="shot-kicker">Arrêt d’urgence</p>
+    </div>
     <div class="media">
-      <img src="photos/photo05.JPG" alt="Protection et finition">
+      <img src="photos/arreturgence.JPG" alt="Arrêt d’urgence et commande">
     </div>
   </section>
 
-  <!-- ROULEAUX BRONZE -->
   <section class="shot reveal">
+    <div class="shot-head">
+      <p class="shot-kicker">Vue arrière</p>
+    </div>
     <div class="media">
-      <img src="photos/photo01.JPG" alt="Rouleaux en bronze poli">
+      <img src="photos/photo arriere..JPG" alt="Vue arrière et motorisation">
+    </div>
+  </section>
+
+  <section class="shot reveal">
+    <div class="shot-head">
+      <p class="shot-kicker">Rouleaux bronze</p>
+    </div>
+    <div class="media">
+      <img src="photos/rouleauxbronze.JPG" alt="Rouleaux en bronze poli">
+    </div>
+  </section>
+
+  <section class="shot reveal">
+    <div class="shot-head">
+      <p class="shot-kicker">Motif feuille</p>
+    </div>
+    <div class="media">
+      <img src="photos/rouleaufeuiile.JPG" alt="Rouleau motif feuille">
+    </div>
+  </section>
+
+  <section class="shot reveal">
+    <div class="shot-head">
+      <p class="shot-kicker">Travail de précision</p>
+    </div>
+    <div class="media">
+      <img src="photos/travaildeprecision.JPG" alt="Travail de précision sur le rouleau">
+    </div>
+  </section>
+
+  <section class="shot reveal">
+    <div class="shot-head">
+      <p class="shot-kicker">Modèle perlé 15 mm</p>
+    </div>
+    <div class="media">
+      <img src="photos/perle15mm.JPG" alt="Rouleau modèle perlé 15 mm">
+    </div>
+  </section>
+
+  <section class="shot reveal">
+    <div class="shot-head">
+      <p class="shot-kicker">Modèle pastille</p>
+    </div>
+    <div class="media">
+      <img src="photos/rouleauxpastille.JPG" alt="Rouleau modèle pastille">
+    </div>
+  </section>
+
+  <section class="shot reveal">
+    <div class="shot-head">
+      <p class="shot-kicker">Modèle hexagone</p>
+    </div>
+    <div class="media">
+      <img src="photos/rouleauxhexagone.JPG" alt="Rouleau modèle hexagone">
+    </div>
+  </section>
+
+  <section class="shot reveal">
+    <div class="shot-head">
+      <p class="shot-kicker">Vue frontale</p>
+    </div>
+    <div class="media">
+      <img src="photos/photo04.JPG" alt="Vue frontale des rouleaux sur la machine">
     </div>
   </section>
 
