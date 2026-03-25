@@ -2,264 +2,41 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <!DOCTYPE html>
-<html lang="fr">
-  
-  <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-K4502PGZ0X"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-K4502PGZ0X');
-</script>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2222911094866542');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-  <meta charset="UTF-8" />
-  <title>Machine de confiserie professionnelle – Bâti à cylindres | Atelier CAL</title>
 
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K4502PGZ0X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K4502PGZ0X');
+  </script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2222911094866542');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
+  <title>Machine de confiserie professionnelle – SRC Série 1 | Atelier CAL</title>
   <meta name="google-site-verification" content="A0dojKL5m35FOtxZXnqt33BbuTEnXFRBVb-cTb6grEY" />
-  <meta name="description" content="Atelier CAL conçoit et fabrique des machines professionnelles pour la confiserie : bâti à cylindres motorisé pour bonbons en sucre cuit, nougatine et miel. Conception française." />
+  <meta name="description" content="Machine de confiserie professionnelle SRC Série 1 Atelier CAL. Bâti à cylindres motorisé avec rouleaux en bronze pour bonbons en sucre cuit, nougatine et miel." />
   <meta name="keywords" content="machine confiserie, machine bonbon, bâti à cylindres, machine nougatine, machine bonbon miel, confiseur professionnel" />
   <meta name="author" content="Atelier CAL" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <style>
-    :root{
-      --text: rgba(255,255,255,0.92);
-      --muted: rgba(255,255,255,0.75);
-      --line: rgba(255,255,255,0.18);
-      --card: rgba(255,255,255,0.04);
-      --accent: #c9a24d;
-      --speed: 20s;
-    }
-
-    body{
-      margin:0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background: radial-gradient(circle at top, #1c1c1c 0%, #0b0b0b 45%, #000 100%);
-    }
-
-    /* ================= BANNIÈRE DÉFILANTE ================= */
-    .top-banner{
-      height: 48px;
-      overflow: hidden;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      background:#0f1115;
-      position: relative;
-    }
-
-    .banner-track{
-      display: flex;
-      align-items: center;
-      width: max-content;
-      height: 100%;
-      animation: marquee var(--speed) linear infinite;
-      gap: 32px;
-      padding-left: 20px;
-    }
-
-    .banner-clone{
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      white-space: nowrap;
-    }
-
-    .banner-text{
-      color: var(--accent);
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.3px;
-    }
-
-    .banner-candies{
-      display: flex;
-      gap: 16px;
-      align-items: center;
-    }
-
-    .candy{
-      width: calc(36px * 1.8);
-      height: calc(36px * 1.8);
-      object-fit: contain;
-      animation: spin linear infinite;
-      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.45));
-    }
-
-    .c1{ animation-duration: 2s; }
-    .c2{ animation-duration: 2.6s; }
-    .c3{ animation-duration: 2.2s; }
-    .c4{ animation-duration: 3s; }
-    .c5{ animation-duration: 2.4s; }
-
-    @keyframes spin{
-      from{ transform: rotate(0deg); }
-      to{ transform: rotate(360deg); }
-    }
-
-    @keyframes marquee{
-      from{ transform: translateX(0); }
-      to{ transform: translateX(-50%); }
-    }
-
-    /* ================= CONTENU ================= */
-    .container{
-      width: min(1120px, 92vw);
-      margin: 0 auto;
-    }
-
-    header{
-      padding: 92px 0 34px;
-      text-align:center;
-    }
-
-    .logo{
-      width: 320px;
-      max-width: 90%;
-      margin-bottom: 18px;
-    }
-
-    nav a{
-      color: rgba(255,255,255,0.85);
-      text-decoration: none;
-      margin: 0 8px;
-      font-size: 0.9rem;
-    }
-
-    nav a:hover{ text-decoration: underline; }
-
-    /* ===== AJOUT PREMIUM : lien discret + badge ===== */
-    nav a.nav-partner{
-      opacity: 0.82;
-      font-size: 0.92rem;
-    }
-    nav a.nav-partner:hover{
-      opacity: 1;
-    }
-
-    .nav-badge{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      margin-left:10px;
-      padding: 3px 8px;
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .2px;
-      color: rgba(255,255,255,0.88);
-      border: 1px solid rgba(201,162,77,0.35);
-      background: linear-gradient(135deg, rgba(201,162,77,0.16), rgba(255,255,255,0.06));
-      box-shadow: 0 10px 26px rgba(0,0,0,0.35);
-      vertical-align: middle;
-    }
-
-    .pulse-dot{
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95), rgba(201,162,77,0.85) 55%, rgba(201,162,77,0.25) 75%);
-      box-shadow: 0 0 0 0 rgba(201,162,77,0.35);
-      animation: pulseSoft 2.2s ease-in-out infinite;
-      flex: 0 0 auto;
-    }
-
-    @keyframes pulseSoft{
-      0%   { transform: scale(1);    box-shadow: 0 0 0 0 rgba(201,162,77,0.35); }
-      55%  { transform: scale(1.10); box-shadow: 0 0 0 8px rgba(201,162,77,0.00); }
-      100% { transform: scale(1);    box-shadow: 0 0 0 0 rgba(201,162,77,0.00); }
-    }
-
-    @media (prefers-reduced-motion: reduce){
-      .pulse-dot{ animation: none; }
-      .banner-track{ animation: none; }
-      .candy{ animation: none; }
-    }
-    /* ===== fin ajout badge ===== */
-
-    h1{
-      margin:14px 0 12px;
-      font-size: clamp(2.2rem, 4vw, 3.2rem);
-    }
-
-    .subtitle{
-      max-width: 920px;
-      margin: 0 auto;
-      color: var(--muted);
-      line-height: 1.65;
-    }
-
-    section{
-      padding: 58px 0;
-      text-align:center;
-    }
-
-    .block{
-      margin: 22px auto 0;
-      padding: 26px 22px;
-      background: var(--card);
-      border: 1px solid var(--line);
-    }
-
-    .hero-video{
-      width: 100%;
-      max-width: 1000px;
-      aspect-ratio: 16/9;
-      margin-bottom: 18px;
-      border: 1px solid rgba(255,255,255,0.18);
-      background:#000;
-    }
-
-    .cta{
-      display:inline-block;
-      padding: 16px 44px;
-      border: 1px solid rgba(255,255,255,0.28);
-      color:#fff;
-      text-decoration:none;
-      margin: 8px;
-      text-transform: uppercase;
-    }
-
-    footer{
-      padding: 28px 0 38px;
-      text-align:center;
-      color: rgba(255,255,255,0.55);
-    }
-
-    /* Couleur email et téléphone */
-    a[href^="mailto"],
-    a[href^="tel"]{
-      color: rgba(255,255,255,0.65);
-      text-decoration: none;
-    }
-
-    a[href^="mailto"]:hover,
-    a[href^="tel"]:hover{
-      color: rgba(255,255,255,0.9);
-    }
-  </style>
-</head>
-
-  <title>Machine de confiserie professionnelle – SRC Série 1 | Atelier CAL</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Machine de confiserie professionnelle SRC Série 1 Atelier CAL. Bâti à cylindres motorisé avec rouleaux en bronze pour bonbons en sucre cuit, nougatine et miel." />
   <link rel="canonical" href="https://atelier-cal.fr/machine.html" />
 
   <style>
@@ -270,14 +47,19 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
       --line2: rgba(255,255,255,0.28);
       --card: rgba(255,255,255,0.04);
       --card2: rgba(255,255,255,0.06);
+      --accent: #c9a24d;
+      --speed: 20s;
     }
+
     *{ box-sizing:border-box; }
+
     body{
       margin:0;
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
       background: radial-gradient(circle at top, #1c1c1c 0%, #0b0b0b 45%, #000 100%);
     }
+
     .container{
       width: min(1120px, 92vw);
       margin: 0 auto;
@@ -288,29 +70,40 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
       text-align:center;
       padding: 18px 0 10px;
     }
+
     nav a{
       color: rgba(255,255,255,0.82);
       text-decoration:none;
       margin: 0 10px;
       font-size: .95rem;
     }
-    nav a:hover{ text-decoration:underline; }
+
+    nav a:hover{
+      text-decoration:underline;
+    }
 
     /* BLOCKS */
-    section{ padding: 26px 0 48px; }
+    section{
+      padding: 26px 0 48px;
+    }
+
     .block{
       border: 1px solid var(--line);
       background: var(--card);
       padding: 26px;
       margin: 18px auto 0;
     }
-    .center{ text-align:center; }
+
+    .center{
+      text-align:center;
+    }
 
     h1{
       margin: 0 0 14px;
       font-size: clamp(2rem, 4vw, 3rem);
       letter-spacing: .3px;
     }
+
     .subtitle{
       color: var(--muted);
       max-width: 920px;
@@ -326,6 +119,7 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
       flex-wrap:wrap;
       margin-top: 18px;
     }
+
     .cta{
       display:inline-flex;
       align-items:center;
@@ -340,24 +134,27 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
       transition: transform .18s ease, box-shadow .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
       width: fit-content;
     }
+
     .cta.primary{
       background:#fff;
       color:#000;
       border-color: rgba(255,255,255,0.9);
     }
+
     .cta.ghost{
       background: transparent;
       color:#fff;
     }
+
     .cta:hover{
       box-shadow: 0 0 22px rgba(255,255,255,0.18);
       transform: translateY(-1px);
     }
-    .cta.primary:hover{
-      background:#fff;
-      color:#000;
+
+    .cta:active{
+      transform: translateY(0px);
+      box-shadow:none;
     }
-    .cta:active{ transform: translateY(0px); box-shadow:none; }
 
     /* INTERACTIVE IMAGE */
     .machine-wrap{
@@ -368,6 +165,7 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
       background: rgba(0,0,0,0.35);
       overflow:hidden;
     }
+
     .machine-wrap img{
       width:100%;
       height:auto;
@@ -377,15 +175,15 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
       -webkit-user-drag:none;
     }
 
-    /* vignette / voile */
     .machine-wrap::after{
       content:"";
       position:absolute;
       inset:-2px;
       pointer-events:none;
-      background: radial-gradient(circle at 40% 30%, rgba(255,255,255,0.08), rgba(0,0,0,0.0) 38%),
-                  radial-gradient(circle at 70% 80%, rgba(255,255,255,0.06), rgba(0,0,0,0.0) 42%),
-                  radial-gradient(circle at center, rgba(0,0,0,0.0) 55%, rgba(0,0,0,0.55) 100%);
+      background:
+        radial-gradient(circle at 40% 30%, rgba(255,255,255,0.08), rgba(0,0,0,0.0) 38%),
+        radial-gradient(circle at 70% 80%, rgba(255,255,255,0.06), rgba(0,0,0,0.0) 42%),
+        radial-gradient(circle at center, rgba(0,0,0,0.0) 55%, rgba(0,0,0,0.55) 100%);
       mix-blend-mode: screen;
       opacity: .55;
     }
@@ -406,14 +204,23 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
       -webkit-tap-highlight-color: transparent;
       transition: transform .15s ease, background .2s ease, border-color .2s ease;
     }
-    .hotspot:hover{ transform: scale(1.04); border-color: rgba(255,255,255,0.85); }
-    .hotspot:active{ transform: scale(0.98); }
+
+    .hotspot:hover{
+      transform: scale(1.04);
+      border-color: rgba(255,255,255,0.85);
+    }
+
+    .hotspot:active{
+      transform: scale(0.98);
+    }
+
     .hotspot span{
       font-weight: 700;
       color: rgba(255,255,255,0.92);
       font-size: 1rem;
       line-height: 1;
     }
+
     .hotspot .ring{
       position:absolute;
       inset:-10px;
@@ -422,47 +229,36 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
       opacity:.55;
       animation: pulse 2.2s ease-in-out infinite;
     }
+
     @keyframes pulse{
       0%,100%{ transform: scale(0.92); opacity:.35; }
       50%{ transform: scale(1.08); opacity:.65; }
     }
 
-    /* DETAILS GRID (below) */
+    /* DETAILS GRID */
     .grid{
       display:grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
       margin-top: 18px;
     }
+
     .card{
       border: 1px solid var(--line);
       background: var(--card2);
       padding: 16px;
     }
+
     .card h3{
       margin: 0 0 6px;
       font-size: 1.05rem;
     }
+
     .card p{
       margin: 0;
       color: var(--muted);
       line-height: 1.6;
       font-size: .96rem;
-    }
-    .card button{
-      margin-top: 10px;
-      width:100%;
-      padding: 12px 12px;
-      border: 1px solid var(--line2);
-      background: transparent;
-      color:#fff;
-      cursor:pointer;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    .card button:hover{
-      background:#fff;
-      color:#000;
     }
 
     /* MODAL */
@@ -476,7 +272,11 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
       z-index: 9999;
       padding: 18px;
     }
-    .modal.open{ display:flex; }
+
+    .modal.open{
+      display:flex;
+    }
+
     .modal-panel{
       width: min(980px, 96vw);
       max-height: min(92vh, 920px);
@@ -486,6 +286,7 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
       backdrop-filter: blur(10px);
       box-shadow: 0 0 40px rgba(0,0,0,0.6);
     }
+
     .modal-head{
       display:flex;
       align-items:center;
@@ -493,10 +294,12 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
       padding: 14px 16px;
       border-bottom: 1px solid rgba(255,255,255,0.14);
     }
+
     .modal-title{
       font-weight:700;
       letter-spacing:.3px;
     }
+
     .modal-close{
       border: 1px solid rgba(255,255,255,0.22);
       background: transparent;
@@ -505,25 +308,35 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
       padding: 8px 10px;
       font-size: .95rem;
     }
-    .modal-close:hover{ background:#fff; color:#000; }
+
+    .modal-close:hover{
+      background:#fff;
+      color:#000;
+    }
+
     .modal-body{
       padding: 16px;
       display:grid;
       grid-template-columns: 1.2fr .8fr;
       gap: 14px;
     }
+
     .modal-body img{
       width:100%;
       height:auto;
       border: 1px solid rgba(255,255,255,0.18);
       display:block;
     }
+
     .modal-body .txt{
       color: var(--muted);
       line-height:1.7;
       font-size: .98rem;
     }
-    .modal-body .txt strong{ color: var(--text); }
+
+    .modal-body .txt strong{
+      color: var(--text);
+    }
 
     footer{
       text-align:center;
@@ -532,21 +345,24 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
       color: rgba(255,255,255,0.55);
     }
 
-@media (max-width: 820px){
-  .grid{ grid-template-columns: 1fr; }
-  .modal-body{ grid-template-columns: 1fr; }
+    @media (max-width: 820px){
+      .grid{
+        grid-template-columns: 1fr;
+      }
 
-  /* Loupes mobile légèrement plus petites */
-  .hotspot{
-    width: 28px;
-    height: 28px;
-  }
+      .modal-body{
+        grid-template-columns: 1fr;
+      }
 
-  .hotspot span{
-    font-size: 0.85rem;
-  }
-}
+      .hotspot{
+        width: 28px;
+        height: 28px;
+      }
 
+      .hotspot span{
+        font-size: 0.85rem;
+      }
+    }
   </style>
 </head>
 
@@ -560,29 +376,28 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
   <section>
     <div class="container">
 
-      <!-- HERO -->
       <div class="block center">
         <h1>Machine de confiserie professionnelle – SRC Série 1</h1>
         <p class="subtitle">
           Bâti à cylindres motorisé avec rouleaux en bronze, conçu pour la fabrication artisanale
           de bonbons en sucre cuit, nougatine et spécialités au miel.
         </p>
-<div id="prix" style="margin:18px auto 10px; text-align:center;">
 
-  <div style="color:rgba(255,255,255,0.55); font-size:1.05rem;">
-    Prix de référence :
-    <span style="text-decoration:line-through;">3 860 € HT</span>
-  </div>
+        <div id="prix" style="margin:18px auto 10px; text-align:center;">
+          <div style="color:rgba(255,255,255,0.55); font-size:1.05rem;">
+            Prix de référence :
+            <span style="text-decoration:line-through;">3 860 € HT</span>
+          </div>
 
-  <div style="margin-top:6px; font-size:1.6rem; font-weight:700;">
-    Prix actuel : 3 260 € HT
-  </div>
+          <div style="margin-top:6px; font-size:1.6rem; font-weight:700;">
+            Prix actuel : 3 260 € HT
+          </div>
 
-  <div style="margin-top:6px; font-size:0.85rem; color:rgba(255,255,255,0.55); line-height:1.4;">
-    TVA non applicable – art. 293B du CGI<br>
-    Hors livraison – calculée à la commande
-  </div>
-</div>
+          <div style="margin-top:6px; font-size:0.85rem; color:rgba(255,255,255,0.55); line-height:1.4;">
+            TVA non applicable – art. 293B du CGI<br>
+            Hors livraison – calculée à la commande
+          </div>
+        </div>
 
         <div class="cta-group">
           <a class="cta primary" href="mailto:contact@atelier-cal.fr">Demander un devis</a>
@@ -590,67 +405,56 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
         </div>
       </div>
 
-      <!-- INTERACTIVE IMAGE -->
       <div class="block">
         <div class="center" style="margin-bottom:10px; color:rgba(255,255,255,0.8);">
           <strong>Vue interactive</strong> — cliquez (PC) ou appuyez (mobile) sur les repères
         </div>
 
         <div class="machine-wrap" id="machineWrap">
-          <!-- Image principale -->
-          <img src="machine-main.png" alt="Machine SRC Série 1 – Atelier CAL">
+          <img src="photos/machinevueentiere.JPG" alt="Machine SRC Série 1 – Atelier CAL">
 
-          <!-- Hotspots (positions en %) : ajuste si besoin -->
-          <!-- 1: Rouleaux -->
-          <div class="hotspot" data-id="1" style="left: 30%; top: 34%;" title="Rouleaux en bronze">
+          <div class="hotspot" data-id="1" style="left:30%; top:34%;" title="Rouleaux en bronze">
             <div class="ring"></div><span>1</span>
           </div>
 
-          <!-- 2: Cadre alu -->
-          <div class="hotspot" data-id="2" style="left: 38%; top: 58%;" title="Cadre aluminium anodisé">
+          <div class="hotspot" data-id="2" style="left:38%; top:58%;" title="Cadre de la machine">
             <div class="ring"></div><span>2</span>
           </div>
 
-          <!-- 3: Boîtier + arrêt d’urgence + rallonge -->
-          <div class="hotspot" data-id="3" style="left: 82%; top: 55%;" title="Boîtier + arrêt d’urgence">
+          <div class="hotspot" data-id="3" style="left:82%; top:55%;" title="Arrêt d’urgence">
             <div class="ring"></div><span>3</span>
           </div>
 
-          <!-- 4: Polycarbonate -->
-          <div class="hotspot" data-id="4" style="left: 62%; top: 18%;" title="Protection polycarbonate">
+          <div class="hotspot" data-id="4" style="left:62%; top:18%;" title="Protection polycarbonate">
             <div class="ring"></div><span>4</span>
           </div>
 
-          <!-- 5: Protection engrenage -->
-          <div class="hotspot" data-id="5" style="left: 57%; top: 62%;" title="Protection engrenage">
+          <div class="hotspot" data-id="5" style="left:57%; top:62%;" title="Vue arrière / motorisation">
             <div class="ring"></div><span>5</span>
           </div>
         </div>
 
-        <!-- Cards dessous (pro + clair) -->
         <div class="grid">
           <div class="card">
             <h3>Caractéristiques clés</h3>
             <p>
               • Branchement domestique <strong>220V monophasé</strong><br>
-              • Vitesse fixe <strong>≈ 10 tr/min</strong> (jusqu’à <strong>40 kg/h</strong>)<br>
-              • Rouleaux <strong>bronze</strong> (anti-adhérent naturel)<br>
-              • Châssis <strong>aluminium</strong> + plaque inox miroir<br>
+              • Vitesse fixe <strong>≈ 10 tr/min</strong><br>
+              • Rouleaux <strong>bronze</strong><br>
+              • Châssis robuste<br>
               • Sécurité : arrêt d’urgence + capots + polycarbonate
             </p>
           </div>
 
-          <div class="card">
-           <h3>Photos réelles de la machine</h3>
+          <div class="card center">
+            <h3>Photos réelles de la machine</h3>
+            <div style="margin-top:14px;">
+              <a href="photos.html" class="cta ghost">Voir les photos</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-<div style="margin-top:14px; text-align:center;">
-  <a href="photos.html" class="cta ghost">
-    Voir les photos
-  </a>
-</div>
-
-
-      <!-- CTA FINAL -->
       <div class="block center">
         <h2 style="margin:0 0 10px;">Recevoir un devis</h2>
         <p class="subtitle" style="max-width:860px;">
@@ -669,7 +473,6 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
     © Atelier CAL – Machines professionnelles de confiserie
   </footer>
 
-  <!-- MODAL -->
   <div class="modal" id="modal" aria-hidden="true">
     <div class="modal-panel" role="dialog" aria-modal="true">
       <div class="modal-head">
@@ -684,54 +487,52 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
   </div>
 
   <script>
-    // Données des 5 parties (tu peux modifier le texte quand tu veux)
     const DETAILS = {
       1: {
         title: "1 — Rouleaux en bronze",
-        img: "zoom-rouleaux.png",
-        alt: "Zoom rouleaux en bronze – SRC Série 1",
+        img: "photos/rouleauxbronze.JPG",
+        alt: "Rouleaux en bronze – SRC Série 1",
         text: `
-          <strong>Rouleaux en bronze-aluminium</strong> : excellente résistance à la chaleur,
-          durabilité remarquable et conduction thermique optimale.<br><br>
-          Idéal pour obtenir un <strong>marquage net</strong> et un <strong>démoulage propre</strong> sur sucre cuit, nougatine et miel.
+          <strong>Rouleaux en bronze</strong> conçus pour un travail propre et durable.<br><br>
+          Idéal pour le sucre cuit, la nougatine et les spécialités au miel, avec un bon marquage
+          et une excellente tenue dans le temps.
         `
       },
       2: {
-        title: "2 — Cadre aluminium anodisé",
-        img: "zoom-cadre.png",
-        alt: "Cadre aluminium anodisé – SRC Série 1",
+        title: "2 — Structure de la machine",
+        img: "photos/machinevueentiere.JPG",
+        alt: "Vue générale de la machine – SRC Série 1",
         text: `
-          <strong>Châssis aluminium</strong> conçu pour une utilisation atelier :
-          stable, robuste et facile à nettoyer.<br><br>
-          L’anodisation améliore la tenue dans le temps et l’aspect “pro”.
+          <strong>Vue générale de la machine</strong> avec sa structure complète.<br><br>
+          Conçue pour une utilisation artisanale et professionnelle, avec une implantation compacte
+          et une présentation soignée.
         `
       },
       3: {
-        title: "3 — Boîtier + arrêt d’urgence + rallonge 4 m",
-        img: "zoom-boitier.png",
-        alt: "Boîtier et arrêt d’urgence – SRC Série 1",
+        title: "3 — Arrêt d’urgence",
+        img: "photos/arreturgence.JPG",
+        alt: "Arrêt d’urgence – SRC Série 1",
         text: `
-          Branchement simple en <strong>220V</strong> sur prise domestique.<br><br>
-          <strong>Arrêt d’urgence</strong> + commandes accessibles, livré avec <strong>rallonge 4 mètres</strong>
-          pour une installation flexible en atelier.
+          <strong>Arrêt d’urgence accessible</strong> pour sécuriser l’utilisation au quotidien.<br><br>
+          Une commande simple et visible, pensée pour un vrai usage atelier.
         `
       },
       4: {
         title: "4 — Protection polycarbonate",
-        img: "zoom-polycarbonate.png",
+        img: "photos/protectionpolycarbo.JPG",
         alt: "Protection polycarbonate – SRC Série 1",
         text: `
-          <strong>Protection transparente en polycarbonate</strong> couvrant les rouleaux :
-          sécurité accrue tout en gardant une visibilité parfaite sur le travail en cours.
+          <strong>Protection transparente en polycarbonate</strong> au-dessus de la zone de travail.<br><br>
+          Elle améliore la sécurité tout en laissant une bonne visibilité sur les rouleaux.
         `
       },
       5: {
-        title: "5 — Protection engrenage",
-        img: "zoom-engrenage.png",
-        alt: "Protection engrenage – SRC Série 1",
+        title: "5 — Vue arrière / motorisation",
+        img: "photos/photo arriere.JPG",
+        alt: "Vue arrière et motorisation – SRC Série 1",
         text: `
-          <strong>Capots de protection</strong> sur la zone engrenages pour limiter tout risque de contact.<br><br>
-          Conçu pour un usage atelier avec une vraie logique “machine pro”.
+          <strong>Vue arrière de la machine</strong> montrant la partie motorisation et l’implantation générale.<br><br>
+          Une conception pensée pour rester compacte, propre et cohérente en atelier.
         `
       }
     };
@@ -752,27 +553,30 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
       modalText.innerHTML = d.text;
 
       modal.classList.add("open");
-      modal.setAttribute("aria-hidden","false");
+      modal.setAttribute("aria-hidden", "false");
     }
 
     function closeModal(){
       modal.classList.remove("open");
-      modal.setAttribute("aria-hidden","true");
-      // évite flash d'ancienne image si lente
-      setTimeout(()=>{ modalImg.src = ""; }, 120);
+      modal.setAttribute("aria-hidden", "true");
+      setTimeout(() => { modalImg.src = ""; }, 120);
     }
 
     modalClose.addEventListener("click", closeModal);
-    modal.addEventListener("click", (e)=>{ if(e.target === modal) closeModal(); });
-    document.addEventListener("keydown", (e)=>{ if(e.key === "Escape") closeModal(); });
+    modal.addEventListener("click", (e) => {
+      if(e.target === modal) closeModal();
+    });
 
-    // Click hotspots
+    document.addEventListener("keydown", (e) => {
+      if(e.key === "Escape") closeModal();
+    });
+
     document.querySelectorAll(".hotspot").forEach(h => {
       h.addEventListener("click", () => openModal(h.dataset.id));
     });
 
-    // Appui long mobile (pointerdown timer)
     let pressTimer = null;
+
     document.querySelectorAll(".hotspot").forEach(h => {
       h.addEventListener("pointerdown", () => {
         pressTimer = setTimeout(() => openModal(h.dataset.id), 380);
@@ -781,13 +585,7 @@ src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
       h.addEventListener("pointerleave", () => clearTimeout(pressTimer));
       h.addEventListener("pointercancel", () => clearTimeout(pressTimer));
     });
-
-    // Bouton carte
-    document.querySelectorAll("[data-open]").forEach(b=>{
-      b.addEventListener("click", ()=> openModal(b.getAttribute("data-open")));
-    });
   </script>
-
 
 </body>
 </html>
