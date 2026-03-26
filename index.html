@@ -28,9 +28,73 @@
       color:var(--text);
     }
 
-    .top-nav{
+    .lang-bar{
       position:fixed;
       top:0;
+      left:0;
+      width:100%;
+      z-index:1100;
+      background:rgba(8,8,8,0.88);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    .lang-inner{
+      max-width:1200px;
+      margin:0 auto;
+      padding:10px 22px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .lang-label{
+      color:rgba(255,255,255,0.55);
+      font-size:0.82rem;
+      letter-spacing:0.4px;
+      margin-right:8px;
+    }
+
+    .lang-item{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 14px;
+      border:1px solid rgba(255,255,255,0.12);
+      background:rgba(255,255,255,0.03);
+      color:rgba(255,255,255,0.92);
+      text-decoration:none;
+      font-size:0.9rem;
+      transition:all .22s ease;
+    }
+
+    .lang-item:hover{
+      background:rgba(255,255,255,0.10);
+      border-color:rgba(255,255,255,0.24);
+      transform:translateY(-1px);
+    }
+
+    .lang-item.active{
+      border-color:rgba(201,162,77,0.40);
+      background:linear-gradient(135deg, rgba(201,162,77,0.16), rgba(255,255,255,0.04));
+      color:#fff;
+      box-shadow:0 0 18px rgba(201,162,77,0.08);
+    }
+
+    .flag{
+      font-size:1rem;
+      line-height:1;
+    }
+
+    .lang-name{
+      white-space:nowrap;
+    }
+
+    .top-nav{
+      position:fixed;
+      top:58px;
       left:0;
       width:100%;
       z-index:1000;
@@ -91,7 +155,7 @@
       justify-content:center;
       position:relative;
       overflow:hidden;
-      padding:100px 20px 50px;
+      padding:160px 20px 50px;
     }
 
     .hero::before{
@@ -322,6 +386,10 @@
         grid-template-columns:1fr;
       }
 
+      .top-nav{
+        top:96px;
+      }
+
       .top-nav-inner{
         flex-direction:column;
         gap:12px;
@@ -329,6 +397,29 @@
 
       .nav-links{
         justify-content:center;
+      }
+
+      .hero{
+        padding-top:190px;
+      }
+    }
+
+    @media (max-width: 640px){
+      .lang-inner{
+        justify-content:center;
+        gap:8px;
+        padding:10px 14px;
+      }
+
+      .lang-label{
+        width:100%;
+        text-align:center;
+        margin:0 0 4px;
+      }
+
+      .lang-item{
+        padding:8px 12px;
+        font-size:0.86rem;
       }
     }
 
@@ -348,6 +439,32 @@
   </style>
 </head>
 <body>
+
+  <div class="lang-bar">
+    <div class="lang-inner">
+      <span class="lang-label">Choisir la langue</span>
+
+      <a href="index.html" class="lang-item active" aria-current="page">
+        <span class="flag">🇫🇷</span>
+        <span class="lang-name">Français</span>
+      </a>
+
+      <a href="de/index.html" class="lang-item">
+        <span class="flag">🇩🇪</span>
+        <span class="lang-name">Deutsch</span>
+      </a>
+
+      <a href="es/index.html" class="lang-item">
+        <span class="flag">🇪🇸</span>
+        <span class="lang-name">Español</span>
+      </a>
+
+      <a href="it/index.html" class="lang-item">
+        <span class="flag">🇮🇹</span>
+        <span class="lang-name">Italiano</span>
+      </a>
+    </div>
+  </div>
 
   <nav class="top-nav">
     <div class="top-nav-inner">
