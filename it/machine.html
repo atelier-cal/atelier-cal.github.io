@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+
+<html lang="it">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Macchina professionale per confetteria – SRC Serie 1 | Atelier CAL</title>
+<meta content="Macchina professionale per confetteria SRC Serie 1 Atelier CAL. Telaio a cilindri motorizzato con rulli in bronzo per zucchero cotto, nougatine e miele." name="description"/>
+<style>
+    :root{
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.72);
+      --line: rgba(255,255,255,0.18);
+      --line2: rgba(255,255,255,0.28);
+      --card: rgba(255,255,255,0.04);
+      --card2: rgba(255,255,255,0.06);
+      --accent:#c9a24d;
+    }
+
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at top, #1c1c1c 0%, #0b0b0b 45%, #000 100%);
+    }
+
+    .top-nav{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:1000;
+      background:rgba(8,8,8,0.82);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(255,255,255,0.10);
+    }
+
+    .lang-inner{
+      max-width:1200px;
+      margin:0 auto;
+      padding:10px 22px 8px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      flex-wrap:wrap;
+      border-bottom:1px solid rgba(255,255,255,0.06);
+    }
+
+    .lang-item{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 14px;
+      border:1px solid rgba(255,255,255,0.12);
+      background:rgba(255,255,255,0.03);
+      color:rgba(255,255,255,0.92);
+      text-decoration:none;
+      font-size:0.9rem;
+      transition:all .22s ease;
+    }
+
+    .lang-item:hover{
+      background:rgba(255,255,255,0.10);
+      border-color:rgba(255,255,255,0.24);
+      transform:translateY(-1px);
+    }
+
+    .lang-item.active{
+      border-color:rgba(201,162,77,0.40);
+      background:linear-gradient(135deg, rgba(201,162,77,0.16), rgba(255,255,255,0.04));
+      color:#fff;
+      box-shadow:0 0 18px rgba(201,162,77,0.08);
+    }
+
+    .flag{
+      font-size:1rem;
+      line-height:1;
+    }
+
+    .lang-name{
+      white-space:nowrap;
+    }
+
+    .top-nav-inner{
+      max-width:1200px;
+      margin:0 auto;
+      padding:14px 22px 16px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+    }
+
+    .brand{
+      color:#fff;
+      text-decoration:none;
+      font-weight:700;
+      letter-spacing:0.5px;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:24px;
+      flex-wrap:wrap;
+    }
+
+    .nav-links a{
+      color:rgba(255,255,255,0.86);
+      text-decoration:none;
+      font-size:0.95rem;
+      position:relative;
+    }
+
+    .nav-links a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-5px;
+      width:0;
+      height:1px;
+      background:var(--accent);
+      transition:0.25s;
+    }
+
+    .nav-links a:hover::after{
+      width:100%;
+    }
+
+    .container{
+      width:min(1120px, 92vw);
+      margin:0 auto;
+      padding-top:150px;
+    }
+
+    section{
+      padding:26px 0 48px;
+    }
+
+    .block{
+      border:1px solid var(--line);
+      background:var(--card);
+      padding:26px;
+      margin:18px auto 0;
+    }
+
+    .center{
+      text-align:center;
+    }
+
+    h1{
+      margin:0 0 14px;
+      font-size:clamp(2rem, 4vw, 3rem);
+      letter-spacing:.3px;
+    }
+
+    .subtitle{
+      color:var(--muted);
+      max-width:920px;
+      margin:0 auto;
+      line-height:1.7;
+    }
+
+    .cta-group{
+      display:flex;
+      justify-content:center;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 34px;
+      border:1px solid var(--line2);
+      text-decoration:none;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      font-size:.95rem;
+      transition:transform .18s ease, box-shadow .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
+      width:fit-content;
+      cursor:pointer;
+      color:#fff;
+      background:transparent;
+    }
+
+    .cta.primary{
+      background:#fff;
+      color:#000;
+      border-color:rgba(255,255,255,0.9);
+    }
+
+    .cta.ghost{
+      background:transparent;
+      color:#fff;
+    }
+
+    .cta:hover{
+      box-shadow:0 0 22px rgba(255,255,255,0.18);
+      transform:translateY(-1px);
+    }
+
+    .machine-wrap{
+      position:relative;
+      width:min(980px, 100%);
+      margin:14px auto 0;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,0.35);
+      overflow:hidden;
+    }
+
+    .machine-wrap img{
+      width:100%;
+      height:auto;
+      display:block;
+      filter:saturate(1.02) contrast(1.02);
+      user-select:none;
+      -webkit-user-drag:none;
+    }
+
+    .machine-wrap::after{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      pointer-events:none;
+      background:
+        radial-gradient(circle at 40% 30%, rgba(255,255,255,0.08), rgba(0,0,0,0.0) 38%),
+        radial-gradient(circle at 70% 80%, rgba(255,255,255,0.06), rgba(0,0,0,0.0) 42%),
+        radial-gradient(circle at center, rgba(0,0,0,0.0) 55%, rgba(0,0,0,0.55) 100%);
+      mix-blend-mode:screen;
+      opacity:.55;
+    }
+
+    .hotspot{
+      position:absolute;
+      width:44px;
+      height:44px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.55);
+      background:rgba(0,0,0,0.35);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      backdrop-filter:blur(6px);
+      -webkit-tap-highlight-color:transparent;
+      transition:transform .15s ease, background .2s ease, border-color .2s ease;
+    }
+
+    .hotspot:hover{
+      transform:scale(1.04);
+      border-color:rgba(255,255,255,0.85);
+    }
+
+    .hotspot:active{
+      transform:scale(0.98);
+    }
+
+    .hotspot span{
+      font-weight:700;
+      color:rgba(255,255,255,0.92);
+      font-size:1rem;
+      line-height:1;
+    }
+
+    .hotspot .ring{
+      position:absolute;
+      inset:-10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.18);
+      opacity:.55;
+      animation:pulse 2.2s ease-in-out infinite;
+    }
+
+    @keyframes pulse{
+      0%,100%{ transform:scale(0.92); opacity:.35; }
+      50%{ transform:scale(1.08); opacity:.65; }
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .card{
+      border:1px solid var(--line);
+      background:var(--card2);
+      padding:16px;
+    }
+
+    .card h3{
+      margin:0 0 6px;
+      font-size:1.05rem;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.6;
+      font-size:.96rem;
+    }
+
+    .contact{
+      margin-top:26px;
+      padding:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,0.03);
+      text-align:center;
+      color:var(--muted);
+    }
+
+    .contact a{
+      color:rgba(255,255,255,0.92);
+      text-decoration:none;
+      border-bottom:1px dotted rgba(255,255,255,0.25);
+    }
+
+    .contact a:hover{
+      border-bottom-color:rgba(255,255,255,0.55);
+    }
+
+    .modal{
+      position:fixed;
+      inset:0;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      background:rgba(0,0,0,0.72);
+      z-index:9999;
+      padding:18px;
+    }
+
+    .modal.open{
+      display:flex;
+    }
+
+    .modal-panel{
+      width:min(980px, 96vw);
+      max-height:min(92vh, 920px);
+      overflow:auto;
+      border:1px solid rgba(255,255,255,0.22);
+      background:rgba(10,10,10,0.86);
+      backdrop-filter:blur(10px);
+      box-shadow:0 0 40px rgba(0,0,0,0.6);
+    }
+
+    .modal-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 16px;
+      border-bottom:1px solid rgba(255,255,255,0.14);
+    }
+
+    .modal-title{
+      font-weight:700;
+      letter-spacing:.3px;
+    }
+
+    .modal-close{
+      border:1px solid rgba(255,255,255,0.22);
+      background:transparent;
+      color:#fff;
+      cursor:pointer;
+      padding:8px 10px;
+      font-size:.95rem;
+    }
+
+    .modal-close:hover{
+      background:#fff;
+      color:#000;
+    }
+
+    .modal-body{
+      padding:16px;
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:14px;
+    }
+
+    .modal-body img{
+      width:100%;
+      height:auto;
+      border:1px solid rgba(255,255,255,0.18);
+      display:block;
+    }
+
+    .modal-body .txt{
+      color:var(--muted);
+      line-height:1.7;
+      font-size:.98rem;
+    }
+
+    .modal-body .txt strong{
+      color:var(--text);
+    }
+
+    footer{
+      text-align:center;
+      padding:30px 0 40px;
+      font-size:0.9rem;
+      color:rgba(255,255,255,0.55);
+    }
+
+    @media (max-width: 900px){
+      .top-nav-inner{
+        flex-direction:column;
+        gap:12px;
+        padding:14px 18px 16px;
+      }
+
+      .nav-links{
+        justify-content:center;
+        gap:18px;
+      }
+
+      .container{
+        padding-top:220px;
+      }
+
+      .grid{
+        grid-template-columns:1fr;
+      }
+
+      .modal-body{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width: 640px){
+      .lang-inner{
+        gap:8px;
+        padding:10px 14px 8px;
+      }
+
+      .lang-item{
+        padding:8px 12px;
+        font-size:0.86rem;
+      }
+
+      .top-nav-inner{
+        padding:12px 16px 14px;
+      }
+
+      .container{
+        padding-top:240px;
+      }
+
+      .hotspot{
+        width:28px;
+        height:28px;
+      }
+
+      .hotspot span{
+        font-size:0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<nav class="top-nav">
+<div class="lang-inner">
+<a class="lang-item" href="/index.html">
+<span class="flag">🇫🇷</span>
+<span class="lang-name">Français</span>
+</a>
+<a class="lang-item" href="/de/index.html">
+<span class="flag">🇩🇪</span>
+<span class="lang-name">Deutsch</span>
+</a>
+<a class="lang-item" href="/es/index.html">
+<span class="flag">🇪🇸</span>
+<span class="lang-name">Español</span>
+</a>
+<a aria-current="page" class="lang-item active" href="/it/index.html">
+<span class="flag">🇮🇹</span>
+<span class="lang-name">Italiano</span>
+</a>
+</div>
+<div class="top-nav-inner">
+<a class="brand" href="/it/index.html">Atelier CAL</a>
+<div class="nav-links">
+<a href="/it/machine.html">La macchina</a>
+<a href="/it/modeles.html">I modelli</a>
+<a href="/it/photos.html">Foto</a>
+<a href="/it/calculer.html">Simulatore di redditività</a>
+<a href="/it/qui-sommes-nous.html">Chi siamo</a>
+</div>
+</div>
+</nav>
+<section>
+<div class="container">
+<div class="block center">
+<h1>Macchina professionale per confetteria – SRC Serie 1</h1>
+<p class="subtitle">Telaio a cilindri motorizzato con rulli in bronzo, progettato per la produzione artigianale di caramelle di zucchero cotto, nougatine e specialità al miele.</p>
+<div id="prix" style="margin:18px auto 10px; text-align:center;">
+<div style="color:rgba(255,255,255,0.55); font-size:1.05rem;">
+            Prezzo di riferimento:
+            <span style="text-decoration:line-through;">3 860 € IVA esclusa</span>
+</div>
+<div style="margin-top:6px; font-size:1.6rem; font-weight:700;">
+            Prezzo attuale: 3 260 € IVA esclusa
+          </div>
+<div style="margin-top:6px; font-size:0.85rem; color:rgba(255,255,255,0.55); line-height:1.45;">
+            IVA non applicabile – art. 293 B del CGI (regime francese).<br/>
+            Vendita all’interno dell’Unione Europea senza spese doganali, nei limiti della normativa vigente.<br/>
+            Spedizione non inclusa – calcolata al momento dell’ordine.
+          </div>
+</div>
+<div class="cta-group">
+<a class="cta primary" href="#devisBox">Richiedi un preventivo</a>
+<a class="cta ghost" href="/it/modeles.html">Vedi i rulli in bronzo</a>
+</div>
+</div>
+<div class="block">
+<div class="center" style="margin-bottom:10px; color:rgba(255,255,255,0.8);">
+<strong>Vista interattiva</strong> — fai clic (PC) o tocca (mobile) i punti
+        </div>
+<div class="machine-wrap" id="machineWrap">
+<img alt="Macchina SRC Serie 1 – Atelier CAL" src="/photos/machinevueentiere.JPG"/>
+<div class="hotspot" data-id="1" style="left:30%; top:34%;" title="Rulli in bronzo">
+<div class="ring"></div><span>1</span>
+</div>
+<div class="hotspot" data-id="2" style="left:38%; top:58%;" title="Struttura della macchina">
+<div class="ring"></div><span>2</span>
+</div>
+<div class="hotspot" data-id="3" style="left:82%; top:55%;" title="Arresto di emergenza">
+<div class="ring"></div><span>3</span>
+</div>
+<div class="hotspot" data-id="4" style="left:62%; top:18%;" title="Protezione in policarbonato">
+<div class="ring"></div><span>4</span>
+</div>
+<div class="hotspot" data-id="5" style="left:57%; top:62%;" title="Vista posteriore / motorizzazione">
+<div class="ring"></div><span>5</span>
+</div>
+</div>
+<div class="grid">
+<div class="card">
+<h3>Caratteristiche principali</h3>
+<p>
+              • Collegamento domestico <strong>220 V monofase</strong><br/>
+              • Velocità fissa <strong>≈ 10 rpm</strong><br/>
+              • Rulli in <strong>bronzo</strong><br/>
+              • Telaio robusto<br/>
+              • Sicurezza: arresto di emergenza + protezioni + policarbonato
+            </p>
+</div>
+<div class="card center">
+<h3>Foto reali della macchina</h3>
+<div style="margin-top:14px;">
+<a class="cta ghost" href="/it/photos.html">Vedi le foto</a>
+</div>
+</div>
+</div>
+</div>
+<div class="block center">
+<h2 style="margin:0 0 10px;">Ricevi un preventivo</h2>
+<p class="subtitle" style="max-width:860px;">
+          Indicami la tua esigenza (tipo di caramelle, volume, forme desiderate) e ti risponderò rapidamente.
+        </p>
+</div>
+<div class="contact" id="devisBox" style="text-align:left;">
+<div style="text-align:center; font-weight:700; color:rgba(255,255,255,0.92); margin-bottom:10px;">
+          Richiesta di preventivo
+        </div>
+<form action="https://formspree.io/f/xojaqvav" method="POST">
+<input name="page" type="hidden" value="machine-it"/>
+<input name="source" type="hidden" value="Richiedi un preventivo"/>
+<div style="margin-bottom:10px;">
+<label>Nome / Azienda</label><br/>
+<input name="nom" required="" style="width:100%;padding:10px;margin-top:6px;background:#0f0f0f;border:1px solid rgba(255,255,255,0.22);color:#fff;outline:none;"/>
+</div>
+<div style="margin-bottom:10px;">
+<label>Email</label><br/>
+<input name="email" required="" style="width:100%;padding:10px;margin-top:6px;background:#0f0f0f;border:1px solid rgba(255,255,255,0.22);color:#fff;outline:none;" type="email"/>
+</div>
+<div style="margin-bottom:10px;">
+<label>Telefono (opzionale)</label><br/>
+<input name="telephone" style="width:100%;padding:10px;margin-top:6px;background:#0f0f0f;border:1px solid rgba(255,255,255,0.22);color:#fff;outline:none;"/>
+</div>
+<div style="margin-bottom:12px;">
+<label>La tua richiesta</label><br/>
+<textarea name="message" rows="4" style="width:100%;padding:10px;margin-top:6px;background:#0f0f0f;border:1px solid rgba(255,255,255,0.22);color:#fff;outline:none;resize:vertical;"></textarea>
+</div>
+<div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+<button class="cta ghost" type="submit">Invia</button>
+</div>
+</form>
+</div>
+<div class="contact" id="contact">
+        Contatto:
+        <a href="mailto:contact@atelier-cal.fr">contact@atelier-cal.fr</a> ·
+        <a href="tel:+33677845435">06 77 84 54 35</a>
+</div>
+</div>
+</section>
+<footer>
+    © Atelier CAL – Macchine professionali per confetteria
+  </footer>
+<div aria-hidden="true" class="modal" id="modal">
+<div aria-modal="true" class="modal-panel" role="dialog">
+<div class="modal-head">
+<div class="modal-title" id="modalTitle">Dettaglio</div>
+<button class="modal-close" id="modalClose" type="button">Chiudi</button>
+</div>
+<div class="modal-body">
+<img alt="" id="modalImg" src=""/>
+<div class="txt" id="modalText"></div>
+</div>
+</div>
+</div>
+<script>
+    const DETAILS = {
+      1: {
+        title: "1 — Rulli in bronzo",
+        img: "/photos/rouleauxbronze.JPG",
+        alt: "Rulli in bronzo – SRC Serie 1",
+        text: `
+          <strong>Rulli in bronzo</strong> progettati per un lavoro pulito e duraturo.<br><br>
+          Ideali per zucchero cotto, nougatine e specialità al miele, con una buona impronta
+          e un’eccellente durata.
+        `
+      },
+      2: {
+        title: "2 — Struttura della macchina",
+        img: "/photos/machinevueentiere.JPG",
+        alt: "Vista generale della macchina – SRC Serie 1",
+        text: `
+          <strong>Vista generale della macchina</strong> con la sua struttura completa.<br><br>
+          Progettata per un uso artigianale e professionale, con un ingombro compatto
+          e una presentazione curata.
+        `
+      },
+      3: {
+        title: "3 — Arresto di emergenza",
+        img: "/photos/arreturgence.JPG",
+        alt: "Arresto di emergenza – SRC Serie 1",
+        text: `
+          <strong>Arresto di emergenza accessibile</strong> per garantire l’uso quotidiano.<br><br>
+          Un comando semplice e ben visibile, pensato per un vero utilizzo in laboratorio.
+        `
+      },
+      4: {
+        title: "4 — Protezione in policarbonato",
+        img: "/photos/protectionpolycarbo.JPG",
+        alt: "Protezione in policarbonato – SRC Serie 1",
+        text: `
+          <strong>Protezione trasparente in policarbonato</strong> sopra la zona di lavoro.<br><br>
+          Migliora la sicurezza mantenendo una buona visibilità sui rulli.
+        `
+      },
+      5: {
+        title: "5 — Vista posteriore / motorizzazione",
+        img: "/photos/photo arriere.JPG",
+        alt: "Vista posteriore e motorizzazione – SRC Serie 1",
+        text: `
+          <strong>Vista posteriore della macchina</strong> che mostra la motorizzazione e l’impostazione generale.<br><br>
+          Una progettazione pensata per restare compatta, pulita e coerente in laboratorio.
+        `
+      }
+    };
+
+    const modal = document.getElementById("modal");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalImg = document.getElementById("modalImg");
+    const modalText = document.getElementById("modalText");
+    const modalClose = document.getElementById("modalClose");
+
+    function openModal(id){
+      const d = DETAILS[id];
+      if(!d) return;
+
+      modalTitle.textContent = d.title;
+      modalImg.src = d.img;
+      modalImg.alt = d.alt || d.title;
+      modalText.innerHTML = d.text;
+
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+    }
+
+    function closeModal(){
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+      setTimeout(() => { modalImg.src = ""; }, 120);
+    }
+
+    modalClose.addEventListener("click", closeModal);
+    modal.addEventListener("click", (e) => {
+      if(e.target === modal) closeModal();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if(e.key === "Escape") closeModal();
+    });
+
+    document.querySelectorAll(".hotspot").forEach(h => {
+      h.addEventListener("click", () => openModal(h.dataset.id));
+    });
+
+    let pressTimer = null;
+
+    document.querySelectorAll(".hotspot").forEach(h => {
+      h.addEventListener("pointerdown", () => {
+        pressTimer = setTimeout(() => openModal(h.dataset.id), 380);
+      });
+      h.addEventListener("pointerup", () => clearTimeout(pressTimer));
+      h.addEventListener("pointerleave", () => clearTimeout(pressTimer));
+      h.addEventListener("pointercancel", () => clearTimeout(pressTimer));
+    });
+  </script>
+</body>
+</html>

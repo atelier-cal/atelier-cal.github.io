@@ -1,1 +1,72 @@
+<!DOCTYPE html>
 
+<html lang="it">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Atelier CAL</title>
+<style>
+    :root{--bg:#070707;--bg-soft:#101010;--text:#f5f5f5;--muted:rgba(255,255,255,0.72);--line:rgba(255,255,255,0.1);--accent:#c9a24d;--whatsapp:#25D366;}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Arial, Helvetica, sans-serif;background:var(--bg);color:var(--text);}
+    .top-nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(8,8,8,0.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}    
+    .lang-inner{max-width:1200px;margin:0 auto;padding:10px 22px 8px;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,0.06);}    
+    .lang-item{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.03);color:rgba(255,255,255,0.92);text-decoration:none;font-size:0.9rem;transition:all .22s ease;}    
+    .lang-item:hover{background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.24);transform:translateY(-1px);}    
+    .lang-item.active{border-color:rgba(201,162,77,0.40);background:linear-gradient(135deg, rgba(201,162,77,0.16), rgba(255,255,255,0.04));color:#fff;box-shadow:0 0 18px rgba(201,162,77,0.08);}    
+    .flag{font-size:1rem;line-height:1}.lang-name{white-space:nowrap}
+    .top-nav-inner{max-width:1200px;margin:0 auto;padding:14px 22px 16px;display:flex;justify-content:space-between;align-items:center;gap:20px;}
+    .brand{color:#fff;text-decoration:none;font-weight:700;letter-spacing:0.5px;}
+    .nav-links{display:flex;gap:24px;flex-wrap:wrap;}
+    .nav-links a{color:rgba(255,255,255,0.86);text-decoration:none;font-size:0.95rem;position:relative;}
+    .nav-links a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1px;background:var(--accent);transition:0.25s;}
+    .nav-links a:hover::after{width:100%;}
+    .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:140px 20px 50px;}
+    .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.58)),url("/photoindex/voirmachine.JPG") center center / cover no-repeat;transform:scale(1.04);}
+    .hero-content{position:relative;z-index:2;max-width:900px;text-align:center;}
+    .hero h1{font-size:clamp(2.5rem, 6vw, 5rem);margin:0 0 16px;line-height:1.05;}
+    .hero p{font-size:clamp(1rem, 2vw, 1.2rem);color:var(--muted);max-width:760px;margin:0 auto 30px;line-height:1.7;}
+    .hero-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+    .btn{display:inline-block;padding:14px 22px;text-decoration:none;border:1px solid rgba(255,255,255,0.25);color:#fff;text-transform:uppercase;font-size:0.84rem;letter-spacing:1px;transition:0.25s;}
+    .btn:hover{background:#fff;color:#000;}.btn-gold{border-color:rgba(201,162,77,0.55);color:var(--accent);} .btn-gold:hover{background:var(--accent);color:#000;border-color:var(--accent);} 
+    .section{padding:110px 20px;border-top:1px solid var(--line);background:linear-gradient(to bottom, #090909, #0d0d0d);}    
+    .section-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:center;} .section.reverse .section-inner{grid-template-columns:0.9fr 1.1fr;}
+    .visual{overflow:hidden;border:1px solid var(--line);background:#000;} .visual img{width:100%;display:block;height:100%;object-fit:cover;transition:transform 0.9s ease;} .section:hover .visual img{transform:scale(1.04);} 
+    .text-block{opacity:0;transform:translateY(40px);transition:0.8s ease;} .text-block.visible{opacity:1;transform:translateY(0);} .eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:1.8px;font-size:0.8rem;margin-bottom:12px;} .text-block h2{font-size:clamp(2rem, 4vw, 3.1rem);margin:0 0 18px;line-height:1.1;} .text-block p{color:var(--muted);line-height:1.8;font-size:1rem;margin-bottom:20px;}
+    .features{display:grid;gap:10px;color:rgba(255,255,255,0.88);font-size:0.98rem;} .features span{padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,0.08);} 
+    .cta{padding:110px 20px;text-align:center;background:radial-gradient(circle at top, rgba(201,162,77,0.10), transparent 40%),#080808;border-top:1px solid var(--line);} .cta-inner{max-width:900px;margin:0 auto;} .cta h2{font-size:clamp(2rem,4vw,3.4rem);margin:0 0 16px;} .cta p{color:var(--muted);line-height:1.7;margin:0 auto 28px;max-width:700px;}
+    footer{text-align:center;padding:30px 20px 40px;color:rgba(255,255,255,0.56);border-top:1px solid var(--line);font-size:0.88rem;} footer a{color:rgba(255,255,255,0.72);text-decoration:none;}
+    .whatsapp-float{position:fixed;left:20px;bottom:20px;width:62px;height:62px;border-radius:50%;background:var(--whatsapp);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 28px rgba(0,0,0,0.35);z-index:2000;text-decoration:none;transition:transform 0.25s ease, box-shadow 0.25s ease;animation:whatsappPulse 2.2s infinite;} .whatsapp-float:hover{transform:scale(1.08);box-shadow:0 14px 34px rgba(0,0,0,0.45);} .whatsapp-float svg{width:30px;height:30px;fill:#fff;display:block;}
+    @keyframes whatsappPulse{0%{transform:scale(1);}50%{transform:scale(1.06);}100%{transform:scale(1);}}
+    @media (max-width: 900px){.section-inner,.section.reverse .section-inner{grid-template-columns:1fr;}.top-nav-inner{flex-direction:column;gap:12px;padding:14px 18px 16px;}.nav-links{justify-content:center;gap:18px;}.hero{padding-top:220px;}}
+    @media (max-width: 640px){.lang-inner{gap:8px;padding:10px 14px 8px;}.lang-item{padding:8px 12px;font-size:0.86rem;}.top-nav-inner{padding:12px 16px 14px;}.hero{padding-top:240px;}}
+    @media (max-width: 600px){.whatsapp-float{left:14px;bottom:14px;width:56px;height:56px;}.whatsapp-float svg{width:27px;height:27px;}}
+  </style>
+</head>
+<body>
+<nav class="top-nav">
+<div class="lang-inner">
+<a class="lang-item" href="/index.html"><span class="flag">🇫🇷</span><span class="lang-name">Français</span></a>
+<a class="lang-item" href="/de/index.html"><span class="flag">🇩🇪</span><span class="lang-name">Deutsch</span></a>
+<a class="lang-item" href="/es/index.html"><span class="flag">🇪🇸</span><span class="lang-name">Español</span></a>
+<a aria-current="page" class="lang-item active" href="/it/index.html"><span class="flag">🇮🇹</span><span class="lang-name">Italiano</span></a>
+</div>
+<div class="top-nav-inner">
+<a class="brand" href="/it/index.html">Atelier CAL</a>
+<div class="nav-links">
+<a href="/it/machine.html">La macchina</a>
+<a href="/it/modeles.html">I modelli</a>
+<a href="/it/photos.html">Foto</a>
+<a href="/it/calculer.html">Simulatore di redditività</a>
+<a href="/it/qui-sommes-nous.html">Chi siamo</a>
+</div>
+</div>
+</nav>
+<section class="hero"><div class="hero-content"><h1>Macchine professionali per confetteria</h1><p>Progettazione e produzione di telai a cilindri di alta gamma per zucchero cotto, miele e nougatine.</p><div class="hero-buttons"><a class="btn btn-gold" href="/it/machine.html">Vedi la macchina</a><a class="btn" href="#modeles">Vedi i modelli</a></div></div></section>
+<section class="section" id="machine"><div class="section-inner"><div class="visual"><img alt="Macchina Atelier CAL" src="/photoindex/voirmachine.JPG"/></div><div class="text-block reveal"><div class="eyebrow">La macchina</div><h2>Un telaio a cilindri compatto e robusto</h2><p>Progettata per la confetteria artigianale e professionale, la macchina Atelier CAL unisce precisione, sicurezza e qualità costruttiva in un formato compatto ed elegante.</p><div class="features"><span>Rulli in bronzo incisi</span><span>Motorizzazione adatta alla produzione</span><span>Per miele, zucchero cotto e nougatine</span><span>Progetto serio e finiture curate</span></div></div></div></section>
+<section class="section reverse" id="modeles"><div class="section-inner"><div class="text-block reveal"><div class="eyebrow">I rulli</div><h2>Incisioni nitide e una vera valorizzazione del prodotto</h2><p>Ogni rullo è progettato per offrire un’impronta pulita, estetica e regolare. Forme, motivi e personalizzazioni permettono di creare caramelle con una forte identità visiva.</p><div class="features"><span>Modelli incisi e personalizzabili</span><span>Impronte precise ed eleganti</span><span>Finitura di alta gamma</span><span>Adatto a creazioni artigianali distintive</span></div></div><div class="visual"><img alt="Rulli incisi Atelier CAL" src="/photoindex/voirmodele.JPG"/></div></div></section>
+<section class="cta"><div class="cta-inner"><h2>Scopri i modelli Atelier CAL</h2><p>Esplora le diverse incisioni, osserva la macchina nel dettaglio, prova la sua redditività e contattaci per una richiesta o un preordine.</p><div class="hero-buttons"><a class="btn btn-gold" href="/it/modeles.html">Vedi i modelli</a><a class="btn" href="/it/photos.html">Vedi le foto</a><a class="btn" href="/it/calculer.html">Simulatore</a></div></div></section>
+<footer>Atelier CAL – Tutti i diritti riservati · <a href="/mentions-legales.html">Note legali</a><br/>contact@atelier-cal.fr · 06 77 84 54 35</footer>
+<a aria-label="Contattare Atelier CAL su WhatsApp" class="whatsapp-float" href="https://wa.me/33677845435?text=Ciao%2C%20vorrei%20ricevere%20informazioni%20sulle%20vostre%20macchine%20per%20confetteria." rel="noopener noreferrer" target="_blank" title="WhatsApp"><svg aria-hidden="true" viewbox="0 0 32 32"><path d="M19.11 17.24c-.27-.13-1.58-.78-1.83-.87-.24-.09-.42-.13-.6.14-.18.27-.69.87-.85 1.05-.16.18-.31.2-.58.07-.27-.13-1.12-.41-2.14-1.3-.79-.7-1.33-1.56-1.48-1.83-.16-.27-.02-.42.11-.55.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.6-1.45-.82-1.98-.22-.53-.44-.45-.6-.46h-.51c-.18 0-.47.07-.71.34-.24.27-.93.91-.93 2.22 0 1.31.96 2.58 1.09 2.76.13.18 1.88 2.87 4.56 4.02.64.28 1.14.45 1.53.57.64.2 1.22.17 1.68.1.51-.08 1.58-.65 1.81-1.28.22-.63.22-1.18.16-1.28-.07-.11-.24-.18-.51-.31zM16.02 2.67c-7.36 0-13.33 5.97-13.33 13.33 0 2.34.61 4.63 1.77 6.65L2.67 29.33l6.84-1.74a13.27 13.27 0 0 0 6.51 1.67h.01c7.36 0 13.33-5.97 13.33-13.33 0-3.57-1.39-6.92-3.92-9.44a13.23 13.23 0 0 0-9.42-3.82zm0 24.2h-.01a11.1 11.1 0 0 1-5.66-1.55l-.41-.24-4.06 1.03 1.08-3.96-.27-.41a11.08 11.08 0 0 1-1.71-5.93c0-6.13 4.99-11.11 11.12-11.11 2.97 0 5.76 1.16 7.86 3.26a11.03 11.03 0 0 1 3.25 7.86c0 6.13-4.99 11.11-11.19 11.11z"></path></svg></a>
+<script>const reveals=document.querySelectorAll('.reveal');const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');}})},{threshold:0.2});reveals.forEach(el=>observer.observe(el));</script>
+</body>
+</html>

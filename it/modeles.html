@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+
+<html lang="it">
+<head>
+<!-- Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-K4502PGZ0X"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K4502PGZ0X');
+  </script>
+<!-- Meta Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2222911094866542');
+  fbq('track', 'PageView');
+  </script>
+<noscript><img height="1" src="https://www.facebook.com/tr?id=2222911094866542&amp;ev=PageView&amp;noscript=1" style="display:none" width="1"/></noscript>
+<!-- End Meta Pixel Code -->
+<meta charset="utf-8"/>
+<title>Atelier CAL – Modelli disponibili</title>
+<meta content="A0dojKL5m35FOtxZXnqt33BbuTEnXFRBVb-cTb6grEY" name="google-site-verification"/>
+<meta content="Atelier CAL progetta e realizza macchine professionali per la confetteria: telai a cilindri motorizzati per caramelle di zucchero cotto, nougatine e miele. Progettazione francese." name="description"/>
+<meta content="macchina per confetteria, macchina per caramelle, telaio a cilindri, macchina per nougatine, macchina per caramelle al miele, confettiere professionale" name="keywords"/>
+<meta content="Atelier CAL" name="author"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- viewer 3D (model-viewer) -->
+<script src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js" type="module"></script>
+<style>
+:root{
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.75);
+      --line: rgba(255,255,255,0.18);
+      --line2: rgba(255,255,255,0.28);
+      --card: rgba(255,255,255,0.04);
+    }
+
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at top, #1c1c1c 0%, #0b0b0b 45%, #000 100%);
+    }
+
+    .container{
+      width: min(1120px, 92vw);
+      margin: 0 auto;
+    }
+
+    header{
+      padding: 60px 0 18px;
+      text-align:center;
+    }
+
+    h1{
+      margin:0 0 10px;
+      font-size: clamp(2rem, 3.4vw, 2.8rem);
+      letter-spacing: .5px;
+    }
+
+    .top-actions{
+      margin-top: 18px;
+      display:flex;
+      gap: 12px;
+      justify-content:center;
+      flex-wrap: wrap;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 14px 22px;
+      border: 1px solid var(--line2);
+      color:#fff;
+      text-decoration:none;
+      font-size: .95rem;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+      background: transparent;
+      transition: all .25s ease;
+      cursor: pointer;
+    }
+    .btn:hover{
+      background:#fff;
+      color:#000;
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+      transform: translateY(-1px);
+    }
+
+    main{ padding: 30px 0 50px; }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card{
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 14px;
+    }
+
+    .img-wrap{
+      position: relative;
+      display: block;
+    }
+
+    .img{
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: #000;
+      border: 1px solid rgba(255,255,255,0.14);
+      display: block;
+      object-fit: contain;
+    }
+
+    .title{
+      margin: 12px 0 6px;
+      font-size: 1.05rem;
+      letter-spacing: .2px;
+    }
+
+    .desc{
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: .95rem;
+    }
+
+    .tag{
+      margin-top: 10px;
+      display:inline-block;
+      padding: 6px 10px;
+      border: 1px solid rgba(255,255,255,0.18);
+      color: rgba(255,255,255,0.8);
+      font-size: .8rem;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+    }
+
+    /* === ligne TAG + bulle (remplace Acheter) === */
+    .tag-row{
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .tag-row .tag{ margin-top: 0; }
+
+    /* ====== bulle message animée ====== */
+    .buy-pill{
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.30);
+      color: rgba(255,255,255,0.95);
+      text-decoration: none;
+      backdrop-filter: blur(6px);
+      white-space: nowrap;
+      transition: background .18s ease, transform .18s ease, box-shadow .18s ease;
+      animation: contactPulse 1.8s ease-in-out infinite;
+    }
+    .buy-pill:hover{
+      background: rgba(255,255,255,0.12);
+      transform: translateY(-1px);
+      box-shadow: 0 0 20px rgba(255,255,255,0.12);
+      animation: none;
+    }
+    .buy-pill svg{
+      width: 18px;
+      height: 18px;
+      stroke: rgba(255,255,255,0.95);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      opacity: .95;
+    }
+    @keyframes contactPulse{
+      0%   { transform: scale(1);   box-shadow: 0 0 0 rgba(255,255,255,0.00); }
+      50%  { transform: scale(1.08); box-shadow: 0 0 18px rgba(255,255,255,0.12); }
+      100% { transform: scale(1);   box-shadow: 0 0 0 rgba(255,255,255,0.00); }
+    }
+
+    .contact{
+      margin-top: 26px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      text-align:center;
+      color: var(--muted);
+    }
+    .contact a{
+      color: rgba(255,255,255,0.92);
+      text-decoration:none;
+      border-bottom: 1px dotted rgba(255,255,255,0.25);
+    }
+    .contact a:hover{
+      border-bottom-color: rgba(255,255,255,0.55);
+    }
+
+    footer{
+      padding: 28px 0 38px;
+      text-align:center;
+      font-size: .9rem;
+      color: rgba(255,255,255,0.55);
+    }
+
+    @media (max-width: 920px){
+      .grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 560px){
+      header{ padding-top: 50px; }
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    /* ===== BADGE 3D PREMIUM (FIABLE) ===== */
+    .img-wrap.has-3d{
+      cursor: pointer;
+    }
+
+    .badge-3d{
+      position: absolute;
+      left: 12px;
+      bottom: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.62);
+      border: 1px solid rgba(255,255,255,0.30);
+      color: rgba(255,255,255,0.95);
+      font-size: 12px;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+      backdrop-filter: blur(6px);
+      pointer-events: none;
+      z-index: 5;
+
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity .18s ease, transform .18s ease, box-shadow .18s ease;
+    }
+
+    .badge-3d svg{
+      width: 14px;
+      height: 14px;
+      display:block;
+      opacity: .95;
+    }
+
+    .card:hover .img-wrap.has-3d .badge-3d{
+      opacity: 1;
+      transform: translateY(0);
+      box-shadow: 0 0 20px rgba(255,255,255,0.10);
+    }
+
+    @media (hover: none){
+      .img-wrap.has-3d .badge-3d{
+        opacity: .95;
+        transform: none;
+      }
+    }
+
+    @keyframes pulse3d {
+      0%   { transform: translateY(0) scale(1); }
+      35%  { transform: translateY(0) scale(1.06); }
+      70%  { transform: translateY(0) scale(1); }
+      100% { transform: translateY(0) scale(1); }
+    }
+
+    .img-wrap.has-3d.pulse .badge-3d{
+      opacity: .98;
+      transform: translateY(0);
+      animation: pulse3d .85s ease-out 1;
+    }
+
+    /* ===== MODAL 3D ===== */
+    .viewer3d-overlay{
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 14px;
+    }
+
+    .viewer3d-box{
+      width: min(980px, 100%);
+      height: min(640px, 82vh);
+      background: #000;
+      border: 1px solid rgba(255,255,255,0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .viewer3d-close{
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+      font-size: 18px;
+      padding: 6px 10px;
+      cursor: pointer;
+      z-index: 2;
+    }
+    .viewer3d-close:hover{
+      background:#fff;
+      color:#000;
+    }
+
+    .recenter-hint{
+      position: absolute;
+      bottom: 18px;
+      right: 18px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 20px;
+      line-height: 40px;
+      text-align: center;
+      z-index: 3;
+      backdrop-filter: blur(4px);
+      pointer-events: none;
+    }
+
+    /* ===== STOCK : badge "Stock ⓘ" + tooltip ===== */
+    .title-line{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .title-line .title{
+      margin: 12px 0 6px;
+      flex: 0 1 auto;
+      min-width: 0;
+    }
+
+    .stock-badge{
+      position: relative;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .2px;
+      white-space: nowrap;
+      color: rgba(255,255,255,0.90);
+      border: 1px solid rgba(201,162,77,0.45);
+      background: linear-gradient(135deg, rgba(201,162,77,0.18), rgba(255,255,255,0.05));
+      box-shadow: 0 10px 26px rgba(0,0,0,0.30);
+      cursor: help;
+      margin-left: auto;
+      user-select: none;
+    }
+
+    .stock-badge .info-dot{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:16px;
+      height:16px;
+      border-radius:50%;
+      font-size:11px;
+      font-weight:900;
+      color:#111;
+      background: linear-gradient(135deg, #fff, #c9a24d);
+      margin-left: 2px;
+      flex: 0 0 auto;
+    }
+
+    .stock-badge .tooltip{
+      position:absolute;
+      bottom: 125%;
+      right: 0;
+      transform: translateY(6px);
+      background: rgba(10,10,10,0.96);
+      color: rgba(255,255,255,0.92);
+      padding: 9px 11px;
+      border-radius: 10px;
+      font-size: 12px;
+      line-height: 1.35;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: .22s ease;
+      box-shadow: 0 14px 40px rgba(0,0,0,.65);
+      border: 1px solid rgba(201,162,77,.42);
+      z-index: 20;
+    }
+
+    .stock-badge .tooltip::after{
+      content:"";
+      position:absolute;
+      top: 100%;
+      right: 14px;
+      border: 7px solid transparent;
+      border-top-color: rgba(10,10,10,0.96);
+      filter: drop-shadow(0 2px 0 rgba(201,162,77,.18));
+    }
+
+    .stock-badge:hover .tooltip{
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (hover:none){
+      .stock-badge:active .tooltip{
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .stock-badge.delay{
+      border-color: rgba(255,170,80,0.45);
+      background: linear-gradient(135deg, rgba(255,170,80,0.16), rgba(255,255,255,0.05));
+    }
+
+    /* ===== AJOUT : HINT TEXTE SEUL (3D) ===== */
+    .drag-hint{
+      position:absolute;
+      left:50%;
+      top:55%;
+      transform:translate(-50%,-50%);
+      pointer-events:none;
+      z-index:4;
+
+      font: 700 12px/1.2 Arial, Helvetica, sans-serif;
+      letter-spacing:.6px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      text-shadow: 0 2px 12px rgba(0,0,0,0.55);
+      background: rgba(0,0,0,0.28);
+      border: 1px solid rgba(255,255,255,0.16);
+      padding: 8px 12px;
+      border-radius: 999px;
+      backdrop-filter: blur(6px);
+
+      opacity:1;
+      transition:opacity .25s ease, transform .25s ease;
+    }
+    .drag-hint.hide{
+      opacity:0;
+      transform:translate(-50%,-50%) scale(.98);
+    }
+
+    .stock-note{
+      margin: 10px auto 0;
+      max-width: 860px;
+      color: rgba(255,255,255,0.65);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+    .stock-note b{ color: rgba(255,255,255,0.82); font-weight: 700; }
+  </style>
+</head>
+<body>
+<header>
+<div class="container">
+<h1>Modelli disponibili</h1>
+<div class="stock-note">* <b>Disponibilità</b>: se le scorte non vengono visualizzate, ruota il telefono in orizzontale.</div>
+<p class="subtitle"></p>
+<div class="top-actions">
+<a class="btn" href="/it/index.html">Indietro</a>
+<!-- ✅ MODIF : bouton devis -> scroll vers le formulaire (PC + mobile) -->
+<a class="btn" href="#devisBox">Richiedi preventivo</a>
+</div>
+</div>
+</header>
+<main>
+<div class="container">
+<div class="grid">
+<!-- PASTILLE -> 3D -->
+<div class="card">
+<div class="img-wrap has-3d" onclick="open3D('/pastille.glb')">
+<img alt="Modello Pastiglia" class="img" src="/modele-pastille.png"/>
+<div class="badge-3d">
+<svg fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+<path d="M3.3 7.3 12 12l8.7-4.7"></path><path d="M12 22V12"></path>
+</svg>
+<span>Vedi in 3D</span>
+</div>
+</div>
+<div class="title-line">
+<div class="title">Pastiglia</div>
+<span class="stock-badge">Disponibilità <span class="info-dot">i</span><span class="tooltip">2 disponibili<br/><br/>Disponibile rapidamente</span></span>
+</div>
+<p class="desc">Formato standard, facile da vendere.</p>
+<div class="tag-row">
+<span class="tag">Standard</span>
+<a class="buy-pill" href="sms:+33677845435?&amp;body=Ciao%20Stevens%2C%20vorrei%20ricevere%20un%20preventivo%20per%20il%20telaio%20a%20cilindri%20SRC%20%28modello%3A%20Pastiglia%29.">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path>
+<path d="M7.5 8.5h9M7.5 12h6"></path>
+</svg>
+</a>
+</div>
+</div>
+<!-- ABEILLE -> 3D -->
+<div class="card">
+<div class="img-wrap has-3d" onclick="open3D('/abeille.glb')">
+<img alt="Modello Ape" class="img" src="/modele-abeille.png"/>
+<div class="badge-3d">
+<svg fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+<path d="M3.3 7.3 12 12l8.7-4.7"></path><path d="M12 22V12"></path>
+</svg>
+<span>Vedi in 3D</span>
+</div>
+</div>
+<div class="title-line">
+<div class="title">Ape (incisa)</div>
+<span class="stock-badge">Disponibilità <span class="info-dot">i</span><span class="tooltip">1 disponibile<br/><br/>Disponibile rapidamente</span></span>
+</div>
+<p class="desc">Firma “miele”, rilievo preciso e finitura premium.</p>
+<div class="tag-row">
+<span class="tag">Firma</span>
+<a class="buy-pill" href="sms:+33677845435?&amp;body=Ciao%20Stevens%2C%20vorrei%20ricevere%20un%20preventivo%20per%20il%20telaio%20a%20cilindri%20SRC%20%28modello%3A%20Ape%20%28incisa%29%29.">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path>
+<path d="M7.5 8.5h9M7.5 12h6"></path>
+</svg>
+</a>
+</div>
+</div>
+<!-- HEXAGONE -> 3D -->
+<div class="card">
+<div class="img-wrap has-3d" onclick="open3D('/hexagone.glb')">
+<img alt="Modello Esagono" class="img" src="/modèle-hexagone.png"/>
+<div class="badge-3d">
+<svg fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+<path d="M3.3 7.3 12 12l8.7-4.7"></path><path d="M12 22V12"></path>
+</svg>
+<span>Vedi in 3D</span>
+</div>
+</div>
+<div class="title-line">
+<div class="title">Esagono</div>
+<span class="stock-badge">Disponibilità <span class="info-dot">i</span><span class="tooltip">1 disponibile<br/><br/>Disponibile rapidamente</span></span>
+</div>
+<p class="desc">Forma esagonale elegante.</p>
+<div class="tag-row">
+<span class="tag">Geometrico</span>
+<a class="buy-pill" href="sms:+33677845435?&amp;body=Ciao%20Stevens%2C%20vorrei%20ricevere%20un%20preventivo%20per%20il%20telaio%20a%20cilindri%20SRC%20%28modello%3A%20Esagono%29.">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path>
+<path d="M7.5 8.5h9M7.5 12h6"></path>
+</svg>
+</a>
+</div>
+</div>
+<!-- FEUILLE -> 3D -->
+<div class="card">
+<div class="img-wrap has-3d" onclick="open3D('/feuille.glb')">
+<img alt="Modello Foglia" class="img" src="/modele-feuille.png"/>
+<div class="badge-3d">
+<svg fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+<path d="M3.3 7.3 12 12l8.7-4.7"></path><path d="M12 22V12"></path>
+</svg>
+<span>Vedi in 3D</span>
+</div>
+</div>
+<div class="title-line">
+<div class="title">Foglia</div>
+<span class="stock-badge">Disponibilità <span class="info-dot">i</span><span class="tooltip">1 disponibile<br/><br/>Disponibile rapidamente</span></span>
+</div>
+<p class="desc">Motivo naturale ed elegante, ottimo risultato visivo.</p>
+<div class="tag-row">
+<span class="tag">Natura</span>
+<a class="buy-pill" href="sms:+33677845435?&amp;body=Ciao%20Stevens%2C%20vorrei%20ricevere%20un%20preventivo%20per%20il%20telaio%20a%20cilindri%20SRC%20%28modello%3A%20Foglia%29.">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path>
+<path d="M7.5 8.5h9M7.5 12h6"></path>
+</svg>
+</a>
+</div>
+</div>
+<!-- CARRE NOUGATINE -->
+<div class="card">
+<div class="img-wrap">
+<img alt="Modello Quadrato nougatine" class="img" src="/modelecarrer.png"/>
+</div>
+<div class="title-line">
+<div class="title">Quadrato</div>
+<span class="stock-badge">
+      Disponibilità
+      <span class="info-dot">i</span>
+<span class="tooltip">
+        0<br/>
+        non disponibile<br/>
+</span>
+</span>
+</div>
+<p class="desc">
+    Formato quadrato, ideale per nougatine e confetteria piatta.
+  </p>
+<div class="tag-row">
+<span class="tag">Nougatine</span>
+<a class="buy-pill" href="sms:+33677845435?&amp;body=Ciao%20Stevens%2C%20vorrei%20ricevere%20un%20preventivo%20per%20il%20telaio%20a%20cilindri%20SRC%20%28modello%3A%20Quadrato%29.">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path>
+<path d="M7.5 8.5h9M7.5 12h6"></path>
+</svg>
+</a>
+</div>
+</div>
+<!-- PERSONNALISATION -> 3D -->
+<div class="card">
+<div class="img-wrap has-3d" onclick="open3D('/surmesure.glb')">
+<img alt="Modello personalizzabile" class="img" src="/Modele-personnalise.png"/>
+<div class="badge-3d">
+<svg fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+<path d="M3.3 7.3 12 12l8.7-4.7"></path><path d="M12 22V12"></path>
+</svg>
+<span>Vedi in 3D</span>
+</div>
+</div>
+<div class="title">Personalizzazione</div>
+<p class="desc">Logo, motivo e formato su misura. Studio rapido e fattibilità in base alla ricetta.</p>
+<span class="tag">Su misura</span>
+</div>
+<!-- OEUF -> 3D -->
+<div class="card">
+<div class="img-wrap has-3d" onclick="open3D('/oeuf.glb')">
+<img alt="Modello Uovo" class="img" src="/modele-oeuf.png"/>
+<div class="badge-3d">
+<svg fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+<path d="M3.3 7.3 12 12l8.7-4.7"></path><path d="M12 22V12"></path>
+</svg>
+<span>Vedi in 3D</span>
+</div>
+</div>
+<div class="title-line">
+<div class="title">Uovo</div>
+<span class="stock-badge delay">Disponibilità <span class="info-dot">i</span><span class="tooltip">Disponibilità 0<br/>Tempi più lunghi</span></span>
+</div>
+<p class="desc">Forma morbida e arrotondata.</p>
+<div class="tag-row">
+<span class="tag">Standard</span>
+<a class="buy-pill" href="sms:+33677845435?&amp;body=Ciao%20Stevens%2C%20vorrei%20ricevere%20un%20preventivo%20per%20il%20telaio%20a%20cilindri%20SRC%20%28modello%3A%20Uovo%29.">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path>
+<path d="M7.5 8.5h9M7.5 12h6"></path>
+</svg>
+</a>
+</div>
+</div>
+<!-- OVALE -> 3D -->
+<div class="card">
+<div class="img-wrap has-3d" onclick="open3D('/ovale.glb')">
+<img alt="Modello Pastiglia ovale" class="img" src="/modele-pastille-ovale.png"/>
+<div class="badge-3d">
+<svg fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+<path d="M3.3 7.3 12 12l8.7-4.7"></path><path d="M12 22V12"></path>
+</svg>
+<span>Vedi in 3D</span>
+</div>
+</div>
+<div class="title-line">
+<div class="title">Pastiglia ovale</div>
+<span class="stock-badge delay">Disponibilità <span class="info-dot">i</span><span class="tooltip">Disponibilità 0<br/>Tempi più lunghi</span></span>
+</div>
+<p class="desc">Formato elegante e allungato, eccellente leggibilità delle incisioni.</p>
+<div class="tag-row">
+<span class="tag">Standard</span>
+<a class="buy-pill" href="sms:+33677845435?&amp;body=Ciao%20Stevens%2C%20vorrei%20ricevere%20un%20preventivo%20per%20il%20telaio%20a%20cilindri%20SRC%20%28modello%3A%20Pastiglia%20ovale%29.">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path>
+<path d="M7.5 8.5h9M7.5 12h6"></path>
+</svg>
+</a>
+</div>
+</div>
+<!-- PERLE (EN DERNIER) -->
+<div class="card">
+<div class="img-wrap">
+<img alt="Modello Perla 15 mm" class="img" src="/modele-perle.png"/>
+</div>
+<div class="title-line">
+<div class="title">Perla Ø 15 mm</div>
+<span class="stock-badge">Disponibilità <span class="info-dot">i</span><span class="tooltip">2 disponibili<br/><br/>Disponibile rapidamente</span></span>
+</div>
+<p class="desc">Forma versatile, sformatura pulita, ideale per caramelle di zucchero cotto.</p>
+<div class="tag-row">
+<span class="tag">Standard</span>
+<a class="buy-pill" href="sms:+33677845435?&amp;body=Ciao%20Stevens%2C%20vorrei%20ricevere%20un%20preventivo%20per%20il%20telaio%20a%20cilindri%20SRC%20%28modello%3A%20Perla%20%C3%98%2015%20mm%29.">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path>
+<path d="M7.5 8.5h9M7.5 12h6"></path>
+</svg>
+</a>
+</div>
+</div>
+</div>
+<!-- ✅ FORMULAIRE DEVIS (Formspree) : visible + pro -->
+<div class="contact" id="devisBox" style="text-align:left;">
+<div style="text-align:center; font-weight:700; color:rgba(255,255,255,0.92); margin-bottom:10px;">
+        Richiesta di preventivo
+      </div>
+<form action="https://formspree.io/f/xojaqvav" method="POST">
+<input name="page" type="hidden" value="modeles-it"/>
+<input name="source" type="hidden" value="Richiedi preventivo"/>
+<div style="margin-bottom:10px;">
+<label>Nome / Azienda</label><br/>
+<input name="nom" required="" style="width:100%;padding:10px;margin-top:6px;background:#0f0f0f;border:1px solid rgba(255,255,255,0.22);color:#fff;outline:none;"/>
+</div>
+<div style="margin-bottom:10px;">
+<label>Email</label><br/>
+<input name="email" required="" style="width:100%;padding:10px;margin-top:6px;background:#0f0f0f;border:1px solid rgba(255,255,255,0.22);color:#fff;outline:none;" type="email"/>
+</div>
+<div style="margin-bottom:10px;">
+<label>Telefono (opzionale)</label><br/>
+<input name="telephone" style="width:100%;padding:10px;margin-top:6px;background:#0f0f0f;border:1px solid rgba(255,255,255,0.22);color:#fff;outline:none;"/>
+</div>
+<div style="margin-bottom:12px;">
+<label>La tua richiesta</label><br/>
+<textarea name="message" rows="4" style="width:100%;padding:10px;margin-top:6px;background:#0f0f0f;border:1px solid rgba(255,255,255,0.22);color:#fff;outline:none;resize:vertical;"></textarea>
+</div>
+<div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+<button class="btn" type="submit">Invia</button>
+</div>
+</form>
+</div>
+<!-- ✅ FIN FORMULAIRE -->
+<div class="contact" id="contact">
+      Contatto: <a href="mailto:contact@atelier-cal.fr">contact@atelier-cal.fr</a> ·
+      <a href="tel:+33677845435">06 77 84 54 35</a>
+</div>
+</div>
+</main>
+<footer>Atelier CAL – Todos los derechos reservados</footer>
+<!-- MODAL 3D -->
+<div class="viewer3d-overlay" id="viewer3D" onclick="close3D(event)">
+<div class="viewer3d-box">
+<button class="viewer3d-close" onclick="close3D(null, true)">✕</button>
+<div class="recenter-hint">⌖</div>
+<!-- AJOUT : texte hint -->
+<div class="drag-hint" id="dragHint">Muovi con il dito</div>
+<!-- FIN AJOUT -->
+<model-viewer auto-rotate="" camera-controls="" camera-orbit="0deg 75deg 4m" environment-image="neutral" exposure="1.05" field-of-view="30deg" id="model3d" interaction-prompt="none" shadow-intensity="0.35" src="" style="width:100%; height:100%; background: radial-gradient(circle at center, #1a1a1a, #000);">
+<div slot="poster" style="color:white;opacity:.85;font-family:Arial;padding:14px;">
+        Caricamento del modello 3D…
+      </div>
+</model-viewer>
+</div>
+</div>
+<script>
+  const DEFAULT_ORBIT = "0deg 75deg 4m";
+  const DEFAULT_FOV = "30deg";
+
+  function showDragHint(){
+    const hint = document.getElementById('dragHint');
+    if(!hint) return;
+    hint.style.display = 'block';
+    hint.classList.remove('hide');
+  }
+  function hideDragHint(){
+    const hint = document.getElementById('dragHint');
+    if(!hint) return;
+    hint.classList.add('hide');
+    setTimeout(()=>{ if(hint) hint.style.display='none'; }, 260);
+  }
+
+  function open3D(glbPath){
+    const overlay = document.getElementById('viewer3D');
+    const model = document.getElementById('model3d');
+
+    overlay.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+
+    showDragHint();
+
+    model.autoRotate = true;
+    model.cameraOrbit = DEFAULT_ORBIT;
+    model.fieldOfView = DEFAULT_FOV;
+    if (model.jumpCameraToGoal) model.jumpCameraToGoal();
+
+    model.src = '';
+
+    requestAnimationFrame(() => {
+      model.src = glbPath + '?v=' + Date.now();
+
+      const onLoad = () => {
+        model.cameraOrbit = DEFAULT_ORBIT;
+        model.fieldOfView = DEFAULT_FOV;
+        model.autoRotate = true;
+        model.removeEventListener('load', onLoad);
+      };
+      model.addEventListener('load', onLoad);
+    });
+  }
+
+  function close3D(e, force){
+    if (!force && e && e.target && e.target.id !== 'viewer3D') return;
+
+    const model = document.getElementById('model3d');
+    model.autoRotate = false;
+    model.src = '';
+    model.cameraOrbit = DEFAULT_ORBIT;
+    model.fieldOfView = DEFAULT_FOV;
+
+    document.getElementById('viewer3D').style.display = 'none';
+    document.body.style.overflow = '';
+
+    showDragHint();
+  }
+
+  window.addEventListener('keydown', (ev) => {
+    if (ev.key === 'Escape') close3D(null, true);
+  });
+
+  (function(){
+    const targets = document.querySelectorAll('.img-wrap.has-3d');
+    if (!('IntersectionObserver' in window) || targets.length === 0) return;
+
+    const pulseOnce = (el) => {
+      el.classList.remove('pulse');
+      void el.offsetWidth;
+      el.classList.add('pulse');
+    };
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) pulseOnce(entry.target);
+      });
+    }, { threshold: 0.45 });
+
+    targets.forEach(t => io.observe(t));
+
+    let tmr;
+    window.addEventListener('scroll', () => {
+      clearTimeout(tmr);
+      tmr = setTimeout(() => {
+        targets.forEach(el => {
+          const r = el.getBoundingClientRect();
+          const mid = window.innerHeight * 0.55;
+          if (r.top < mid && r.bottom > mid) pulseOnce(el);
+        });
+      }, 160);
+    }, { passive: true });
+  })();
+
+  (function(){
+    const model = document.getElementById('model3d');
+    if(!model) return;
+    ['pointerdown','touchstart','mousedown','wheel'].forEach(evt=>{
+      model.addEventListener(evt, hideDragHint, { passive:true });
+    });
+  })();
+
+
+  // ✅ PC: clic sur les boutons "message" (liens sms:) -> scroll vers le formulaire devis
+  // ✅ Mobile: on laisse le lien sms: ouvrir l'app SMS
+  (function () {
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (isMobile) return;
+
+    const devisBox = document.getElementById('devisBox');
+    if (!devisBox) return;
+
+    const messageLinks = document.querySelectorAll('a.buy-pill[href^="sms:"]');
+    if (!messageLinks.length) return;
+
+    messageLinks.forEach((a) => {
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        devisBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        // Focus sur le premier champ du formulaire (si présent)
+        setTimeout(() => {
+          const firstInput =
+            devisBox.querySelector('input[name="nom"]') ||
+            devisBox.querySelector('input[type="text"]') ||
+            devisBox.querySelector('input, textarea, select');
+
+          if (firstInput) firstInput.focus({ preventScroll: true });
+        }, 400);
+      }, true);
+    });
+  })();
+
+</script>
+</body>
+</html>
