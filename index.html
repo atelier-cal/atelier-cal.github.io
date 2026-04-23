@@ -97,10 +97,17 @@
     }
 
     .brand{
-      color:#fff;
+      display:inline-flex;
+      align-items:center;
       text-decoration:none;
-      font-weight:700;
-      letter-spacing:0.5px;
+    }
+
+    .brand img{
+      display:block;
+      height:64px;
+      width:auto;
+      max-width:260px;
+      object-fit:contain;
     }
 
     .nav-links{
@@ -383,6 +390,10 @@
       .hero{
         padding-top:220px;
       }
+
+      .brand img{
+        height:58px;
+      }
     }
 
     @media (max-width: 640px){
@@ -402,6 +413,11 @@
 
       .hero{
         padding-top:240px;
+      }
+
+      .brand img{
+        height:50px;
+        max-width:220px;
       }
     }
 
@@ -446,7 +462,9 @@
     </div>
 
     <div class="top-nav-inner">
-      <a href="/index.html" class="brand">Atelier CAL</a>
+      <a href="/index.html" class="brand" aria-label="Atelier CAL">
+        <img src="photoindex/logo-cal.png" alt="Logo Atelier CAL">
+      </a>
       <div class="nav-links">
         <a href="/machine.html">La machine</a>
         <a href="/modeles.html">Les modèles</a>
