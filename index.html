@@ -13,6 +13,7 @@
       --line:rgba(255,255,255,0.1);
       --accent:#c9a24d;
       --accent-strong:#e0b45a;
+      --gold-dark:#2b1d04;
       --whatsapp:#25D366;
     }
 
@@ -35,7 +36,7 @@
       left:0;
       width:100%;
       z-index:1000;
-      background:rgba(8,8,8,0.90);
+      background:rgba(8,8,8,0.92);
       backdrop-filter:blur(10px);
       border-bottom:1px solid var(--line);
     }
@@ -43,17 +44,17 @@
     .top-nav-inner{
       max-width:1280px;
       margin:0 auto;
-      padding:20px 22px 18px;
+      padding:18px 24px 16px;
       display:flex;
       justify-content:space-between;
       align-items:flex-start;
-      gap:22px;
+      gap:24px;
     }
 
     .top-left{
       display:flex;
       align-items:center;
-      gap:22px;
+      gap:20px;
       min-width:0;
       flex:1;
     }
@@ -67,9 +68,9 @@
 
     .brand img{
       display:block;
-      height:150px;
+      height:142px;
       width:auto;
-      max-width:560px;
+      max-width:520px;
       object-fit:contain;
     }
 
@@ -79,59 +80,80 @@
       flex-direction:column;
       justify-content:center;
       gap:8px;
-      min-height:108px;
-      min-width:360px;
+      min-width:420px;
+      min-height:116px;
       padding:18px 26px;
       text-decoration:none;
-      color:#211804;
-      border:1px solid rgba(224,180,90,0.65);
+      color:var(--gold-dark);
+      border:1px solid rgba(224,180,90,0.72);
       background:
-        linear-gradient(135deg, #f7dfa2 0%, #e8c46d 32%, #cf9d3d 66%, #f4dfab 100%);
+        linear-gradient(135deg, #f8e5b0 0%, #edcb7a 24%, #d6a648 56%, #c9932c 78%, #f4dfad 100%);
       box-shadow:
-        0 0 0 1px rgba(255,255,255,0.06) inset,
-        0 0 18px rgba(201,162,77,0.22),
-        0 0 36px rgba(201,162,77,0.16);
+        0 0 0 1px rgba(255,255,255,0.08) inset,
+        0 10px 24px rgba(0,0,0,0.24),
+        0 0 22px rgba(201,162,77,0.18),
+        0 0 46px rgba(201,162,77,0.16);
       overflow:hidden;
       flex-shrink:0;
-      animation:catalogPulse 2s ease-in-out infinite;
+      transition:transform .25s ease, box-shadow .25s ease;
+      animation:catalogPulse 2.4s ease-in-out infinite;
     }
 
     .catalog-highlight-link::before{
       content:"";
       position:absolute;
-      top:-110%;
-      left:-30%;
-      width:30%;
-      height:320%;
+      top:-120%;
+      left:-32%;
+      width:28%;
+      height:340%;
       background:linear-gradient(
         90deg,
         rgba(255,255,255,0) 0%,
-        rgba(255,255,255,0.18) 44%,
-        rgba(255,255,255,0.68) 50%,
-        rgba(255,255,255,0.16) 56%,
+        rgba(255,255,255,0.14) 45%,
+        rgba(255,255,255,0.70) 50%,
+        rgba(255,255,255,0.12) 55%,
         rgba(255,255,255,0) 100%
       );
       transform:rotate(18deg);
-      animation:catalogShine 3s linear infinite;
+      animation:catalogShine 3.2s linear infinite;
+      pointer-events:none;
+    }
+
+    .catalog-highlight-link::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to bottom, rgba(255,255,255,0.10), rgba(255,255,255,0));
       pointer-events:none;
     }
 
     .catalog-highlight-link:hover{
-      transform:translateY(-2px) scale(1.02);
+      transform:translateY(-2px) scale(1.015);
       box-shadow:
-        0 0 0 1px rgba(255,255,255,0.08) inset,
-        0 0 28px rgba(201,162,77,0.34),
-        0 0 56px rgba(201,162,77,0.22);
+        0 0 0 1px rgba(255,255,255,0.10) inset,
+        0 14px 30px rgba(0,0,0,0.28),
+        0 0 30px rgba(201,162,77,0.28),
+        0 0 58px rgba(201,162,77,0.20);
+    }
+
+    .catalog-kicker{
+      position:relative;
+      z-index:1;
+      font-size:0.72rem;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:1.8px;
+      color:rgba(43,29,4,0.80);
     }
 
     .catalog-top{
       position:relative;
       z-index:1;
-      font-size:1.05rem;
-      font-weight:800;
+      font-size:1.2rem;
+      font-weight:900;
       text-transform:uppercase;
-      letter-spacing:1.1px;
-      line-height:1.05;
+      letter-spacing:1px;
+      line-height:1;
       white-space:nowrap;
     }
 
@@ -140,8 +162,19 @@
       z-index:1;
       font-size:0.84rem;
       line-height:1.35;
-      color:rgba(33,24,4,0.88);
+      color:rgba(43,29,4,0.90);
       font-weight:700;
+    }
+
+    .catalog-cta{
+      position:relative;
+      z-index:1;
+      margin-top:2px;
+      font-size:0.74rem;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:1.2px;
+      color:rgba(43,29,4,0.92);
     }
 
     .top-right{
@@ -282,7 +315,7 @@
       justify-content:center;
       position:relative;
       overflow:hidden;
-      padding:310px 20px 50px;
+      padding:300px 20px 50px;
     }
 
     .hero::before{
