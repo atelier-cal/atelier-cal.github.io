@@ -1,8 +1,4 @@
-.brand img{
-  height:125px; /* +45% */
-  max-width:500px;
-}
-}<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
@@ -16,6 +12,7 @@
       --muted:rgba(255,255,255,0.72);
       --line:rgba(255,255,255,0.1);
       --accent:#c9a24d;
+      --accent-strong:#e0b45a;
       --whatsapp:#25D366;
     }
 
@@ -38,7 +35,7 @@
       left:0;
       width:100%;
       z-index:1000;
-      background:rgba(8,8,8,0.86);
+      background:rgba(8,8,8,0.88);
       backdrop-filter:blur(10px);
       border-bottom:1px solid var(--line);
     }
@@ -46,11 +43,18 @@
     .top-nav-inner{
       max-width:1200px;
       margin:0 auto;
-      padding:14px 22px 12px;
+      padding:16px 22px 14px;
       display:flex;
       justify-content:space-between;
       align-items:center;
-      gap:20px;
+      gap:22px;
+    }
+
+    .top-left{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      min-width:0;
     }
 
     .brand{
@@ -62,13 +66,75 @@
 
     .brand img{
       display:block;
-      height:86px;
+      height:125px;
       width:auto;
-      max-width:340px;
+      max-width:500px;
       object-fit:contain;
     }
 
-    .nav-right{
+    .catalog-highlight-link{
+      position:relative;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:56px;
+      padding:12px 18px;
+      text-decoration:none;
+      color:#1b1406;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      font-size:0.83rem;
+      line-height:1.25;
+      text-align:center;
+      border:1px solid rgba(224,180,90,0.6);
+      background:
+        linear-gradient(135deg, #f7dfa2 0%, #e6bf68 35%, #c99632 65%, #f5de9f 100%);
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.06) inset,
+        0 0 18px rgba(201,162,77,0.20),
+        0 0 34px rgba(201,162,77,0.16);
+      overflow:hidden;
+      flex-shrink:0;
+      animation:catalogPulse 1.9s ease-in-out infinite;
+    }
+
+    .catalog-highlight-link::before{
+      content:"";
+      position:absolute;
+      top:-120%;
+      left:-35%;
+      width:34%;
+      height:340%;
+      background:linear-gradient(
+        90deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.14) 45%,
+        rgba(255,255,255,0.65) 50%,
+        rgba(255,255,255,0.12) 55%,
+        rgba(255,255,255,0) 100%
+      );
+      transform:rotate(18deg);
+      animation:catalogShine 2.8s linear infinite;
+      pointer-events:none;
+    }
+
+    .catalog-highlight-link:hover{
+      transform:translateY(-1px) scale(1.02);
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.08) inset,
+        0 0 26px rgba(201,162,77,0.30),
+        0 0 54px rgba(201,162,77,0.20);
+    }
+
+    .catalog-highlight-text{
+      position:relative;
+      z-index:1;
+      display:block;
+      white-space:nowrap;
+    }
+
+    .top-right{
       display:flex;
       align-items:center;
       justify-content:flex-end;
@@ -206,7 +272,7 @@
       justify-content:center;
       position:relative;
       overflow:hidden;
-      padding:220px 20px 50px;
+      padding:260px 20px 50px;
     }
 
     .hero::before{
@@ -431,6 +497,57 @@
       100%{transform:scale(1);}
     }
 
+    @keyframes catalogPulse{
+      0%{
+        box-shadow:
+          0 0 0 1px rgba(255,255,255,0.06) inset,
+          0 0 16px rgba(201,162,77,0.18),
+          0 0 30px rgba(201,162,77,0.12);
+      }
+      50%{
+        box-shadow:
+          0 0 0 1px rgba(255,255,255,0.08) inset,
+          0 0 28px rgba(201,162,77,0.34),
+          0 0 56px rgba(201,162,77,0.22);
+      }
+      100%{
+        box-shadow:
+          0 0 0 1px rgba(255,255,255,0.06) inset,
+          0 0 16px rgba(201,162,77,0.18),
+          0 0 30px rgba(201,162,77,0.12);
+      }
+    }
+
+    @keyframes catalogShine{
+      0%{
+        left:-40%;
+      }
+      100%{
+        left:130%;
+      }
+    }
+
+    @media (max-width: 1100px){
+      .top-nav-inner{
+        gap:16px;
+      }
+
+      .top-left{
+        gap:14px;
+      }
+
+      .brand img{
+        height:110px;
+        max-width:420px;
+      }
+
+      .catalog-highlight-link{
+        padding:11px 15px;
+        font-size:0.77rem;
+        min-height:52px;
+      }
+    }
+
     @media (max-width: 900px){
       .section-inner,
       .section.reverse .section-inner{
@@ -438,12 +555,23 @@
       }
 
       .top-nav-inner{
-        padding:14px 18px 10px;
+        padding:14px 18px 12px;
+      }
+
+      .top-left{
+        flex:1;
+        min-width:0;
       }
 
       .brand img{
-        height:72px;
-        max-width:280px;
+        height:95px;
+        max-width:320px;
+      }
+
+      .catalog-highlight-link{
+        min-height:50px;
+        padding:10px 14px;
+        font-size:0.72rem;
       }
 
       .nav-links{
@@ -452,18 +580,40 @@
       }
 
       .hero{
-        padding-top:240px;
+        padding-top:250px;
       }
     }
 
     @media (max-width: 640px){
       .top-nav-inner{
         padding:12px 16px 10px;
+        gap:10px;
+      }
+
+      .top-left{
+        gap:10px;
+        flex:1;
+        min-width:0;
+      }
+
+      .brand{
+        min-width:0;
       }
 
       .brand img{
-        height:58px;
-        max-width:220px;
+        height:80px;
+        max-width:250px;
+      }
+
+      .catalog-highlight-link{
+        min-height:46px;
+        padding:9px 12px;
+        font-size:0.64rem;
+        letter-spacing:0.7px;
+      }
+
+      .catalog-highlight-text{
+        white-space:normal;
       }
 
       .lang-toggle{
@@ -481,7 +631,7 @@
       }
 
       .hero{
-        padding-top:230px;
+        padding-top:240px;
       }
     }
 
@@ -501,23 +651,31 @@
 
     @media (max-width: 520px){
       .top-nav-inner{
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:10px;
+        align-items:flex-start;
       }
 
-      .brand{
+      .top-left{
         width:100%;
-        justify-content:center;
+        justify-content:flex-start;
       }
 
-      .nav-right{
-        width:100%;
-        justify-content:center;
+      .top-right{
+        align-self:flex-start;
+      }
+
+      .brand img{
+        height:72px;
+        max-width:210px;
+      }
+
+      .catalog-highlight-link{
+        min-height:42px;
+        padding:8px 10px;
+        font-size:0.58rem;
       }
 
       .hero{
-        padding-top:260px;
+        padding-top:245px;
       }
     }
   </style>
@@ -526,11 +684,17 @@
 
   <nav class="top-nav">
     <div class="top-nav-inner">
-      <a href="/index.html" class="brand" aria-label="Atelier CAL">
-        <img src="photoindex/logo-cal.png" alt="Logo Atelier CAL">
-      </a>
+      <div class="top-left">
+        <a href="/index.html" class="brand" aria-label="Atelier CAL">
+          <img src="photoindex/logo-cal.png" alt="Logo Atelier CAL">
+        </a>
 
-      <div class="nav-right">
+        <a href="/modeles.html" class="catalog-highlight-link" aria-label="Voir le nouveau catalogue">
+          <span class="catalog-highlight-text">Nouveau<br>catalogue</span>
+        </a>
+      </div>
+
+      <div class="top-right">
         <div class="lang-dropdown">
           <button class="lang-toggle" aria-label="Choisir la langue" type="button">
             <span class="lang-flag">🇫🇷</span>
