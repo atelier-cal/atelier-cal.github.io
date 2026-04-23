@@ -15,7 +15,6 @@
     }
 
     *{box-sizing:border-box}
-
     html{scroll-behavior:smooth;}
 
     body{
@@ -37,9 +36,9 @@
     }
 
     .top-nav-inner{
-      max-width:1320px;
+      max-width:1400px;
       margin:0 auto;
-      padding:18px 24px 16px;
+      padding:16px 24px 14px;
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -63,19 +62,20 @@
 
     .brand img{
       display:block;
-      height:135px;
+      height:125px;
       width:auto;
-      max-width:500px;
+      max-width:460px;
       object-fit:contain;
     }
 
     .promo-banner-link{
       display:block;
       flex:1;
-      max-width:760px;
-      min-width:360px;
+      max-width:820px;
+      min-width:420px;
       overflow:hidden;
       border:1px solid rgba(201,162,77,0.45);
+      background:#000;
       box-shadow:
         0 0 24px rgba(201,162,77,0.18),
         0 12px 34px rgba(0,0,0,0.35);
@@ -92,9 +92,8 @@
     .promo-banner-link img{
       display:block;
       width:100%;
-      height:118px;
-      object-fit:cover;
-      object-position:center;
+      height:auto;
+      object-fit:contain;
     }
 
     .top-right{
@@ -104,9 +103,7 @@
       flex-shrink:0;
     }
 
-    .lang-dropdown{
-      position:relative;
-    }
+    .lang-dropdown{position:relative;}
 
     .lang-toggle{
       display:inline-flex;
@@ -228,7 +225,7 @@
       justify-content:center;
       position:relative;
       overflow:hidden;
-      padding:270px 20px 50px;
+      padding:360px 20px 50px;
     }
 
     .hero::before{
@@ -330,9 +327,7 @@
       transition:transform 0.9s ease;
     }
 
-    .section:hover .visual img{
-      transform:scale(1.04);
-    }
+    .section:hover .visual img{transform:scale(1.04);}
 
     .text-block{
       opacity:0;
@@ -454,21 +449,9 @@
     }
 
     @media (max-width: 1100px){
-      .brand img{
-        height:115px;
-      }
-
-      .promo-banner-link img{
-        height:104px;
-      }
-
-      .promo-banner-link{
-        min-width:300px;
-      }
-
-      .hero{
-        padding-top:245px;
-      }
+      .brand img{height:110px;}
+      .promo-banner-link{min-width:320px; max-width:700px;}
+      .hero{padding-top:320px;}
     }
 
     @media (max-width: 900px){
@@ -479,15 +462,16 @@
 
       .top-nav-inner{
         padding:14px 18px 12px;
+        gap:16px;
       }
 
       .brand img{
-        height:95px;
-        max-width:300px;
+        height:88px;
+        max-width:260px;
       }
 
-      .promo-banner-link img{
-        height:90px;
+      .promo-banner-link{
+        min-width:260px;
       }
 
       .nav-links{
@@ -496,32 +480,28 @@
       }
 
       .hero{
-        padding-top:230px;
+        padding-top:280px;
       }
     }
 
     @media (max-width: 640px){
       .top-nav-inner{
-        padding:12px 12px 10px;
-        gap:10px;
+        padding:12px 10px 10px;
+        gap:8px;
       }
 
       .top-left{
-        gap:10px;
+        gap:8px;
       }
 
       .brand img{
-        height:72px;
-        max-width:165px;
+        height:62px;
+        max-width:125px;
       }
 
       .promo-banner-link{
         min-width:0;
         max-width:none;
-      }
-
-      .promo-banner-link img{
-        height:68px;
       }
 
       .lang-toggle{
@@ -543,32 +523,28 @@
       }
 
       .hero{
-        padding-top:205px;
+        padding-top:210px;
       }
     }
 
     @media (max-width: 520px){
-      .top-nav-inner{
-        align-items:center;
-      }
-
-      .brand img{
-        height:62px;
-        max-width:135px;
-      }
-
-      .promo-banner-link img{
-        height:60px;
-      }
-
       .top-right{
         position:absolute;
         top:8px;
         right:8px;
       }
 
+      .top-left{
+        padding-right:40px;
+      }
+
+      .brand img{
+        height:54px;
+        max-width:110px;
+      }
+
       .hero{
-        padding-top:205px;
+        padding-top:200px;
       }
     }
 
