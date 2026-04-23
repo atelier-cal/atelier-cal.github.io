@@ -7,21 +7,16 @@
   <style>
     :root{
       --bg:#070707;
-      --bg-soft:#101010;
       --text:#f5f5f5;
       --muted:rgba(255,255,255,0.72);
       --line:rgba(255,255,255,0.1);
       --accent:#c9a24d;
-      --accent-strong:#e0b45a;
-      --gold-dark:#2b1d04;
       --whatsapp:#25D366;
     }
 
     *{box-sizing:border-box}
 
-    html{
-      scroll-behavior:smooth;
-    }
+    html{scroll-behavior:smooth;}
 
     body{
       margin:0;
@@ -42,21 +37,21 @@
     }
 
     .top-nav-inner{
-      max-width:1280px;
+      max-width:1320px;
       margin:0 auto;
       padding:18px 24px 16px;
       display:flex;
+      align-items:center;
       justify-content:space-between;
-      align-items:flex-start;
       gap:24px;
     }
 
     .top-left{
       display:flex;
       align-items:center;
-      gap:20px;
-      min-width:0;
+      gap:22px;
       flex:1;
+      min-width:0;
     }
 
     .brand{
@@ -68,113 +63,38 @@
 
     .brand img{
       display:block;
-      height:142px;
+      height:135px;
       width:auto;
-      max-width:520px;
+      max-width:500px;
       object-fit:contain;
     }
 
-    .catalog-highlight-link{
-      position:relative;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      gap:8px;
-      min-width:420px;
-      min-height:116px;
-      padding:18px 26px;
-      text-decoration:none;
-      color:var(--gold-dark);
-      border:1px solid rgba(224,180,90,0.72);
-      background:
-        linear-gradient(135deg, #f8e5b0 0%, #edcb7a 24%, #d6a648 56%, #c9932c 78%, #f4dfad 100%);
-      box-shadow:
-        0 0 0 1px rgba(255,255,255,0.08) inset,
-        0 10px 24px rgba(0,0,0,0.24),
-        0 0 22px rgba(201,162,77,0.18),
-        0 0 46px rgba(201,162,77,0.16);
+    .promo-banner-link{
+      display:block;
+      flex:1;
+      max-width:760px;
+      min-width:360px;
       overflow:hidden;
-      flex-shrink:0;
-      transition:transform .25s ease, box-shadow .25s ease;
-      animation:catalogPulse 2.4s ease-in-out infinite;
-    }
-
-    .catalog-highlight-link::before{
-      content:"";
-      position:absolute;
-      top:-120%;
-      left:-32%;
-      width:28%;
-      height:340%;
-      background:linear-gradient(
-        90deg,
-        rgba(255,255,255,0) 0%,
-        rgba(255,255,255,0.14) 45%,
-        rgba(255,255,255,0.70) 50%,
-        rgba(255,255,255,0.12) 55%,
-        rgba(255,255,255,0) 100%
-      );
-      transform:rotate(18deg);
-      animation:catalogShine 3.2s linear infinite;
-      pointer-events:none;
-    }
-
-    .catalog-highlight-link::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(to bottom, rgba(255,255,255,0.10), rgba(255,255,255,0));
-      pointer-events:none;
-    }
-
-    .catalog-highlight-link:hover{
-      transform:translateY(-2px) scale(1.015);
+      border:1px solid rgba(201,162,77,0.45);
       box-shadow:
-        0 0 0 1px rgba(255,255,255,0.10) inset,
-        0 14px 30px rgba(0,0,0,0.28),
-        0 0 30px rgba(201,162,77,0.28),
-        0 0 58px rgba(201,162,77,0.20);
+        0 0 24px rgba(201,162,77,0.18),
+        0 12px 34px rgba(0,0,0,0.35);
+      transition:transform .25s ease, box-shadow .25s ease;
     }
 
-    .catalog-kicker{
-      position:relative;
-      z-index:1;
-      font-size:0.72rem;
-      font-weight:800;
-      text-transform:uppercase;
-      letter-spacing:1.8px;
-      color:rgba(43,29,4,0.80);
+    .promo-banner-link:hover{
+      transform:translateY(-2px);
+      box-shadow:
+        0 0 34px rgba(201,162,77,0.30),
+        0 16px 42px rgba(0,0,0,0.45);
     }
 
-    .catalog-top{
-      position:relative;
-      z-index:1;
-      font-size:1.2rem;
-      font-weight:900;
-      text-transform:uppercase;
-      letter-spacing:1px;
-      line-height:1;
-      white-space:nowrap;
-    }
-
-    .catalog-bottom{
-      position:relative;
-      z-index:1;
-      font-size:0.84rem;
-      line-height:1.35;
-      color:rgba(43,29,4,0.90);
-      font-weight:700;
-    }
-
-    .catalog-cta{
-      position:relative;
-      z-index:1;
-      margin-top:2px;
-      font-size:0.74rem;
-      font-weight:900;
-      text-transform:uppercase;
-      letter-spacing:1.2px;
-      color:rgba(43,29,4,0.92);
+    .promo-banner-link img{
+      display:block;
+      width:100%;
+      height:118px;
+      object-fit:cover;
+      object-position:center;
     }
 
     .top-right{
@@ -206,10 +126,7 @@
       border-color:rgba(255,255,255,0.24);
     }
 
-    .lang-flag{
-      font-size:1rem;
-      line-height:1;
-    }
+    .lang-flag{font-size:1rem; line-height:1;}
 
     .lang-current{
       white-space:nowrap;
@@ -257,9 +174,7 @@
       border-bottom:1px solid rgba(255,255,255,0.06);
     }
 
-    .lang-option:last-child{
-      border-bottom:none;
-    }
+    .lang-option:last-child{border-bottom:none;}
 
     .lang-option:hover{
       background:rgba(255,255,255,0.07);
@@ -304,9 +219,7 @@
       transition:0.25s;
     }
 
-    .nav-links a:hover::after{
-      width:100%;
-    }
+    .nav-links a:hover::after{width:100%;}
 
     .hero{
       min-height:100vh;
@@ -315,7 +228,7 @@
       justify-content:center;
       position:relative;
       overflow:hidden;
-      padding:300px 20px 50px;
+      padding:270px 20px 50px;
     }
 
     .hero::before{
@@ -540,58 +453,21 @@
       100%{transform:scale(1);}
     }
 
-    @keyframes catalogPulse{
-      0%{
-        box-shadow:
-          0 0 0 1px rgba(255,255,255,0.06) inset,
-          0 0 18px rgba(201,162,77,0.18),
-          0 0 34px rgba(201,162,77,0.12);
-      }
-      50%{
-        box-shadow:
-          0 0 0 1px rgba(255,255,255,0.09) inset,
-          0 0 32px rgba(201,162,77,0.36),
-          0 0 64px rgba(201,162,77,0.22);
-      }
-      100%{
-        box-shadow:
-          0 0 0 1px rgba(255,255,255,0.06) inset,
-          0 0 18px rgba(201,162,77,0.18),
-          0 0 34px rgba(201,162,77,0.12);
-      }
-    }
-
-    @keyframes catalogShine{
-      0%{
-        left:-40%;
-      }
-      100%{
-        left:130%;
-      }
-    }
-
-    @media (max-width: 1200px){
-      .top-nav-inner{
-        gap:18px;
-      }
-
+    @media (max-width: 1100px){
       .brand img{
-        height:136px;
-        max-width:470px;
+        height:115px;
       }
 
-      .catalog-highlight-link{
-        min-width:320px;
-        min-height:98px;
-        padding:16px 22px;
+      .promo-banner-link img{
+        height:104px;
       }
 
-      .catalog-top{
-        font-size:0.98rem;
+      .promo-banner-link{
+        min-width:300px;
       }
 
-      .catalog-bottom{
-        font-size:0.79rem;
+      .hero{
+        padding-top:245px;
       }
     }
 
@@ -602,31 +478,16 @@
       }
 
       .top-nav-inner{
-        padding:16px 18px 14px;
-        gap:14px;
-      }
-
-      .top-left{
-        gap:14px;
+        padding:14px 18px 12px;
       }
 
       .brand img{
-        height:112px;
-        max-width:340px;
+        height:95px;
+        max-width:300px;
       }
 
-      .catalog-highlight-link{
-        min-width:250px;
-        min-height:88px;
-        padding:14px 18px;
-      }
-
-      .catalog-top{
-        font-size:0.88rem;
-      }
-
-      .catalog-bottom{
-        font-size:0.72rem;
+      .promo-banner-link img{
+        height:90px;
       }
 
       .nav-links{
@@ -635,60 +496,79 @@
       }
 
       .hero{
-        padding-top:290px;
+        padding-top:230px;
       }
     }
 
     @media (max-width: 640px){
       .top-nav-inner{
-        padding:14px 16px 12px;
-        gap:12px;
-        align-items:flex-start;
+        padding:12px 12px 10px;
+        gap:10px;
       }
 
       .top-left{
         gap:10px;
-        flex:1;
-        min-width:0;
       }
 
       .brand img{
-        height:95px;
-        max-width:250px;
+        height:72px;
+        max-width:165px;
       }
 
-      .catalog-highlight-link{
-        min-width:180px;
-        min-height:78px;
-        padding:12px 14px;
+      .promo-banner-link{
+        min-width:0;
+        max-width:none;
       }
 
-      .catalog-top{
-        font-size:0.74rem;
-        letter-spacing:0.8px;
-      }
-
-      .catalog-bottom{
-        font-size:0.62rem;
-        line-height:1.3;
+      .promo-banner-link img{
+        height:68px;
       }
 
       .lang-toggle{
-        padding:9px 12px;
-        font-size:0.84rem;
+        padding:8px 10px;
+        font-size:0.78rem;
+      }
+
+      .lang-current{
+        display:none;
       }
 
       .nav-links{
-        gap:16px;
-        padding:14px 16px;
+        gap:14px;
+        padding:12px 10px;
       }
 
       .nav-links a{
-        font-size:0.9rem;
+        font-size:0.84rem;
       }
 
       .hero{
-        padding-top:275px;
+        padding-top:205px;
+      }
+    }
+
+    @media (max-width: 520px){
+      .top-nav-inner{
+        align-items:center;
+      }
+
+      .brand img{
+        height:62px;
+        max-width:135px;
+      }
+
+      .promo-banner-link img{
+        height:60px;
+      }
+
+      .top-right{
+        position:absolute;
+        top:8px;
+        right:8px;
+      }
+
+      .hero{
+        padding-top:205px;
       }
     }
 
@@ -705,48 +585,6 @@
         height:27px;
       }
     }
-
-    @media (max-width: 520px){
-      .top-nav-inner{
-        justify-content:space-between;
-        align-items:flex-start;
-      }
-
-      .top-left{
-        width:100%;
-        justify-content:flex-start;
-        padding-right:8px;
-      }
-
-      .top-right{
-        position:absolute;
-        top:14px;
-        right:16px;
-      }
-
-      .brand img{
-        height:82px;
-        max-width:210px;
-      }
-
-      .catalog-highlight-link{
-        min-width:150px;
-        min-height:72px;
-        padding:10px 12px;
-      }
-
-      .catalog-top{
-        font-size:0.67rem;
-      }
-
-      .catalog-bottom{
-        font-size:0.56rem;
-      }
-
-      .hero{
-        padding-top:260px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -758,9 +596,8 @@
           <img src="photoindex/logo-cal.png" alt="Logo Atelier CAL">
         </a>
 
-        <a href="/modeles.html" class="catalog-highlight-link" aria-label="Voir le nouveau catalogue">
-          <span class="catalog-top">Nouveau catalogue</span>
-          <span class="catalog-bottom">Collection abeille · Collection chocolatier nougatine</span>
+        <a href="/collection.html" class="promo-banner-link" aria-label="Découvrir le nouveau catalogue Atelier CAL">
+          <img src="photoindex/banierepub1.png" alt="Nouveau catalogue Atelier CAL">
         </a>
       </div>
 
@@ -773,22 +610,10 @@
           </button>
 
           <div class="lang-menu">
-            <a href="/index.html" class="lang-option active">
-              <span>🇫🇷</span>
-              <span>Français</span>
-            </a>
-            <a href="/de/index.html" class="lang-option">
-              <span>🇩🇪</span>
-              <span>Deutsch</span>
-            </a>
-            <a href="/es/index.html" class="lang-option">
-              <span>🇪🇸</span>
-              <span>Español</span>
-            </a>
-            <a href="/it/index.html" class="lang-option">
-              <span>🇮🇹</span>
-              <span>Italiano</span>
-            </a>
+            <a href="/index.html" class="lang-option active"><span>🇫🇷</span><span>Français</span></a>
+            <a href="/de/index.html" class="lang-option"><span>🇩🇪</span><span>Deutsch</span></a>
+            <a href="/es/index.html" class="lang-option"><span>🇪🇸</span><span>Español</span></a>
+            <a href="/it/index.html" class="lang-option"><span>🇮🇹</span><span>Italiano</span></a>
           </div>
         </div>
       </div>
