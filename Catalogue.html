@@ -1,23 +1,86 @@
-<a class="btn-download" href="atelier-cal-src-serie-1.pdf" download>
-  📄 Télécharger le catalogue Atelier CAL
-</a>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalogue Atelier CAL</title>
 
-<style>
-.btn-download {
-  display: inline-block;
-  padding: 16px 28px;
-  background: linear-gradient(135deg, #b8873b, #d4af37);
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 10px;
-  font-size: 18px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  transition: 0.3s;
-}
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #fffaf0, #f3e3c0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 25px;
+      box-sizing: border-box;
+    }
 
-.btn-download:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-}
-</style>
+    .box {
+      max-width: 720px;
+      width: 100%;
+      background: white;
+      padding: 40px 25px;
+      border-radius: 24px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.18);
+    }
+
+    h1 {
+      font-size: clamp(30px, 6vw, 56px);
+      margin: 0 0 15px;
+      color: #2b1b0f;
+    }
+
+    p {
+      font-size: clamp(17px, 3vw, 24px);
+      color: #5b4a35;
+      margin-bottom: 30px;
+      line-height: 1.4;
+    }
+
+    .btn-download {
+      display: block;
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 22px 26px;
+      background: linear-gradient(135deg, #b8873b, #d4af37);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 14px;
+      font-size: clamp(20px, 4vw, 28px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+      box-sizing: border-box;
+    }
+
+    .info {
+      margin-top: 25px;
+      font-size: 16px;
+      color: #7a6a55;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <h1>Catalogue Atelier CAL</h1>
+
+    <p>
+      Découvrez nos machines de confiserie professionnelles,
+      nos modèles disponibles et nos offres.
+    </p>
+
+    <a class="btn-download" href="atelier-cal-src-serie-1.pdf" download>
+      📄 Télécharger le catalogue PDF
+    </a>
+
+    <div class="info">
+      TVA à 0 % — article 293 B du CGI
+    </div>
+  </div>
+</body>
+</html>
