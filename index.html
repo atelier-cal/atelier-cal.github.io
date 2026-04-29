@@ -60,6 +60,27 @@
       object-fit:contain;
     }
 
+    .header-entete{
+      flex:1;
+      height:115px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      min-width:0;
+      border:1px solid rgba(201,162,77,0.18);
+      background:#000;
+      box-shadow:0 0 22px rgba(201,162,77,0.10);
+    }
+
+    .header-entete img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      display:block;
+    }
+
     .top-right{
       display:flex;
       align-items:flex-start;
@@ -456,6 +477,10 @@
         max-width:280px;
       }
 
+      .header-entete{
+        height:90px;
+      }
+
       .promo-section{
         padding-top:175px;
       }
@@ -474,6 +499,10 @@
       .brand img{
         height:68px;
         max-width:170px;
+      }
+
+      .header-entete{
+        display:none;
       }
 
       .lang-toggle{
@@ -525,6 +554,10 @@
       <a href="/index.html" class="brand" aria-label="Atelier CAL">
         <img src="photoindex/logo-cal.png" alt="Logo Atelier CAL">
       </a>
+
+      <div class="header-entete">
+        <img src="photoindex/entete.png" alt="Bâti à cylindre SRC Série - Conception française">
+      </div>
 
       <div class="top-right">
         <div class="lang-dropdown">
