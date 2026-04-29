@@ -55,6 +55,12 @@
       font-size: clamp(20px, 4vw, 28px);
       box-shadow: 0 8px 25px rgba(0,0,0,0.25);
       box-sizing: border-box;
+      transition: 0.3s;
+    }
+
+    .btn-download:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
     }
 
     .info {
@@ -70,11 +76,12 @@
     <h1>Catalogue Atelier CAL</h1>
 
     <p>
-      Découvrez nos machines de confiserie professionnelles,
+      📘 Découvrez nos machines de confiserie professionnelles,<br>
       nos modèles disponibles et nos offres.
     </p>
 
-    <a class="btn-download" href="atelier-cal-src-serie-1.pdf" download>
+    <!-- ✅ BON LIEN -->
+    <a class="btn-download" href="https://atelier-cal.fr/pdf/catalogue.pdf" target="_blank">
       📄 Télécharger le catalogue PDF
     </a>
 
