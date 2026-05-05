@@ -772,7 +772,7 @@
         Demande de devis
       </div>
 
-      <form action="https://formspree.io/f/xojaqvav" method="POST">
+      <form id="devisForm" action="https://formspree.io/f/xojaqvav" method="POST">
         <input type="hidden" name="page" value="modeles">
         <input type="hidden" name="source" value="Demander un devis">
 
@@ -979,6 +979,52 @@
           if (firstInput) firstInput.focus({ preventScroll: true });
         }, 400);
       }, true);
+    });
+  })();
+
+  // ✅ Envoi Formspree gratuit + redirection vers la page Catalogue
+  (function () {
+    const devisForm = document.getElementById('devisForm');
+    if (!devisForm) return;
+
+    devisForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const data = new FormData(form);
+      const submitButton = form.querySelector('button[type="submit"]');
+      const originalText = submitButton ? submitButton.textContent : '';
+
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Envoi...';
+      }
+
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          window.location.href = 'https://atelier-cal.fr/Catalogue';
+        } else {
+          alert('Une erreur est survenue. Vous pouvez nous contacter directement à contact@atelier-cal.fr');
+          if (submitButton) {
+            submitButton.disabled = false;
+            submitButton.textContent = originalText;
+          }
+        }
+      } catch (error) {
+        alert('Erreur de connexion. Merci de réessayer ou de nous contacter directement.');
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = originalText;
+        }
+      }
     });
   })();
 
