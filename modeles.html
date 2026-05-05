@@ -36,11 +36,11 @@
   <meta name="author" content="Atelier CAL" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- viewer 3D (model-viewer) -->
+  <!-- Viewer 3D -->
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
   <style>
-:root{
+    :root{
       --text: rgba(255,255,255,0.92);
       --muted: rgba(255,255,255,0.75);
       --line: rgba(255,255,255,0.18);
@@ -49,6 +49,10 @@
     }
 
     *{ box-sizing:border-box; }
+
+    html{
+      scroll-behavior: smooth;
+    }
 
     body{
       margin:0;
@@ -96,6 +100,7 @@
       transition: all .25s ease;
       cursor: pointer;
     }
+
     .btn:hover{
       background:#fff;
       color:#000;
@@ -155,7 +160,6 @@
       text-transform: uppercase;
     }
 
-    /* === ligne TAG + bulle (remplace Acheter) === */
     .tag-row{
       margin-top: 10px;
       display: flex;
@@ -163,9 +167,9 @@
       justify-content: space-between;
       gap: 12px;
     }
+
     .tag-row .tag{ margin-top: 0; }
 
-    /* ====== bulle message animée ====== */
     .buy-pill{
       width: 40px;
       height: 40px;
@@ -183,12 +187,14 @@
       transition: background .18s ease, transform .18s ease, box-shadow .18s ease;
       animation: contactPulse 1.8s ease-in-out infinite;
     }
+
     .buy-pill:hover{
       background: rgba(255,255,255,0.12);
       transform: translateY(-1px);
       box-shadow: 0 0 20px rgba(255,255,255,0.12);
       animation: none;
     }
+
     .buy-pill svg{
       width: 18px;
       height: 18px;
@@ -199,6 +205,7 @@
       stroke-linejoin: round;
       opacity: .95;
     }
+
     @keyframes contactPulse{
       0%   { transform: scale(1);   box-shadow: 0 0 0 rgba(255,255,255,0.00); }
       50%  { transform: scale(1.08); box-shadow: 0 0 18px rgba(255,255,255,0.12); }
@@ -213,13 +220,54 @@
       text-align:center;
       color: var(--muted);
     }
+
     .contact a{
       color: rgba(255,255,255,0.92);
       text-decoration:none;
       border-bottom: 1px dotted rgba(255,255,255,0.25);
     }
+
     .contact a:hover{
       border-bottom-color: rgba(255,255,255,0.55);
+    }
+
+    .form-title{
+      text-align:center;
+      font-weight:700;
+      color:rgba(255,255,255,0.92);
+      margin-bottom:10px;
+      font-size: 1.05rem;
+      line-height: 1.4;
+    }
+
+    .form-field{
+      margin-bottom:10px;
+    }
+
+    .form-field label{
+      color: rgba(255,255,255,0.82);
+      font-size: .95rem;
+    }
+
+    .form-control{
+      width:100%;
+      padding:10px;
+      margin-top:6px;
+      background:#0f0f0f;
+      border:1px solid rgba(255,255,255,0.22);
+      color:#fff;
+      outline:none;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .form-control:focus{
+      border-color: rgba(255,255,255,0.55);
+      box-shadow: 0 0 0 3px rgba(255,255,255,0.06);
+    }
+
+    textarea.form-control{
+      resize:vertical;
+      min-height: 110px;
     }
 
     footer{
@@ -232,12 +280,12 @@
     @media (max-width: 920px){
       .grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
+
     @media (max-width: 560px){
       header{ padding-top: 50px; }
       .grid{ grid-template-columns: 1fr; }
     }
 
-    /* ===== BADGE 3D PREMIUM (FIABLE) ===== */
     .img-wrap.has-3d{
       cursor: pointer;
     }
@@ -260,7 +308,6 @@
       backdrop-filter: blur(6px);
       pointer-events: none;
       z-index: 5;
-
       opacity: 0;
       transform: translateY(6px);
       transition: opacity .18s ease, transform .18s ease, box-shadow .18s ease;
@@ -299,7 +346,6 @@
       animation: pulse3d .85s ease-out 1;
     }
 
-    /* ===== MODAL 3D ===== */
     .viewer3d-overlay{
       position: fixed;
       inset: 0;
@@ -332,6 +378,7 @@
       cursor: pointer;
       z-index: 2;
     }
+
     .viewer3d-close:hover{
       background:#fff;
       color:#000;
@@ -355,12 +402,12 @@
       pointer-events: none;
     }
 
-    /* ===== STOCK : badge "Stock ⓘ" + tooltip ===== */
     .title-line{
       display:flex;
       align-items:center;
       gap:10px;
     }
+
     .title-line .title{
       margin: 12px 0 6px;
       flex: 0 1 auto;
@@ -449,7 +496,6 @@
       background: linear-gradient(135deg, rgba(255,170,80,0.16), rgba(255,255,255,0.05));
     }
 
-    /* ===== AJOUT : HINT TEXTE SEUL (3D) ===== */
     .drag-hint{
       position:absolute;
       left:50%;
@@ -457,7 +503,6 @@
       transform:translate(-50%,-50%);
       pointer-events:none;
       z-index:4;
-
       font: 700 12px/1.2 Arial, Helvetica, sans-serif;
       letter-spacing:.6px;
       text-transform: uppercase;
@@ -468,10 +513,10 @@
       padding: 8px 12px;
       border-radius: 999px;
       backdrop-filter: blur(6px);
-
       opacity:1;
       transition:opacity .25s ease, transform .25s ease;
     }
+
     .drag-hint.hide{
       opacity:0;
       transform:translate(-50%,-50%) scale(.98);
@@ -484,22 +529,23 @@
       font-size: 12px;
       line-height: 1.35;
     }
-    .stock-note b{ color: rgba(255,255,255,0.82); font-weight: 700; }
+
+    .stock-note b{
+      color: rgba(255,255,255,0.82);
+      font-weight: 700;
+    }
   </style>
 </head>
+
 <body>
 <header>
   <div class="container">
     <h1>Modèles disponibles</h1>
     <div class="stock-note">* <b>Stock</b> : si les stocks n’apparaissent pas, tournez votre téléphone en mode paysage.</div>
 
-    <p class="subtitle"></p>
-
     <div class="top-actions">
       <a class="btn" href="index.html">Retour</a>
-
-      <!-- ✅ MODIF : bouton devis -> scroll vers le formulaire (PC + mobile) -->
-      <a class="btn" href="#devisBox">Demander un devis</a>
+      <a class="btn" href="#devisBox">Demander un devis / catalogue</a>
     </div>
   </div>
 </header>
@@ -508,7 +554,7 @@
   <div class="container">
     <div class="grid">
 
-      <!-- PASTILLE -> 3D -->
+      <!-- PASTILLE -->
       <div class="card">
         <div class="img-wrap has-3d" onclick="open3D('pastille.glb')">
           <img class="img" src="modele-pastille.png" alt="Modèle Pastille">
@@ -520,17 +566,17 @@
             <span>Voir en 3D</span>
           </div>
         </div>
+
         <div class="title-line">
           <div class="title">Pastille</div>
           <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip">2 en stock<br><br>Dispo rapidement</span></span>
         </div>
 
-        <p class="desc">Format standard, passe partout ! .</p>
+        <p class="desc">Format standard, passe-partout.</p>
 
         <div class="tag-row">
           <span class="tag">Standard</span>
-          <a class="buy-pill"
-             href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20Pastille).">
+          <a class="buy-pill" href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20Pastille).">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
               <path d="M7.5 8.5h9M7.5 12h6"/>
@@ -539,7 +585,7 @@
         </div>
       </div>
 
-      <!-- ABEILLE -> 3D -->
+      <!-- ABEILLE -->
       <div class="card">
         <div class="img-wrap has-3d" onclick="open3D('abeille.glb')">
           <img class="img" src="modele-abeille.png" alt="Modèle Abeille">
@@ -551,16 +597,17 @@
             <span>Voir en 3D</span>
           </div>
         </div>
+
         <div class="title-line">
           <div class="title">Abeille (gravée)</div>
-          <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip"> 1 en cour de fabrication <br><br>Disponible sur commande </span></span>
+          <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip">1 en cours de fabrication<br><br>Disponible sur commande</span></span>
         </div>
+
         <p class="desc">Signature “miel”, relief précis, rendu premium.</p>
 
         <div class="tag-row">
           <span class="tag">Signature</span>
-          <a class="buy-pill"
-             href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20Abeille%20grav%C3%A9e).">
+          <a class="buy-pill" href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20Abeille%20grav%C3%A9e).">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
               <path d="M7.5 8.5h9M7.5 12h6"/>
@@ -569,7 +616,7 @@
         </div>
       </div>
 
-      <!-- HEXAGONE -> 3D -->
+      <!-- HEXAGONE -->
       <div class="card">
         <div class="img-wrap has-3d" onclick="open3D('hexagone.glb')">
           <img class="img" src="modèle-hexagone.png" alt="Modèle Hexagone">
@@ -581,16 +628,17 @@
             <span>Voir en 3D</span>
           </div>
         </div>
+
         <div class="title-line">
           <div class="title">Hexagone</div>
-          <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip">0 en stock<br><br>Dispo sur commande </span></span>
+          <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip">0 en stock<br><br>Dispo sur commande</span></span>
         </div>
+
         <p class="desc">Forme hexagonale élégante.</p>
 
         <div class="tag-row">
           <span class="tag">Géométrique</span>
-          <a class="buy-pill"
-             href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20Hexagone).">
+          <a class="buy-pill" href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20Hexagone).">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
               <path d="M7.5 8.5h9M7.5 12h6"/>
@@ -599,7 +647,7 @@
         </div>
       </div>
 
-      <!-- FEUILLE -> 3D -->
+      <!-- FEUILLE -->
       <div class="card">
         <div class="img-wrap has-3d" onclick="open3D('feuille.glb')">
           <img class="img" src="modele-feuille.png" alt="Modèle Feuille">
@@ -611,16 +659,17 @@
             <span>Voir en 3D</span>
           </div>
         </div>
+
         <div class="title-line">
           <div class="title">Feuille</div>
           <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip">1 en stock<br><br>Dispo rapidement</span></span>
         </div>
+
         <p class="desc">Motif naturel et élégant, très bon rendu visuel.</p>
 
         <div class="tag-row">
           <span class="tag">Nature</span>
-          <a class="buy-pill"
-             href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20Feuille).">
+          <a class="buy-pill" href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20Feuille).">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
               <path d="M7.5 8.5h9M7.5 12h6"/>
@@ -629,42 +678,31 @@
         </div>
       </div>
 
-      <!-- CARRE NOUGATINE -->
-<div class="card">
-  <div class="img-wrap">
-    <img class="img" src="modelecarrer.png" alt="Modèle Carré nougatine">
-  </div>
+      <!-- CARRE -->
+      <div class="card">
+        <div class="img-wrap">
+          <img class="img" src="modelecarrer.png" alt="Modèle Carré nougatine">
+        </div>
 
-  <div class="title-line">
-    <div class="title">Carré</div>
-    <span class="stock-badge">
-      Stock
-      <span class="info-dot">i</span>
-      <span class="tooltip">
-        0<br>
-        non disponible<br>
-      </span>
-    </span>
-  </div>
+        <div class="title-line">
+          <div class="title">Carré</div>
+          <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip">0<br>Non disponible</span></span>
+        </div>
 
-  <p class="desc">
-    Format carré plusieur tailles réalisées, idéal pour la nougatine et les confiseries plates
-  </p>
+        <p class="desc">Format carré, plusieurs tailles réalisées, idéal pour la nougatine et les confiseries plates.</p>
 
-  <div class="tag-row">
-    <span class="tag">Nougatine</span>
-    <a class="buy-pill"
-       href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20Carr%C3%A9).">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
-        <path d="M7.5 8.5h9M7.5 12h6"/>
-      </svg>
-    </a>
-  </div>
-</div>
+        <div class="tag-row">
+          <span class="tag">Nougatine</span>
+          <a class="buy-pill" href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20Carr%C3%A9).">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
+              <path d="M7.5 8.5h9M7.5 12h6"/>
+            </svg>
+          </a>
+        </div>
+      </div>
 
-
-      <!-- PERSONNALISATION -> 3D -->
+      <!-- PERSONNALISATION -->
       <div class="card">
         <div class="img-wrap has-3d" onclick="open3D('surmesure.glb')">
           <img class="img" src="Modele-personnalise.png" alt="Modèle personnalisable">
@@ -676,12 +714,13 @@
             <span>Voir en 3D</span>
           </div>
         </div>
+
         <div class="title">Personnalisation</div>
         <p class="desc">Logo, motif, format sur demande. Étude rapide et faisabilité selon recette.</p>
         <span class="tag">Sur mesure</span>
       </div>
 
-      <!-- OEUF -> 3D -->
+      <!-- OEUF -->
       <div class="card">
         <div class="img-wrap has-3d" onclick="open3D('oeuf.glb')">
           <img class="img" src="modele-oeuf.png" alt="Modèle Œuf">
@@ -693,16 +732,17 @@
             <span>Voir en 3D</span>
           </div>
         </div>
+
         <div class="title-line">
           <div class="title">Œuf</div>
           <span class="stock-badge delay">Stock <span class="info-dot">i</span><span class="tooltip">Stock 0<br>Délai plus long</span></span>
         </div>
+
         <p class="desc">Forme douce et arrondie.</p>
 
         <div class="tag-row">
           <span class="tag">Standard</span>
-          <a class="buy-pill"
-             href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20%C5%92uf).">
+          <a class="buy-pill" href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20%C5%92uf).">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
               <path d="M7.5 8.5h9M7.5 12h6"/>
@@ -711,7 +751,7 @@
         </div>
       </div>
 
-      <!-- OVALE -> 3D -->
+      <!-- OVALE -->
       <div class="card">
         <div class="img-wrap has-3d" onclick="open3D('ovale.glb')">
           <img class="img" src="modele-pastille-ovale.png" alt="Modèle Pastille ovale">
@@ -723,16 +763,17 @@
             <span>Voir en 3D</span>
           </div>
         </div>
+
         <div class="title-line">
           <div class="title">Pastille ovale</div>
           <span class="stock-badge delay">Stock <span class="info-dot">i</span><span class="tooltip">Stock 0<br>Délai plus long</span></span>
         </div>
+
         <p class="desc">Format élégant et allongé, excellente lisibilité des gravures.</p>
 
         <div class="tag-row">
           <span class="tag">Standard</span>
-          <a class="buy-pill"
-             href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20Pastille%20ovale).">
+          <a class="buy-pill" href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20Pastille%20ovale).">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
               <path d="M7.5 8.5h9M7.5 12h6"/>
@@ -741,21 +782,22 @@
         </div>
       </div>
 
-      <!-- PERLE (EN DERNIER) -->
+      <!-- PERLE -->
       <div class="card">
         <div class="img-wrap">
           <img class="img" src="modele-perle.png" alt="Modèle Perle 15 mm">
         </div>
+
         <div class="title-line">
           <div class="title">Perle Ø 15 mm</div>
-          <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip">1 disponibles<br> <br>Dispo rapidement</span></span>
+          <span class="stock-badge">Stock <span class="info-dot">i</span><span class="tooltip">1 disponible<br><br>Dispo rapidement</span></span>
         </div>
+
         <p class="desc">Forme polyvalente, démoulage propre, idéale pour bonbons en sucre cuit.</p>
 
         <div class="tag-row">
           <span class="tag">Standard</span>
-          <a class="buy-pill"
-             href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20Perle%2015%20mm).">
+          <a class="buy-pill" href="sms:+33677845435?&body=Bonjour%20Stevens%2C%20je%20souhaite%20un%20devis%20pour%20le%20b%C3%A2ti%20%C3%A0%20cylindres%20SRC%20(mod%C3%A8le%20%3A%20Perle%2015%20mm).">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
               <path d="M7.5 8.5h9M7.5 12h6"/>
@@ -766,46 +808,45 @@
 
     </div>
 
-    <!-- ✅ FORMULAIRE DEVIS (Formspree) : visible + pro -->
+    <!-- FORMULAIRE DEVIS / CATALOGUE -->
     <div id="devisBox" class="contact" style="text-align:left;">
-      <div style="text-align:center; font-weight:700; color:rgba(255,255,255,0.92); margin-bottom:10px;">
-        Demande de devis
+      <div class="form-title">
+        Demander un devis ou télécharger notre catalogue tarifaire
       </div>
 
       <form action="https://formspree.io/f/xojaqvav" method="POST">
+        <!-- Redirection automatique après envoi Formspree -->
+        <input type="hidden" name="_redirect" value="https://atelier-cal.fr/catalogue.html">
+
         <input type="hidden" name="page" value="modeles">
-        <input type="hidden" name="source" value="Demander un devis">
+        <input type="hidden" name="source" value="Demander un devis ou télécharger le catalogue tarifaire">
 
-        <div style="margin-bottom:10px;">
-          <label>Nom / Entreprise</label><br>
-          <input required name="nom"
-            style="width:100%;padding:10px;margin-top:6px;background:#0f0f0f;border:1px solid rgba(255,255,255,0.22);color:#fff;outline:none;">
+        <div class="form-field">
+          <label for="nom">Nom / Entreprise</label><br>
+          <input id="nom" class="form-control" required name="nom" autocomplete="name">
         </div>
 
-        <div style="margin-bottom:10px;">
-          <label>Email</label><br>
-          <input required type="email" name="email"
-            style="width:100%;padding:10px;margin-top:6px;background:#0f0f0f;border:1px solid rgba(255,255,255,0.22);color:#fff;outline:none;">
+        <div class="form-field">
+          <label for="email">Email</label><br>
+          <input id="email" class="form-control" required type="email" name="email" autocomplete="email">
         </div>
 
-        <div style="margin-bottom:10px;">
-          <label>Téléphone (optionnel)</label><br>
-          <input name="telephone"
-            style="width:100%;padding:10px;margin-top:6px;background:#0f0f0f;border:1px solid rgba(255,255,255,0.22);color:#fff;outline:none;">
+        <div class="form-field">
+          <label for="telephone">Téléphone (optionnel)</label><br>
+          <input id="telephone" class="form-control" name="telephone" autocomplete="tel">
         </div>
 
-        <div style="margin-bottom:12px;">
-          <label>Votre demande</label><br>
-          <textarea name="message" rows="4"
-            style="width:100%;padding:10px;margin-top:6px;background:#0f0f0f;border:1px solid rgba(255,255,255,0.22);color:#fff;outline:none;resize:vertical;"></textarea>
+        <div class="form-field">
+          <label for="message">Votre demande</label><br>
+          <textarea id="message" class="form-control" name="message" rows="4"></textarea>
         </div>
 
         <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
-          <button class="btn" type="submit">Envoyer</button>
+          <button class="btn" type="submit">Envoyer et accéder au catalogue</button>
         </div>
       </form>
     </div>
-    <!-- ✅ FIN FORMULAIRE -->
+    <!-- FIN FORMULAIRE -->
 
     <div id="contact" class="contact">
       Contact : <a href="mailto:contact@atelier-cal.fr">contact@atelier-cal.fr</a> ·
@@ -822,9 +863,7 @@
     <button class="viewer3d-close" onclick="close3D(null, true)">✕</button>
     <div class="recenter-hint">⌖</div>
 
-    <!-- AJOUT : texte hint -->
-    <div id="dragHint" class="drag-hint">Bouger avec le doight</div>
-    <!-- FIN AJOUT -->
+    <div id="dragHint" class="drag-hint">Bouger avec le doigt</div>
 
     <model-viewer
       id="model3d"
@@ -855,11 +894,14 @@
     hint.style.display = 'block';
     hint.classList.remove('hide');
   }
+
   function hideDragHint(){
     const hint = document.getElementById('dragHint');
     if(!hint) return;
     hint.classList.add('hide');
-    setTimeout(()=>{ if(hint) hint.style.display='none'; }, 260);
+    setTimeout(() => {
+      if(hint) hint.style.display='none';
+    }, 260);
   }
 
   function open3D(glbPath){
@@ -887,6 +929,7 @@
         model.autoRotate = true;
         model.removeEventListener('load', onLoad);
       };
+
       model.addEventListener('load', onLoad);
     });
   }
@@ -944,14 +987,14 @@
   (function(){
     const model = document.getElementById('model3d');
     if(!model) return;
-    ['pointerdown','touchstart','mousedown','wheel'].forEach(evt=>{
+
+    ['pointerdown','touchstart','mousedown','wheel'].forEach(evt => {
       model.addEventListener(evt, hideDragHint, { passive:true });
     });
   })();
 
-
-  // ✅ PC: clic sur les boutons "message" (liens sms:) -> scroll vers le formulaire devis
-  // ✅ Mobile: on laisse le lien sms: ouvrir l'app SMS
+  // PC : clic sur les boutons message -> scroll vers le formulaire devis
+  // Mobile : on laisse le lien SMS ouvrir l'application SMS
   (function () {
     const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
     if (isMobile) return;
@@ -969,7 +1012,6 @@
 
         devisBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-        // Focus sur le premier champ du formulaire (si présent)
         setTimeout(() => {
           const firstInput =
             devisBox.querySelector('input[name="nom"]') ||
@@ -982,6 +1024,24 @@
     });
   })();
 
+  // Tracking clic formulaire
+  (function(){
+    const form = document.querySelector('#devisBox form');
+    if(!form) return;
+
+    form.addEventListener('submit', function(){
+      if (typeof fbq === 'function') {
+        fbq('track', 'Lead');
+      }
+
+      if (typeof gtag === 'function') {
+        gtag('event', 'generate_lead', {
+          event_category: 'formulaire',
+          event_label: 'demande_devis_catalogue'
+        });
+      }
+    });
+  })();
 </script>
 </body>
 </html>
