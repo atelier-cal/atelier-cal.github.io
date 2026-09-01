@@ -1,819 +1,239 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <!DOCTYPE html>
-<html lang="fr">
-<head>
-  <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-K4502PGZ0X"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-K4502PGZ0X');
-</script>
-  
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2222911094866542');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2222911094866542&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-
-  <meta charset="UTF-8" />
-  <title>Machine de confiserie professionnelle – Bâti à cylindres | Atelier CAL</title>
-
-  <meta name="google-site-verification" content="A0dojKL5m35FOtxZXnqt33BbuTEnXFRBVb-cTb6grEY" />
-  <meta name="description" content="Atelier CAL conçoit et fabrique des machines professionnelles pour la confiserie : bâti à cylindres motorisé pour bonbons en sucre cuit, nougatine et miel. Conception française." />
-  <meta name="keywords" content="machine confiserie, machine bonbon, bâti à cylindres, machine nougatine, machine bonbon miel, confiseur professionnel" />
-  <meta name="author" content="Atelier CAL" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <style>
-    :root{
-      --text: rgba(255,255,255,0.92);
-      --muted: rgba(255,255,255,0.75);
-      --line: rgba(255,255,255,0.18);
-      --card: rgba(255,255,255,0.04);
-      --accent: #c9a24d;
-      --speed: 20s;
-    }
-
-    body{
-      margin:0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background: radial-gradient(circle at top, #1c1c1c 0%, #0b0b0b 45%, #000 100%);
-    }
-
-    /* ================= BANNIÈRE DÉFILANTE ================= */
-    .top-banner{
-      height: 48px;
-      overflow: hidden;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      background:#0f1115;
-      position: relative;
-    }
-
-    .banner-track{
-      display: flex;
-      align-items: center;
-      width: max-content;
-      height: 100%;
-      animation: marquee var(--speed) linear infinite;
-      gap: 32px;
-      padding-left: 20px;
-    }
-
-    .banner-clone{
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      white-space: nowrap;
-    }
-
-    .banner-text{
-      color: var(--accent);
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.3px;
-    }
-
-    .banner-candies{
-      display: flex;
-      gap: 16px;
-      align-items: center;
-    }
-
-    .candy{
-      width: calc(36px * 1.8);
-      height: calc(36px * 1.8);
-      object-fit: contain;
-      animation: spin linear infinite;
-      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.45));
-    }
-
-    .c1{ animation-duration: 2s; }
-    .c2{ animation-duration: 2.6s; }
-    .c3{ animation-duration: 2.2s; }
-    .c4{ animation-duration: 3s; }
-    .c5{ animation-duration: 2.4s; }
-
-    @keyframes spin{
-      from{ transform: rotate(0deg); }
-      to{ transform: rotate(360deg); }
-    }
-
-    @keyframes marquee{
-      from{ transform: translateX(0); }
-      to{ transform: translateX(-50%); }
-    }
-
-    /* ================= CONTENU ================= */
-    .container{
-      width: min(1120px, 92vw);
-      margin: 0 auto;
-    }
-
-    header{
-      padding: 92px 0 34px;
-      text-align:center;
-    }
-
-    .logo{
-      width: 320px;
-      max-width: 90%;
-      margin-bottom: 18px;
-    }
-
-    nav a{
-      color: rgba(255,255,255,0.85);
-      text-decoration: none;
-      margin: 0 8px;
-      font-size: 0.9rem;
-    }
-
-    nav a:hover{ text-decoration: underline; }
-
-    /* ===== AJOUT PREMIUM : lien discret + badge ===== */
-    nav a.nav-partner{
-      opacity: 0.82;
-      font-size: 0.92rem;
-    }
-    nav a.nav-partner:hover{
-      opacity: 1;
-    }
-
-    .nav-badge{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      margin-left:10px;
-      padding: 3px 8px;
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .2px;
-      color: rgba(255,255,255,0.88);
-      border: 1px solid rgba(201,162,77,0.35);
-      background: linear-gradient(135deg, rgba(201,162,77,0.16), rgba(255,255,255,0.06));
-      box-shadow: 0 10px 26px rgba(0,0,0,0.35);
-      vertical-align: middle;
-    }
-
-    .pulse-dot{
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95), rgba(201,162,77,0.85) 55%, rgba(201,162,77,0.25) 75%);
-      box-shadow: 0 0 0 0 rgba(201,162,77,0.35);
-      animation: pulseSoft 2.2s ease-in-out infinite;
-      flex: 0 0 auto;
-    }
-
-    @keyframes pulseSoft{
-      0%   { transform: scale(1);    box-shadow: 0 0 0 0 rgba(201,162,77,0.35); }
-      55%  { transform: scale(1.10); box-shadow: 0 0 0 8px rgba(201,162,77,0.00); }
-      100% { transform: scale(1);    box-shadow: 0 0 0 0 rgba(201,162,77,0.00); }
-    }
-
-    @media (prefers-reduced-motion: reduce){
-      .pulse-dot{ animation: none; }
-      .banner-track{ animation: none; }
-      .candy{ animation: none; }
-    }
-    /* ===== fin ajout badge ===== */
-
-    h1{
-      margin:14px 0 12px;
-      font-size: clamp(2.2rem, 4vw, 3.2rem);
-    }
-
-    .subtitle{
-      max-width: 920px;
-      margin: 0 auto;
-      color: var(--muted);
-      line-height: 1.65;
-    }
-
-    section{
-      padding: 58px 0;
-      text-align:center;
-    }
-
-    .block{
-      margin: 22px auto 0;
-      padding: 26px 22px;
-      background: var(--card);
-      border: 1px solid var(--line);
-    }
-
-    .hero-video{
-      width: 100%;
-      max-width: 1000px;
-      aspect-ratio: 16/9;
-      margin-bottom: 18px;
-      border: 1px solid rgba(255,255,255,0.18);
-      background:#000;
-    }
-
-    .cta{
-      display:inline-block;
-      padding: 16px 44px;
-      border: 1px solid rgba(255,255,255,0.28);
-      color:#fff;
-      text-decoration:none;
-      margin: 8px;
-      text-transform: uppercase;
-    }
-
-    footer{
-      padding: 28px 0 38px;
-      text-align:center;
-      color: rgba(255,255,255,0.55);
-    }
-
-    /* Couleur email et téléphone */
-    a[href^="mailto"],
-    a[href^="tel"]{
-      color: rgba(255,255,255,0.65);
-      text-decoration: none;
-    }
-
-    a[href^="mailto"]:hover,
-    a[href^="tel"]:hover{
-      color: rgba(255,255,255,0.9);
-    }
-  </style>
-</head>
-
-  <title>Simulateur de rentabilité – Atelier CAL</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simulateur de rentabilité | Atelier CAL</title>
+  <meta name="description" content="Estimez le chiffre d’affaires, la marge mensuelle et le temps d’amortissement de votre machine Atelier CAL.">
+  <link rel="canonical" href="https://atelier-cal.fr/calculer.html">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+  <link rel="stylesheet" href="/assets/premium-pages.css">
   <style>
-    :root{
-      --text: rgba(255,255,255,0.92);
-      --muted: rgba(255,255,255,0.75);
-      --line: rgba(255,255,255,0.18);
-      --card: rgba(255,255,255,0.04);
-      --accent: #c9a24d;
-    }
-
-    *{ box-sizing:border-box; }
-
-    body{
-      margin:0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background: radial-gradient(circle at top, #1c1c1c 0%, #0b0b0b 45%, #000 100%);
-    }
-
-    .container{
-      width: min(1120px, 92vw);
-      margin: 0 auto;
-      padding: 26px 0 60px;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:12px 14px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,0.18);
-      background: rgba(255,255,255,0.06);
-      color: var(--text);
-      text-decoration:none;
-      font-weight:700;
-    }
-
-    h1{ margin:14px 0 8px; }
-
-    .panel{
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 18px;
-    }
-
-    .row{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-bottom: 10px;
-    }
-    .row > div{ flex:1 1 220px; }
-
-    label{
-      display:block;
-      margin-bottom:6px;
-      font-weight:700;
-      color: var(--muted);
-    }
-
-    input[type="number"], select{
-      width:100%;
-      padding:12px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,0.16);
-      background: rgba(0,0,0,0.35);
-      color: var(--text);
-      outline:none;
-    }
-
-    /* ===== GRID (PC) ===== */
-    .grid{
-      display:grid;
-      grid-template-columns: 1.3fr 1fr 1fr 1fr;
-      gap:10px;
-      margin-top:14px;
-      align-items:center;
-    }
-
-    .head{ font-weight:800; color:var(--muted); }
-    .label{ font-weight:900; }
-
-    /* ===== Field row (mobile labels à droite) ===== */
-    .field-row{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      width:100%;
-      background: rgba(0,0,0,0.18);
-      border:1px solid rgba(255,255,255,0.10);
-      border-radius: 12px;
-      padding: 10px 10px;
-    }
-
-    .field-row input[type="number"]{
-      width: 140px;
-      max-width: 45%;
-      margin:0;
-    }
-
-    .field-label{
-      font-weight:800;
-      color: rgba(255,255,255,0.72);
-      white-space:nowrap;
-      flex: 1;
-    }
-
-    /* PC : on cache les labels à droite (on a déjà les entêtes) */
-    @media(min-width: 861px){
-      .field-label{ display:none; }
-      .field-row{
-        background: transparent;
-        border: 0;
-        padding: 0;
-      }
-      .field-row input[type="number"]{
-        width:100%;
-        max-width: 100%;
-      }
-    }
-
-    /* ===== Slider paquets/mois ===== */
-    .qty-wrap{
-      display:flex;
-      align-items:center;
-      gap: 10px;
-      width:100%;
-    }
-
-    input[type="range"].qty{
-      -webkit-appearance:none;
-      appearance:none;
-      width:100%;
-      height:10px;
-      border-radius:999px;
-      outline:none;
-      background: linear-gradient(to right, var(--accent) 0%, rgba(255,255,255,0.18) 0%);
-      border:1px solid rgba(255,255,255,0.10);
-    }
-
-    input[type="range"].qty::-webkit-slider-thumb{
-      -webkit-appearance:none;
-      appearance:none;
-      width:22px;
-      height:22px;
-      border-radius:50%;
-      background: var(--accent);
-      border: 2px solid rgba(0,0,0,0.35);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.35);
-      cursor:pointer;
-    }
-
-    input[type="range"].qty::-moz-range-thumb{
-      width:22px;
-      height:22px;
-      border-radius:50%;
-      background: var(--accent);
-      border: 2px solid rgba(0,0,0,0.35);
-      cursor:pointer;
-    }
-
-    .qty-pill{
-      min-width: 56px;
-      text-align:center;
-      font-weight: 900;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(255,255,255,0.06);
-    }
-
-    .actions{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      margin-top:14px;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-
-    .kpis{
-      display:grid;
-      grid-template-columns: repeat(3,1fr);
-      gap:10px;
-      margin-top:14px;
-    }
-
-    .kpi{
-      background: rgba(255,255,255,0.03);
-      border:1px solid rgba(255,255,255,0.1);
-      border-radius:14px;
-      padding:14px;
-    }
-
-    .kpi-title{ color:var(--muted); font-weight:800; }
-    .kpi-val{ font-size:1.25rem; font-weight:900; }
-
-    .summary-line{
-      margin: 10px 0 12px;
-      padding: 10px 12px;
-      border-radius: 12px;
-      border: 1px dashed rgba(255,255,255,0.25);
-      background: rgba(255,255,255,0.04);
-      font-weight: 900;
-    }
-
-    .chart-wrap{
-      height:360px;
-      margin-top:10px;
-      padding:12px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,0.1);
-      background: rgba(0,0,0,0.25);
-      position: relative;
-    }
-    #roiChart{ width:100%; height:100%; }
-
-    @media(max-width:860px){
-      .grid{ grid-template-columns:1fr; }
-      .head{ display:none; }
-      .kpis{ grid-template-columns:1fr; }
-      .chart-wrap{ height:420px; }
-
-      .field-row input[type="number"]{
-        width: 120px;
-        max-width: 44%;
-      }
+    .roi-head { padding: 64px 0 34px; }
+    .roi-head h1 { margin: 14px 0 12px; }
+    .roi-head p { max-width: 760px; }
+    .roi-layout { padding-bottom: 80px; }
+    .roi-top { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; margin-bottom: 18px; }
+    label { display: block; margin-bottom: 7px; color: rgba(255,255,255,.68); font-weight: 800; }
+    input[type="number"], select { width: 100%; min-height: 48px; padding: 11px 13px; }
+    .roi-grid { display: grid; grid-template-columns: 1.25fr 1fr 1fr 1fr; gap: 11px; align-items: center; }
+    .roi-grid .head { color: rgba(255,255,255,.57); font-size: .82rem; font-weight: 850; }
+    .product-name { color: #fff; font-weight: 900; }
+    .field-row { display: flex; align-items: center; gap: 9px; width: 100%; }
+    .field-row input[type="number"] { width: 100%; }
+    .field-label { display: none; }
+    .qty-wrap { display: flex; align-items: center; gap: 10px; width: 100%; }
+    input[type="range"] { width: 100%; accent-color: #d5ad65; }
+    .qty-pill { min-width: 54px; padding: 6px 9px; text-align: center; font-weight: 900; }
+    .roi-actions { display: flex; justify-content: space-between; align-items: center; gap: 15px; margin-top: 20px; }
+    .live-option { display: inline-flex; align-items: center; gap: 9px; margin: 0; }
+    .kpis { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 18px; }
+    .kpi-title { color: rgba(255,255,255,.6); font-size: .85rem; font-weight: 800; }
+    .summary-line { margin: 12px 0; padding: 12px 14px; border: 1px dashed rgba(213,173,101,.34) !important; border-radius: 13px; font-weight: 850; }
+    .chart-wrap { height: 390px; padding: 16px !important; }
+    #roiChart { width: 100%; height: 100%; }
+    @media (max-width: 820px) {
+      .roi-top, .kpis { grid-template-columns: 1fr; }
+      .roi-grid { grid-template-columns: 1fr; }
+      .roi-grid .head, .roi-grid > div:first-child { display: none; }
+      .product-name { margin-top: 15px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.1); }
+      .field-label { display: block; min-width: 90px; color: rgba(255,255,255,.58); font-size: .8rem; font-weight: 800; }
+      .chart-wrap { height: 340px; }
     }
   </style>
 </head>
 
 <body>
-<div class="container">
+  <main class="container">
+    <header class="roi-head">
+      <a class="btn" href="/">← Retour à l’accueil</a>
+      <p class="eyebrow" style="margin-top:34px">Outil d’aide à la décision</p>
+      <h1>Calculer la rentabilité</h1>
+      <p>Adaptez les volumes, les prix et vos marges. Le simulateur estime le temps nécessaire pour amortir votre investissement.</p>
+    </header>
 
-  <a class="btn" href="index.html">← Retour</a>
-
-  <h1>Calculer la rentabilité</h1>
-
-  <div class="panel">
-
-    <div class="row">
-      <div>
-        <label>Poids du paquet</label>
-        <select id="packSize">
-          <option value="200">200 g</option>
-          <option value="250" selected>250 g</option>
-        </select>
-      </div>
-      <div>
-        <label>Prix de départ – forme standard</label>
-        <input type="number" id="machinePrice" value="3260" step="10" min="0">
-      </div>
-    </div>
-
-    <div class="grid">
-      <div></div>
-      <div class="head">Paquets/mois</div>
-      <div class="head">Prix €/kg</div>
-      <div class="head">Marge %</div>
-
-      <!-- ===== SUCRE CUIT ===== -->
-      <div class="label">Bonbon sucre cuit</div>
-
-      <div class="field-row">
-        <div class="qty-wrap" style="flex:1;">
-          <input class="qty" type="range" id="qtySugar" min="0" max="500" step="1" value="120" data-max="500">
-          <span class="qty-pill" id="qtySugarOut">120</span>
+    <section class="roi-layout">
+      <div class="panel">
+        <div class="roi-top">
+          <div>
+            <label for="packSize">Poids du paquet</label>
+            <select id="packSize">
+              <option value="200">200 g</option>
+              <option value="250" selected>250 g</option>
+            </select>
+          </div>
+          <div>
+            <label for="machinePrice">Investissement machine (€)</label>
+            <input type="number" id="machinePrice" value="3260" step="10" min="0">
+          </div>
         </div>
-        <span class="field-label">Paquets / mois</span>
-      </div>
 
-      <div class="field-row">
-        <input type="number" id="priceSugar" value="21.30" step="0.10" min="0">
-        <span class="field-label">Prix €/kg</span>
-      </div>
+        <div class="roi-grid">
+          <div></div>
+          <div class="head">Paquets / mois</div>
+          <div class="head">Prix €/kg</div>
+          <div class="head">Marge %</div>
 
-      <div class="field-row">
-        <input type="number" id="marginSugar" value="50" step="1" min="0" max="100">
-        <span class="field-label">Marge %</span>
-      </div>
+          <div class="product-name">Bonbon sucre cuit</div>
+          <div class="field-row">
+            <div class="qty-wrap"><input type="range" id="qtySugar" min="0" max="500" value="120"><span class="qty-pill" id="qtySugarOut">120</span></div>
+            <span class="field-label">Paquets</span>
+          </div>
+          <div class="field-row"><input type="number" id="priceSugar" value="21.30" step="0.10" min="0"><span class="field-label">Prix €/kg</span></div>
+          <div class="field-row"><input type="number" id="marginSugar" value="50" step="1" min="0" max="100"><span class="field-label">Marge %</span></div>
 
-      <!-- ===== MIEL ===== -->
-      <div class="label">Bonbon au miel</div>
+          <div class="product-name">Bonbon au miel</div>
+          <div class="field-row">
+            <div class="qty-wrap"><input type="range" id="qtyHoney" min="0" max="500" value="80"><span class="qty-pill" id="qtyHoneyOut">80</span></div>
+            <span class="field-label">Paquets</span>
+          </div>
+          <div class="field-row"><input type="number" id="priceHoney" value="28.90" step="0.10" min="0"><span class="field-label">Prix €/kg</span></div>
+          <div class="field-row"><input type="number" id="marginHoney" value="55" step="1" min="0" max="100"><span class="field-label">Marge %</span></div>
 
-      <div class="field-row">
-        <div class="qty-wrap" style="flex:1;">
-          <input class="qty" type="range" id="qtyHoney" min="0" max="500" step="1" value="80" data-max="500">
-          <span class="qty-pill" id="qtyHoneyOut">80</span>
+          <div class="product-name">Nougatine</div>
+          <div class="field-row">
+            <div class="qty-wrap"><input type="range" id="qtyNoug" min="0" max="500" value="40"><span class="qty-pill" id="qtyNougOut">40</span></div>
+            <span class="field-label">Paquets</span>
+          </div>
+          <div class="field-row"><input type="number" id="priceNoug" value="55.00" step="0.10" min="0"><span class="field-label">Prix €/kg</span></div>
+          <div class="field-row"><input type="number" id="marginNoug" value="45" step="1" min="0" max="100"><span class="field-label">Marge %</span></div>
         </div>
-        <span class="field-label">Paquets / mois</span>
-      </div>
 
-      <div class="field-row">
-        <input type="number" id="priceHoney" value="28.90" step="0.10" min="0">
-        <span class="field-label">Prix €/kg</span>
-      </div>
-
-      <div class="field-row">
-        <input type="number" id="marginHoney" value="55" step="1" min="0" max="100">
-        <span class="field-label">Marge %</span>
-      </div>
-
-      <!-- ===== NOUGATINE ===== -->
-      <div class="label">Nougatine</div>
-
-      <div class="field-row">
-        <div class="qty-wrap" style="flex:1;">
-          <input class="qty" type="range" id="qtyNoug" min="0" max="500" step="1" value="40" data-max="500">
-          <span class="qty-pill" id="qtyNougOut">40</span>
+        <div class="roi-actions">
+          <label class="live-option"><input type="checkbox" id="live" checked> Calcul en direct</label>
+          <button class="btn" id="btnCalc" type="button">Calculer</button>
         </div>
-        <span class="field-label">Paquets / mois</span>
+
+        <div class="kpis">
+          <div class="kpi"><div class="kpi-title">Chiffre d’affaires / mois</div><div class="kpi-val" id="kpiCA">—</div></div>
+          <div class="kpi"><div class="kpi-title">Marge / mois</div><div class="kpi-val" id="kpiMargin">—</div></div>
+          <div class="kpi"><div class="kpi-title">Amortissement estimé</div><div class="kpi-val" id="kpiPayback">—</div></div>
+        </div>
+
+        <div id="summaryLine" class="summary-line">—</div>
+        <div class="chart-wrap"><canvas id="roiChart"></canvas></div>
       </div>
+    </section>
+  </main>
 
-      <div class="field-row">
-        <input type="number" id="priceNoug" value="55.00" step="0.10" min="0">
-        <span class="field-label">Prix €/kg</span>
-      </div>
+  <script>
+    let chart;
 
-      <div class="field-row">
-        <input type="number" id="marginNoug" value="45" step="1" min="0" max="100">
-        <span class="field-label">Marge %</span>
-      </div>
-    </div>
+    const markerPlugin = {
+      id: "markerPlugin",
+      afterDatasetsDraw(currentChart) {
+        const index = currentChart.$paybackIndex;
+        if (index === null || index === undefined) return;
+        const point = currentChart.getDatasetMeta(0).data[index];
+        if (!point) return;
+        const {x, y} = point.getProps(["x", "y"], true);
+        const ctx = currentChart.ctx;
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(x, y, 7, 0, Math.PI * 2);
+        ctx.fillStyle = "#d5ad65";
+        ctx.fill();
+        ctx.fillStyle = "#0b0c0d";
+        ctx.font = "900 11px sans-serif";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText("€", x, y + .5);
+        ctx.fillStyle = "#d5ad65";
+        ctx.font = "800 12px sans-serif";
+        ctx.textAlign = "left";
+        ctx.fillText("Amorti ici", x + 12, y - 10);
+        ctx.restore();
+      }
+    };
 
-    <div class="actions">
-      <label style="font-weight:800; color:rgba(255,255,255,0.85);">
-        <input type="checkbox" id="live" checked>
-        Calcul en direct
-      </label>
-      <button class="btn" id="btnCalc" type="button">Calculer</button>
-    </div>
-
-    <div class="kpis">
-      <div class="kpi"><div class="kpi-title">CA / mois</div><div class="kpi-val" id="kpiCA">—</div></div>
-      <div class="kpi"><div class="kpi-title">Marge / mois</div><div class="kpi-val" id="kpiMargin">—</div></div>
-      <div class="kpi"><div class="kpi-title">Amortissement</div><div class="kpi-val" id="kpiPayback">—</div></div>
-    </div>
-
-    <div id="summaryLine" class="summary-line">—</div>
-
-    <div class="chart-wrap">
-      <canvas id="roiChart"></canvas>
-    </div>
-
-  </div>
-</div>
-
-<script>
-  let chart;
-  let pulseTimer = null;
-
-  // Plugin : affiche “€” + halo pulsant + "Amorti ici" sur le point d'amortissement
-  const amortiMarkerPlugin = {
-    id: 'amortiMarkerPlugin',
-    afterDatasetsDraw(chart, args, pluginOptions){
-      const index = chart?.$amortiIndex;
-      if(index === null || index === undefined || index < 0) return;
-
-      // dataset 0 = marge cumulée
-      const meta = chart.getDatasetMeta(0);
-      if(!meta || !meta.data || !meta.data[index]) return;
-
-      const pt = meta.data[index].getProps(['x','y'], true);
-      const ctx = chart.ctx;
-
-      // pulse (0..1)
-      const t = Date.now();
-      const pulse = (Math.sin(t / 220) + 1) / 2; // douce
-      const haloR = 10 + pulse * 10;
-
-      ctx.save();
-
-      // Halo
-      ctx.beginPath();
-      ctx.arc(pt.x, pt.y, haloR, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(201,162,77,${0.10 + pulse*0.18})`;
-      ctx.fill();
-
-      // Point
-      ctx.beginPath();
-      ctx.arc(pt.x, pt.y, 7, 0, Math.PI * 2);
-      ctx.fillStyle = '#c9a24d';
-      ctx.fill();
-
-      // € dans le point
-      ctx.fillStyle = '#0b0b0b';
-      ctx.font = '900 11px Arial';
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.fillText('€', pt.x, pt.y + 0.5);
-
-      // Label “Amorti ici”
-      ctx.fillStyle = 'rgba(201,162,77,0.98)';
-      ctx.font = '900 12px Arial';
-      ctx.textAlign = 'left';
-      ctx.textBaseline = 'bottom';
-
-      const text = 'Amorti ici';
-      const tx = pt.x + 12;
-      const ty = pt.y - 10;
-
-      // petit contour sombre pour lisibilité
-      ctx.strokeStyle = 'rgba(0,0,0,0.65)';
-      ctx.lineWidth = 4;
-      ctx.strokeText(text, tx, ty);
-
-      ctx.lineWidth = 1;
-      ctx.fillText(text, tx, ty);
-
-      ctx.restore();
-    }
-  };
-
-  function euro(n){
-    if(!isFinite(n)) return "—";
-    return n.toLocaleString("fr-FR",{style:"currency",currency:"EUR"});
-  }
-  function v(id){
-    const el = document.getElementById(id);
-    if(!el) return 0;
-    return parseFloat(el.value) || 0;
-  }
-
-  function setRangeFill(rangeEl){
-    const min = parseFloat(rangeEl.min || "0");
-    const max = parseFloat(rangeEl.max || rangeEl.dataset.max || "100");
-    const val = parseFloat(rangeEl.value || "0");
-    const pct = ((val - min) * 100) / (max - min);
-    rangeEl.style.background = `linear-gradient(to right, var(--accent) ${pct}%, rgba(255,255,255,0.18) ${pct}%)`;
-  }
-
-  function syncQty(id){
-    const r = document.getElementById(id);
-    const out = document.getElementById(id + "Out");
-    if(!r || !out) return;
-    out.textContent = r.value;
-    setRangeFill(r);
-  }
-
-  function startPulseRedraw(){
-    if(pulseTimer) clearInterval(pulseTimer);
-    // 30 fps ~ fluide sans trop charger
-    pulseTimer = setInterval(()=>{
-      if(chart) chart.draw();
-    }, 33);
-  }
-
-  function compute(){
-    const packKg = v("packSize") / 1000;
-    const machine = v("machinePrice");
-
-    const qtySugar = v("qtySugar");
-    const qtyHoney = v("qtyHoney");
-    const qtyNoug  = v("qtyNoug");
-
-    const items = [
-      [qtySugar, v("priceSugar"), v("marginSugar")],
-      [qtyHoney, v("priceHoney"), v("marginHoney")],
-      [qtyNoug,  v("priceNoug"),  v("marginNoug")]
-    ];
-
-    let ca=0, marge=0, packs=0;
-    items.forEach(i=>{
-      const c = i[0] * packKg * i[1];
-      ca += c;
-      marge += c * (i[2] / 100);
-      packs += i[0];
-    });
-
-    document.getElementById("kpiCA").textContent = euro(ca);
-    document.getElementById("kpiMargin").textContent = euro(marge);
-
-    const pay = marge>0 ? (machine/marge).toFixed(1)+" mois" : "—";
-    document.getElementById("kpiPayback").textContent = pay;
-
-    document.getElementById("summaryLine").textContent =
-      `Production : ${(packs*packKg).toFixed(1)} kg/mois — machine amortie en ~${pay}`;
-
-    const labels=[], mc=[], inv=[];
-    let cum=0;
-    for(let i=1;i<=24;i++){
-      cum += marge;
-      labels.push("M"+i);
-      mc.push(cum);
-      inv.push(machine);
+    function value(id) {
+      return Number.parseFloat(document.getElementById(id)?.value) || 0;
     }
 
-    // index du mois où la marge cumulée dépasse le prix machine
-    let amortiIndex = mc.findIndex(val => val >= machine);
-    if(amortiIndex === -1) amortiIndex = null;
+    function euro(number) {
+      return Number.isFinite(number) ? number.toLocaleString("fr-FR", {style: "currency", currency: "EUR"}) : "—";
+    }
 
-    if(chart) chart.destroy();
+    function syncRange(id) {
+      const range = document.getElementById(id);
+      const output = document.getElementById(id + "Out");
+      output.textContent = range.value;
+      const percent = (Number(range.value) / Number(range.max)) * 100;
+      range.style.background = `linear-gradient(to right, #d5ad65 ${percent}%, rgba(255,255,255,.16) ${percent}%)`;
+    }
 
-    chart = new Chart(roiChart,{
-      type:"line",
-      data:{
-        labels,
-        datasets:[
-          { label:"Marge cumulée", data:mc, borderWidth:2, tension:0.25, pointRadius:3 },
-          { label:"Investissement machine", data:inv, borderWidth:2, borderDash:[6,6], tension:0, pointRadius:0 }
-        ]
-      },
-      options:{
-        responsive:true,
-        maintainAspectRatio:false,
-        plugins:{
-          legend:{position:"bottom"}
+    function compute() {
+      const packKg = value("packSize") / 1000;
+      const machinePrice = value("machinePrice");
+      const rows = [
+        ["qtySugar", "priceSugar", "marginSugar"],
+        ["qtyHoney", "priceHoney", "marginHoney"],
+        ["qtyNoug", "priceNoug", "marginNoug"]
+      ];
+      let revenue = 0;
+      let margin = 0;
+      let packs = 0;
+      for (const [qtyId, priceId, marginId] of rows) {
+        const quantity = value(qtyId);
+        const rowRevenue = quantity * packKg * value(priceId);
+        packs += quantity;
+        revenue += rowRevenue;
+        margin += rowRevenue * (value(marginId) / 100);
+      }
+
+      const payback = margin > 0 ? machinePrice / margin : 0;
+      document.getElementById("kpiCA").textContent = euro(revenue);
+      document.getElementById("kpiMargin").textContent = euro(margin);
+      document.getElementById("kpiPayback").textContent = margin > 0 ? `${payback.toFixed(1)} mois` : "—";
+      document.getElementById("summaryLine").textContent = margin > 0
+        ? `Production estimée : ${(packs * packKg).toFixed(1)} kg/mois · investissement amorti en environ ${payback.toFixed(1)} mois.`
+        : "Ajoutez une production mensuelle pour calculer l’amortissement.";
+
+      const labels = Array.from({length: 24}, (_, index) => `M${index + 1}`);
+      const cumulative = labels.map((_, index) => margin * (index + 1));
+      const investment = labels.map(() => machinePrice);
+      const paybackIndex = cumulative.findIndex(amount => amount >= machinePrice);
+      if (chart) chart.destroy();
+      chart = new Chart(document.getElementById("roiChart"), {
+        type: "line",
+        data: {
+          labels,
+          datasets: [
+            {label: "Marge cumulée", data: cumulative, borderColor: "#d5ad65", backgroundColor: "rgba(213,173,101,.14)", fill: true, borderWidth: 2, tension: .28, pointRadius: 2},
+            {label: "Investissement", data: investment, borderColor: "rgba(255,255,255,.55)", borderDash: [7,7], borderWidth: 2, pointRadius: 0}
+          ]
         },
-        scales:{
-          y:{ticks:{callback:v=>v.toLocaleString("fr-FR")+" €"}}
-        }
-      },
-      plugins:[amortiMarkerPlugin]
-    });
-
-    // stocke l'index dans l'instance chart pour le plugin
-    chart.$amortiIndex = amortiIndex;
-
-    // lance l'animation uniquement si amorti existe
-    if(amortiIndex !== null) startPulseRedraw();
-    else if(pulseTimer){ clearInterval(pulseTimer); pulseTimer = null; }
-  }
-
-  function hook(){
-    ["qtySugar","qtyHoney","qtyNoug"].forEach(id=>{
-      const el = document.getElementById(id);
-      if(!el) return;
-      el.addEventListener("input", ()=>{
-        syncQty(id);
-        if(document.getElementById("live").checked) compute();
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {legend: {position: "bottom", labels: {color: "rgba(255,255,255,.72)"}}},
+          scales: {
+            x: {ticks: {color: "rgba(255,255,255,.55)"}, grid: {color: "rgba(255,255,255,.05)"}},
+            y: {ticks: {color: "rgba(255,255,255,.55)", callback: amount => `${Number(amount).toLocaleString("fr-FR")} €`}, grid: {color: "rgba(255,255,255,.08)"}}
+          }
+        },
+        plugins: [markerPlugin]
       });
-      syncQty(id);
-    });
+      chart.$paybackIndex = paybackIndex >= 0 ? paybackIndex : null;
+      chart.draw();
+    }
 
-    ["packSize","machinePrice","priceSugar","marginSugar","priceHoney","marginHoney","priceNoug","marginNoug"]
-      .forEach(id=>{
-        const el = document.getElementById(id);
-        if(!el) return;
-        el.addEventListener("input", ()=> document.getElementById("live").checked && compute());
+    for (const id of ["qtySugar", "qtyHoney", "qtyNoug"]) {
+      const element = document.getElementById(id);
+      element.addEventListener("input", () => {
+        syncRange(id);
+        if (document.getElementById("live").checked) compute();
       });
+      syncRange(id);
+    }
 
+    for (const id of ["packSize", "machinePrice", "priceSugar", "marginSugar", "priceHoney", "marginHoney", "priceNoug", "marginNoug"]) {
+      document.getElementById(id).addEventListener("input", () => {
+        if (document.getElementById("live").checked) compute();
+      });
+    }
     document.getElementById("btnCalc").addEventListener("click", compute);
-  }
-
-  hook();
-  compute();
-</script>
-  
-
-
+    compute();
+  </script>
 </body>
 </html>

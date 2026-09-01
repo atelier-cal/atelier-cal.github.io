@@ -1,68 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Mentions légales – Atelier CAL</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mentions légales | Atelier CAL</title>
   <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="/assets/premium-pages.css">
 </head>
+<body>
+  <main class="container" style="padding:46px 0 70px">
+    <a class="btn" href="/">← Retour à l’accueil</a>
+    <article class="content" style="margin-top:20px">
+      <p class="eyebrow">Informations légales</p>
+      <h1>Mentions légales</h1>
 
-<body style="font-family: Arial, sans-serif; background:#0b0b0b; color:#eee; padding:40px; line-height:1.6;">
+      <h2>Éditeur du site</h2>
+      <p><strong>Atelier CAL</strong><br>Micro-entreprise<br>Responsable de la publication : Stevens Renaud<br>Email : <a href="mailto:contact@atelier-cal.fr">contact@atelier-cal.fr</a><br>Téléphone : <a href="tel:+33677845435">06 77 84 54 35</a><br>SIRET : 897 494 407 00017<br>TVA non applicable, art. 293B du CGI</p>
 
-<h1>Mentions légales</h1>
+      <h2>Hébergement</h2>
+      <p>GitHub Pages – GitHub, Inc.<br>88 Colin P Kelly Jr St, San Francisco, CA 94107, États-Unis</p>
 
-<p>
-<strong>Atelier CAL</strong><br>
-Micro-entreprise<br>
-Responsable de la publication : Stevens Renaud<br>
-Email : contact@atelier-cal.fr<br>
-Téléphone : 06 77 84 54 35<br>
-SIRET : 89749440700017<br>
-TVA non applicable, art. 293B du CGI
-</p>
+      <h2>Objet du site</h2>
+      <p>Le site <strong>atelier-cal.fr</strong> présente les machines professionnelles de confiserie conçues et fabriquées par Atelier CAL ainsi que les services associés.</p>
 
-<p>
-<strong>Hébergement</strong><br>
-GitHub Pages – GitHub, Inc.<br>
-88 Colin P Kelly Jr St, San Francisco, CA 94107, États-Unis
-</p>
-
-<p>
-Le site <strong>atelier-cal.fr</strong> a pour objet la présentation de machines
-professionnelles de confiserie et de services associés.
-</p>
-
-<p>
-<a href="/" style="color:#aaa;">← Retour au site</a>
-</p>
-<script>
-fetch("https://ipapi.co/json/")
-  .then(r => r.json())
-  .then(d => {
-    const blocked = ["RU","IQ","AM"]; // Russie, Irak, Arménie
-    if (blocked.includes(d.country_code)) {
-      document.documentElement.innerHTML = `
-        <head>
-          <meta charset="UTF-8">
-          <title>Access restricted</title>
-        </head>
-        <body style="
-          background:#000;
-          color:#fff;
-          display:flex;
-          align-items:center;
-          justify-content:center;
-          height:100vh;
-          font-family:Arial;
-          text-align:center;">
-          <div>
-            <h1>404</h1>
-            <p>This website is not available in your country.</p>
-          </div>
-        </body>`;
-    }
-  })
-  .catch(()=>{});
-</script>
-
+      <h2>Documents complémentaires</h2>
+      <p><a href="/confidentialite.html">Politique de confidentialité</a><br><a href="/cgv.html">Conditions générales de vente</a></p>
+    </article>
+  </main>
 </body>
 </html>
