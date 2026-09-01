@@ -730,7 +730,7 @@
     let offerWasClosed = false;
     try { offerWasClosed = sessionStorage.getItem('atelier-cal-offer-closed') === '1'; } catch (error) {}
     if (!offerWasClosed && typeof offerDialog.showModal === 'function') {
-      window.setTimeout(() => offerDialog.showModal(), 550);
+      window.setTimeout(() => offerDialog.showModal(), 8000);
     }
     offerClose.addEventListener('click', () => offerDialog.close());
     offerDialog.addEventListener('close', () => {
