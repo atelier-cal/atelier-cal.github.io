@@ -377,7 +377,7 @@ footer {
 }
 
 .site-nav-inner {
-  min-height: 76px;
+  min-height: 86px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -395,7 +395,7 @@ footer {
   letter-spacing: .12em;
 }
 
-.site-brand img { width: 68px; height: 44px; object-fit: contain; }
+.site-brand img { width: 106px; height: 70px; object-fit: contain; }
 .site-links { display: flex; align-items: center; gap: 24px; }
 .site-links a { color: rgba(255,255,255,.68) !important; text-decoration: none; font-weight: 760; font-size: .92rem; }
 .site-links a:hover, .site-links a[aria-current="page"] { color: #fff !important; }
@@ -426,6 +426,30 @@ footer {
 }
 .mobile-menu-panel a { display: block; padding: 12px 14px; border-radius: 11px; color: rgba(255,255,255,.78) !important; text-decoration: none; font-weight: 780; }
 .mobile-menu-panel a:hover { background: rgba(255,255,255,.06); color: #fff !important; }
+
+.simple-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--line);
+  background: rgba(9,10,11,.94);
+  backdrop-filter: blur(18px);
+}
+.simple-topbar-inner {
+  min-height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.simple-brand { display: inline-flex; align-items: center; }
+.simple-brand img { width: 106px; height: 70px; object-fit: contain; }
+.simple-home-link {
+  color: rgba(255,255,255,.78) !important;
+  text-decoration: none;
+  font-weight: 760;
+}
+.simple-home-link:hover { color: #fff !important; }
 
 .page-hero {
   padding: clamp(64px,9vw,118px) 0 clamp(48px,7vw,90px);
@@ -587,8 +611,8 @@ footer {
 
 @media (max-width: 640px) {
   .container, .wrap { width: min(100% - 28px,1180px) !important; }
-  .site-nav-inner { min-height: 68px; }
-  .site-brand img { width: 58px; height: 38px; }
+  .site-nav-inner, .simple-topbar-inner { min-height: 70px; }
+  .site-brand img, .simple-brand img { width: 84px; height: 55px; }
   .page-hero { padding-top: 48px; }
   .page-hero-grid { grid-template-columns: 1fr; }
   .hero-media { border-radius: 19px; }
