@@ -496,6 +496,39 @@
       .whatsapp-float { right: 14px; bottom: 14px; width: 50px; padding: 0; justify-content: center; }
       .whatsapp-float span { display: none; }
     }
+    .offer-dialog {
+      width: min(620px, calc(100% - 28px));
+      max-height: calc(100vh - 28px);
+      padding: 0;
+      overflow: visible;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 22px;
+      background: #fff;
+      box-shadow: 0 28px 90px rgba(0,0,0,.5);
+    }
+    .offer-dialog::backdrop { background: rgba(6,8,11,.76); backdrop-filter: blur(7px); }
+    .offer-dialog img { display: block; width: 100%; max-height: calc(100vh - 28px); border-radius: 21px; object-fit: contain; }
+    .offer-dialog a { display: block; }
+    .offer-close {
+      position: absolute;
+      top: -14px;
+      right: -14px;
+      width: 44px;
+      height: 44px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      color: #fff;
+      background: #0d1938;
+      font: 900 1.35rem/1 Arial,sans-serif;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0,0,0,.28);
+    }
+    .offer-close:hover { background: #da6a00; }
+    @media (max-width: 560px) {
+      .offer-dialog { width: calc(100% - 22px); border-radius: 17px; }
+      .offer-dialog img { border-radius: 16px; }
+      .offer-close { top: -8px; right: -5px; }
+    }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { transition: none !important; }
@@ -573,7 +606,7 @@
             <p class="eyebrow">La gamme Atelier CAL</p>
             <h2 id="machines-title">Deux versions. Un choix sûr.</h2>
           </div>
-          <p>La base mécanique reste robuste et compacte. Ce sont les rouleaux qui déterminent la finition, la souplesse d’utilisation et le positionnement de votre machine.</p>
+          <p>Un bâti à cylindres robuste et compact. Choisissez les rouleaux qui correspondent à votre production : plastique pour plus de souplesse, bronze pour une finition précise et durable.</p>
         </div>
         <div class="machine-grid">
           <article class="machine-card">
@@ -685,5 +718,24 @@
   <a class="whatsapp-float" href="https://wa.me/33677845435?text=Bonjour%2C%20je%20souhaite%20avoir%20des%20informations%20sur%20les%20machines%20Atelier%20CAL." aria-label="Contacter Atelier CAL sur WhatsApp" rel="noopener">
     <span>WhatsApp</span>
   </a>
+  <dialog class="offer-dialog" id="offerDialog" aria-label="Offre spéciale Atelier CAL">
+    <button class="offer-close" id="offerClose" type="button" aria-label="Fermer l’offre">×</button>
+    <a href="https://wa.me/33677845435?text=Bonjour%2C%20je%20souhaite%20profiter%20de%20l%27offre%20sp%C3%A9ciale%20Atelier%20CAL." rel="noopener">
+      <img src="/assets/images/offre-speciale.webp" alt="Offre limitée Atelier CAL : version bronze à 2 930 euros TTC et version plastique à 2 290 euros TTC avec deux paires de rouleaux incluses" width="1254" height="1254">
+    </a>
+  </dialog>
+  <script>
+    const offerDialog = document.getElementById('offerDialog');
+    const offerClose = document.getElementById('offerClose');
+    let offerWasClosed = false;
+    try { offerWasClosed = sessionStorage.getItem('atelier-cal-offer-closed') === '1'; } catch (error) {}
+    if (!offerWasClosed && typeof offerDialog.showModal === 'function') {
+      window.setTimeout(() => offerDialog.showModal(), 550);
+    }
+    offerClose.addEventListener('click', () => offerDialog.close());
+    offerDialog.addEventListener('close', () => {
+      try { sessionStorage.setItem('atelier-cal-offer-closed', '1'); } catch (error) {}
+    });
+  </script>
 </body>
 </html>
