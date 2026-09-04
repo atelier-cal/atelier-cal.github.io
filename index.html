@@ -553,6 +553,7 @@
 <meta name="twitter:image" content="https://atelier-cal.fr/assets/images/machine-rouleaux-bronze.webp">
 <meta name="twitter:image:alt" content="Machine Atelier CAL équipée de rouleaux en bronze">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://atelier-cal.fr/#organization","name":"Atelier CAL","url":"https://atelier-cal.fr/","logo":"https://atelier-cal.fr/logo-atelier-cal.png","image":"https://atelier-cal.fr/assets/images/machine-rouleaux-bronze.webp","email":"contact@atelier-cal.fr","telephone":"+33677845435"},{"@type":"WebPage","@id":"https://atelier-cal.fr/#webpage","url":"https://atelier-cal.fr/","name":"Machines de confiserie professionnelles | Atelier CAL","inLanguage":"fr","primaryImageOfPage":{"@type":"ImageObject","url":"https://atelier-cal.fr/assets/images/machine-rouleaux-bronze.webp","contentUrl":"https://atelier-cal.fr/assets/images/machine-rouleaux-bronze.webp","width":1536,"height":1024,"caption":"Machine Atelier CAL équipée de rouleaux en bronze"},"isPartOf":{"@id":"https://atelier-cal.fr/#website"},"publisher":{"@id":"https://atelier-cal.fr/#organization"}},{"@type":"WebSite","@id":"https://atelier-cal.fr/#website","url":"https://atelier-cal.fr/","name":"Atelier CAL","publisher":{"@id":"https://atelier-cal.fr/#organization"}}]}</script>
+  <script defer src="/assets/analytics-consent.js?v=20260904"></script>
 </head>
 
 <body>
@@ -751,8 +752,23 @@
     const offerClose = document.getElementById('offerClose');
     let offerWasClosed = false;
     try { offerWasClosed = sessionStorage.getItem('atelier-cal-offer-closed') === '1'; } catch (error) {}
-    if (!offerWasClosed && typeof offerDialog.showModal === 'function') {
-      window.setTimeout(() => offerDialog.showModal(), 8000);
+    const scheduleOffer = () => {
+      if (!offerWasClosed && typeof offerDialog.showModal === 'function') {
+        window.setTimeout(() => offerDialog.showModal(), 8000);
+      }
+    };
+    const scheduleOfferAfterConsent = () => {
+      const consentBanner = document.querySelector('.cal-consent');
+      if (consentBanner && !consentBanner.hidden) {
+        window.addEventListener('atelier-cal-consent-set', scheduleOffer, { once: true });
+      } else {
+        scheduleOffer();
+      }
+    };
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', scheduleOfferAfterConsent, { once: true });
+    } else {
+      scheduleOfferAfterConsent();
     }
     offerClose.addEventListener('click', () => offerDialog.close());
     offerDialog.addEventListener('close', () => {
