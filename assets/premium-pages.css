@@ -501,10 +501,27 @@ footer {
 .model-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; }
 .model-card { overflow: hidden; border: 1px solid var(--line); border-radius: 20px; background: rgba(255,255,255,.04); transition: transform .22s ease, border-color .22s ease; }
 .model-card:hover { transform: translateY(-4px); border-color: rgba(213,173,101,.35); }
-.model-image { position: relative; overflow: hidden; background: #111; cursor: default; }
+.model-image {
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  padding: clamp(10px,1.2vw,18px);
+  background: linear-gradient(145deg,#eeece8,#d8d6d1);
+  cursor: default;
+}
 .model-image[data-model] { cursor: pointer; }
-.model-image img { display: block; width: 100%; aspect-ratio: 4/3; object-fit: cover; transition: transform .5s ease; }
-.model-card:hover .model-image img { transform: scale(1.025); }
+.model-image img { display: block; width: 100%; height: 100%; aspect-ratio: auto; object-fit: contain; object-position: center; }
+.model-card:hover .model-image img { transform: none; }
+
+/* Desktop model cards use the square source frame so the product and roller stay fully visible. */
+@media (min-width: 901px) {
+  .page-modeles .model-image {
+    aspect-ratio: 1 / 1;
+    padding: 10px;
+  }
+}
 .viewer-badge { position: absolute; right: 12px; bottom: 12px; padding: 7px 10px; border: 1px solid rgba(255,255,255,.22); border-radius: 999px; color: #fff; background: rgba(8,9,10,.78); font-size: .75rem; font-weight: 850; }
 .model-body { padding: 21px; }
 .model-title-row { display: flex; justify-content: space-between; gap: 14px; align-items: start; }
@@ -520,12 +537,105 @@ footer {
 .viewer-box model-viewer { display: block; width: 100%; height: min(72vh,680px); background: radial-gradient(circle at 50% 30%, #2b2b29, #101112 65%); }
 .viewer-close { position: absolute; top: 14px; right: 14px; z-index: 3; min-height: 42px; padding: 9px 14px; border: 1px solid var(--line2); border-radius: 999px; color: #fff; background: rgba(8,9,10,.8); font: inherit; font-weight: 850; cursor: pointer; }
 
-.gallery-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; }
+.gallery-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); align-items: start; gap: 18px; }
 .gallery-card { overflow: hidden; border: 1px solid var(--line); border-radius: 20px; background: rgba(255,255,255,.04); }
 .gallery-card.featured { grid-column: 1 / -1; }
 .gallery-card img, .gallery-card video { display: block; width: 100%; aspect-ratio: 4/3; object-fit: cover; }
 .gallery-card.featured video { aspect-ratio: 16/9; }
 .gallery-caption { padding: 17px 19px; color: #fff; font-weight: 850; }
+
+.page-modeles .hero-media img,
+.page-photos .hero-media img,
+.page-photos .gallery-card img,
+.page-photos .gallery-card video {
+  height: clamp(300px,34vw,500px);
+  max-height: 500px;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
+  background: #111314;
+}
+.page-photos .gallery-card.featured img,
+.page-photos .gallery-card.featured video {
+  height: clamp(360px,48vw,650px);
+  max-height: 650px;
+}
+
+.page-photos .roller-detail-grid .gallery-card img,
+.page-photos .roller-detail-grid .gallery-card.featured img {
+  height: auto;
+  max-height: none;
+  aspect-ratio: 3 / 2;
+  object-fit: contain;
+}
+
+.production-real-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  align-items: start;
+  gap: 18px;
+}
+.production-real-card.wide { grid-column: 1 / -1; }
+.page-photos .production-real-card.wide img {
+  height: auto;
+  max-height: none;
+  aspect-ratio: 16/9;
+}
+.production-real-card:not(.wide) img,
+.production-real-card:not(.wide) video {
+  height: 520px;
+  max-height: 520px;
+  aspect-ratio: auto;
+}
+
+.production-samples-grid {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 16px;
+}
+.sample-card { display: grid; grid-template-rows: 1fr auto; }
+.sample-media {
+  display: grid;
+  place-items: center;
+  min-height: 260px;
+  padding: 16px;
+  background: #f1efeb;
+}
+.sample-card .sample-media img {
+  width: 100%;
+  height: 100%;
+  max-height: 300px;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  background: transparent;
+}
+.sample-card.compact .sample-media img {
+  width: 76%;
+  height: 76%;
+}
+.custom-sample-art {
+  display: flex;
+  min-height: 260px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 28px;
+  color: rgba(255,255,255,.72);
+  background: radial-gradient(circle at 50% 32%,rgba(213,173,101,.2),transparent 52%),#111314;
+  text-align: center;
+}
+.custom-sample-art span {
+  font-size: .78rem;
+  font-weight: 900;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.custom-sample-art strong {
+  color: var(--premium-gold);
+  font-size: clamp(1.7rem,2.4vw,2.35rem);
+  line-height: 1;
+}
 
 .story-copy h2 { margin: 0 0 16px; font-size: clamp(2rem,4vw,3.4rem); }
 .story-copy p { font-size: 1.04rem; }
@@ -607,6 +717,7 @@ footer {
   .page-hero-grid { gap: 34px; }
   .split.reverse > :first-child { order: initial; }
   .feature-grid, .model-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .production-samples-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .catalogue-art { min-height: 330px; }
 }
 
@@ -617,7 +728,9 @@ footer {
   .page-hero { padding-top: 48px; }
   .page-hero-grid { grid-template-columns: 1fr; }
   .hero-media { border-radius: 19px; }
-  .feature-grid, .model-grid, .gallery-grid, .spec-grid, .form-grid, .metric-row, .footer-grid { grid-template-columns: 1fr; }
+  .feature-grid, .model-grid, .gallery-grid, .production-real-grid, .production-samples-grid, .spec-grid, .form-grid, .metric-row, .footer-grid { grid-template-columns: 1fr; }
+  .production-real-card.wide { grid-column: auto; }
+  .sample-media, .custom-sample-art { min-height: 220px; }
   .gallery-card.featured, .field.full { grid-column: auto; }
   .spec-item { align-items: start; padding: 18px; }
   .page-actions .btn { width: 100%; }
@@ -666,6 +779,19 @@ footer {
     aspect-ratio: auto var(--photo-ratio, 3 / 2);
     object-fit: contain;
     object-position: center;
+  }
+  .page-photos .gallery-card img,
+  .page-photos .gallery-card video,
+  .page-photos .gallery-card.featured img,
+  .page-photos .gallery-card.featured video,
+  .page-photos .production-real-card.wide img,
+  .page-photos .production-real-card:not(.wide) img,
+  .page-photos .production-real-card:not(.wide) video {
+    width: 100%;
+    height: auto;
+    max-height: 420px;
+    aspect-ratio: auto var(--photo-ratio, 3 / 2);
+    object-fit: contain;
   }
   .model-card:hover .model-image img { transform: none; }
   .catalogue-art { min-height: 0; aspect-ratio: 3/2; background-size: contain; background-repeat: no-repeat; }
