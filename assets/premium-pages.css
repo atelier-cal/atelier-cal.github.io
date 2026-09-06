@@ -481,6 +481,7 @@ footer {
 .price-box { margin-top: 26px; padding: 22px; border: 1px solid rgba(213,173,101,.3); border-radius: 18px; background: rgba(213,173,101,.08); }
 .price-box .price { display: block; color: #fff; font-size: clamp(1.75rem,3vw,2.45rem); font-weight: 950; letter-spacing: -.03em; }
 .price-box small { color: var(--muted); }
+.price-details > small { display: block; margin-top: 8px; }
 
 .split { display: grid; grid-template-columns: minmax(0,1fr) minmax(380px,.9fr); gap: clamp(30px,6vw,74px); align-items: center; }
 .split.reverse > :first-child { order: 2; }
