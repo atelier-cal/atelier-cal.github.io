@@ -10,7 +10,7 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:title" content="Atelier CAL — Machines de confiserie professionnelles">
-  <meta property="og:description" content="Deux versions de rouleaux, une machine conçue pour les artisans confiseurs.">
+  <meta property="og:description" content="La précision des rouleaux bronze, dans une machine conçue pour les artisans confiseurs.">
   <meta property="og:url" content="https://atelier-cal.fr/">
   <meta property="og:image" content="https://atelier-cal.fr/assets/images/atelier-cal-facebook-1200x630.jpg">
 <meta property="og:image:secure_url" content="https://atelier-cal.fr/assets/images/atelier-cal-facebook-1200x630.jpg">
@@ -502,43 +502,32 @@
       .whatsapp-float { right: 14px; bottom: max(14px, env(safe-area-inset-bottom)); max-width: calc(100% - 28px); padding: 12px 16px; justify-content: center; }
       .site-footer { padding-bottom: 94px; }
     }
-    .offer-dialog {
-      width: min(620px, calc(100% - 28px));
-      max-height: calc(100vh - 28px);
-      max-height: calc(100dvh - 28px);
-      padding: 0;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,.22);
-      border-radius: 22px;
-      background: #fff;
-      box-shadow: 0 28px 90px rgba(0,0,0,.5);
+    .machine-featured { display: grid; grid-template-columns: 1.05fr 1fr; align-items: center; }
+    .machine-featured .machine-visual { aspect-ratio: auto; align-self: stretch; background: #e3ded5; }
+    .machine-featured .machine-visual img { height: 100%; object-fit: contain; }
+    .machine-featured .machine-description { min-height: 0; }
+    .machine-price { margin: 0 0 26px; }
+    .machine-price p { display: flex; align-items: baseline; flex-wrap: wrap; gap: 10px; margin: 0 0 6px; }
+    .machine-price strong { font-size: clamp(2rem, 4vw, 2.7rem); line-height: 1.1; letter-spacing: -.04em; }
+    .machine-price del, .machine-price small { color: var(--muted); }
+    .machine-price small { display: block; font-size: .82rem; line-height: 1.6; }
+    .entry-section { padding-top: 72px; }
+    .entry-card { display: grid; grid-template-columns: 250px 1fr; gap: 36px; align-items: center; padding: 28px; border: 1px solid var(--line); border-radius: 22px; background: var(--surface); }
+    .entry-image { border-radius: 14px; overflow: hidden; }
+    .entry-image img { width: 100%; height: auto; }
+    .entry-copy h2 { font-size: clamp(1.35rem, 3vw, 1.85rem); line-height: 1.15; letter-spacing: -.025em; margin-bottom: 12px; }
+    .entry-copy p { color: var(--muted); margin-bottom: 14px; }
+    .entry-copy .machine-kicker { color: #87632e; margin-bottom: 8px; }
+    .entry-copy strong { color: var(--text); }
+    @media (max-width: 850px) {
+      .machine-featured { grid-template-columns: 1fr; }
+      .machine-featured .machine-visual img { height: auto; }
+      .entry-card { grid-template-columns: 180px 1fr; gap: 24px; }
     }
-    .offer-dialog::backdrop { background: rgba(6,8,11,.76); backdrop-filter: blur(7px); }
-    .offer-layout { display: flex; flex-direction: column; max-height: calc(100vh - 30px); max-height: calc(100dvh - 30px); }
-    .offer-header { display: flex; flex: 0 0 auto; align-items: center; justify-content: space-between; gap: 12px; padding: 8px 12px 8px 18px; color: #0d1938; border-bottom: 1px solid #e5e5e5; font-weight: 850; }
-    .offer-body { overflow-y: auto; min-height: 0; overscroll-behavior: contain; }
-    .offer-dialog img { display: block; width: 100%; height: auto; object-fit: contain; }
-    .offer-footer { flex: 0 0 auto; padding: 12px; border-top: 1px solid #e5e5e5; background: #fff; }
-    .offer-whatsapp { display: flex; align-items: center; justify-content: center; gap: 9px; min-height: 48px; padding: 12px 16px; border-radius: 12px; background: #13763b; color: #fff; text-align: center; text-decoration: none; font-weight: 850; line-height: 1.35; }
-    .offer-whatsapp:hover { background: #0f6130; }
-    html:has(.offer-dialog[open]) { overflow: hidden; }
-    .offer-close {
-      position: static;
-      flex: 0 0 44px;
-      width: 44px;
-      height: 44px;
-      border: 2px solid #fff;
-      border-radius: 50%;
-      color: #fff;
-      background: #0d1938;
-      font: 900 1.35rem/1 Arial,sans-serif;
-      cursor: pointer;
-      box-shadow: 0 8px 20px rgba(0,0,0,.28);
-    }
-    .offer-close:hover { background: #da6a00; }
     @media (max-width: 560px) {
-      .offer-dialog { width: calc(100% - 28px); border-radius: 17px; }
-      .offer-header { font-size: .95rem; }
+      .entry-section { padding-top: 50px; }
+      .entry-card { grid-template-columns: 1fr; padding: 20px; gap: 20px; }
+      .entry-image { max-width: 260px; margin-inline: auto; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -604,9 +593,9 @@
       <div class="shell hero-content">
         <p class="eyebrow">Conception française · Confiserie professionnelle</p>
         <h1 id="hero-title">La machine adaptée à votre façon de produire.</h1>
-        <p class="hero-lead">Deux versions de rouleaux, une même exigence de précision. Choisissez simplement la configuration qui correspond à votre atelier, vos recettes et votre rythme de production.</p>
+        <p class="hero-lead">Découvrez notre machine à rouleaux bronze, conçue pour votre atelier, vos recettes et votre rythme de production. Une finition précise, des formes standards au choix et un accompagnement direct par le fabricant.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#machines">Voir les deux versions</a>
+          <a class="btn btn-primary" href="#machines">Découvrir la version bronze</a>
           <a class="btn btn-secondary" href="https://wa.me/33677845435?text=Bonjour%2C%20je%20souhaite%20%C3%AAtre%20conseill%C3%A9%20pour%20choisir%20une%20machine%20Atelier%20CAL." rel="noopener">Discuter sur WhatsApp</a>
         </div>
       </div>
@@ -625,52 +614,35 @@
         <div class="section-heading">
           <div>
             <p class="eyebrow">La gamme Atelier CAL</p>
-            <h2 id="machines-title">Deux versions. Un choix sûr.</h2>
+            <h2 id="machines-title">La précision du bronze.</h2>
           </div>
-          <p>Un bâti à cylindres robuste et compact. Choisissez les rouleaux qui correspondent à votre production : plastique pour plus de souplesse, bronze pour une finition précise et durable.</p>
+          <p>Un bâti à cylindres robuste et compact, équipé de rouleaux en bronze pour une finition précise et durable. Choisissez les formes qui correspondent à votre production.</p>
         </div>
-        <div class="machine-grid">
-          <article class="machine-card">
-            <div class="machine-visual">
-              <img src="assets/images/machine-rouleaux-plastique.webp" alt="Machine Atelier CAL équipée de rouleaux en plastique blancs" loading="eager" style="--photo-ratio: 1536 / 1024" width="1536" height="1024">
-              <span class="machine-label">Accessible &amp; polyvalente</span>
-            </div>
-            <div class="machine-body">
-              <p class="machine-kicker">Version 01</p>
-              <h3>Rouleaux plastique</h3>
-              <p class="machine-description">Une configuration simple et polyvalente, pensée pour démarrer, varier les formes et produire efficacement en atelier.</p>
-              <ul class="feature-list">
-                <li>Rouleaux légers et interchangeables</li>
-                <li>Prise en main rapide</li>
-                <li>Idéale pour une production artisanale flexible</li>
-              </ul>
-              <div class="card-actions">
-                <a class="btn btn-dark" href="/machine-plastique.html">Découvrir cette version</a>
-              </div>
-            </div>
-          </article>
-          <article class="machine-card">
+        <article class="machine-card machine-featured">
             <div class="machine-visual">
               <img src="assets/images/machine-rouleaux-bronze.webp" alt="Machine Atelier CAL équipée de rouleaux gravés en bronze" loading="eager" style="--photo-ratio: 1536 / 1024" width="1536" height="1024">
               <span class="machine-label">Précision &amp; durabilité</span>
             </div>
             <div class="machine-body">
-              <p class="machine-kicker">Version 02</p>
+              <p class="machine-kicker">La version bronze</p>
               <h3>Rouleaux bronze</h3>
-              <p class="machine-description">La version haut de gamme pour obtenir des empreintes nettes, une finition soignée et une grande régularité de production.</p>
+              <p class="machine-description">Des empreintes nettes, une finition soignée et une grande régularité de production. La machine bronze est proposée avec les formes standards, ou avec une gravure personnalisée sur devis.</p>
               <ul class="feature-list">
-                <li>Gravures précises et personnalisables</li>
+                <li>Formes standards au choix</li>
                 <li>Finition premium des confiseries</li>
                 <li>Conçue pour durer en usage professionnel</li>
               </ul>
+              <div class="machine-price">
+                <p><strong>2 930 €</strong> <span>TTC</span> <del>3 260 €</del></p>
+                <small>Machine bronze avec formes standards. Offre jusqu’au 25 décembre 2026.<br>Gravures personnalisées : supplément sur devis. Livraison en supplément.</small>
+              </div>
               <div class="card-actions">
-                <a class="btn btn-dark" href="/machine.html">Découvrir cette version</a>
+                <a class="btn btn-dark" href="/machine.html">Découvrir la machine bronze</a>
                 <a class="btn btn-link" href="/modeles.html">Voir les modèles</a>
               </div>
             </div>
           </article>
-        </div>
-        <p class="choice-note"><strong>Vous hésitez entre les deux ?</strong> Décrivez votre production et vos recettes : Atelier CAL vous orientera vers la version la plus adaptée.</p>
+        <p class="choice-note"><strong>Quelle forme pour vos confiseries ?</strong> Décrivez vos recettes et votre production : Atelier CAL vous conseille sur les rouleaux adaptés.</p>
       </div>
     </section>
 
@@ -702,6 +674,19 @@
             <h3>Échange direct</h3>
             <p>Un accompagnement par le fabricant pour choisir la machine et les rouleaux.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="entry-section" aria-labelledby="entry-title">
+      <div class="shell entry-card">
+        <a class="entry-image" href="/machine-plastique.html" aria-label="Découvrir la machine à rouleaux plastique"><img src="/assets/images/machine-rouleaux-plastique.webp" alt="Machine Atelier CAL équipée de rouleaux en plastique" loading="lazy" width="1536" height="1024"></a>
+        <div class="entry-copy">
+          <p class="machine-kicker">Une alternative pour démarrer</p>
+          <h2 id="entry-title">La version à rouleaux plastique.</h2>
+          <p>La même base mécanique, avec des rouleaux interchangeables et un budget plus accessible.</p>
+          <p><strong>2 290 € TTC</strong> · Deux paires de rouleaux incluses.<br><small>Offre jusqu’au 25 décembre 2026. Livraison en supplément.</small></p>
+          <a class="btn btn-link" href="/machine-plastique.html">Découvrir cette version</a>
         </div>
       </div>
     </section>
@@ -741,40 +726,5 @@
   <a class="whatsapp-float" href="https://wa.me/33677845435?text=Bonjour%2C%20je%20souhaite%20avoir%20des%20informations%20sur%20les%20machines%20Atelier%20CAL." aria-label="Contacter Atelier CAL sur WhatsApp" rel="noopener">
     <span>Discuter sur WhatsApp</span>
   </a>
-  <dialog class="offer-dialog" id="offerDialog" aria-label="Offre spéciale Atelier CAL">
-    <div class="offer-layout">
-      <div class="offer-header"><span>Offre en cours · Atelier CAL</span><button class="offer-close" id="offerClose" type="button" aria-label="Fermer l’offre" autofocus>×</button></div>
-      <div class="offer-body"><img src="/assets/images/offre-speciale.webp" alt="Offre limitée Atelier CAL : version bronze à 2 930 euros TTC et version plastique à 2 290 euros TTC avec deux paires de rouleaux incluses" style="--photo-ratio: 1254 / 1254" width="1254" height="1254"></div>
-      <div class="offer-footer"><a class="offer-whatsapp" href="https://wa.me/33677845435?text=Bonjour%2C%20je%20souhaite%20profiter%20de%20l%27offre%20sp%C3%A9ciale%20Atelier%20CAL." target="_blank" rel="noopener">Discuter de l’offre sur WhatsApp</a></div>
-    </div>
-  </dialog>
-  <script>
-    const offerDialog = document.getElementById('offerDialog');
-    const offerClose = document.getElementById('offerClose');
-    let offerWasClosed = false;
-    try { offerWasClosed = sessionStorage.getItem('atelier-cal-offer-closed') === '1'; } catch (error) {}
-    const scheduleOffer = () => {
-      if (!offerWasClosed && typeof offerDialog.showModal === 'function') {
-        window.setTimeout(() => offerDialog.showModal(), 8000);
-      }
-    };
-    const scheduleOfferAfterConsent = () => {
-      const consentBanner = document.querySelector('.cal-consent');
-      if (consentBanner && !consentBanner.hidden) {
-        window.addEventListener('atelier-cal-consent-set', scheduleOffer, { once: true });
-      } else {
-        scheduleOffer();
-      }
-    };
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', scheduleOfferAfterConsent, { once: true });
-    } else {
-      scheduleOfferAfterConsent();
-    }
-    offerClose.addEventListener('click', () => offerDialog.close());
-    offerDialog.addEventListener('close', () => {
-      try { sessionStorage.setItem('atelier-cal-offer-closed', '1'); } catch (error) {}
-    });
-  </script>
 </body>
 </html>
