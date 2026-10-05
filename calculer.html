@@ -53,6 +53,7 @@
       <p class="eyebrow" style="margin-top:34px">Outil d’aide à la décision</p>
       <h1>Calculer la rentabilité</h1>
       <p>Adaptez les volumes, les prix et vos marges. Le simulateur estime le temps nécessaire pour amortir votre investissement.</p>
+      <p><small>Tous les prix saisis et les montants calculés sont hors taxes. France métropolitaine : TVA 0 % — TVA non applicable, art. 293 B du CGI.</small></p>
     </header>
 
     <section class="roi-layout">
@@ -156,7 +157,7 @@
     }
 
     function euro(number) {
-      return Number.isFinite(number) ? number.toLocaleString("fr-FR", {style: "currency", currency: "EUR"}) : "—";
+      return Number.isFinite(number) ? number.toLocaleString("fr-FR", {style: "currency", currency: "EUR", useGrouping: false}).replace(/\u00a0/g, " ") : "—";
     }
 
     function syncRange(id) {
@@ -214,7 +215,7 @@
           plugins: {legend: {position: "bottom", labels: {color: "rgba(255,255,255,.72)"}}},
           scales: {
             x: {ticks: {color: "rgba(255,255,255,.55)"}, grid: {color: "rgba(255,255,255,.05)"}},
-            y: {ticks: {color: "rgba(255,255,255,.55)", callback: amount => `${Number(amount).toLocaleString("fr-FR")} €`}, grid: {color: "rgba(255,255,255,.08)"}}
+            y: {ticks: {color: "rgba(255,255,255,.55)", callback: amount => `${Number(amount).toLocaleString("fr-FR", {useGrouping: false})} €`}, grid: {color: "rgba(255,255,255,.08)"}}
           }
         },
         plugins: [markerPlugin]
