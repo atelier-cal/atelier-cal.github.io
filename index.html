@@ -86,6 +86,7 @@
     .brand { display: inline-flex; align-items: center; flex: 0 0 auto; text-decoration: none; }
     .brand img { width: 112px; height: 74px; object-fit: contain; object-position: left center; }
     .desktop-nav { display: flex; align-items: center; gap: 24px; }
+    .header-actions { display: flex; align-items: center; gap: 14px; flex: 0 0 auto; }
     .desktop-nav > a,
     .language summary {
       color: rgba(255, 255, 255, .78);
@@ -98,11 +99,24 @@
     .desktop-nav > a:focus-visible,
     .language summary:hover { color: #fff; }
     .language { position: relative; }
-    .language summary { cursor: pointer; list-style: none; }
+    .language summary {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 42px;
+      padding: 8px 11px;
+      border: 1px solid var(--gold-bright);
+      border-radius: 10px;
+      background: rgba(213,173,101,.08);
+      color: #fff;
+      cursor: pointer;
+      list-style: none;
+    }
+    .language img { width: 24px; height: 16px; flex: 0 0 auto; border-radius: 2px; }
     .language summary::-webkit-details-marker { display: none; }
     .language-menu {
       position: absolute;
-      top: calc(100% + 16px);
+      top: calc(100% + 10px);
       right: 0;
       width: 172px;
       padding: 8px;
@@ -112,14 +126,17 @@
       box-shadow: 0 18px 45px rgba(0,0,0,.32);
     }
     .language-menu a {
-      display: block;
+      display: flex;
+      align-items: center;
+      gap: 10px;
       padding: 9px 10px;
       border-radius: 8px;
       color: rgba(255,255,255,.8);
       text-decoration: none;
       font-size: .88rem;
     }
-    .language-menu a:hover { background: rgba(255,255,255,.08); color: #fff; }
+    .language-menu a:hover,
+    .language-menu a[aria-current="page"] { background: rgba(255,255,255,.08); color: #fff; }
     .header-cta,
     .btn {
       display: inline-flex;
@@ -562,17 +579,18 @@
         <a href="/photos.html">Photos</a>
         <a href="/calculer.html">Rentabilité</a>
         <a href="/qui-sommes-nous.html">À propos</a>
-        <details class="language">
-          <summary aria-label="Changer de langue">FR&nbsp; ▾</summary>
-          <div class="language-menu">
-            <a href="/">🇫🇷&nbsp; Français</a>
-            <a href="/de/index.html">🇩🇪&nbsp; Deutsch</a>
-            <a href="/es/index.html">🇪🇸&nbsp; Español</a>
-            <a href="/it/index.html">🇮🇹&nbsp; Italiano</a>
-            <a href="/en/index.html">🇬🇧&nbsp; English</a>
-          </div>
-        </details>
       </nav>
+      <div class="header-actions">
+        <details class="language">
+          <summary aria-label="Choisir un pays ou une langue" title="Pays / Langue"><img src="/flag-fr.svg" alt="" width="24" height="16"><span>FR</span><span aria-hidden="true">▾</span></summary>
+          <nav class="language-menu" aria-label="Pays et langues">
+            <a href="/" hreflang="fr" lang="fr" aria-current="page"><img src="/flag-fr.svg" alt="" width="24" height="16">Français</a>
+            <a href="/it/" hreflang="it" lang="it"><img src="/flag-it.svg" alt="" width="24" height="16">Italiano</a>
+            <a href="/es/" hreflang="es" lang="es"><img src="/flag-es.svg" alt="" width="24" height="16">Español</a>
+            <a href="/en/" hreflang="en" lang="en"><img src="/flag-en.svg" alt="" width="24" height="16">English</a>
+            <a href="/de/" hreflang="de" lang="de"><img src="/flag-de.svg" alt="" width="24" height="16">Deutsch</a>
+          </nav>
+        </details>
       <a class="header-cta" href="mailto:contact@atelier-cal.fr?subject=Demande%20de%20devis%20Atelier%20CAL">Demander un devis</a>
       <details class="mobile-nav">
         <summary aria-label="Ouvrir le menu">☰</summary>
@@ -585,6 +603,7 @@
           <a href="mailto:contact@atelier-cal.fr?subject=Demande%20de%20devis%20Atelier%20CAL">Demander un devis</a>
         </nav>
       </details>
+      </div>
     </div>
   </header>
 
@@ -854,5 +873,23 @@
   <a class="whatsapp-float" href="https://wa.me/33677845435?text=Bonjour%2C%20je%20souhaite%20avoir%20des%20informations%20sur%20les%20machines%20Atelier%20CAL." aria-label="Contacter Atelier CAL sur WhatsApp" rel="noopener">
     <span>Discuter sur WhatsApp</span>
   </a>
+  <script>
+    (() => {
+      const language = document.querySelector('.language');
+      const mobileMenu = document.querySelector('.mobile-nav');
+      document.addEventListener('click', event => {
+        if (!language.contains(event.target)) language.open = false;
+      });
+      language.addEventListener('toggle', () => {
+        if (language.open) mobileMenu.open = false;
+      });
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && language.open) {
+          language.open = false;
+          language.querySelector('summary').focus();
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
