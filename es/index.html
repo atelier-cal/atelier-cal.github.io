@@ -1,17 +1,864 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Máquinas profesionales de confitería | Atelier CAL</title><meta name="description" content="Atelier CAL diseña máquinas compactas de rodillos para azúcar cocido, caramelos de miel y nougatina."><link rel="canonical" href="https://atelier-cal.fr/es/index.html"><link rel="alternate" hreflang="en" href="https://atelier-cal.fr/en/index.html"><link rel="alternate" hreflang="de" href="https://atelier-cal.fr/de/index.html"><link rel="alternate" hreflang="es" href="https://atelier-cal.fr/es/index.html"><link rel="alternate" hreflang="it" href="https://atelier-cal.fr/it/index.html"><link rel="alternate" hreflang="fr" href="https://atelier-cal.fr/"><meta property="og:title" content="Máquinas profesionales de confitería | Atelier CAL"><meta property="og:description" content="Atelier CAL diseña máquinas compactas de rodillos para azúcar cocido, caramelos de miel y nougatina."><meta property="og:image" content="https://atelier-cal.fr/assets/images/atelier-cal-facebook-1200x630.jpg">
-<meta property="og:image:secure_url" content="https://atelier-cal.fr/assets/images/atelier-cal-facebook-1200x630.jpg"><link rel="stylesheet" href="/assets/premium-pages.css?v=20260922"><meta name="robots" content="index, follow, max-image-preview:large">
-<meta property="og:image:alt" content="Máquina Atelier CAL con rodillos de bronce">
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Máquinas profesionales de confitería | Atelier CAL</title>
+  <meta name="description" content="Atelier CAL diseña y fabrica máquinas de rodillos profesionales para azúcar cocido, miel y nougatine. Descubra las versiones con rodillos de plástico y de bronce.">
+  <link rel="canonical" href="https://atelier-cal.fr/es/index.html">
+  <meta name="theme-color" content="#0b0c0d">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Atelier CAL — Máquinas profesionales de confitería">
+  <meta property="og:description" content="La precisión de los rodillos de bronce en una máquina diseñada para confiteros artesanos.">
+  <meta property="og:url" content="https://atelier-cal.fr/es/index.html">
+  <meta property="og:image" content="https://atelier-cal.fr/assets/images/atelier-cal-facebook-1200x630.jpg">
+<meta property="og:image:secure_url" content="https://atelier-cal.fr/assets/images/atelier-cal-facebook-1200x630.jpg">
+
+  <link rel="preload" as="image" href="/assets/images/machines-atelier-cal.webp" type="image/webp">
+
+  <link rel="stylesheet" href="/assets/nouvelle-collection.css">
+  <script defer src="/assets/i18n/nouvelle-collection.es.js"></script>
+
+  <style>
+    :root {
+      --ink: #0b0c0d;
+      --ink-soft: #17191a;
+      --paper: #f4f1eb;
+      --surface: #fff;
+      --text: #151718;
+      --muted: #656966;
+      --line: rgba(21, 23, 24, .13);
+      --line-dark: rgba(255, 255, 255, .13);
+      --gold: #b6863e;
+      --gold-bright: #d5ad65;
+      --gold-pale: #efe2c8;
+      --radius-lg: 28px;
+      --shadow: 0 22px 60px rgba(20, 18, 14, .12);
+      --max: 1240px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    button, summary { font: inherit; }
+    .shell { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
+
+    .skip-link {
+      position: fixed;
+      top: 8px;
+      left: 8px;
+      z-index: 2000;
+      transform: translateY(-140%);
+      background: var(--surface);
+      color: var(--ink);
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-weight: 800;
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(11, 12, 13, .94);
+      border-bottom: 1px solid var(--line-dark);
+      backdrop-filter: blur(16px);
+    }
+    .header-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 26px;
+    }
+    .brand { display: inline-flex; align-items: center; flex: 0 0 auto; text-decoration: none; }
+    .brand img { width: 112px; height: 74px; object-fit: contain; object-position: left center; }
+    .desktop-nav { display: flex; align-items: center; gap: 24px; }
+    .desktop-nav > a,
+    .language summary {
+      color: rgba(255, 255, 255, .78);
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 700;
+      transition: color 160ms ease;
+    }
+    .desktop-nav > a:hover,
+    .desktop-nav > a:focus-visible,
+    .language summary:hover { color: #fff; }
+    .language { position: relative; }
+    .language summary { cursor: pointer; list-style: none; }
+    .language summary::-webkit-details-marker { display: none; }
+    .language-menu {
+      position: absolute;
+      top: calc(100% + 16px);
+      right: 0;
+      width: 172px;
+      padding: 8px;
+      border: 1px solid var(--line-dark);
+      border-radius: 14px;
+      background: #151718;
+      box-shadow: 0 18px 45px rgba(0,0,0,.32);
+    }
+    .language-menu a {
+      display: block;
+      padding: 9px 10px;
+      border-radius: 8px;
+      color: rgba(255,255,255,.8);
+      text-decoration: none;
+      font-size: .88rem;
+    }
+    .language-menu a:hover { background: rgba(255,255,255,.08); color: #fff; }
+    .header-cta,
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 18px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      line-height: 1.2;
+      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+    }
+    .header-cta {
+      min-height: 42px;
+      padding: 10px 16px;
+      background: var(--gold-bright);
+      color: #14110b;
+      font-size: .88rem;
+    }
+    .header-cta:hover, .btn:hover { transform: translateY(-2px); }
+    .mobile-nav { display: none; position: relative; }
+    .mobile-nav summary {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line-dark);
+      border-radius: 50%;
+      color: #fff;
+      cursor: pointer;
+      list-style: none;
+      font-size: 1.25rem;
+    }
+    .mobile-nav summary::-webkit-details-marker { display: none; }
+    .mobile-menu {
+      position: absolute;
+      top: 54px;
+      right: 0;
+      width: min(300px, calc(100vw - 40px));
+      padding: 12px;
+      background: #151718;
+      border: 1px solid var(--line-dark);
+      border-radius: 18px;
+      box-shadow: 0 20px 50px rgba(0,0,0,.38);
+    }
+    .mobile-menu a {
+      display: block;
+      padding: 11px 12px;
+      color: rgba(255,255,255,.85);
+      text-decoration: none;
+      border-radius: 9px;
+      font-weight: 700;
+    }
+    .mobile-menu a:hover { background: rgba(255,255,255,.08); }
+
+    .hero {
+      position: relative;
+      min-height: 660px;
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      isolation: isolate;
+      background: #151515;
+      color: #fff;
+    }
+    .hero-media, .hero-media::after { position: absolute; inset: 0; }
+    .hero-media { z-index: -2; }
+    .hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: center 52%; }
+    .hero-media::after {
+      content: "";
+      background:
+        linear-gradient(90deg, rgba(7,8,9,.72) 0%, rgba(7,8,9,.54) 33%, rgba(7,8,9,.08) 67%, rgba(7,8,9,.14) 100%),
+        linear-gradient(0deg, rgba(7,8,9,.34) 0%, transparent 45%);
+    }
+    .hero-content {
+      max-width: 650px;
+      padding-block: 96px 118px;
+      text-shadow: 0 2px 18px rgba(0,0,0,.62);
+    }
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--gold-bright);
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      margin-bottom: 22px;
+      font-size: clamp(2.7rem, 6vw, 5.65rem);
+      line-height: .98;
+      letter-spacing: -.055em;
+      text-wrap: balance;
+    }
+    .hero-lead {
+      max-width: 590px;
+      margin-bottom: 30px;
+      color: rgba(255,255,255,.78);
+      font-size: clamp(1.02rem, 1.7vw, 1.24rem);
+      line-height: 1.65;
+    }
+    .hero-actions, .card-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn-primary { background: var(--gold-bright); color: #17130c; }
+    .btn-primary:hover { background: #e2bd79; }
+    .btn-secondary {
+      border-color: rgba(255,255,255,.28);
+      color: #fff;
+      background: rgba(255,255,255,.06);
+      backdrop-filter: blur(8px);
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.42); }
+    .hero-points {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-top: 1px solid var(--line-dark);
+      background: rgba(8,9,10,.62);
+      backdrop-filter: blur(13px);
+    }
+    .hero-points-inner { min-height: 76px; display: grid; grid-template-columns: repeat(4, 1fr); }
+    .hero-point {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 17px 24px;
+      border-left: 1px solid var(--line-dark);
+      color: rgba(255,255,255,.8);
+      font-size: .86rem;
+      font-weight: 750;
+    }
+    .hero-point:last-child { border-right: 1px solid var(--line-dark); }
+    .hero-point::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background: var(--gold-bright);
+      box-shadow: 0 0 0 5px rgba(213,173,101,.12);
+    }
+
+    .section { padding-block: 108px; }
+    .section-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(280px, .7fr);
+      gap: 50px;
+      align-items: end;
+      margin-bottom: 48px;
+    }
+    .section-heading h2 {
+      margin-bottom: 0;
+      max-width: 780px;
+      font-size: clamp(2.15rem, 4.8vw, 4.5rem);
+      line-height: 1.02;
+      letter-spacing: -.05em;
+      text-wrap: balance;
+    }
+    .section-heading p:last-child { margin-bottom: 3px; color: var(--muted); font-size: 1.04rem; }
+    .machine-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+    .machine-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .machine-visual { position: relative; overflow: hidden; aspect-ratio: 3 / 2; background: #cbc7c0; }
+    .machine-visual img { width: 100%; height: 100%; object-fit: cover; transition: transform 480ms cubic-bezier(.2,.8,.2,1); }
+    .machine-card:hover .machine-visual img { transform: scale(1.025); }
+    .machine-label {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,.36);
+      border-radius: 999px;
+      color: #fff;
+      background: rgba(11,12,13,.72);
+      backdrop-filter: blur(10px);
+      font-size: .76rem;
+      font-weight: 850;
+      letter-spacing: .04em;
+    }
+    .machine-body { padding: 32px; }
+    .machine-kicker {
+      margin-bottom: 9px;
+      color: var(--gold);
+      font-size: .76rem;
+      font-weight: 900;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .machine-body h3 {
+      margin-bottom: 14px;
+      font-size: clamp(1.65rem, 3vw, 2.4rem);
+      line-height: 1.08;
+      letter-spacing: -.035em;
+    }
+    .machine-description { min-height: 78px; margin-bottom: 24px; color: var(--muted); }
+    .feature-list {
+      display: grid;
+      gap: 11px;
+      margin: 0 0 28px;
+      padding: 22px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      list-style: none;
+    }
+    .feature-list li { position: relative; padding-left: 24px; font-size: .94rem; font-weight: 700; }
+    .feature-list li::before {
+      content: "";
+      position: absolute;
+      top: .6em;
+      left: 2px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+    .card-actions .btn { min-height: 46px; }
+    .card-actions .btn-primary { flex: 1 1 240px; }
+    .btn-dark { background: var(--ink); color: #fff; }
+    .btn-dark:hover { background: #252829; }
+    .btn-link { color: var(--ink); border-color: var(--line); background: transparent; }
+    .btn-link:hover { background: var(--paper); }
+    .choice-note {
+      margin-top: 22px;
+      padding: 18px 22px;
+      border: 1px solid rgba(182,134,62,.3);
+      border-radius: 16px;
+      color: #5d513d;
+      background: var(--gold-pale);
+      text-align: center;
+      font-size: .92rem;
+    }
+
+    .why-section { padding-block: 96px; color: #fff; background: var(--ink); }
+    .why-grid { display: grid; grid-template-columns: .9fr 1.25fr; gap: 70px; align-items: start; }
+    .why-intro h2 {
+      margin-bottom: 20px;
+      font-size: clamp(2.1rem, 4vw, 4rem);
+      line-height: 1.04;
+      letter-spacing: -.045em;
+    }
+    .why-intro p:last-child { color: rgba(255,255,255,.65); }
+    .why-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+      overflow: hidden;
+      border: 1px solid var(--line-dark);
+      border-radius: 22px;
+      background: var(--line-dark);
+    }
+    .why-item { min-height: 190px; padding: 28px; background: var(--ink-soft); }
+    .why-number {
+      display: block;
+      margin-bottom: 32px;
+      color: var(--gold-bright);
+      font-size: .76rem;
+      font-weight: 900;
+      letter-spacing: .12em;
+    }
+    .why-item h3 { margin-bottom: 8px; font-size: 1.14rem; }
+    .why-item p { margin-bottom: 0; color: rgba(255,255,255,.62); font-size: .92rem; }
+
+    .cta-section { padding-block: 96px; }
+    .cta-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 40px;
+      align-items: center;
+      padding: 52px;
+      border-radius: var(--radius-lg);
+      background: #ded7cb;
+      box-shadow: inset 0 0 0 1px rgba(21,23,24,.08);
+    }
+    .cta-panel h2 {
+      margin-bottom: 12px;
+      font-size: clamp(2rem, 4vw, 3.7rem);
+      line-height: 1.04;
+      letter-spacing: -.045em;
+    }
+    .cta-panel p { max-width: 700px; margin-bottom: 0; color: #5f615e; }
+    .cta-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; }
+
+    .site-footer {
+      padding-block: 42px;
+      border-top: 1px solid var(--line-dark);
+      color: rgba(255,255,255,.64);
+      background: var(--ink);
+      font-size: .88rem;
+    }
+    .footer-grid { display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: end; }
+    .footer-brand { margin-bottom: 10px; color: #fff; font-size: 1.02rem; font-weight: 850; }
+    .footer-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 16px; }
+    .footer-links a { text-decoration: none; }
+    .footer-links a:hover { color: #fff; }
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 900;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      min-height: 50px;
+      padding: 12px 17px;
+      border-radius: 999px;
+      color: #fff;
+      background: #168f47;
+      box-shadow: 0 15px 36px rgba(10,70,32,.28);
+      text-decoration: none;
+      font-size: .88rem;
+      font-weight: 850;
+    }
+    .whatsapp-float::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 0 0 4px rgba(255,255,255,.16);
+    }
+    :focus-visible { outline: 3px solid var(--gold-bright); outline-offset: 3px; }
+
+    @media (max-width: 1050px) {
+      .desktop-nav { gap: 16px; }
+      .desktop-nav > a:nth-of-type(4) { display: none; }
+      .hero-media img { object-position: 60% center; }
+      .why-grid { gap: 40px; }
+      .cta-panel { grid-template-columns: 1fr; }
+      .cta-actions { justify-content: flex-start; }
+    }
+    @media (max-width: 850px) {
+      .desktop-nav, .header-cta { display: none; }
+      .mobile-nav { display: block; }
+      .hero { min-height: 0; display: block; }
+      .hero-media { position: relative; z-index: auto; }
+      .hero-media img { display: block; height: auto; max-height: 420px; object-fit: contain; object-position: center; }
+      .hero-media::after { display: none; }
+      .hero-content { max-width: 660px; padding-block: 32px 40px; text-shadow: none; }
+      .hero-points { position: static; }
+      .hero-points-inner { grid-template-columns: repeat(2, 1fr); }
+      .hero-point:nth-child(3), .hero-point:nth-child(4) { border-top: 1px solid var(--line-dark); }
+      .section { padding-block: 82px; }
+      .section-heading, .machine-grid, .why-grid { grid-template-columns: 1fr; }
+      .section-heading { gap: 24px; margin-bottom: 34px; }
+      .machine-description { min-height: auto; }
+      .machine-visual { aspect-ratio: auto; }
+      .machine-visual img { display: block; height: auto; max-height: 420px; object-fit: contain; }
+      .machine-card:hover .machine-visual img { transform: none; }
+      .why-list { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-links { justify-content: flex-start; }
+    }
+    @media (max-width: 560px) {
+      .shell { width: min(calc(100% - 28px), var(--max)); }
+      .header-inner { min-height: 70px; }
+      .brand img { width: 92px; height: 60px; }
+      .hero { min-height: 0; }
+      .hero-content { padding-block: 28px 36px; }
+      h1 { font-size: clamp(2.55rem, 13vw, 4.2rem); }
+      .hero-lead { font-size: 1rem; }
+      .hero-actions .btn, .card-actions .btn, .cta-actions .btn { width: 100%; }
+      .hero-points-inner { grid-template-columns: 1fr 1fr; }
+      .hero-point { padding: 13px 12px; font-size: .76rem; }
+      .section { padding-block: 68px; }
+      .machine-grid { gap: 18px; }
+      .machine-card { border-radius: 20px; }
+      .machine-body { padding: 24px 20px; }
+      .machine-label { top: 12px; left: 12px; }
+      .why-section { padding-block: 70px; }
+      .why-list { grid-template-columns: 1fr; }
+      .why-item { min-height: auto; }
+      .why-number { margin-bottom: 20px; }
+      .cta-section { padding-block: 68px; }
+      .cta-panel { padding: 32px 22px; }
+      .whatsapp-float { right: 14px; bottom: max(14px, env(safe-area-inset-bottom)); max-width: calc(100% - 28px); padding: 12px 16px; justify-content: center; }
+      .site-footer { padding-bottom: 94px; }
+    }
+    .machine-featured { display: grid; grid-template-columns: 1.05fr 1fr; align-items: center; }
+    .machine-featured .machine-visual { aspect-ratio: auto; align-self: stretch; background: #e3ded5; }
+    .machine-featured .machine-visual img { height: 100%; object-fit: contain; }
+    .machine-featured .machine-description { min-height: 0; }
+    .machine-price { margin: 0 0 26px; }
+    .machine-price p { display: flex; align-items: baseline; flex-wrap: wrap; gap: 10px; margin: 0 0 6px; }
+    .machine-price strong { font-size: clamp(2rem, 4vw, 2.7rem); line-height: 1.1; letter-spacing: -.04em; }
+    .machine-price del, .machine-price small { color: var(--muted); }
+    .machine-price small { display: block; font-size: .82rem; line-height: 1.6; }
+    .entry-section { padding-top: 72px; }
+    .entry-card { display: grid; grid-template-columns: 250px 1fr; gap: 36px; align-items: center; padding: 28px; border: 1px solid var(--line); border-radius: 22px; background: var(--surface); }
+    .entry-image { border-radius: 14px; overflow: hidden; }
+    .entry-image img { width: 100%; height: auto; }
+    .entry-copy h2 { font-size: clamp(1.35rem, 3vw, 1.85rem); line-height: 1.15; letter-spacing: -.025em; margin-bottom: 12px; }
+    .entry-copy p { color: var(--muted); margin-bottom: 14px; }
+    .entry-copy .machine-kicker { color: #87632e; margin-bottom: 8px; }
+    .entry-copy strong { color: var(--text); }
+    @media (max-width: 850px) {
+      .machine-featured { grid-template-columns: 1fr; }
+      .machine-featured .machine-visual img { height: auto; }
+      .entry-card { grid-template-columns: 180px 1fr; gap: 24px; }
+    }
+    @media (max-width: 560px) {
+      .entry-section { padding-top: 50px; }
+      .entry-card { grid-template-columns: 1fr; padding: 20px; gap: 20px; }
+      .entry-image { max-width: 260px; margin-inline: auto; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:image:alt" content="Máquina Atelier CAL equipada con rodillos de bronce">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/jpeg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://atelier-cal.fr/assets/images/atelier-cal-facebook-1200x630.jpg">
-<meta name="twitter:image:alt" content="Máquina Atelier CAL con rodillos de bronce">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://atelier-cal.fr/es/index.html#webpage","url":"https://atelier-cal.fr/es/index.html","name":"Máquinas profesionales de confitería | Atelier CAL","inLanguage":"es","primaryImageOfPage":{"@type":"ImageObject","url":"https://atelier-cal.fr/assets/images/machine-rouleaux-bronze.webp","contentUrl":"https://atelier-cal.fr/assets/images/machine-rouleaux-bronze.webp","width":1536,"height":1024,"caption":"Máquina Atelier CAL con rodillos de bronce"},"isPartOf":{"@id":"https://atelier-cal.fr/#website"},"publisher":{"@id":"https://atelier-cal.fr/#organization"}}]}</script>
-</head><body><nav class="site-nav" aria-label="Main navigation"><div class="container site-nav-inner"><a class="site-brand" href="/es/index.html" aria-label="Atelier CAL"><img src="/logo-atelier-cal.png" alt="Atelier CAL" width="106" height="70"></a><div class="site-links"><a href="/es/index.html" aria-current="page">Inicio</a><a href="/es/machine.html">Bronce</a><a href="/es/machine-plastique.html">Plástico</a><a href="/es/modeles.html">Rodillos</a><a href="/es/photos.html">Fotos</a><a href="/es/qui-sommes-nous.html">Taller</a><details class="locale-switch"><summary>ES</summary><div class="locale-switch-menu"><a href="/en/index.html">English</a><a href="/de/index.html">Deutsch</a><a href="/es/index.html">Español</a><a href="/it/index.html">Italiano</a><a href="/">Français</a></div></details></div><details class="mobile-menu"><summary>Menú</summary><div class="mobile-menu-panel"><a href="/es/index.html">Inicio</a><a href="/es/machine.html">Bronce</a><a href="/es/machine-plastique.html">Plástico</a><a href="/es/modeles.html">Rodillos</a><a href="/es/photos.html">Fotos</a><a href="/es/qui-sommes-nous.html">Taller</a><a href="/es/catalogue.html">Catálogo</a><a href="/es/calculer.html">Rentabilidad</a><hr><a href="/en/index.html">English</a><a href="/de/index.html">Deutsch</a><a href="/es/index.html">Español</a><a href="/it/index.html">Italiano</a><a href="/">Français</a></div></details></div></nav><main><section class="home-hero"><div class="home-hero-media"><picture><source media="(max-width: 900px)" srcset="/assets/images/machine-rouleaux-bronze.webp" width="1536" height="1024"><img src="/assets/images/machines-atelier-cal.webp" alt="" fetchpriority="high" style="--photo-ratio: 1726 / 911" width="1726" height="911"></picture></div><div class="container home-hero-content"><p class="eyebrow">Diseño francés · Confitería profesional</p><h1>La máquina que se adapta a su forma de producir.</h1><p class="lead">Máquina de bronce con formas estándar. Una configuración compacta y motorizada para una producción de confitería precisa y regular.</p><div class="page-actions"><a class="btn primary" href="#versions">Descubrir la versión de bronce</a><a class="btn" href="https://wa.me/33677845435?text=Hablar%20de%20mi%20proyecto">Chatear por WhatsApp</a></div></div></section>
-  <section class="section" id="versions"><div class="container"><div class="section-head"><p class="eyebrow">La gama Atelier CAL</p><h2>Rodillos de bronce</h2><p>Máquina de bronce con formas estándar. Una configuración compacta y motorizada para una producción de confitería precisa y regular.</p></div><div class="bronze-primary">
+<meta name="twitter:image:alt" content="Máquina Atelier CAL equipada con rodillos de bronce">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://atelier-cal.fr/#organization","name":"Atelier CAL","url":"https://atelier-cal.fr/","logo":"https://atelier-cal.fr/logo-atelier-cal.png","image":"https://atelier-cal.fr/assets/images/machine-rouleaux-bronze.webp","email":"contact@atelier-cal.fr","telephone":"+33677845435"},{"@type":"WebPage","@id":"https://atelier-cal.fr/es/index.html#webpage","url":"https://atelier-cal.fr/es/index.html","name":"Máquinas profesionales de confitería | Atelier CAL","inLanguage":"es","primaryImageOfPage":{"@type":"ImageObject","url":"https://atelier-cal.fr/assets/images/machine-rouleaux-bronze.webp","contentUrl":"https://atelier-cal.fr/assets/images/machine-rouleaux-bronze.webp","width":1536,"height":1024,"caption":"Máquina Atelier CAL equipada con rodillos de bronce"},"isPartOf":{"@id":"https://atelier-cal.fr/#website"},"publisher":{"@id":"https://atelier-cal.fr/#organization"}},{"@type":"WebSite","@id":"https://atelier-cal.fr/#website","url":"https://atelier-cal.fr/","name":"Atelier CAL","publisher":{"@id":"https://atelier-cal.fr/#organization"}}]}</script>
+  <script defer src="/assets/i18n/analytics-consent.es.js?v=20260904"></script>
+<link rel="alternate" hreflang="fr" href="https://atelier-cal.fr/">
+<link rel="alternate" hreflang="en" href="https://atelier-cal.fr/en/index.html">
+<link rel="alternate" hreflang="de" href="https://atelier-cal.fr/de/index.html">
+<link rel="alternate" hreflang="es" href="https://atelier-cal.fr/es/index.html">
+<link rel="alternate" hreflang="it" href="https://atelier-cal.fr/it/index.html">
+<link rel="alternate" hreflang="x-default" href="https://atelier-cal.fr/">
+</head>
 
-  <article class="version-card bronze-featured"><img src="/assets/images/machine-rouleaux-bronze.webp" alt="Rodillos de bronce" loading="eager" style="--photo-ratio: 1536 / 1024" width="1536" height="1024"><div class="version-card-body"><p class="eyebrow">Oferta válida hasta el 25 de diciembre de 2026.</p><h2>Rodillos de bronce</h2><p>La versión premium para impresiones nítidas, un acabado cuidado y una producción profesional regular.</p><div class="price-box price-details"><span class="price">2 930 € <small>sin IVA</small></span><small>Bronce estándar, sin grabado. Oferta actual: 2 930 € sin IVA · Precio habitual: 3 260 € sin IVA.</small><small>Con rodillos grabados o a medida: 3 860 € sin IVA.</small><small>Precios para profesionales sin IVA ni transporte. El IVA se aplica según el país de entrega y el tratamiento fiscal de la venta. El IVA aplicable y los gastos de envío se detallarán en el presupuesto antes del pedido. Entrega en Francia: solo transferencia bancaria.</small></div><div class="version-meta"><span>Grabado preciso</span><span>Acabado premium</span><span>Uso profesional</span></div><a class="btn primary" href="/es/machine.html">Descubrir la versión de bronce</a></div></article></div></div></section>
-  <section class="section"><div class="container"><div class="section-head"><p class="eyebrow">Diseñada para el trabajo real</p><h2>Lo esencial, bien diseñado.</h2></div><div class="feature-grid"><article class="feature-card"><span class="number">01</span><h3>Precisión constante</h3><p>Impresiones limpias y repetibles en toda la producción.</p></article><article class="feature-card"><span class="number">02</span><h3>Formato compacto</h3><p>Una máquina que encuentra fácilmente su lugar en el obrador.</p></article><article class="feature-card"><span class="number">03</span><h3>Seguridad integrada</h3><p>Parada de emergencia, protecciones y diseño profesional.</p></article></div></div></section>
-  <section class="section entry-alternative"><div class="container entry-alternative-card"><img src="/assets/images/machine-rouleaux-plastique.webp" alt="Rodillos de plástico" loading="lazy" style="--photo-ratio: 1536 / 1024" width="1536" height="1024"><div><p class="eyebrow">Una alternativa para empezar</p><h2>Rodillos de plástico</h2><p>Una configuración ligera y flexible para facilitar la manipulación y cambiar de formas.</p><div class="price-box"><span class="price">2 290 € <small>sin IVA</small></span><small>Oferta válida hasta el 25 de diciembre de 2026.</small></div><a class="btn" href="/es/machine-plastique.html">Descubrir la versión de plástico</a></div></div></section>
-<section class="section" id="quote"><div class="container"><div class="product-contact"><div><h2>Hablemos de su producción.</h2><p>Tipo de caramelo, materia, volúmenes y formas: pocos datos bastan para orientarle claramente.</p></div><div class="page-actions"><a class="btn primary" href="mailto:contact@atelier-cal.fr">Escribir por email</a><a class="btn" href="/es/catalogue.html">Descargar el catálogo</a></div></div></div></section></main><footer class="site-footer"><div class="container"><div class="footer-grid"><div><div class="footer-brand">ATELIER CAL</div><p>Máquinas profesionales de confitería para artesanos y centros de formación.</p></div><div><div class="footer-title">Catálogo</div><div class="footer-links"><a href="/es/machine.html">Rodillos de bronce</a><a href="/es/machine-plastique.html">Rodillos de plástico</a><a href="/es/catalogue.html">Descargar el catálogo</a><a href="/es/calculer.html">Rentabilidad</a></div></div><div><div class="footer-title">Contacto</div><div class="footer-links"><a href="mailto:contact@atelier-cal.fr">contact@atelier-cal.fr</a><a href="tel:+33677845435">+33 6 77 84 54 35</a><a href="/es/confidentialite.html">Aviso legal</a></div></div></div><div class="footer-bottom">© Atelier CAL</div></div></footer></body></html>
+<body>
+  <a class="skip-link" href="#contenu">Ir al contenido</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="/es/index.html" aria-label="Atelier CAL — Inicio">
+        <img src="/logo-atelier-cal.png" alt="Atelier CAL" width="112" height="74">
+      </a>
+      <nav class="desktop-nav" aria-label="Navegación principal">
+        <a href="#machines">Las máquinas</a>
+        <a href="/es/modeles.html">Los rodillos</a>
+        <a href="/es/photos.html">Fotos</a>
+        <a href="/es/calculer.html">Rentabilidad</a>
+        <a href="/es/qui-sommes-nous.html">Acerca de</a>
+        <details class="language">
+          <summary aria-label="Cambiar idioma">ES  ▾</summary>
+          <div class="language-menu">
+            <a href="/">🇫🇷  Français</a>
+            <a href="/de/index.html">🇩🇪  Deutsch</a>
+            <a href="/es/index.html">🇪🇸  Español</a>
+            <a href="/it/index.html">🇮🇹  Italiano</a>
+            <a href="/en/index.html">🇬🇧  English</a>
+          </div>
+        </details>
+      </nav>
+      <a class="header-cta" href="mailto:contact@atelier-cal.fr?subject=Solicitud%20de%20presupuesto%20Atelier%20CAL">Solicitar un presupuesto</a>
+      <details class="mobile-nav">
+        <summary aria-label="Abrir el menú">☰</summary>
+        <nav class="mobile-menu" aria-label="Navegación móvil">
+          <a href="#machines">Las máquinas</a>
+          <a href="/es/modeles.html">Los rodillos</a>
+          <a href="/es/photos.html">Fotos</a>
+          <a href="/es/calculer.html">Calculadora de rentabilidad</a>
+          <a href="/es/qui-sommes-nous.html">Quiénes somos</a>
+          <a href="mailto:contact@atelier-cal.fr?subject=Solicitud%20de%20presupuesto%20Atelier%20CAL">Solicitar un presupuesto</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-media" aria-hidden="true">
+        <picture><source media="(max-width: 850px)" srcset="/assets/images/machine-rouleaux-bronze.webp" width="1536" height="1024"><img src="/assets/images/machines-atelier-cal.webp" alt="" fetchpriority="high" style="--photo-ratio: 1726 / 911" width="1726" height="911"></picture>
+      </div>
+      <div class="shell hero-content">
+        <p class="eyebrow">Diseño francés · Confitería profesional</p>
+        <h1 id="hero-title">La máquina adaptada a su forma de producir.</h1>
+        <p class="hero-lead">Descubra nuestra máquina con rodillos de bronce, diseñada para su taller, sus recetas y su ritmo de producción. Un acabado preciso, formas estándar a elegir y asesoramiento directo del fabricante.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#machines">Descubrir la versión de bronce</a>
+          <a class="btn btn-secondary" href="https://wa.me/33677845435?text=Hola%2C%20me%20gustar%C3%ADa%20recibir%20asesoramiento%20para%20elegir%20una%20m%C3%A1quina%20Atelier%20CAL." rel="noopener">Hablar por WhatsApp</a>
+        </div>
+      </div>
+      <a class="collection-hero-link" href="#nouvelle-collection">Nueva colección <span aria-hidden="true">↓</span></a>
+      <div class="hero-points" aria-label="Características principales">
+        <div class="shell hero-points-inner">
+          <div class="hero-point">Conexión de 220 V</div>
+          <div class="hero-point">Formato compacto</div>
+          <div class="hero-point">Producción motorizada</div>
+          <div class="hero-point">Azúcar, miel, nougatine</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="collection-section" aria-labelledby="collection-title">
+      <div class="shell collection-panel" id="nouvelle-collection" data-collection aria-roledescription="carrusel" aria-label="Nueva colección de caramelos">
+        <div class="collection-copy">
+          <p class="eyebrow">Formas por descubrir</p>
+          <h2 id="collection-title">Nueva <br>colección.</h2>
+          <p class="collection-lead">Relieve, color, <br>carácter.</p>
+          <p class="collection-description">19 formas de azúcar cocido para inspirar sus próximas creaciones. Recorra las imágenes y encuentre el motivo que le representa.</p>
+          <a class="btn btn-primary" href="/es/modeles.html#devis">Hablemos de su modelo <span aria-hidden="true"> ↗</span></a>
+          <p class="collection-hint">Deslice o utilice las flechas para explorar.</p>
+        </div>
+        <div class="collection-gallery">
+          <div class="collection-stage" tabindex="0" aria-label="Imágenes de la colección. Utilice las flechas izquierda y derecha del teclado.">
+              <figure class="collection-slide" role="group" aria-roledescription="diapositiva" aria-label="1 de 19">
+                <img src="/assets/images/nouvelle-collection/01-pave-cannele.webp" alt="Rectángulo acanalado, caramelo de azúcar cocido de color miel claro" width="900" height="900" loading="lazy" decoding="async">
+                <figcaption><strong>Rectángulo acanalado</strong></figcaption>
+              </figure>
+              <figure class="collection-slide" role="group" aria-roledescription="diapositiva" aria-label="2 de 19" hidden>
+                <img src="/assets/images/nouvelle-collection/02-pave-ruche.webp" alt="Rectángulo de panal, caramelo ámbar de azúcar cocido" width="900" height="900" loading="lazy" decoding="async">
+                <figcaption><strong>Rectángulo de panal</strong></figcaption>
+              </figure>
+              <figure class="collection-slide" role="group" aria-roledescription="diapositiva" aria-label="3 de 19" hidden>
+                <img src="/assets/images/nouvelle-collection/03-pave-vagues-v2.webp" alt="Rectángulo de tres ondas, caramelo azul turquesa de azúcar cocido" width="900" height="900" loading="lazy" decoding="async">
+                <figcaption><strong>Rectángulo de tres ondas</strong></figcaption>
+              </figure>
+              <figure class="collection-slide" role="group" aria-roledescription="diapositiva" aria-label="4 de 19" hidden>
+                <img src="/assets/images/nouvelle-collection/04-pave-ecailles.webp" alt="Rectángulo de escamas, caramelo rosa frambuesa de azúcar cocido" width="900" height="900" loading="lazy" decoding="async">
+                <figcaption><strong>Rectángulo de escamas</strong></figcaption>
+              </figure>
+              <figure class="collection-slide" role="group" aria-roledescription="diapositiva" aria-label="5 de 19" hidden>
+                <img src="/assets/images/nouvelle-collection/05-palmette-douce.webp" alt="Palmeta suave, caramelo verde de azúcar cocido" width="900" height="900" loading="lazy" decoding="async">
+                <figcaption><strong>Palmeta suave</strong></figcaption>
+              </figure>
+              <figure class="collection-slide" role="group" aria-roledescription="diapositiva" aria-label="6 de 19" hidden>
+                <img src="/assets/images/nouvelle-collection/06-poisson-galet.webp" alt="Pez canto rodado, caramelo azul laguna de azúcar cocido" width="900" height="900" loading="lazy" decoding="async">
+                <figcaption><strong>Pez canto rodado</strong></figcaption>
+              </figure>
+              <figure class="collection-slide" role="group" aria-roledescription="diapositiva" aria-label="7 de 19" hidden>
+                <img src="/assets/images/nouvelle-collection/07-galet-zebre-v2.webp" alt="Canto rodado de cebra, caramelo violeta grosella de azúcar cocido" width="900" height="900" loading="lazy" decoding="async">
+                <figcaption><strong>Canto rodado de cebra</strong></figcaption>
+              </figure>
+              <figure class="collection-slide" role="group" aria-roledescription="diapositiva" aria-label="8 de 19" hidden>
+                <img src="/assets/images/nouvelle-collection/08-feuille-tropicale.webp" alt="Hoja tropical, caramelo verde esmeralda de azúcar cocido" width="900" height="900" loading="lazy" decoding="async">
+                <figcaption><strong>Hoja tropical</strong></figcaption>
+              </figure>
+              <figure class="collection-slide" role="group" aria-roledescription="diapositiva" aria-label="9 de 19" hidden>
+                <img src="/assets/images/nouvelle-collection/09-trefle-quatre-feuilles.webp" alt="Trébol de cuatro hojas, caramelo verde manzana de azúcar cocido" width="900" height="900" loading="lazy" decoding="async">
+                <figcaption><strong>Trébol de cuatro hojas</strong></figcaption>
+              </figure>
+              <figure class="collection-slide" role="group" aria-roledescription="diapositiva" aria-label="10 de 19" hidden>
+                <img src="/assets/images/nouvelle-collection/10-pastille-ronde-rayonnee.webp" alt="Pastilla redonda con rayos, caramelo rosa claro de azúcar cocido" width="900" height="900" loading="lazy" decoding="async">
+                <figcaption><strong>Pastilla redonda con rayos</strong></figcaption>
+              </figure>
+              <figure class="collection-slide" role="group" aria-roledescription="diapositiva" aria-label="11 de 19" hidden>
+                <img src="/assets/images/nouvelle-collection/11-grain-de-cafe.webp" alt="Grano de café, caramelo marrón caramelo de azúcar cocido" width="900" height="900" loading="lazy" decoding="async">
+                <figcaption><strong>Grano de café</strong></figcaption>
+              </figure>
+              <figure class="collection-slide" role="group" aria-roledescription="diapositiva" aria-label="12 de 19" hidden>
+                <img src="/assets/images/nouvelle-collection/12-galet-trois-vagues.webp" alt="Canto rodado de tres ondas, caramelo azul claro de azúcar cocido" width="900" height="900" loading="lazy" decoding="async">
+                <figcaption><strong>Canto rodado de tres ondas</strong></figcaption>
+              </figure>
+              <figure class="collection-slide" role="group" aria-roledescription="diapositiva" aria-label="13 de 19" hidden>
+                <img src="/assets/images/nouvelle-collection/13-croissant-lune.webp" alt="Luna creciente, caramelo amarillo limón de azúcar cocido" width="900" height="900" loading="lazy" decoding="async">
+                <figcaption><strong>Luna creciente</strong></figcaption>
+              </figure>
+              <figure class="collection-slide" role="group" aria-roledescription="diapositiva" aria-label="14 de 19" hidden>
+                <img src="/assets/images/nouvelle-collection/15-epi-ble-stylise.webp" alt="Espiga de trigo estilizada, caramelo dorado de azúcar cocido" width="900" height="900" loading="lazy" decoding="async">
+                <figcaption><strong>Espiga de trigo estilizada</strong></figcaption>
+              </figure>
+              <figure class="collection-slide" role="group" aria-roledescription="diapositiva" aria-label="15 de 19" hidden>
+                <img src="/assets/images/nouvelle-collection/16-etoile-cinq-branches.webp" alt="Estrella suave de cinco puntas, caramelo amarillo de azúcar cocido" width="900" height="900" loading="lazy" decoding="async">
+                <figcaption><strong>Estrella suave de cinco puntas</strong></figcaption>
+              </figure>
+              <figure class="collection-slide" role="group" aria-roledescription="diapositiva" aria-label="16 de 19" hidden>
+                <img src="/assets/images/nouvelle-collection/17-poisson-stylise.webp" alt="Pez estilizado, caramelo naranja mandarina de azúcar cocido" width="900" height="900" loading="lazy" decoding="async">
+                <figcaption><strong>Pez estilizado</strong></figcaption>
+              </figure>
+              <figure class="collection-slide" role="group" aria-roledescription="diapositiva" aria-label="17 de 19" hidden>
+                <img src="/assets/images/nouvelle-collection/18-coeur-torsade.webp" alt="Corazón trenzado, caramelo rojo cereza de azúcar cocido" width="900" height="900" loading="lazy" decoding="async">
+                <figcaption><strong>Corazón trenzado</strong></figcaption>
+              </figure>
+              <figure class="collection-slide" role="group" aria-roledescription="diapositiva" aria-label="18 de 19" hidden>
+                <img src="/assets/images/nouvelle-collection/19-ruche-hexagonale.webp" alt="Panal hexagonal, caramelo de azúcar cocido de color miel ámbar" width="900" height="900" loading="lazy" decoding="async">
+                <figcaption><strong>Panal hexagonal</strong></figcaption>
+              </figure>
+              <figure class="collection-slide" role="group" aria-roledescription="diapositiva" aria-label="19 de 19" hidden>
+                <img src="/assets/images/nouvelle-collection/20-feuille-chene.webp" alt="Hoja de roble, caramelo verde oliva de azúcar cocido" width="900" height="900" loading="lazy" decoding="async">
+                <figcaption><strong>Hoja de roble</strong></figcaption>
+              </figure>
+          </div>
+          <div class="collection-controls" hidden>
+            <span class="collection-count" aria-hidden="true">01 / 19</span>
+            <div class="collection-buttons">
+              <button type="button" class="collection-arrow" data-prev aria-label="Imagen anterior">←</button>
+              <button type="button" class="collection-play" data-play aria-label="Pausar el carrusel">Pausa <span aria-hidden="true">Ⅱ</span></button>
+              <button type="button" class="collection-arrow" data-next aria-label="Imagen siguiente">→</button>
+            </div>
+          </div>
+          <div class="collection-thumbs" aria-label="Elegir una imagen" hidden>
+              <button type="button" class="collection-thumb" aria-label="Ver Rectángulo acanalado" aria-pressed="true" data-slide="0"><img src="/assets/images/nouvelle-collection/01-pave-cannele-thumb.webp" alt="" width="72" height="72" loading="lazy"></button>
+              <button type="button" class="collection-thumb" aria-label="Ver Rectángulo de panal" aria-pressed="false" data-slide="1"><img src="/assets/images/nouvelle-collection/02-pave-ruche-thumb.webp" alt="" width="72" height="72" loading="lazy"></button>
+              <button type="button" class="collection-thumb" aria-label="Ver Rectángulo de tres ondas" aria-pressed="false" data-slide="2"><img src="/assets/images/nouvelle-collection/03-pave-vagues-v2-thumb.webp" alt="" width="72" height="72" loading="lazy"></button>
+              <button type="button" class="collection-thumb" aria-label="Ver Rectángulo de escamas" aria-pressed="false" data-slide="3"><img src="/assets/images/nouvelle-collection/04-pave-ecailles-thumb.webp" alt="" width="72" height="72" loading="lazy"></button>
+              <button type="button" class="collection-thumb" aria-label="Ver Palmeta suave" aria-pressed="false" data-slide="4"><img src="/assets/images/nouvelle-collection/05-palmette-douce-thumb.webp" alt="" width="72" height="72" loading="lazy"></button>
+              <button type="button" class="collection-thumb" aria-label="Ver Pez canto rodado" aria-pressed="false" data-slide="5"><img src="/assets/images/nouvelle-collection/06-poisson-galet-thumb.webp" alt="" width="72" height="72" loading="lazy"></button>
+              <button type="button" class="collection-thumb" aria-label="Ver Canto rodado de cebra" aria-pressed="false" data-slide="6"><img src="/assets/images/nouvelle-collection/07-galet-zebre-v2-thumb.webp" alt="" width="72" height="72" loading="lazy"></button>
+              <button type="button" class="collection-thumb" aria-label="Ver Hoja tropical" aria-pressed="false" data-slide="7"><img src="/assets/images/nouvelle-collection/08-feuille-tropicale-thumb.webp" alt="" width="72" height="72" loading="lazy"></button>
+              <button type="button" class="collection-thumb" aria-label="Ver Trébol de cuatro hojas" aria-pressed="false" data-slide="8"><img src="/assets/images/nouvelle-collection/09-trefle-quatre-feuilles-thumb.webp" alt="" width="72" height="72" loading="lazy"></button>
+              <button type="button" class="collection-thumb" aria-label="Ver Pastilla redonda con rayos" aria-pressed="false" data-slide="9"><img src="/assets/images/nouvelle-collection/10-pastille-ronde-rayonnee-thumb.webp" alt="" width="72" height="72" loading="lazy"></button>
+              <button type="button" class="collection-thumb" aria-label="Ver Grano de café" aria-pressed="false" data-slide="10"><img src="/assets/images/nouvelle-collection/11-grain-de-cafe-thumb.webp" alt="" width="72" height="72" loading="lazy"></button>
+              <button type="button" class="collection-thumb" aria-label="Ver Canto rodado de tres ondas" aria-pressed="false" data-slide="11"><img src="/assets/images/nouvelle-collection/12-galet-trois-vagues-thumb.webp" alt="" width="72" height="72" loading="lazy"></button>
+              <button type="button" class="collection-thumb" aria-label="Ver Luna creciente" aria-pressed="false" data-slide="12"><img src="/assets/images/nouvelle-collection/13-croissant-lune-thumb.webp" alt="" width="72" height="72" loading="lazy"></button>
+              <button type="button" class="collection-thumb" aria-label="Ver Espiga de trigo estilizada" aria-pressed="false" data-slide="13"><img src="/assets/images/nouvelle-collection/15-epi-ble-stylise-thumb.webp" alt="" width="72" height="72" loading="lazy"></button>
+              <button type="button" class="collection-thumb" aria-label="Ver Estrella suave de cinco puntas" aria-pressed="false" data-slide="14"><img src="/assets/images/nouvelle-collection/16-etoile-cinq-branches-thumb.webp" alt="" width="72" height="72" loading="lazy"></button>
+              <button type="button" class="collection-thumb" aria-label="Ver Pez estilizado" aria-pressed="false" data-slide="15"><img src="/assets/images/nouvelle-collection/17-poisson-stylise-thumb.webp" alt="" width="72" height="72" loading="lazy"></button>
+              <button type="button" class="collection-thumb" aria-label="Ver Corazón trenzado" aria-pressed="false" data-slide="16"><img src="/assets/images/nouvelle-collection/18-coeur-torsade-thumb.webp" alt="" width="72" height="72" loading="lazy"></button>
+              <button type="button" class="collection-thumb" aria-label="Ver Panal hexagonal" aria-pressed="false" data-slide="17"><img src="/assets/images/nouvelle-collection/19-ruche-hexagonale-thumb.webp" alt="" width="72" height="72" loading="lazy"></button>
+              <button type="button" class="collection-thumb" aria-label="Ver Hoja de roble" aria-pressed="false" data-slide="18"><img src="/assets/images/nouvelle-collection/20-feuille-chene-thumb.webp" alt="" width="72" height="72" loading="lazy"></button>
+          </div>
+          <p class="collection-status" role="status" aria-live="polite" aria-atomic="true"></p>
+          <noscript><p class="collection-fallback">Active JavaScript para recorrer las 19 formas.</p></noscript>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="machines" aria-labelledby="machines-title">
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">La gama Atelier CAL</p>
+            <h2 id="machines-title">La precisión del bronce.</h2>
+          </div>
+          <p>Una máquina de rodillos robusta y compacta, equipada con rodillos de bronce para un acabado preciso y duradero. Elija las formas que correspondan a su producción.</p>
+        </div>
+        <article class="machine-card machine-featured">
+            <div class="machine-visual">
+              <img src="/assets/images/machine-rouleaux-bronze.webp" alt="Máquina Atelier CAL equipada con rodillos de bronce grabados" loading="eager" style="--photo-ratio: 1536 / 1024" width="1536" height="1024">
+              <span class="machine-label">Precisión y durabilidad</span>
+            </div>
+            <div class="machine-body">
+              <p class="machine-kicker">La versión de bronce</p>
+              <h3>Rodillos de bronce</h3>
+              <p class="machine-description">Huellas nítidas, un acabado cuidado y una gran regularidad de producción. La máquina de bronce se ofrece con formas estándar o con un grabado personalizado bajo presupuesto.</p>
+              <ul class="feature-list">
+                <li>Formas estándar a elegir</li>
+                <li>Acabado prémium de las confituras</li>
+                <li>Diseñada para durar en uso profesional</li>
+              </ul>
+              <div class="machine-price">
+                <p><strong>2930 €</strong> <span>impuestos incluidos</span> <del>3260 €</del></p>
+                <small>Máquina de bronce con formas estándar. Oferta hasta el 25 de diciembre de 2026.<br>Grabados personalizados: suplemento bajo presupuesto. Entrega con coste adicional.</small>
+              </div>
+              <div class="card-actions">
+                <a class="btn btn-dark" href="/es/machine.html">Descubrir la máquina de bronce</a>
+                <a class="btn btn-link" href="/es/modeles.html">Ver los modelos</a>
+              </div>
+            </div>
+          </article>
+        <p class="choice-note"><strong>¿Qué forma para sus caramelos?</strong> Describa sus recetas y su producción: Atelier CAL le aconsejará sobre los rodillos adecuados.</p>
+      </div>
+    </section>
+
+    <section class="why-section" aria-labelledby="why-title">
+      <div class="shell why-grid">
+        <div class="why-intro">
+          <p class="eyebrow">Pensada para el trabajo real</p>
+          <h2 id="why-title">Lo esencial, bien diseñado.</h2>
+          <p>Cada máquina tiene un objetivo sencillo: producir caramelos regulares con un equipo fiable, compacto y fácil de integrar en un taller.</p>
+        </div>
+        <div class="why-list">
+          <article class="why-item">
+            <span class="why-number">01</span>
+            <h3>Precisión constante</h3>
+            <p>Huellas limpias y reproducibles en toda la producción.</p>
+          </article>
+          <article class="why-item">
+            <span class="why-number">02</span>
+            <h3>Formato compacto</h3>
+            <p>Una máquina diseñada para encontrar su lugar de forma natural en el taller.</p>
+          </article>
+          <article class="why-item">
+            <span class="why-number">03</span>
+            <h3>Seguridad integrada</h3>
+            <p>Parada de emergencia, protecciones y diseño adaptado al uso profesional.</p>
+          </article>
+          <article class="why-item">
+            <span class="why-number">04</span>
+            <h3>Contacto directo</h3>
+            <p>Asesoramiento del fabricante para elegir la máquina y los rodillos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="entry-section" aria-labelledby="entry-title">
+      <div class="shell entry-card">
+        <a class="entry-image" href="/es/machine-plastique.html" aria-label="Descubrir la máquina con rodillos de plástico"><img src="/assets/images/machine-rouleaux-plastique.webp" alt="Máquina Atelier CAL equipada con rodillos de plástico" loading="lazy" width="1536" height="1024"></a>
+        <div class="entry-copy">
+          <p class="machine-kicker">Una alternativa para empezar</p>
+          <h2 id="entry-title">La versión de entrada con plástico alimentario</h2>
+          <p>La misma base mecánica, con rodillos intercambiables y un presupuesto más accesible.</p>
+          <p><strong>2290 € impuestos incluidos</strong> · Dos pares de rodillos incluidos.<br><small>Oferta hasta el 25 de diciembre de 2026. Entrega con coste adicional.</small></p>
+          <a class="btn btn-link" href="/es/machine-plastique.html">Descubrir esta versión</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section" aria-labelledby="contact-title">
+      <div class="shell cta-panel">
+        <div>
+          <p class="eyebrow">Su proyecto</p>
+          <h2 id="contact-title">Hablemos de su producción.</h2>
+          <p>Tipo de caramelo, materia trabajada, volúmenes y formas deseadas: bastan unos datos para asesorarle con claridad.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-dark" href="mailto:contact@atelier-cal.fr?subject=Mi%20proyecto%20de%20m%C3%A1quina%20Atelier%20CAL">Escribir por email</a>
+          <a class="btn btn-link" href="/es/catalogue.html">Descargar el catálogo</a>
+          <a class="btn btn-link" href="tel:+33677845435">06 77 84 54 35</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div>
+        <div class="footer-brand">Atelier CAL</div>
+        <div>Máquinas profesionales de confitería · Diseño y fabricación franceses</div>
+      </div>
+      <nav class="footer-links" aria-label="Enlaces del pie de página">
+        <a href="/es/mentions-legales.html">Aviso legal</a>
+        <a href="/es/confidentialite.html">Privacidad</a>
+        <a href="/es/cgv.html">Condiciones de venta</a>
+        <a href="/es/catalogue.html">Catálogo</a>
+        <a href="mailto:contact@atelier-cal.fr">contact@atelier-cal.fr</a>
+      </nav>
+    </div>
+  <p class="container"><small>IVA no aplicable — artículo L. 223-3 del Código francés de Impuestos sobre Bienes y Servicios (antiguo artículo 293 B del Código General de Impuestos francés).</small></p></footer>
+
+  <a class="whatsapp-float" href="https://wa.me/33677845435?text=Hola%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20las%20m%C3%A1quinas%20Atelier%20CAL." aria-label="Contactar con Atelier CAL por WhatsApp" rel="noopener">
+    <span>Hablar por WhatsApp</span>
+  </a>
+</body>
+</html>
