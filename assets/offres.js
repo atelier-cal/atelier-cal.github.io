@@ -2,10 +2,12 @@
   'use strict';
   const dialog = document.getElementById('cal-promo-dialog');
   const select = document.getElementById('offre-modele');
-  const models = {pastille:'Bronze Pastille', perle:'Bronze Perle 15 mm'};
+  const models = {perle:'Bronze Perle 15 mm'};
   if (select) {
     const requested = new URLSearchParams(location.search).get('modele');
     if (Object.hasOwn(models, requested)) select.value = models[requested];
+    const unavailable = document.getElementById('cal-offer-unavailable');
+    if (requested === 'pastille' && unavailable) unavailable.hidden = false;
     document.querySelectorAll('[data-offer-model]').forEach(link => {
       link.addEventListener('click', () => {
         const chosen = link.dataset.offerModel;
@@ -14,7 +16,7 @@
     });
   }
   if (!dialog || typeof dialog.showModal !== 'function') return;
-  const sessionKey = 'atelier-cal-bronze-offers-2026-v2';
+  const sessionKey = 'atelier-cal-perle-offer-20261012';
   let shown = false;
   let timer;
   let previousFocus;
