@@ -1,0 +1,17 @@
+.cal-custom-offer .cal-offers-eyebrow{color:#8b5b20}
+.cal-custom-offer h2{color:#29231b!important}
+.cal-custom-card{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
+.cal-custom-photo{margin:0;background:#d7d6d2;display:flex;align-items:center}
+.cal-custom-card .cal-custom-photo img{width:100%;height:auto;min-height:0;aspect-ratio:3/2;object-fit:contain}
+.cal-custom-card .cal-offers-card-body{padding:32px}
+.cal-custom-previous{margin:8px 0 14px;color:#686158;font-size:14px;line-height:1.5}
+.cal-custom-previous del{white-space:nowrap}
+.cal-custom-saving{display:inline-block;margin:0 0 12px;padding:7px 12px;border-radius:8px;background:#f1e3c9;color:#75501d;font-size:14px;font-weight:700}
+.cal-custom-collection{margin:22px 0;padding:18px 20px;border:1px solid #c59a5155;border-radius:14px;background:#c59a5110}
+.cal-custom-collection p{margin:0 0 8px;line-height:1.5}
+.cal-custom-collection strong{display:inline-block;color:#efcf90;font-size:27px;white-space:nowrap}
+.cal-custom-collection del,.cal-custom-model-price del{display:inline-block;margin-right:10px;color:#a79e8b;font-size:14px;white-space:nowrap}
+.cal-custom-collection small{display:block;line-height:1.5;color:#d1c8b9}
+.cal-custom-model-price small{display:block;margin-bottom:8px;font-size:12px;line-height:1.5}
+.cal-custom-model-price strong{display:inline-block;color:#e8c784;font-size:22px;white-space:nowrap}
+@media(max-width:720px){.cal-custom-card{grid-template-columns:1fr}.cal-custom-card .cal-offers-card-body{padding:24px}.cal-custom-collection{padding:16px}.cal-custom-collection strong{font-size:24px}}
