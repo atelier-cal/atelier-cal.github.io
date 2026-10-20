@@ -1,8 +1,8 @@
-/* Fixed campaign dates in Paris summer time; never reset for a visitor. */
+/* Fixed campaign dates in Paris time (winter offset at the deadline); never reset for a visitor. */
 (() => {
   'use strict';
-  const end = Date.parse('2026-10-20T00:00:00+02:00');
-  const lastDay = Date.parse('2026-10-19T00:00:00+02:00');
+  const end = Date.parse('2026-11-01T00:00:00+01:00');
+  const lastDay = Date.parse('2026-10-31T00:00:00+01:00');
   const read = (now = Date.now()) => {
     const seconds = Math.max(0, Math.ceil((end - now) / 1000));
     return {
