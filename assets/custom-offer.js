@@ -5,7 +5,7 @@
   const requested = new URLSearchParams(location.search).get('modele');
   // Existing Pearl campaign links still lead to the corresponding machine.
   if (requested === 'perle') {
-    location.replace(new URL('machine-bronze-perle.html#devis', location.href));
+    location.replace(new URL('machine.html?modele=perle#devis', location.href));
     return;
   }
   const models = {
