@@ -1,18 +1,21 @@
 (() => {
   'use strict';
   const select = document.getElementById('custom-modele');
-  if (!select) return;
   const requested = new URLSearchParams(location.search).get('modele');
-  // Existing Pearl campaign links still lead to the corresponding machine.
-  if (requested === 'perle') {
-    location.replace(new URL('machine.html?modele=perle#devis', location.href));
+  if (!select) {
+    const machine = document.getElementById('modele');
+    if (!machine) return;
+    const option = [...machine.options].find(item => item.dataset.quoteModel === requested);
+    if (option) {
+      machine.value = option.value;
+      machine.dispatchEvent(new Event('change', { bubbles: true }));
+    }
     return;
   }
-  const models = {
-    abeille: 'Signature Abeille',
-    feuille: 'Signature Feuille',
-    collection: 'Nouvelle Collection',
-    surmesure: 'Forme sur mesure'
-  };
-  if (Object.hasOwn(models, requested)) select.value = models[requested];
+  // Old campaign links for other shapes now lead to a regular quote request.
+  if (['perle', 'feuille', 'collection', 'surmesure'].includes(requested)) {
+    location.replace(new URL('machine.html?modele=' + requested + '#devis', location.href));
+    return;
+  }
+  select.value = 'Signature Abeille';
 })();
